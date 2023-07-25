@@ -1,1 +1,296 @@
-body {background-color: #FFF8F8;}
+
+@import url("https://use.typekit.net/zpt8xte.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0px;
+}
+
+body {display: flex;
+     flex-direction: column;
+     background-color:#FFF8F8 ;}
+
+
+footer {margin-top: 2rem;}
+
+
+
+
+ul {list-style: none;
+  margin: 0;
+  padding: 0;}
+
+a {text-decoration: none;
+ color: inherit;
+ }
+
+ fieldset {border: none;}
+
+
+
+.hero-banner {
+    height: 80vh;
+    background: #64DBBE;
+    display: grid;
+    grid-template-columns: 80fr 20fr;
+    justify-content: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    }
+
+.hero-image img {
+    max-width: 1000px; 
+    height: 65vh; 
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    margin-top: 5.5rem; 
+}
+
+.buttons-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    margin-top: 10rem;
+    color: #FFF;
+          text-align: center;
+          font-family: "calling-code", sans-serif;
+          font-size: 1.75rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.075rem;
+          text-transform: uppercase;
+        }
+
+.button1 {padding:1rem;}
+
+
+.case-study-main-container {display: flex;
+                            flex-direction: column;
+                            margin: 2rem;}
+
+.case-study-container1{width: 100%;
+    background: #FFE6E6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+
+.case-studies-container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;}
+
+
+.case-study {display: flex;
+             flex-direction: row;
+             justify-content: center;
+             align-items: center;
+             margin-top: 2rem;}
+
+
+
+.footer-container-main {background:#64DBBE;
+                        /*position: relative;*/
+                        display: flex;
+                        bottom: 0;
+                        width: 100%;
+                        /*height: 100%;*/
+                        height:80vh;
+                        margin-top: 2rem;
+
+                        }
+
+.footer-image-container {display: flex;
+                         justify-content: center; 
+                         align-items: center; 
+                         position: relative;
+                         width: 55%;
+                         /*height: 45rem;*/
+                         height:80vh;
+                         border: 1px solid white;
+                        }
+
+
+input, button {display: block;}
+
+
+
+.resturant { display: inline-flex;
+              position:absolute;
+              left:0;
+              bottom: 0;;
+              max-width: 80%;
+              height: auto;
+             } 
+
+
+
+.houses {display:inline-flex;
+         position: absolute;
+         right:0;
+         bottom:0;
+         max-width: 50%;
+         height: auto;
+         z-index: 1;}
+
+                        
+
+.myForm {display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items:center;
+         box-sizing:border-box;
+         right: 0;
+         margin: 0;
+         width: 45%;
+         height: 100%;
+         background: #292929;
+         border-left: .5rem solid #FFF;
+         }
+
+
+.myForm-content {display: flex;
+                 flex-direction: column;
+                 align-items: center;
+                 padding: .5rem;
+                 width: 50%;
+                 height: auto;
+                 /*border: 1px solid purple;*/}
+
+
+.heading-container {display: flex;
+                   /*border: 1px solid white; need for debugging*/
+                   width: 50%;
+                   align-items: start;
+                   margin-bottom: 2rem;}
+
+.formHeading {color: #FFF;
+             font-family: "calling-code", sans-serif;
+             font-size: 1.75rem;
+             font-style: normal;
+             font-weight: 700;
+             line-height: normal;
+             letter-spacing: 0.075rem;
+             text-transform: uppercase;}
+
+.allBoxes { /*Border: 1px solid pink;*/
+           display: inline-flex;
+           flex-direction: column;
+           width: 50%;
+           height: auto;}
+
+
+.individualBoxes {margin-bottom: 1rem;
+                 display: flex;
+                 flex-direction: column;
+                 width: 100%;
+                 height:auto;
+                 /*border: 1px solid white; need for bebugging */}
+
+input { display: flex;
+        width: 95%;
+        height: 2rem;
+        padding: 1rem .8rem;
+        border: .5px solid #FFF;
+        background: none;
+        color: #FFF;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.02rem;}
+        
+
+::placeholder {display: flex;
+              color: #BFBFBF;
+              font-family: 'Roboto Condensed', sans-serif;
+              font-size: 1rem;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              letter-spacing: 0.06rem;}
+
+
+  .message {
+    display: flex;
+    width: 95%;
+    height: 8rem;
+    padding: 1rem .8rem;
+    border: .5px solid #FFF;
+    background: none;
+    text-align: start;
+    justify-content: flex-start;
+  }
+
+
+  
+
+
+.formLabel {display: inline-flex;
+           margin-bottom: .3rem;
+           justify-content: flex-end;
+           color: #FFF;
+           font-family: 'Roboto Condensed', sans-serif;
+           font-size: 1rem;
+           font-style: normal;
+           font-weight: 700;
+           line-height: normal;
+           letter-spacing: 0.02rem;
+           }
+
+.buttonContainer {display: flex;
+                  justify-content: flex-end;
+                  margin-right: .5rem;
+                  /*border:1px solid white; I need to debugging */
+                  width: 50%;
+                  }
+
+.submitButton {display: inline-flex;
+    width: 12rem;
+    height: 3rem;
+    padding: 0.7rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "calling-code", sans-serif;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.075rem;
+    text-transform: uppercase;
+}
+
+.successMessage {color: #F16762;
+    font-family: "calling-code", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.075rem;
+    text-transform: uppercase;}
+
+
+
+
+
+       
+
+  
+
+
+
+
+
+
+
+
+
+
+
