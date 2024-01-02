@@ -1,280 +1,750 @@
 
-@import url("https://use.typekit.net/zpt8xte.css");
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
-
-body, html {
-    height: 100%;
-    margin: 0px;
-}
-
-body {display: flex;
-     flex-direction: column;
-     background-color:#FFF8F8 ;}
-
-
-footer {margin-top: 2rem;}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 
 
+body {font-family: 'IBM Plex Sans Condensed', sans-serif;
+      color:#292929;
+      background-color: #F6FCFA;
+     }
 
 ul {list-style: none;
-  margin: 0;
-  padding: 0;}
-
-a {text-decoration: none;
- color: inherit;
- }
-
- fieldset {border: none;}
+    padding: 0;
+    margin: 0;
+   }
 
 
 
-.hero-banner {
-    height: 80vh;
-    background: #64DBBE;
-    display: grid;
-    grid-template-columns: 80fr 20fr;
-    justify-content: center;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    }
+a {text-decoration: none; 
+   color: #333; 
+  }
 
-.hero-image img {
-    max-width: 1000px; 
-    height: 65vh; 
-    margin-right: 10%;
-    margin-left: 10%;
-    margin-bottom: 5%;
-    margin-top: 5.5rem; 
-}
-
-.buttons-group {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; 
-    margin-top: 10rem;
-    color: #FFF;
-          text-align: center;
-          font-family: "calling-code", sans-serif;
-          font-size: 1.75rem;
-          font-style: normal;
-          font-weight: 700;
-          line-height: normal;
-          letter-spacing: 0.075rem;
-          text-transform: uppercase;
+.Button {padding-bottom: .75rem;
+         font-weight: bold;
         }
 
-.button1 {padding:1rem;}
+.NavBar {padding-left: 5%;
+         padding-right: 5%;}
 
 
-.case-study-main-container {display: flex;
+.NavButtonPortfolio {width: 9.375rem;
+                    }
+
+.NavButtonAbout {width: 6.063rem;
+                }
+
+.NavButtonResume {width: 7.188rem;
+                 }
+
+.Container {margin-left: 5%;
+            margin-right: 5%;
+            padding-right: 5%;
+            padding-left: 5%;}
+
+
+.CaseStudyGifContainer {background-image: url(Large\ GIF\ \(1056x602\).gif);
+                        background-size:contain;
+                        margin:5%;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        order:-1;
+                       }
+
+.NavButtonContainer {display: flex;
+                     height:3.45rem;
+                     text-align: center;
+                     align-items: center;
+                     gap: 1.88rem;
+                    }
+
+.IntroHeroBanner {background-color: #64DBBE;
+                 }
+
+
+.ImageContainer {background-size:contain;
+                 background-position: center bottom ;
+                 background-repeat: no-repeat;
+                }
+                
+                
+.ImageContainerHome {background-image: url(RHartHomePhoto.png);}
+
+.CaseStudy {display:grid;
+            background-color: white;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+           }
+
+
+.FooterInfo {color: #292929;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+            }
+
+
+.Footer {background-color: #64DBBE;
+         margin: 0px;
+         padding: 0px;}
+   
+             
+.FooterEmail, .FooterPhone, .FooterLinkedIn {display: flex;
+                                             text-align: center;
+                                             justify-content: flex-start;}  
+
+                                             
+.FooterPic {background-image: url(RHartFooterImg.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom left;
+           }
+
+.LogoImgSmallScreen {padding-left: 5%;
+                     padding-top: 2%;}         
+
+
+
+
+
+.AboutHeroBanner {background-color: #64DBBE;
+                        height: 75vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                 }
+
+
+.AboutTextImg {background-image: url(RHartAbout.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                justify-content:center;
+                align-items: center;}
+
+
+.SkillsContainerMother {display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        justify-self: center;
+                        align-items: center;}
+
+.SkillsContainerDaugther {display: flex;
+                          flex-wrap: wrap;
+                          flex-direction: column;
+                          justify-content: end;
+                          align-items: flex-start;
+                         }
+
+.SkillsContainer {display: flex;
+                 flex-wrap: wrap;
+                 flex-direction: column;
+                 justify-content: center;
+                 align-items: flex-start;
+                 }
+
+.SkillsContainerButton {display: flex;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        align-items: center;
+                       }
+
+.Skills {display: flex;
+         padding: 0.5rem 0.75rem;
+         justify-content: center;
+         align-items: center;
+         border-radius: 0.625rem;
+         color:#F6FCFA;
+         background: #292929;
+        }
+
+                
+.EducationContainerMother {display: flex;
+                           justify-content: center;
+                           justify-self: center;
+                           align-items: center;}
+
+.EducationContainerDaugther {display: flex;
+                             flex-direction: column;
+                             justify-content: end;
+                             align-items: flex-start;
+                            }
+
+
+@media screen and (min-width: 1060px) {
+
+    .Heading {font-size: 4rem;
+              font-weight: bold;
+             }
+
+    .H2 {font-size: 2.5rem;
+         font-weight:bold;
+        }
+
+    .H3 {font-size: 2rem
+        }
+
+    .PText {font-size:1.25rem;
+            font-weight:normal;
+            line-height:2.5rem;
+            margin-top: 2rem;
+           }
+
+    .Container {margin-bottom: 4.5rem;
+               }  
+
+    .Button {font-size: 1.5rem;
+            }
+    
+    .Button2 {margin-top: 2.5rem;
+             }
+
+    .LogoImgSmallScreenContainer {display: none;
+                                 }
+
+    .NavBar {display: flex;
+             height:8.75rem;
+             align-items: center;
+             justify-content: space-between;
+             position: sticky;
+             top:0;
+             z-index: 1;
+             background: #F6FCFA;
+            }
+
+    .LogoImgDesktop {height:3.5rem;
+              width: 4.5rem;
+             }
+   
+
+    .IntroHeroBanner {display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      height: 75vh;
+                     }
+                    
+    .ImageContainerHome {background-image: url(RHartHomePhoto.png);}
+
+
+   .HomePageTextContainer {display: flex;
+                           justify-content: center;
+                           justify-self: center;
+                           align-items: center;
+                           width: 31rem;
+                          }
+
+
+   .CaseStudy {height: 30rem;
+               grid-template-columns: 1fr 1fr;
+              }
+
+  
+
+   .CaseStudyText {margin-left:5%;}
+
+
+
+    .AboutHeroBannerImg {height: 85%;}
+
+
+    .MainContainerAboutme {display: flex;
+        align-items: center;
+        justify-content: center;}
+
+
+    .AboutMeContainer {display: grid;
+                       grid-template-columns: 1fr 1fr;}
+
+    
+
+    .ImageContainerAbout {background-image: url(RHartAbout.png);
+                          background-size:cover;
+                          background-position: center center;
+
+                      
+                        }
+
+@media only screen and (max-width: 1300px) {
+    .ImageContainerAbout {
+        background-size: contain; 
+        width: 26rem;
+    }
+}
+
+
+    
+    .AboutMeTextContainer {width:35rem;}
+
+    .Para {width: 30rem;}
+
+    .AboutTextImgContainer {display: none;}
+
+
+   .SkillsContainerDaugther, .EducationContainerDaugther {width: 62rem;
+                            }
+
+   
+
+    .SkillsContainerButton {gap:1.62rem;
+                           }
+
+    .Skills {gap: 0.625rem;
+            }
+
+    .SkillsTitle {font-size: 4rem;
+                  font-weight: bold;
+                  text-decoration-line: underline;
+                  margin-top: 4.5rem;
+                  margin-bottom: 4.5rem;
+                 }
+     
+    .SkillsContainerHeading {font-size: 2rem;
+                             font-weight: bold;
+                             text-transform: uppercase;
+                             margin-bottom: 2rem;
+                            }
+    .SkillsContainer {margin-bottom: 3.5rem;}
+
+
+    .Education {font-size:2rem;
+                font-weight: bold;
+                letter-spacing: 0.0125rem;
+                margin-bottom: 1.5rem;}
+
+
+    .EducationYear {font-size:1.25rem;
+                    font-weight: normal;
+                    margin-bottom:4rem;}
+
+
+
+   .Footer {display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 10rem;
+            height:30rem;}
+
+   .FooterInfoText {display: grid;
+                    border: 2px solid #F6FCFA;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding: 5%;
+                    height:19rem;
+                    width: 22rem;
+                   }
+   
+   .FooterTextHeading  {font-size: 1.25rem;
+                        font-style: normal;
+                        font-weight: 400;}
+             
+  .FooterEmail, .FooterPhone, .FooterLinkedIn {gap:2.5rem;
+                                               font-size: 1.5rem;
+                                               font-weight: bold;
+                                               letter-spacing: 0.05rem;}  
+
+
+.mailIcon,.messageIcon, .linkinIcon  {width:35px;
+                                      height: 30px;}
+
+
+}
+
+
+
+
+
+@media screen and (min-width: 930px) and (max-width: 1059px) {
+
+    .Heading {font-size: 3rem;
+              font-weight: bold;
+             }
+
+    .H2 {font-size: 2rem;
+         font-weight:bold;
+        }
+
+    .H3 {font-size: 1.5rem
+        }
+
+    .PText {font-size:1.125rem;
+            font-weight:normal;
+            line-height:2.125rem;
+            margin-top: 1.5rem;}   
+
+    .Container {margin-bottom: 4rem;
+               }
+
+    .Button {font-size: 1.25rem;
+        }
+
+    .Button2 {margin-top: 2rem;
+             }
+    
+    
+            
+    .NavLogo {display: none;
+             }
+   
+    .NavBar {display: flex;
+             height:5.625rem;
+             align-items: center;
+             justify-content: center;
+             position: sticky;
+             top:0;
+             z-index: 1;
+             background: #F6FCFA;
+            }
+   
+    .IntroHeroBanner {display: grid;
+                      grid-template-columns: 1fr .75fr;
+                      height: 30rem;
+                     }
+
+    
+   .IntroTextContainer  {display: flex;
+                         justify-content: center;
+                         justify-self: center;
+                         align-items: center;
+                         width: 26rem;
+                        }
+                    
+
+    .CaseStudy {height: 34rem;
+                grid-template-rows: 1fr 1fr;
+                grid-column: 1fr
+               }
+                
+
+    .CaseStudyTextContainer {display: flex;
                             flex-direction: column;
-                            margin: 2rem;}
+                            justify-content: center;
+                            align-items: center;}
+    
+    
+    .AboutHeroBannerImg {width: 90%;}
 
-.case-study-container1{width: 100%;
-    background: #FFE6E6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+
+    .AboutMeContainer {display: flex;
+                       align-items: center;
+                       justify-content: center;}
+
+
+
+    .AboutMeTextContainer {width: 38rem;
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;}
+       
+
+
+    .AboutTextImg {height: 40rem;
+                  }
+
+
+
+    .SkillsContainerDaugther , .EducationContainerDaugther {width: 35rem;
+                                                           }
+
+
+
+    .SkillsContainerButton {gap:1.62rem;
+                           }
+
+
+    .Skills {gap: 0.625rem;
+            }
+
+
+    .SkillsTitle {font-size: 3rem;
+                  font-weight: bold;
+                  text-decoration-line: underline;
+                  margin-top: 3.5rem;
+                  margin-bottom: 3.5rem;}
+
+
+    .SkillsContainerHeading {font-size: 1.5rem;
+                             font-weight: bold;
+                             text-transform: uppercase;
+                             margin-bottom: 1.5rem;
+                            }
+
+    .SkillsContainer {margin-bottom: 3rem;
+                     }
+
+    .Education {font-size:1.5rem;
+                font-weight: bold;
+                letter-spacing: 0.0125rem;
+                margin-bottom: 1rem;}
+
+        
+    .EducationYear {font-size:1.125rem;
+                    font-weight: normal;
+                    margin-bottom:3rem;}
+
+
+    .Footer {display: grid;
+             grid-template-columns: 1fr 1fr;
+             height:25rem;
+             margin-top: 8rem;
+            }
+
+
+    .FooterInfoText {display: grid;
+                     border: 2px solid #F6FCFA;
+                     justify-content: flex-start;
+                     align-items: center;
+                     padding: 5%;
+                     height:18rem;
+                     width: 20rem;
+                    }
+    
+    .FooterTextHeading  {font-size: 1.125rem;
+                         font-weight: normal;}
+
+              
+    .FooterEmail, .FooterPhone, .FooterLinkedIn {gap:1.5rem;
+     font-size: 1.25rem;
+     font-style: normal;
+     font-weight: bold;
+     letter-spacing: 0.05rem;}  
+ 
+ 
+    .mailIcon,.messageIcon, .linkinIcon  {width:30px;
+            height: 25px;}
+ 
+    
+    }
+    
+
+
+@media screen and (max-width: 929px) {
+
+    .Heading {font-size: 2rem;
+              font-weight: bold;
+             }
+
+    .H2 {font-size: 1.5rem;
+         font-weight:bold;
+        }
+
+    .H3 {font-size: 1.25rem
+        }
+
+    .PText {font-size:1rem;
+            font-weight:normal;
+            line-height:1.875rem;
+            margin-top: 1.25rem;}   
+
+    .Container {margin-bottom: 3.5rem;
+               }
+
+    .ButtonMoreAboutMe {display: none;
+                       }
+    
+    .NavLogo {display: none;
+             }
+
+    .LogoImgSmallScreen {width: 3.349rem;
+                         height: 2.672;}
+
+    .NavBar {display: flex;
+             height:5rem;
+             align-items: center;
+             justify-content: center;
+             position: sticky;
+             top:0;
+             z-index: 1;
+             background: #F6FCFA;
+            }
+
+    .NavButtonContainer {gap:1.5rem;
+                        }
+
+    .Button {padding-bottom: .25rem;
+             font-size: 1.125rem;
+             font-weight: bold;
+            }
+
+    .Button2 {margin-top: 1.5rem;}
+                   
+    .NavButtonPortfolio {width: 5.688rem;
+                         border-bottom: 2px solid #64DBBE;
+                         align-items: center;
+                        }
+                   
+    .NavButtonAbout {width: 3.813rem;
+                     align-items: center;
+                   }
+                   
+    .NavButtonResume {width: 4.75rem;
+                      align-self: center;
+                   }
+
+    .IntroHeroBanner {display: grid;
+                      grid-template-rows: .75fr 1fr;
+                      height:32rem;
+                   }
+     
+   .IntroTextContainer  {display: flex;
+                         justify-content: center;
+                         justify-self: center;
+                         align-items: center;
+                         width: 21rem;}
+
+    .CaseStudy {height: 32rem;
+                grid-template-rows: .85fr 1fr;
+                grid-column: 1fr;
+               }
+
+    .CaseStudyTextContainer {justify-self: center;
+                            width:22rem;
+                            }
+
+    .AboutTextImg {height:17rem;}
+
+
+    .SkillsContainerDaugther , .EducationContainerDaugther {width: 70%;
+                                                           }
+
+
+
+    .SkillsContainerButton {gap:1.12rem;
+                           }
+
+
+    .Skills {gap:.5rem;
+            }
+
+
+    .SkillsTitle {font-size: 2rem;
+                  font-weight: bold;
+                  text-decoration-line: underline;
+                  margin-top: 3.5rem;
+                  margin-bottom: 3rem;
+                 }
+
+
+    .SkillsContainerHeading {font-size: 1.25rem;
+                             font-weight: bold;
+                             text-transform: uppercase;
+                             margin-bottom: 1.5rem;
+                            }
+
+    .SkillsContainer {margin-bottom: 3rem;
+                     }
+
+    .Education {font-size:1.25rem;
+                font-weight: bold;
+                letter-spacing: 0.0125rem;
+                margin-bottom:.88rem;}
+
+    .EducationYear {font-size:1rem;
+                    font-weight: normal;
+                    margin-bottom:2.5rem;}
+
+    .Footer {display: grid;
+             margin-top: 6rem;
+             grid-template-rows: .75fr 1fr;
+             height: 35rem;
+            }
+        
+    .FooterInfo {justify-content:flex-start;
+                 align-items: center;
+                 padding-left: 10%;
+                 order: -1;
+                }
+
+    .FooterInfoText {display: grid;
+                     grid-gap: 1.8rem;           
+                    }
+
+    .FooterTextHeading  {font-size: 1.125rem;
+                         font-weight: normal;
+                        }
+
+    .FooterEmail, .FooterPhone, .FooterLinkedIn {gap:1rem;
+                        font-size: 1.25rem;
+                        font-style: normal;
+                        font-weight: bold;
+                        letter-spacing: 0.05rem;}  
+
+    .FooterPic {background-image: url(RHartFooterImg.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position:start;
+                }
+    
+
+    }
+
+@media screen and (min-width: 650px) and (max-width: 929px) {
+
+    .AboutHeroBanner {height: 35rem;}
+
+    .AboutHeroBannerImg {width:90%
+        }
+
+}
+
+
+@media screen and (min-width: 450px) and (max-width: 649px) {
+
+    .AboutHeroBanner {height: 25rem;}
+
+    .AboutHeroBannerImg {width:90%;
+        }
+
+}
+    
+
+
+@media screen and (max-width: 449px) {
+    
+    .HomePageTextContainer {width: 85%;
+                           }
+                  
+    .AboutHeroBanner {height: 20rem;}
+                        
+    .AboutHeroBannerImg {width:90%
+                        }
+                        
+                        
     }
 
 
-.case-studies-container2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;}
 
+       
 
-.case-study {display: flex;
-             flex-direction: row;
-             justify-content: center;
-             align-items: center;
-             margin-top: 2rem;}
+  
+
+   
 
 
 
-.footer-container-main {background:#64DBBE;
-                        /*position: relative;*/
-                        display: flex;
-                        bottom: 0;
-                        width: 100%;
-                        /*height: 100%;*/
-                        height:80vh;
-                        margin-top: 2rem;
-
-                        }
-
-.footer-image-container {display: flex;
-                         justify-content: center; 
-                         align-items: center; 
-                         position: relative;
-                         width: 55%;
-                         /*height: 45rem;*/
-                         height:80vh;
-                         border: 1px solid white;
-                        }
-
-
-input, button {display: block;}
 
 
 
-.resturant { display: inline-flex;
-              position:absolute;
-              left:0;
-              bottom: 0;;
-              max-width: 80%;
-              height: auto;
-             } 
 
 
 
-.houses {display:inline-flex;
-         position: absolute;
-         right:0;
-         bottom:0;
-         max-width: 50%;
-         height: auto;
-         z-index: 1;}
-
-                        
-
-.myForm {display: flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items:center;
-         box-sizing:border-box;
-         right: 0;
-         margin: 0;
-         width: 45%;
-         height: 100%;
-         background: #292929;
-         border-left: .5rem solid #FFF;
-         }
 
 
-.myForm-content {display: flex;
-                 flex-direction: column;
-                 align-items: center;
-                 padding: .5rem;
-                 width: 50%;
-                 height: auto;
-                 /*border: 1px solid purple;*/}
 
 
-.heading-container {display: flex;
-                   /*border: 1px solid white; need for debugging*/
-                   width: 50%;
-                   align-items: start;
-                   margin-bottom: 2rem;}
-
-.formHeading {color: #FFF;
-             font-family: "calling-code", sans-serif;
-             font-size: 1.75rem;
-             font-style: normal;
-             font-weight: 700;
-             line-height: normal;
-             letter-spacing: 0.075rem;
-             text-transform: uppercase;}
-
-.allBoxes { /*Border: 1px solid pink;*/
-           display: inline-flex;
-           flex-direction: column;
-           width: 50%;
-           height: auto;}
 
 
-.individualBoxes {margin-bottom: 1rem;
-                 display: flex;
-                 flex-direction: column;
-                 width: 100%;
-                 height:auto;
-                 /*border: 1px solid white; need for bebugging */}
-
-input { display: flex;
-        width: 95%;
-        height: 2rem;
-        padding: 1rem .8rem;
-        border: .5px solid #FFF;
-        background: none;
-        color: #FFF;
-        font-family: 'Roboto Condensed', sans-serif;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: 0.02rem;}
-        
-
-::placeholder {display: flex;
-              color: #BFBFBF;
-              font-family: 'Roboto Condensed', sans-serif;
-              font-size: 1rem;
-              font-style: normal;
-              font-weight: 700;
-              line-height: normal;
-              letter-spacing: 0.06rem;}
 
 
-  .message {
-    display: flex;
-    width: 95%;
-    height: 8rem;
-    padding: 1rem .8rem;
-    border: .5px solid #FFF;
-    background: none;
-    text-align: start;
-    justify-content: flex-start;
-  }
+
+
+
+
+
 
 
   
 
 
-.formLabel {display: inline-flex;
-           margin-bottom: .3rem;
-           justify-content: flex-end;
-           color: #FFF;
-           font-family: 'Roboto Condensed', sans-serif;
-           font-size: 1rem;
-           font-style: normal;
-           font-weight: 700;
-           line-height: normal;
-           letter-spacing: 0.02rem;
-           }
 
-.buttonContainer {display: flex;
-                  justify-content: flex-end;
-                  margin-right: .5rem;
-                  /*border:1px solid white; I need to debugging */
-                  width: 50%;
-                  }
 
-.submitButton {display: inline-flex;
-    width: 12rem;
-    height: 3rem;
-    padding: 0.7rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: "calling-code", sans-serif;
-    font-size: 1.75rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.075rem;
-    text-transform: uppercase;
-}
 
-.successMessage {color: #F16762;
-    font-family: "calling-code", sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.075rem;
-    text-transform: uppercase;}
 
 
 
