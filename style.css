@@ -1,7 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-
+/* =====================STYLE ACROSS ALL MEDIA SCREE SIZES========================= */
+/* =====================STYLE ACROSS ALL MEDIA SCREE SIZES========================= */
+/* =====================STYLE ACROSS ALL MEDIA SCREE SIZES========================= */
 
 body {font-family: 'IBM Plex Sans Condensed', sans-serif;
       color:#292929;
@@ -13,19 +15,21 @@ ul {list-style: none;
     margin: 0;
    }
 
-
-
 a {text-decoration: none; 
    color: #333; 
   }
 
-.Button {padding-bottom: .75rem;
-         font-weight: bold;
-        }
+/* ----------------------Nav Bar with Nav-Buttons------------------ */
 
 .NavBar {padding-left: 5%;
          padding-right: 5%;}
 
+.NavButtonContainer {display: flex;
+                     height:3.45rem;
+                     text-align: center;
+                     align-items: center;
+                     gap: 1.88rem;
+                    }
 
 .NavButtonPortfolio {width: 9.375rem;
                     }
@@ -36,10 +40,61 @@ a {text-decoration: none;
 .NavButtonResume {width: 7.188rem;
                  }
 
+/* --------------------------Buttons--------------------------------- */
+
+.Button {padding-bottom: .75rem;
+         font-weight: bold;
+        }
+
+/* --------------------------Footer Style------------------------------- */
+
+.FooterInfo {color: #292929;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+            }         
+           
+.Footer {background-color: #64DBBE;
+         margin: 0px;
+         padding: 0px;}
+                                     
+.FooterEmail, .FooterPhone, .FooterLinkedIn {display: flex;
+                                             text-align: center;
+                                             justify-content: flex-start;
+                                            }  
+                                                                  
+.FooterPic {background-image: url(RHartFooterImg.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom left;
+           }
+           
+.LogoImgSmallScreen {padding-left: 5%;
+                     padding-top: 2%;}    
+                     
+ /* ------------------all containers across the screens--------------------- */                    
+
 .Container {margin-left: 5%;
             margin-right: 5%;
             padding-right: 5%;
             padding-left: 5%;}
+
+/* ----------------------Home Page Sytles----------------------------------- */
+
+.IntroHeroBanner {background-color: #64DBBE;
+                 }
+
+.ImageContainer {background-size:contain;
+                 background-position: center bottom ;
+                 background-repeat: no-repeat;
+                }              
+                
+.ImageContainerHome {background-image: url(RHartHomePhoto.png);}
+
+.CaseStudy {display:grid;
+            background-color: white;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+           }
 
 
 .CaseStudyGifContainer {background-image: url(Large\ GIF\ \(1056x602\).gif);
@@ -50,60 +105,7 @@ a {text-decoration: none;
                         order:-1;
                        }
 
-.NavButtonContainer {display: flex;
-                     height:3.45rem;
-                     text-align: center;
-                     align-items: center;
-                     gap: 1.88rem;
-                    }
-
-.IntroHeroBanner {background-color: #64DBBE;
-                 }
-
-
-.ImageContainer {background-size:contain;
-                 background-position: center bottom ;
-                 background-repeat: no-repeat;
-                }
-                
-                
-.ImageContainerHome {background-image: url(RHartHomePhoto.png);}
-
-.CaseStudy {display:grid;
-            background-color: white;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-           }
-
-
-.FooterInfo {color: #292929;
-             display: flex;
-             justify-content: center;
-             align-items: center;
-            }
-
-
-.Footer {background-color: #64DBBE;
-         margin: 0px;
-         padding: 0px;}
-   
-             
-.FooterEmail, .FooterPhone, .FooterLinkedIn {display: flex;
-                                             text-align: center;
-                                             justify-content: flex-start;}  
-
-                                             
-.FooterPic {background-image: url(RHartFooterImg.svg);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: bottom left;
-           }
-
-.LogoImgSmallScreen {padding-left: 5%;
-                     padding-top: 2%;}         
-
-
-
-
+/* ------------------------About page style--------------------------------- */
 
 .AboutHeroBanner {background-color: #64DBBE;
                         height: 75vh;
@@ -155,7 +157,6 @@ a {text-decoration: none;
          color:#F6FCFA;
          background: #292929;
         }
-
                 
 .EducationContainerMother {display: flex;
                            justify-content: center;
@@ -169,7 +170,15 @@ a {text-decoration: none;
                             }
 
 
+
+/* ======================LARGE SCREENS STYLES ====================== */
+/* ======================LARGE SCREENS STYLES ====================== */
+/* ======================LARGE SCREENS STYLES ====================== */
+
+
 @media screen and (min-width: 1060px) {
+
+/* ------------- Applies to all pages Design System --------------- */
 
     .Heading {font-size: 4rem;
               font-weight: bold;
@@ -191,14 +200,22 @@ a {text-decoration: none;
     .Container {margin-bottom: 4.5rem;
                }  
 
+
+
+/* -------------------------- Buttons ------------------------------- */
+
     .Button {font-size: 1.5rem;
             }
     
     .Button2 {margin-top: 2.5rem;
              }
 
+
+
+ /*---------------------- Navigation Design---------------------------------- */
+
     .LogoImgSmallScreenContainer {display: none;
-                                 }
+                                 } /* Logo not displayed on computer/large screens */
 
     .NavBar {display: flex;
              height:8.75rem;
@@ -211,9 +228,46 @@ a {text-decoration: none;
             }
 
     .LogoImgDesktop {height:3.5rem;
-              width: 4.5rem;
-             }
-   
+                     width: 4.5rem;
+                    }
+
+
+
+/*----------------------- Footer Design ------------------------------------- */
+
+    .Footer {display: grid;
+             grid-template-columns: 1fr 1fr;
+             margin-top: 10rem;
+             height:30rem;
+            }
+
+    .FooterInfoText {display: grid;
+                     border: 2px solid #F6FCFA;
+                     justify-content: flex-start;
+                     align-items: center;
+                     padding: 5%;
+                     height:19rem;
+                     width: 22rem;
+                    }
+
+    .FooterTextHeading  {font-size: 1.25rem;
+                         font-style: normal;
+                         font-weight: 400;
+                        }
+     
+    .FooterEmail, .FooterPhone, .FooterLinkedIn {gap:2.5rem;
+                                                 font-size: 1.5rem;
+                                                 font-weight: bold;
+                                                 letter-spacing: 0.05rem;
+                                                }  
+
+    .mailIcon,.messageIcon, .linkinIcon  {width:35px;
+                                          height: 30px;
+                                         }
+
+
+
+/* --------------------- HomePage Design -------------------------------- */
 
     .IntroHeroBanner {display: grid;
                       grid-template-columns: 1fr 1fr;
@@ -222,65 +276,62 @@ a {text-decoration: none;
                     
     .ImageContainerHome {background-image: url(RHartHomePhoto.png);}
 
-
-   .HomePageTextContainer {display: flex;
+    .HomePageTextContainer {display: flex;
                            justify-content: center;
                            justify-self: center;
                            align-items: center;
                            width: 31rem;
                           }
 
+    .CaseStudy {height: 30rem;
+                grid-template-columns: 1fr 1fr;
+               }
 
-   .CaseStudy {height: 30rem;
-               grid-template-columns: 1fr 1fr;
-              }
-
-  
-
-   .CaseStudyText {margin-left:5%;}
+    .CaseStudyText {margin-left:5%;}
 
 
 
-    .AboutHeroBannerImg {height: 85%;}
+ /* ------------------- AboutPage Design ----------------------------*/
 
+    .AboutHeroBannerImg {height: 85%;
+                        }
 
     .MainContainerAboutme {display: flex;
-        align-items: center;
-        justify-content: center;}
-
+                           align-items: center;
+                           justify-content: center;
+                          }
 
     .AboutMeContainer {display: grid;
-                       grid-template-columns: 1fr 1fr;}
-
-    
+                       grid-template-columns: 1fr 1fr;
+                      }
 
     .ImageContainerAbout {background-image: url(RHartAbout.png);
                           background-size:cover;
                           background-position: center center;
+                         }
 
-                      
-                        }
+                        
 
-@media only screen and (max-width: 1300px) {
-    .ImageContainerAbout {
-        background-size: contain; 
-        width: 26rem;
+/* Added screen style for About page image container above  */
+
+    @media only screen and (max-width: 1300px) {
+        
+    .ImageContainerAbout {background-size: contain; 
+                          width: 26rem;
+                         }
     }
-}
 
+    .AboutMeTextContainer {width:35rem;
+                          }
 
-    
-    .AboutMeTextContainer {width:35rem;}
+    .Para {width: 30rem;
+          }
 
-    .Para {width: 30rem;}
+    .AboutTextImgContainer {display: none;
+                           }
 
-    .AboutTextImgContainer {display: none;}
-
-
-   .SkillsContainerDaugther, .EducationContainerDaugther {width: 62rem;
-                            }
-
-   
+    .SkillsContainerDaugther, .EducationContainerDaugther {width: 62rem;
+                                                          }
 
     .SkillsContainerButton {gap:1.62rem;
                            }
@@ -300,48 +351,17 @@ a {text-decoration: none;
                              text-transform: uppercase;
                              margin-bottom: 2rem;
                             }
-    .SkillsContainer {margin-bottom: 3.5rem;}
 
+    .SkillsContainer {margin-bottom: 3.5rem;}
 
     .Education {font-size:2rem;
                 font-weight: bold;
                 letter-spacing: 0.0125rem;
                 margin-bottom: 1.5rem;}
 
-
     .EducationYear {font-size:1.25rem;
                     font-weight: normal;
                     margin-bottom:4rem;}
-
-
-
-   .Footer {display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin-top: 10rem;
-            height:30rem;}
-
-   .FooterInfoText {display: grid;
-                    border: 2px solid #F6FCFA;
-                    justify-content: flex-start;
-                    align-items: center;
-                    padding: 5%;
-                    height:19rem;
-                    width: 22rem;
-                   }
-   
-   .FooterTextHeading  {font-size: 1.25rem;
-                        font-style: normal;
-                        font-weight: 400;}
-             
-  .FooterEmail, .FooterPhone, .FooterLinkedIn {gap:2.5rem;
-                                               font-size: 1.5rem;
-                                               font-weight: bold;
-                                               letter-spacing: 0.05rem;}  
-
-
-.mailIcon,.messageIcon, .linkinIcon  {width:35px;
-                                      height: 30px;}
-
 
 }
 
@@ -349,7 +369,15 @@ a {text-decoration: none;
 
 
 
+/* ================= MEDIUM SCREENS STYLES ======================= */
+/* ================= MEDIUM SCREENS STYLES ======================= */
+/* ================= MEDIUM SCREENS STYLES ======================= */
+
+
+
 @media screen and (min-width: 930px) and (max-width: 1059px) {
+
+/* ------------ Applies to all pages Design System -----------  */
 
     .Heading {font-size: 3rem;
               font-weight: bold;
@@ -365,22 +393,29 @@ a {text-decoration: none;
     .PText {font-size:1.125rem;
             font-weight:normal;
             line-height:2.125rem;
-            margin-top: 1.5rem;}   
+            margin-top: 1.5rem;
+           }   
 
     .Container {margin-bottom: 4rem;
                }
 
+
+
+/* -------------------------- Buttons ------------------------------- */
+
     .Button {font-size: 1.25rem;
-        }
+            }
 
     .Button2 {margin-top: 2rem;
              }
-    
-    
-            
+
+
+
+/*---------------------- Navigation Design---------------------------------- */
+
     .NavLogo {display: none;
              }
-   
+
     .NavBar {display: flex;
              height:5.625rem;
              align-items: center;
@@ -390,94 +425,9 @@ a {text-decoration: none;
              z-index: 1;
              background: #F6FCFA;
             }
-   
-    .IntroHeroBanner {display: grid;
-                      grid-template-columns: 1fr .75fr;
-                      height: 30rem;
-                     }
-
-    
-   .IntroTextContainer  {display: flex;
-                         justify-content: center;
-                         justify-self: center;
-                         align-items: center;
-                         width: 26rem;
-                        }
-                    
-
-    .CaseStudy {height: 34rem;
-                grid-template-rows: 1fr 1fr;
-                grid-column: 1fr
-               }
-                
-
-    .CaseStudyTextContainer {display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;}
-    
-    
-    .AboutHeroBannerImg {width: 90%;}
 
 
-
-    .AboutMeContainer {display: flex;
-                       align-items: center;
-                       justify-content: center;}
-
-
-
-    .AboutMeTextContainer {width: 38rem;
-                           display: flex;
-                           align-items: center;
-                           justify-content: center;}
-       
-
-
-    .AboutTextImg {height: 40rem;
-                  }
-
-
-
-    .SkillsContainerDaugther , .EducationContainerDaugther {width: 35rem;
-                                                           }
-
-
-
-    .SkillsContainerButton {gap:1.62rem;
-                           }
-
-
-    .Skills {gap: 0.625rem;
-            }
-
-
-    .SkillsTitle {font-size: 3rem;
-                  font-weight: bold;
-                  text-decoration-line: underline;
-                  margin-top: 3.5rem;
-                  margin-bottom: 3.5rem;}
-
-
-    .SkillsContainerHeading {font-size: 1.5rem;
-                             font-weight: bold;
-                             text-transform: uppercase;
-                             margin-bottom: 1.5rem;
-                            }
-
-    .SkillsContainer {margin-bottom: 3rem;
-                     }
-
-    .Education {font-size:1.5rem;
-                font-weight: bold;
-                letter-spacing: 0.0125rem;
-                margin-bottom: 1rem;}
-
-        
-    .EducationYear {font-size:1.125rem;
-                    font-weight: normal;
-                    margin-bottom:3rem;}
-
+/* --------------------------Footer Style------------------------------- */
 
     .Footer {display: grid;
              grid-template-columns: 1fr 1fr;
@@ -496,25 +446,121 @@ a {text-decoration: none;
                     }
     
     .FooterTextHeading  {font-size: 1.125rem;
-                         font-weight: normal;}
-
-              
+                         font-weight: normal;
+                        }
+      
     .FooterEmail, .FooterPhone, .FooterLinkedIn {gap:1.5rem;
-     font-size: 1.25rem;
-     font-style: normal;
-     font-weight: bold;
-     letter-spacing: 0.05rem;}  
- 
+                                                 font-size: 1.25rem;
+                                                 font-style: normal;
+                                                 font-weight: bold;
+                                                 letter-spacing: 0.05rem;
+                                                }  
  
     .mailIcon,.messageIcon, .linkinIcon  {width:30px;
-            height: 25px;}
+                                          height: 25px;
+                                         }
  
-    
-    }
-    
+
+
+
+/* --------------------- HomePage Design -------------------------------- */
+   
+    .IntroHeroBanner {display: grid;
+                      grid-template-columns: 1fr .75fr;
+                      height: 30rem;
+                     }
+
+   .IntroTextContainer  {display: flex;
+                         justify-content: center;
+                         justify-self: center;
+                         align-items: center;
+                         width: 26rem;
+                        }
+                
+    .CaseStudy {height: 34rem;
+                grid-template-rows: 1fr 1fr;
+                grid-column: 1fr
+               }
+            
+    .CaseStudyTextContainer {display: flex;
+                             flex-direction: column;
+                             justify-content: center;
+                             align-items: center;
+                            }
+
+
+
+/* ------------------- AboutPage Design ----------------------------*/
+
+    .AboutHeroBannerImg {width: 90%;}
+
+    .AboutMeContainer {display: flex;
+                       align-items: center;
+                       justify-content: center;
+                      }
+
+    .AboutMeTextContainer {width: 38rem;
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;
+                          }
+       
+    .AboutTextImg {height: 40rem;
+                  }
+
+    .SkillsContainerDaugther , .EducationContainerDaugther {width: 35rem;
+                                                           }
+
+    .SkillsContainerButton {gap:1.62rem;
+                           }
+
+    .Skills {gap: 0.625rem;
+            }
+
+    .SkillsTitle {font-size: 3rem;
+                  font-weight: bold;
+                  text-decoration-line: underline;
+                  margin-top: 3.5rem;
+                  margin-bottom: 3.5rem;
+                 }
+
+    .SkillsContainerHeading {font-size: 1.5rem;
+                             font-weight: bold;
+                             text-transform: uppercase;
+                             margin-bottom: 1.5rem;
+                            }
+
+    .SkillsContainer {margin-bottom: 3rem;
+                     }
+
+    .Education {font-size:1.5rem;
+                font-weight: bold;
+                letter-spacing: 0.0125rem;
+                margin-bottom: 1rem;
+               }
+
+        
+    .EducationYear {font-size:1.125rem;
+                    font-weight: normal;
+                    margin-bottom:3rem;
+                   }
+
+}
+
+
+  
+
+
+
+
+/* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
+/* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
+/* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
 
 
 @media screen and (max-width: 929px) {
+
+/* ------------ Applies to all pages Design System -----------  */
 
     .Heading {font-size: 2rem;
               font-weight: bold;
@@ -535,8 +581,25 @@ a {text-decoration: none;
     .Container {margin-bottom: 3.5rem;
                }
 
+
+
+
+/* -------------------------- Buttons ------------------------------- */
+
+    .Button {padding-bottom: .25rem;
+             font-size: 1.125rem;
+             font-weight: bold;
+            }
+   
+    .Button2 {margin-top: 1.5rem;
+             }
+
     .ButtonMoreAboutMe {display: none;
                        }
+
+
+
+/*---------------------- Navigation Design---------------------------------- */
     
     .NavLogo {display: none;
              }
@@ -557,12 +620,7 @@ a {text-decoration: none;
     .NavButtonContainer {gap:1.5rem;
                         }
 
-    .Button {padding-bottom: .25rem;
-             font-size: 1.125rem;
-             font-weight: bold;
-            }
 
-    .Button2 {margin-top: 1.5rem;}
                    
     .NavButtonPortfolio {width: 5.688rem;
                          align-items: center;
@@ -570,74 +628,17 @@ a {text-decoration: none;
                    
     .NavButtonAbout {width: 3.813rem;
                      align-items: center;
-                   }
+                    }
                    
     .NavButtonResume {width: 4.75rem;
                       align-self: center;
-                   }
-
-    .IntroHeroBanner {display: grid;
-                      grid-template-rows: .75fr 1fr;
-                      height:32rem;
-                   }
-     
-   .IntroTextContainer  {display: flex;
-                         justify-content: center;
-                         justify-self: center;
-                         align-items: center;
-                         width: 21rem;}
-
-    .CaseStudy {height: 32rem;
-                grid-template-rows: .85fr 1fr;
-                grid-column: 1fr;
-               }
-
-    .CaseStudyTextContainer {justify-self: center;
-                            width:22rem;
-                            }
-
-    .AboutTextImg {height:17rem;}
-
-
-    .SkillsContainerDaugther , .EducationContainerDaugther {width: 70%;
-                                                           }
-
-
-
-    .SkillsContainerButton {gap:1.12rem;
-                           }
-
-
-    .Skills {gap:.5rem;
-            }
-
-
-    .SkillsTitle {font-size: 2rem;
-                  font-weight: bold;
-                  text-decoration-line: underline;
-                  margin-top: 3.5rem;
-                  margin-bottom: 3rem;
-                 }
-
-
-    .SkillsContainerHeading {font-size: 1.25rem;
-                             font-weight: bold;
-                             text-transform: uppercase;
-                             margin-bottom: 1.5rem;
-                            }
-
-    .SkillsContainer {margin-bottom: 3rem;
                      }
 
-    .Education {font-size:1.25rem;
-                font-weight: bold;
-                letter-spacing: 0.0125rem;
-                margin-bottom:.88rem;}
 
-    .EducationYear {font-size:1rem;
-                    font-weight: normal;
-                    margin-bottom:2.5rem;}
 
+
+/* --------------------------Footer Style------------------------------- */
+    
     .Footer {display: grid;
              margin-top: 6rem;
              grid-template-rows: .75fr 1fr;
@@ -669,26 +670,100 @@ a {text-decoration: none;
                 background-repeat: no-repeat;
                 background-position:start;
                 }
+           
     
+                
+
+/* --------------------- HomePage Design -------------------------------- */
+
+    .IntroHeroBanner {display: grid;
+                      grid-template-rows: .75fr 1fr;
+                      height:32rem;
+                   }
+     
+   .IntroTextContainer  {display: flex;
+                         justify-content: center;
+                         justify-self: center;
+                         align-items: center;
+                         width: 21rem;}
+
+    .CaseStudy {height: 32rem;
+                grid-template-rows: .85fr 1fr;
+                grid-column: 1fr;
+               }
+
+    .CaseStudyTextContainer {justify-self: center;
+                             width:22rem;
+                            }
+
+
+
+
+/* ------------------- AboutPage Design ----------------------------*/
+
+    .AboutTextImg {height:17rem;
+                  }
+
+    .SkillsContainerDaugther , .EducationContainerDaugther {width: 70%;
+                                                           }
+
+    .SkillsContainerButton {gap:1.12rem;
+                           }
+
+    .Skills {gap:.5rem;
+            }
+
+    .SkillsTitle {font-size: 2rem;
+                  font-weight: bold;
+                  text-decoration-line: underline;
+                  margin-top: 3.5rem;
+                  margin-bottom: 3rem;
+                 }
+
+    .SkillsContainerHeading {font-size: 1.25rem;
+                             font-weight: bold;
+                             text-transform: uppercase;
+                             margin-bottom: 1.5rem;
+                            }
+
+    .SkillsContainer {margin-bottom: 3rem;
+                     }
+
+    .Education {font-size:1.25rem;
+                font-weight: bold;
+                letter-spacing: 0.0125rem;
+                margin-bottom:.88rem;}
+
+    .EducationYear {font-size:1rem;
+                    font-weight: normal;
+                    margin-bottom:2.5rem;}
+
 
     }
 
+/* ================= ADDITIONAL SCREENS STYLES ======================= */
+/* ================= ADDITIONAL SCREENS STYLES ======================= */
+/* ================= ADDITIONAL SCREENS STYLES ======================= */
+
+
 @media screen and (min-width: 650px) and (max-width: 929px) {
 
-    .AboutHeroBanner {height: 35rem;}
+    .AboutHeroBanner {height: 35rem;
+                     }
 
     .AboutHeroBannerImg {width:90%
-        }
+                        }
 
 }
 
 
 @media screen and (min-width: 450px) and (max-width: 649px) {
 
-    .AboutHeroBanner {height: 25rem;}
+    .AboutHeroBanner {height: 25rem;
+                     }
 
     .AboutHeroBannerImg {width:90%;
-        }
+                        }
 
 }
     
@@ -699,11 +774,12 @@ a {text-decoration: none;
     .HomePageTextContainer {width: 85%;
                            }
                   
-    .AboutHeroBanner {height: 20rem;}
+    .AboutHeroBanner {height: 20rem;
+                     }
                         
     .AboutHeroBannerImg {width:90%
                         }
-                        
+                  
                         
     }
 
