@@ -5,30 +5,31 @@
 /* =====================STYLE ACROSS ALL MEDIA SCREE SIZES========================= */
 /* =====================STYLE ACROSS ALL MEDIA SCREE SIZES========================= */
 
-body {font-family: 'IBM Plex Sans Condensed', sans-serif;
-      color:#292929;
-      background-color: #F6FCFA;
+body {background-color: #F6FCFA;
+      color: #292929;
+      font-family: 'IBM Plex Sans Condensed', sans-serif;
      }
 
 ul {list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
    }
 
-a {text-decoration: none; 
-   color: #333; 
+a {color: #333; 
+   text-decoration: none; 
   }
 
+/* ----------------------Nav Bar with Nav-Buttons------------------ */
 /* ----------------------Nav Bar with Nav-Buttons------------------ */
 
 .NavBar {padding-left: 5%;
          padding-right: 5%;}
 
-.NavButtonContainer {display: flex;
+.NavButtonContainer {align-items: center;
+                     display: flex;
+                     gap: 1.88rem;
                      height:3.45rem;
                      text-align: center;
-                     align-items: center;
-                     gap: 1.88rem;
                     }
 
 .NavButtonPortfolio {width: 9.375rem;
@@ -41,11 +42,13 @@ a {text-decoration: none;
                  }
 
 /* --------------------------Buttons--------------------------------- */
+/* --------------------------Buttons--------------------------------- */
 
 .Button {padding-bottom: .75rem;
          font-weight: bold;
         }
 
+/* --------------------------Footer Style------------------------------- */
 /* --------------------------Footer Style------------------------------- */
 
 .FooterInfo {color: #292929;
@@ -55,8 +58,8 @@ a {text-decoration: none;
             }         
            
 .Footer {background-color: #64DBBE;
-         margin: 0px;
-         padding: 0px;}
+         margin: 0;
+         padding: 0;}
                                      
 .FooterEmail, .FooterPhone, .FooterLinkedIn {display: flex;
                                              text-align: center;
@@ -78,7 +81,14 @@ a {text-decoration: none;
             margin-right: 5%;
             padding-right: 5%;
             padding-left: 5%;}
+            
+.ContainerCaseStudy {margin-left: 5%;
+                     margin-right: 5%;
+                     padding-right: 5%;
+                     padding-left: 5%;
+                    }
 
+/* ----------------------Home Page Sytles----------------------------------- */
 /* ----------------------Home Page Sytles----------------------------------- */
 
 .IntroHeroBanner {background-color: #64DBBE;
@@ -93,7 +103,7 @@ a {text-decoration: none;
 
 .CaseStudy {display:grid;
             background-color: white;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
            }
 
 
@@ -105,22 +115,25 @@ a {text-decoration: none;
                         order:-1;
                        }
 
+
+/* ------------------------About page style--------------------------------- */
 /* ------------------------About page style--------------------------------- */
 
 .AboutHeroBanner {background-color: #64DBBE;
-                        height: 75vh;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                  height: 75vh;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
                  }
 
 
 .AboutTextImg {background-image: url(RHartAbout.png);
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-                justify-content:center;
-                align-items: center;}
+               background-size: contain;
+               background-repeat: no-repeat;
+               background-position: center;
+               justify-content:center;
+               align-items: center;
+              }
 
 
 .SkillsContainerMother {display: flex;
@@ -171,6 +184,163 @@ a {text-decoration: none;
 
 
 
+/* ------------------- iKlass CaseStudy Design ----------------------------*/                            
+/* ------------------- iKlass CaseStudy Design ----------------------------*/
+
+.CaseStudyContainerMain {display: flex;
+                         justify-content: center;
+                         justify-self: center;
+                         align-items: center;
+                        }
+
+.CaseStudyContainerMainLB {background-color: #E9F1F6;
+                          }
+                          
+.CaseStudyContainerMainDB {background-color: #B2DDFC;
+                          }
+
+.CaseStudyHeading  {display: flex;
+                    justify-self: center;
+                    align-items: center;
+                   }
+
+.iKlassCaseStudyHeading  {display: flex;
+                    justify-content: center;
+                    justify-self: center;
+                    align-items: center;
+                   }
+
+
+
+
+
+/*----Team Role ----*/
+.TitleContainer {display: flex;
+                 flex-direction: column;
+                 justify-content: center;
+                 justify-self: center;
+                 align-items: center;
+                }    
+.ProjectDetailContainer {display: flex;
+                         justify-content: center;
+                         justify-self: center;
+                         align-items: center;
+                        }                    
+.ProjectTitle {font-weight: bold;
+               text-transform: uppercase;
+              }       
+
+/*----OverView ----*/ /*----Objective---*/
+.OverviewContainer , .ObjectiveContainer {display: flex;
+                                         }
+
+/*----Research Approach ----*/
+.ImageUserResearch , .ImageEmployeesResearch ,
+.IllustrationScan , .IllustrationChatbox , 
+.IllustrationEmployees, .IllustrationSchedule, 
+.RestateProblemIllustrations                   {background-size:contain;
+                                                background-repeat: no-repeat;
+                                                background-position: center center;
+                                               }
+
+.ImageUserResearch {background-image: url(UserResearch.png);
+                   }
+
+.ImageEmployeesResearch {background-image: url(EmployeesResearch.png);
+                        }
+
+.IllustrationScan {background-image: url(IllustrationScan.svg);
+                  }
+
+.IllustrationChatbox  {background-image: url(IllustrationChatbox.svg);
+                      }
+
+.IllustrationEmployees  {background-image: url(IllustrationEmployees.svg);
+                        }
+
+.IllustrationSchedule {background-image: url(IllustrationSchedule.svg);
+                      }
+
+.RestateProblemIllustrations {background-image: url(communication\ illustration.svg);
+                      }
+
+.PTextResearch , .PTextInsights {display:flex;
+                                 justify-content: center;
+                                 justify-self: center;
+                                 align-items: center;
+                                }
+
+.Researchboxesflexbox, .Insightsboxesflexbox {display: flex;
+                                              flex-direction: column;
+                                              align-items: center;
+                                              justify-content: center;
+                                             }
+
+.SolutionMain {display: flex;
+              flex-direction: column;}
+
+.SolutionSub {display:flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              border: 1px solid #292929;}
+
+.designText {display: flex;
+             flex-direction: column;}
+
+.designText2 {font-weight: bold;}
+
+
+
+.VisualContainerMain {display: flex;
+                      flex-direction: column;
+                     }
+
+.VisualDesignSubGroupsFlexbox1Gif {background-image: url(HybridNav.gif);}
+
+.VisualDesignSubGroupsFlexbox2Gif {background-image: url(ConsistentContentsized.gif);}
+
+.VisualDesignSubGroupsFlexbox3Gif {background-image: url(SimpleLanguage.gif);}
+
+
+.VisualDesignSubGroupsFlexbox {display: flex;
+                               flex-direction: column;}
+
+.VisualDesignTextBox {display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+                     }
+
+.VisualImageContainer {background-position: center center;
+                      }
+
+.ScannablePhotoContainer {display: flex;
+                          justify-content: center;
+                         }
+
+.ScannablePhoto {background-image: url(ScannablePhoto.png);
+                }
+
+.LookFeelGif {background-image: url(LookFeel.gif);
+              height: 20rem;}
+
+.SummerImageContainer {display: flex;
+                      } 
+
+      
+
+
+
+
+/* ======================LARGE SCREENS STYLES ====================== */
+/* ======================LARGE SCREENS STYLES ====================== */
+/* ======================LARGE SCREENS STYLES ====================== */
+/* ======================LARGE SCREENS STYLES ====================== */
+/* ======================LARGE SCREENS STYLES ====================== */
+/* ======================LARGE SCREENS STYLES ====================== */
+/* ======================LARGE SCREENS STYLES ====================== */
+/* ======================LARGE SCREENS STYLES ====================== */
+/* ======================LARGE SCREENS STYLES ====================== */
 /* ======================LARGE SCREENS STYLES ====================== */
 /* ======================LARGE SCREENS STYLES ====================== */
 /* ======================LARGE SCREENS STYLES ====================== */
@@ -188,7 +358,7 @@ a {text-decoration: none;
          font-weight:bold;
         }
 
-    .H3 {font-size: 2rem
+    .H3 {font-size: 2rem;
         }
 
     .PText {font-size:1.25rem;
@@ -197,11 +367,20 @@ a {text-decoration: none;
             margin-top: 2rem;
            }
 
+    .ParaH3 {text-align: center;
+             font-size: 2rem;
+             font-weight:500;
+             margin-top: 4rem;
+             line-height:3.25rem;
+            }
+
+    .PTextInsights , .PTextResearch {margin-top: 0;}
     .Container {margin-bottom: 4.5rem;
                }  
 
 
 
+/* -------------------------- Buttons ------------------------------- */
 /* -------------------------- Buttons ------------------------------- */
 
     .Button {font-size: 1.5rem;
@@ -212,6 +391,7 @@ a {text-decoration: none;
 
 
 
+/*---------------------- Navigation Design---------------------------------- */
  /*---------------------- Navigation Design---------------------------------- */
 
     .LogoImgSmallScreenContainer {display: none;
@@ -233,6 +413,7 @@ a {text-decoration: none;
 
 
 
+/*----------------------- Footer Design ------------------------------------- */
 /*----------------------- Footer Design ------------------------------------- */
 
     .Footer {display: grid;
@@ -268,6 +449,7 @@ a {text-decoration: none;
 
 
 /* --------------------- HomePage Design -------------------------------- */
+/* --------------------- HomePage Design -------------------------------- */
 
     .IntroHeroBanner {display: grid;
                       grid-template-columns: 1fr 1fr;
@@ -291,6 +473,8 @@ a {text-decoration: none;
 
 
 
+
+ /* ------------------- AboutPage Design ----------------------------*/
  /* ------------------- AboutPage Design ----------------------------*/
 
     .AboutHeroBannerImg {height: 85%;
@@ -310,8 +494,9 @@ a {text-decoration: none;
                           background-position: center center;
                          }
 
-                        
-
+ 
+                         
+/* Added screen style for About page image container above  */
 /* Added screen style for About page image container above  */
 
     @media only screen and (max-width: 1300px) {
@@ -361,14 +546,231 @@ a {text-decoration: none;
 
     .EducationYear {font-size:1.25rem;
                     font-weight: normal;
-                    margin-bottom:4rem;}
+                    margin-bottom:4rem;
+                   }
+
+
+
+/* ------------------- iKlass CaseStudy Design ----------------------------*/                  
+/* ------------------- iKlass CaseStudy Design ----------------------------*/
+
+
+.CaseStudyContainerMain {margin-bottom:8rem;}
+
+.CaseStudyContainerMainDB, .CaseStudyContainerMainLB  {padding-top:5rem;
+                           padding-bottom: 5rem;
+                          }
+
+
+
+.SubHeadingContainer {display: flex;
+                      flex-direction: column;
+                      gap:.75rem;
+                      justify-content: center;
+                      justify-self: center;
+                      align-items: center;
+                     }
+                     
+.RestateProblemHeading, .LookFeelHeading {align-items: flex-start;}
+
+
+.SubH {font-size: 1.25rem;
+       font-weight: bold;
+      }
+
+.SubHMain {font-size: 2rem;
+           font-weight: bold;
+           margin-bottom: 1rem;
+           line-height: 3.375rem;
+          }
+
+/*---Intro Banner ---*/
+    .IklassHeroBanner {display: grid;
+                       grid-template-columns: 1fr 1fr;
+                       height: 35rem;
+                      }
+    .IntroCaseStudyContainer {display: flex;
+                              justify-content: center;
+                              justify-self: center;
+                              align-items: center;
+                              width: 28rem;
+                             }
+    .ImageContaineriKlass  {background-image: url(iklasskids.svg);
+                            background-size:contain;
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                           } 
+
+/*----Team Role ----*/
+   
+    .ProjectDetail {display: flex;
+                    gap: 8rem;
+                    margin-top: 5rem;
+                    margin-bottom: 4rem;
+                   }
+    .ProjectTitle {margin-bottom: 0%;
+                   }       
+                                   
+     .ProjectSubTitle {margin-top: .75rem;}
+
+/*---- Containers ----*/
+
+    .OverviewContainer, .ProblemContainer, 
+    .ObjectiveContainer, .ResearchContainerboxes, 
+    .InsightsContainerboxes, .RestateProblemContainerFlex, 
+    .designText, .VisualHeadingSubMain, .DesignOverviewContainer,
+    .VisualDesignSubGroups, .SummerText            {width: 56.25rem;
+                                                   }
+
+   
+
+/*---- Research Approach ----*/
+.ResearchContainerboxes, .InsightsContainerboxes {display: grid;
+                                                  grid-template-columns: 1fr 1fr;
+                                                  gap: 4.625rem;
+                                                  height: 18rem;
+                                                 }
+
+.ResearchContainerboxes, .DesignOverviewContainer  {margin-bottom: 4rem;
+                        }
+
+.InsightsContainerboxes {margin-bottom: 8rem;
+                        }
+
+.InsightsContainerboxes {place-items: center;}
+
+.ResearchContainerbox1 ,  .InsightsContainerbox1{margin-top: 4rem;}
+
+.IllustrationScan {height: 16.75rem;
+                   width: 10.852rem;
+                   order: 1;
+                  }
+
+.IllustrationChatbox {height: 14.513rem;
+                      width: 20rem;
+                     }
+
+.IllustrationEmployees {height: 17rem;
+                        width: 23rem;
+                        order: 1;
+                       } 
+
+.IllustrationSchedule  {height: 16.0625rem;
+                        width: 10.36375rem;
+                       }
+
+.RestateProblemContainerFlex {display: grid;
+                              grid-template-columns: 1fr .5fr;
+                              gap: 8rem;
+                              width: 70rem;;
+                              }
+
+.SolutionMain {gap: 2rem;
+               margin-bottom: 1rem;
+              }                            
+
+.SolutionSub {width: 50rem;
+              padding: 3.375rem 7.5rem 2.37781rem 7.5rem;
+              gap: 1rem;
+             }
+
+.SolutionSubHead {font-weight: 700;
+                 }  
+
+.SolutionSubText, .SolutionSubHead {font-size: 1.5rem;
+                  line-height: 2.5rem;
+                 }  
+.designText {gap: 4rem;}
+
+                 
+.ViewWebsiteButtonCenter {margin-top: 4rem;
+                          margin-bottom: 4rem;}
+
+.VisualContainer {text-align: center;
+                 }
+                    
+
+.VisualContainerImage    {background-image: url(ViewWebsiteLScreen.png);
+                          width: 56.25rem;
+                          height: 29.625rem;
+                         }
+
+
+
+.SiteMapContainerImage {background-image: url(InformationHierarchy.svg);
+                        width: 60rem;
+                        height: 27rem;
+                        margin-top: 2rem;
+                      
+                      }
+
+.SiteMapNotesContainerImage {background-image: url(informationwithnotes.svg);
+                        width: 60rem;
+                        height: 40rem;
+                        margin-top: 8rem;
+                      
+                      }
+
+.VisualDesignSubGroupsFlexbox4 {background-image: url(ScannableInfo.png);}
+
+.VisualDesignSubGroups {margin-top: 5rem;}
+
+.VisualDesignSubGroupsFlexbox {gap:8rem;
+                               margin-top: 5rem;}
+                            
+.VisualDesignIndivisualBoxes {display: grid;
+                              gap: 8rem;
+                              grid-template-columns: 1fr 1fr;
+                              height: 21rem;
+                              width: 60rem;}
+
+.VisualImageContainer { order: -1; }
+
+.InfoCardPhoto {background-image: url(ScannableInfo.png);
+               }     
+
+.ScannablePhoto, .InfoCardPhoto {width: 56.25rem;
+                                 margin-top: 5rem;
+                                }
+
+.ScannablePhoto {height: 23.74794rem;
+                }
+
+.InfoCardPhoto {height: 30rem;
+               }
+
+.ScannableInfoSubGroups {margin-top: 8rem;
+                        }
+
+.LookFeelContainerFlex {display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap:2rem;
+                       }
+
+.LookFeelContainer {display: flex;
+                    width:34rem;
+                   }
+
+.SummerGif {background-image: url(SummerLarge.gif);
+    width: 60rem;
+    height: 35rem;
+   }
+           
+.SummerContainerMain {margin-bottom: 4rem;}
+
+
 
 }
 
-
-
-
-
+/* ================= MEDIUM SCREENS STYLES ======================= */
+/* ================= MEDIUM SCREENS STYLES ======================= */
+/* ================= MEDIUM SCREENS STYLES ======================= */
+/* ================= MEDIUM SCREENS STYLES ======================= */
+/* ================= MEDIUM SCREENS STYLES ======================= */
+/* ================= MEDIUM SCREENS STYLES ======================= */
+/* ================= MEDIUM SCREENS STYLES ======================= */
+/* ================= MEDIUM SCREENS STYLES ======================= */
+/* ================= MEDIUM SCREENS STYLES ======================= */
 /* ================= MEDIUM SCREENS STYLES ======================= */
 /* ================= MEDIUM SCREENS STYLES ======================= */
 /* ================= MEDIUM SCREENS STYLES ======================= */
@@ -396,11 +798,19 @@ a {text-decoration: none;
             margin-top: 1.5rem;
            }   
 
+    .ParaH3 {text-align: center;
+             width:36.5rem;
+             font-size: 1.5rem;
+             font-weight:500;
+             margin-top: 3.5rem;
+             line-height:3.25rem;
+            }
+
     .Container {margin-bottom: 4rem;
                }
 
 
-
+/* -------------------------- Buttons ------------------------------- */
 /* -------------------------- Buttons ------------------------------- */
 
     .Button {font-size: 1.25rem;
@@ -411,6 +821,7 @@ a {text-decoration: none;
 
 
 
+/*---------------------- Navigation Design---------------------------------- */
 /*---------------------- Navigation Design---------------------------------- */
 
     .NavLogo {display: none;
@@ -427,6 +838,7 @@ a {text-decoration: none;
             }
 
 
+/* --------------------------Footer Style------------------------------- */
 /* --------------------------Footer Style------------------------------- */
 
     .Footer {display: grid;
@@ -462,10 +874,10 @@ a {text-decoration: none;
  
 
 
-
+/* --------------------- HomePage Design -------------------------------- */
 /* --------------------- HomePage Design -------------------------------- */
    
-    .IntroHeroBanner {display: grid;
+   .IntroHeroBanner {display: grid;
                       grid-template-columns: 1fr .75fr;
                       height: 30rem;
                      }
@@ -479,7 +891,7 @@ a {text-decoration: none;
                 
     .CaseStudy {height: 34rem;
                 grid-template-rows: 1fr 1fr;
-                grid-column: 1fr
+                grid-column: 1fr;
                }
             
     .CaseStudyTextContainer {display: flex;
@@ -487,9 +899,10 @@ a {text-decoration: none;
                              justify-content: center;
                              align-items: center;
                             }
+    .PTextCaseStudy {width: 40rem ;}
 
 
-
+/* ------------------- AboutPage Design ----------------------------*/
 /* ------------------- AboutPage Design ----------------------------*/
 
     .AboutHeroBannerImg {width: 90%;}
@@ -505,7 +918,7 @@ a {text-decoration: none;
                            justify-content: center;
                           }
        
-    .AboutTextImg {height: 40rem;
+    .AboutTextImg {height: 34.375rem;
                   }
 
     .SkillsContainerDaugther , .EducationContainerDaugther {width: 35rem;
@@ -545,14 +958,236 @@ a {text-decoration: none;
                     margin-bottom:3rem;
                    }
 
+                  
+
+/* ------------------- iKlass CaseStudy Design ----------------------------*/
+/* ------------------- iKlass CaseStudy Design ----------------------------*/
+
+.CaseStudyContainerMain {margin-bottom:6.5rem;}
+
+.CaseStudyContainerMainDB, .CaseStudyContainerMainLB  {padding-top:4rem;
+                           padding-bottom: 4rem;
+                          }
+
+
+.SubHeadingContainer {display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+                      justify-self: center;
+                      align-items: center;
+                      gap:.375rem; 
+                     }
+
+.SubH {font-size: 1rem;
+       font-weight: bold;
+      }
+                 
+.SubHMain {font-size: 1.5rem;
+           font-weight: bold;
+           margin-bottom: .75rem;
+           line-height: 2.5rem;
+          }
+
+/*---Intro Banner ---*/
+.IklassHeroBanner {display: flex;
+                   height: 45rem;
+                   justify-content: center;
+                   justify-self: center;
+                   align-items: center;
+                  }
+ .IntroCaseStudyContainer {display: flex;
+                           justify-content: center;
+                           justify-self: center;
+                           align-items: center;
+                           width: 33.438rem;
+                          }
+ .PTextIklassIntro {font-size:1.5rem;
+                    line-height: 2.5rem;
+                   }           
+ .ImageIklassKids  {background-image: url(iklasskids.svg);
+                    background-size:contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    margin-top: 4rem;
+                    height: 17rem;
+                   } 
+
+/*----Team Role ----*/
+
+.ProjectDetail {display: flex;
+                gap: 6rem;
+                margin-top: 4rem;
+                margin-bottom: 4rem;}
+
+.ProjectTitle {margin-bottom: 0%;
+              }       
+                   
+.ProjectSubTitle {margin-top: .75rem;
+                 }
+
+/*----Containers ----*/
+
+.OverviewContainer , .ProblemContainer, 
+.ObjectiveContainer, .RestateProblemContainerFlex, .designText, 
+.VisualHeadingSubMain, .VisualDesignSubGroups, .LookFeelHeadingSubMain, .SummerText {width: 40rem;
+                                                                       }
+                                       
+                                       
+.ResearchContainerboxes, .InsightsContainerboxes {display: grid;
+                          grid-template-rows: .5fr 2fr;
+                          width: 34.375rem;
+                          gap: 2rem;
+                          margin-bottom: 6rem;}
+
+.ResearchContainerboxes {height: 27rem;
+                        }
+
+.InsightsContainerboxes {place-items: center;
+                         height: 24.563;
+                        }
+
+.ImageUserResearch, .ImageEmployeesResearch, .InsightsImg {grid-row: 2;
+                                                          }
+               
+.ResearchContainerbox1, .InsightsContainerbox1 {margin-top: 2.5rem;
+                       }
+
+.Researchboxesflexbox, .Insightsboxesflexbox {display: flex;
+                                              flex-direction: column;
+                                              align-items: center;
+                                             }
+
+
+.IllustrationScan {width: 10.18319rem;
+                   height: 14.1875rem;
+                  }    
+
+.IllustrationChatbox {height: 12.46256rem;
+                      width: 18rem;
+                     }
+
+.IllustrationEmployees {width: 22rem;
+                        height: 14rem;
+                       } 
+
+.IllustrationSchedule  {height: 16.0625rem;
+                        width: 10.36375rem;
+                       }
+
+
+.RestateProblemContainerFlex {display: grid;
+                              grid-template-rows: 1fr 1fr;
+                              gap: 4rem;
+                             }    
+    
+
+.SolutionMain {gap: 2rem;
+               margin-bottom: 1rem;
+              }                            
+
+.SolutionSub {width: 40rem;
+              padding: 2.325rem 3.125rem 2.325rem  3.125rem;
+              gap: 1rem;
+             }
+
+.SolutionSubHead {font-weight: 700;
+                 }  
+
+.SolutionSubText, .SolutionSubHead {font-size: 1.25rem;
+                                    line-height: 2.5rem;
+                                   }  
+
+.designText {gap: 4rem;
+             width: 43.125rem;}
+
+.VisualContainer {text-align: center;
+             }
+
+
+.VisualContainerImage  {background-image: url(ViewWebsite.png);
+                        width: 33.14988rem;
+                        height: 57.3125rem;
+                        margin-top: 5rem;
+                       }
+
+.SiteMapContainerImage {background-image: url(SiteMap.svg);
+                        width: 38.25rem;
+                        height: 79.152rem;
+                        margin-top: 5rem;
+                       }
+
+.SiteMapNotesContainerImage {background-image: url(sitemapwithnotes.svg);
+                            width: 38.25rem;
+                            height: 79.152rem;
+                            margin-top: 5rem;
+                           }
+
+.VisualDesignSubGroupsFlexbox4 {background-image: url(scannableinfosmall.svg);}
+
+.VisualDesignSubGroups {margin-top: 4rem;}
+
+.VisualDesignSubGroupsFlexbox {gap:6rem;
+                               margin-top: 6rem;}
+                            
+.VisualDesignIndivisualBoxes {display: grid;
+                              gap: 4rem;
+                              height: 30rem;
+                              width: 40rem;}
+
+.VisualDesignSubGroupsFlexbox1, .VisualDesignSubGroupsFlexbox2 {grid-template-rows: .5fr 1fr;
+                                                               }
+
+.VisualDesignSubGroupsFlexbox3 {grid-template-rows: .5fr 1.5fr;
+                               }
+
+.ScannableInfoSubGroups {margin-top: 6rem;
+                        }
+
+.InfoCardPhoto {background-image: url(scannableinfosmall.svg);
+            }     
+
+.ScannablePhoto, .InfoCardPhoto {width: 40rem;
+                                }
+
+.ScannablePhoto {height: 17rem;
+                 margin-top: 6rem;
+                }
+
+.InfoCardPhoto  {height: 32rem;
+                 margin-top: 3rem;
+                }
+
+.ScannableInfoSubGroups {margin-top: 8rem;}
+
+.LookFeelContainerFlex {display: grid;
+                        grid-template-rows: .5fr 1.5fr;
+                        gap:2rem;
+                       }
+
+.SummerGif {background-image: url(SummerSmall.gif);
+            width: 40rem;
+            height: 38rem;
+           }
+                   
+.SummerContainerMain {margin-bottom: 4rem;}
+                
+
+
 }
 
 
   
 
 
-
-
+/* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
+/* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
+/* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
+/* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
+/* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
+/* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
+/* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
+/* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
+/* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
 /* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
 /* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
 /* =================SMALL SCREENS STYLES FOR ALL PAGES======================= */
@@ -570,20 +1205,27 @@ a {text-decoration: none;
          font-weight:bold;
         }
 
-    .H3 {font-size: 1.25rem
+    .H3 {font-size: 1.25rem;
+        line-height:1.875rem;
         }
 
     .PText {font-size:1rem;
             font-weight:normal;
             line-height:1.875rem;
-            margin-top: 1.25rem;}   
+            margin-top: 1.25rem;}  
+            
+    .ParaH3 {font-size: 1.25rem;
+             font-weight:500;
+             margin-top: 2.5rem;
+             line-height:1.875rem;
+            }
 
     .Container {margin-bottom: 3.5rem;
                }
 
 
 
-
+/* -------------------------- Buttons ------------------------------- */
 /* -------------------------- Buttons ------------------------------- */
 
     .Button {padding-bottom: .25rem;
@@ -598,7 +1240,7 @@ a {text-decoration: none;
                        }
 
 
-
+/*---------------------- Navigation Design---------------------------------- */
 /*---------------------- Navigation Design---------------------------------- */
     
     .NavLogo {display: none;
@@ -636,7 +1278,7 @@ a {text-decoration: none;
 
 
 
-
+/* --------------------------Footer Style------------------------------- */
 /* --------------------------Footer Style------------------------------- */
     
     .Footer {display: grid;
@@ -673,7 +1315,7 @@ a {text-decoration: none;
            
     
                 
-
+/* --------------------- HomePage Design -------------------------------- */
 /* --------------------- HomePage Design -------------------------------- */
 
     .IntroHeroBanner {display: grid;
@@ -699,6 +1341,7 @@ a {text-decoration: none;
 
 
 
+/* ------------------- AboutPage Design ----------------------------*/
 /* ------------------- AboutPage Design ----------------------------*/
 
     .AboutTextImg {height:17rem;
@@ -732,15 +1375,269 @@ a {text-decoration: none;
     .Education {font-size:1.25rem;
                 font-weight: bold;
                 letter-spacing: 0.0125rem;
-                margin-bottom:.88rem;}
+                margin-bottom:.88rem;
+               }
 
     .EducationYear {font-size:1rem;
                     font-weight: normal;
-                    margin-bottom:2.5rem;}
+                    margin-bottom:2.5rem;
+                   }
 
 
-    }
 
+/* ------------------- iKlass CaseStudy Design ----------------------------*/    
+/* ------------------- iKlass CaseStudy Design ----------------------------*/
+
+.CaseStudyContainerMain {margin-bottom:6.5rem;}
+
+.CaseStudyContainerMainDB, .CaseStudyContainerMainLB  {padding-top:4rem;
+                           padding-bottom: 4rem;
+                          }
+
+
+
+
+/*---Intro Banner ---*/
+    .IklassHeroBanner {display: flex;
+                       height: 33rem;
+                       justify-content: center;
+                       justify-self: center;
+                       align-items: center;
+                      }
+    .IntroCaseStudyContainer {display: flex;
+                              justify-content: center;
+                              justify-self: center;
+                              align-items: center;
+                             }
+    .iklassHeading {display: flex;
+                    justify-content: center;
+                    justify-self: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                   }
+    .PTextIklassIntro {font-size:1.125rem;
+                       line-height: 1.875rem;
+                       margin-top: 3rem;
+                       flex-wrap: wrap;
+                      }
+    .ImageIklassKids  {background-image: url(iklasskids.svg);
+                       background-size:contain;
+                       background-repeat: no-repeat;
+                       background-position: center center;
+                       margin-top: 1.5rem;
+                       height: 10rem;
+                      }   
+
+                    
+
+   
+/*----Team Role ----*/                  
+    .ProjectDetail {display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    margin-top: 3rem;
+                   }
+    .TitleContainer {border: 1px solid #292929;
+                     width: 10rem;
+                     height: 5rem;
+                     padding: 0.75rem;
+                    }
+
+    .ProjectTitle {margin-bottom: 0%;
+                  }                            
+    .ProjectSubTitle {margin-top: .5rem;
+                     }
+
+ /*---- Containers----*/
+
+    .OverviewContainer , .ProblemContainer, 
+    .InsightsContainer, .ObjectiveContainer, 
+    .RestateProblemContainerFlex  {width: 90%;
+                                  }
+
+    .SubHeadingContainer {display: flex;
+                          flex-direction: column;
+                          justify-content: center;
+                          align-items: flex-start;
+                          gap:.5rem;
+                         }
+                      
+    .SubH {font-size: .75rem;
+           font-weight: bold;
+           line-height:1.875rem;
+          }
+                                       
+    .SubHMain {font-size: 1.25rem;
+               font-weight: bold;
+               margin-bottom: .75rem;
+               line-height: 1.875rem
+              }
+              
+
+    .ResearchContainerboxes, .InsightsContainerboxes  {display: grid;
+                                                       grid-template-rows: .5fr 2fr;
+                                                       gap: 1.5rem;
+                                                       margin-bottom: 3rem;
+                                                      }
+
+    .ResearchContainerboxes  {height: 22rem;
+                            }
+
+    .InsightsContainerboxes {height: 25.563rem;
+                             place-items: center;
+                            }
+
+    .PTextResearch {max-width: 24rem;
+                   }
+
+    .ImageUserResearch, .ImageEmployeesResearch, .InsightsImg {grid-row: 2;
+                                                              }
+        
+    .ResearchContainerbox1 {margin-top: 1.5rem;
+                           }
+
+    .Researchboxesflexbox {display: flex;
+                           flex-direction: column;
+                           align-items: center;
+                          }
+                        
+    .IllustrationScan {width: 9rem;
+                       height: 14rem;
+                      }    
+        
+    .IllustrationChatbox {height: 11rem;
+                          width: 16rem;
+                         }
+        
+    .IllustrationEmployees {width: 19rem;
+                            height: 14rem;
+                           } 
+        
+    .IllustrationSchedule  {height: 14rem;
+                            width: 9rem;
+                           }
+
+    .RestateProblemContainerFlex {display: grid;
+                                  grid-template-rows: 1fr 1fr;
+                                  gap: 3.25rem;
+                                 }     
+
+
+    .SolutionMain {gap: 1rem;
+                margin-bottom: 1rem;
+                }                            
+
+    .SolutionSub {width: 70%;
+                padding: 1.5rem 2rem 1.5rem  2rem;
+                gap: 1rem;
+                }
+
+    .SolutionSubHead {font-weight: 700;
+                    }  
+
+    .SolutionSubText, .SolutionSubHead {font-size: 1.125rem;
+                                        line-height: 2rem;
+                                    }  
+    
+    .designText {width: 80%;
+                 gap: 4rem;}
+
+
+    .VisualContainerImage  {background-image: url(ViewWebsite.png);
+                            width: 80%;
+                            height: 39.0625rem;
+                            margin-top: 4rem;
+                           }
+
+                           
+
+
+    .SiteMapContainerImage {background-image: url(SiteMap.svg);
+                            width: 25rem;
+                            height: 51rem;
+                            margin-top: 2rem;
+                          }
+
+    .SiteMapNotesContainerImage {background-image: url(sitemapwithnotes.svg);
+        width: 25rem;
+        height: 51rem;
+        margin-top: 4rem;
+       }
+
+    .VisualDesignsHeading {align-items: center;}
+
+    .VisualSubH {font-size:1.125rem;}
+
+    .VisualDesignsHeadingSubMain {font-size:1.5rem;}
+
+    .VisualDesignSubGroups {margin-top: 2rem;}
+
+    .VisualDesignSubGroupsFlexbox {gap:6rem;
+                                   margin-top: 6rem;}
+                            
+    .VisualDesignIndivisualBoxes {display: grid;
+                                  gap: 3rem;
+                                  height: 28rem;
+                                  width: 100%;
+                                 }
+
+    .VisualDesignSubGroups {width: 100%;}
+
+    
+
+    .VisualDesignSubGroupsFlexbox1, .VisualDesignSubGroupsFlexbox2 {grid-template-rows: .5fr 1fr;
+                                                               }
+
+    .VisualDesignSubGroupsFlexbox3 {grid-template-rows: .5fr 1.5fr;
+                               }
+
+
+    .ScannableInfoSubGroups {margin-top: 5rem;
+                            }
+ 
+    .InfoCardPhoto {background-image: url(scannableinfosmall.svg);
+                   }     
+                
+    .ScannablePhoto, .InfoCardPhoto {width: 100%;
+                                    }
+                
+    .ScannablePhoto {height: 11rem;
+                     margin-top: 3rem;
+                    }
+                
+    .InfoCardPhoto {height: 32rem;
+                    margin-top: 3rem;
+                   }
+                
+    .ScannableInfoSubGroups {margin-top: 5rem;}
+
+    .LookFeelContainerFlex {display: grid;
+                            grid-template-rows: .5fr 1.5fr;
+                           }
+
+    .SummerTextContainer {display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          width: 90%;}
+ 
+
+    .SummerGif {background-image: url(SummerSmall.gif);
+        width: 90%;
+        height: 22.875rem }
+   
+   .SummerContainerMain {margin-bottom: 4rem;}
+
+
+}
+
+
+
+
+
+
+/* ================= ADDITIONAL SCREENS STYLES ======================= */
+/* ================= ADDITIONAL SCREENS STYLES ======================= */
+/* ================= ADDITIONAL SCREENS STYLES ======================= */
 /* ================= ADDITIONAL SCREENS STYLES ======================= */
 /* ================= ADDITIONAL SCREENS STYLES ======================= */
 /* ================= ADDITIONAL SCREENS STYLES ======================= */
@@ -779,7 +1676,22 @@ a {text-decoration: none;
                         
     .AboutHeroBannerImg {width:90%
                         }
-                  
+
+    .SiteMapContainerImage {background-image: url(SiteMap.svg);
+        width: 20rem;
+        height: 44rem; 
+       }
+
+    .SiteMapNotesContainerImage {background-image: url(sitemapwithnotes.svg);
+        width: 20rem;
+        height: 44rem;}
+
+    .ScannablePhoto {width: 100%;
+        height: 10rem;
+        margin-top: 2rem;
+       }
+
+    .LookFeelContainerFlex {height: 30rem;}          
                         
     }
 
