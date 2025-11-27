@@ -121,13 +121,15 @@ export default function Home() {
     return (
       <>
         <div ref={spacerRef} />
+        <div className="w-full flex justify-center items-center px-[var(--spacing-lg)] pb-[var(--spacing-lg)]">
         <Image 
           src="/Photos/RihaHartWebsitePhoto.jpg" 
           alt="Riha Hart" 
           width={400}
           height={540}
-          className="w-full h-auto max-h-[540px] object-cover object-top rounded-[var(--radius-m)]"
+          className="w-full h-auto object-cover object-top rounded-[var(--radius-xs)]"
         />
+        </div>
       </>
     )
   } 
@@ -136,13 +138,15 @@ export default function Home() {
     return (
       <>
         <div ref={spacerRef} />
-        <Image 
-          src="/Photos/RihaHartWebsitePhoto.jpg" 
-          alt="Riha Hart" 
-          width={600}
-          height={810}
-          className="w-full h-auto max-h-[810px] object-cover object-top"
-        />
+        <div className="w-full flex justify-center items-center px-[var(--spacing-5xl)] pb-[var(--spacing-5xl)] pt-[var(--spacing-lg)]">
+          <Image 
+            src="/Photos/RihaHartWebsitePhoto.jpg" 
+            alt="Riha Hart" 
+            width={600}
+            height={810}
+            className="w-full h-auto max-h-[810px] object-cover object-top"
+          />
+        </div>
       </>
     )
   } 

@@ -11,23 +11,23 @@ const Navigation = () => {
   if (isMobile) {
     return (
       <nav className="w-full py-4 px-4 fixed top-0 left-0 bg-white z-50">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center py-[var(--spacing-lg)] px-[var(--spacing-lg)]">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="cursor-pointer"
+            className="cursor-pointer translate-y-[8px]"
           >
             <Image 
               src="/Icons/Hamburger/HamburgerXSmall.svg" 
               alt="Menu" 
-              width={24}
-              height={24}
+              width={34}
+              height={32}
             />
           </button>
           
           <Image 
-            src="/Icons/Logo/LogoXSmall.svg" 
+            src="/Icons/Logo/LogoLarge.svg" 
             alt="Riha Hart Logo" 
-            width={80}
+            width={140}
             height={100}
             priority
           />
@@ -72,7 +72,7 @@ const Navigation = () => {
         <div className="w-full mx-auto flex justify-between items-center py-[var(--spacing-xl)] px-[var(--spacing-5xl)]">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="cursor-pointer"
+            className="cursor-pointer translate-y-[12px]"
           >
             <Image 
               src="/Icons/Hamburger/HamburgerMedium.svg" 
@@ -100,7 +100,7 @@ const Navigation = () => {
       <div className="flex justify-between py-[var(--spacing-2xl)] px-[var(--spacing-12xl)]">
         <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="cursor-pointer"
+          className="cursor-pointer translate-y-[16px]"
         >
           <Image 
             src="/Icons/Hamburger/HamburgerLarge.svg" 
