@@ -6,11 +6,9 @@ import useMobileDetection from '@/_utilities/useMobileDetection'
 
 export default function Home() {
   const { isMobile, isTablet, isDesktop1440px, isDesktop } = useMobileDetection()
-  const [navHeight, setNavHeight] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
   const [videoLoaded, setVideoLoaded] = useState(false)
   const [isFadingOut, setIsFadingOut] = useState(false)
-  const spacerRef = useRef(null)
   const videoRef = useRef(null)
 
   // Handle video loading and playback
@@ -20,27 +18,28 @@ export default function Home() {
     const video = videoRef.current
     if (!video) return
 
-    // Ensure video plays completely
+    // Reset video state
     video.currentTime = 0
     video.loop = false
+    video.muted = true
+    video.playsInline = true
 
-    const handleLoadedData = () => {
-      setVideoLoaded(true)
-      video.play().catch((error) => {
-        console.error('Video play error:', error)
-        // If autoplay fails, skip loading screen
-        setIsLoading(false)
-      })
-    }
+    let hasStartedPlaying = false
 
-    const handleCanPlayThrough = () => {
-      if (!videoLoaded) {
+    const handleCanPlay = () => {
+      if (!hasStartedPlaying) {
+        hasStartedPlaying = true
         setVideoLoaded(true)
         video.play().catch((error) => {
           console.error('Video play error:', error)
           setIsLoading(false)
         })
       }
+    }
+
+    const handlePlaying = () => {
+      // Video is actually playing
+      setVideoLoaded(true)
     }
 
     const handleEnded = () => {
@@ -56,140 +55,27 @@ export default function Home() {
       setIsLoading(false)
     }
 
-    // Prevent video from being paused
-    const handlePause = () => {
-      if (!video.ended) {
-        video.play()
-      }
+    // Check if video is already ready to play
+    if (video.readyState >= 3) { // HAVE_FUTURE_DATA or higher
+      handleCanPlay()
     }
 
-    // Add multiple event listeners for better compatibility
-    video.addEventListener('loadeddata', handleLoadedData)
-    video.addEventListener('canplaythrough', handleCanPlayThrough)
+    // Add event listeners
+    video.addEventListener('canplay', handleCanPlay)
+    video.addEventListener('playing', handlePlaying)
     video.addEventListener('ended', handleEnded)
     video.addEventListener('error', handleError)
-    video.addEventListener('pause', handlePause)
 
-    // Try to load the video
+    // Load the video
     video.load()
 
     return () => {
-      video.removeEventListener('loadeddata', handleLoadedData)
-      video.removeEventListener('canplaythrough', handleCanPlayThrough)
+      video.removeEventListener('canplay', handleCanPlay)
+      video.removeEventListener('playing', handlePlaying)
       video.removeEventListener('ended', handleEnded)
       video.removeEventListener('error', handleError)
-      video.removeEventListener('pause', handlePause)
     }
-  }, [isLoading, videoLoaded])
-
-  useEffect(() => {
-    // Wait for nav to be fully rendered
-    const updateSpacer = () => {
-      const nav = document.querySelector('nav')
-      if (nav && spacerRef.current) {
-        const height = nav.offsetHeight
-        setNavHeight(height)
-        spacerRef.current.style.height = `${height}px`
-        spacerRef.current.style.margin = '0'
-        spacerRef.current.style.padding = '0'
-      }
-    }
-    
-    // Only update spacer after loading is complete
-    if (!isLoading) {
-      updateSpacer()
-      const timer = setTimeout(updateSpacer, 100)
-      return () => clearTimeout(timer)
-    }
-  }, [isMobile, isTablet, isDesktop1440px, isLoading])
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && !isLoading) {
-      // Wait for image to load, then scroll to show the face (top of image)
-      const timer = setTimeout(() => {
-        const nav = document.querySelector('nav')
-        const navHeight = nav ? nav.offsetHeight : 0
-        
-        // Different scroll amounts based on screen size
-        let scrollAmount
-        if (isDesktop) {
-          // Large Desktop (>1440px): scroll to show bottom of image in viewport
-          // Wait a bit for image to load, then calculate
-          setTimeout(() => {
-            const imageElement = document.querySelector('img[alt="Riha Hart"]')
-            if (imageElement && imageElement.offsetHeight > 0) {
-              const imageHeight = imageElement.offsetHeight
-              const navHeight = nav ? nav.offsetHeight : 0
-              // Scroll less to keep face visible: nav height + portion of image height
-              scrollAmount = navHeight + (imageHeight * 0.4)
-            } else {
-              // Fallback: scroll 2.5x viewport height
-              scrollAmount = window.innerHeight * 1
-            }
-            
-            // Perform the scroll
-            const startPosition = window.pageYOffset || window.scrollY
-            const distance = scrollAmount - startPosition
-            const duration = 700
-            let startTime = null
-
-            function easeOut(t) {
-              return 1 - Math.pow(1 - t, 3)
-            }
-
-            function animation(currentTime) {
-              if (startTime === null) startTime = currentTime
-              const timeElapsed = currentTime - startTime
-              const progress = Math.min(timeElapsed / duration, 1)
-              const easedProgress = easeOut(progress)
-              
-              window.scrollTo(0, startPosition + distance * easedProgress)
-              
-              if (progress < 1) {
-                requestAnimationFrame(animation)
-              }
-            }
-
-            requestAnimationFrame(animation)
-          }, 100)
-          return
-        } else if (isDesktop1440px) {
-          // Desktop 1440px: scroll 30% of viewport
-          scrollAmount = window.innerHeight * 0.3
-        } else {
-          // Other sizes: nav height + 10% of viewport
-          scrollAmount = navHeight + (window.innerHeight * 0.1)
-        }
-        
-        // Custom smooth scroll with ease-out easing and longer duration
-        const startPosition = window.pageYOffset || window.scrollY
-        const distance = scrollAmount - startPosition
-        const duration = 500 // 2 seconds for slower, smoother scroll
-        let startTime = null
-
-        function easeOut(t) {
-          // Smooth ease-out easing function (cubic ease-out)
-          return 1 - Math.pow(1 - t, 3)
-        }
-
-        function animation(currentTime) {
-          if (startTime === null) startTime = currentTime
-          const timeElapsed = currentTime - startTime
-          const progress = Math.min(timeElapsed / duration, 1)
-          const easedProgress = easeOut(progress)
-          
-          window.scrollTo(0, startPosition + distance * easedProgress)
-          
-          if (progress < 1) {
-            requestAnimationFrame(animation)
-          }
-        }
-
-        requestAnimationFrame(animation)
-      }, 500)
-      return () => clearTimeout(timer)
-    }
-  }, [isDesktop, isDesktop1440px, isLoading])
+  }, [isLoading])
 
   // Loading screen with video
   if (isLoading) {
@@ -218,16 +104,14 @@ export default function Home() {
   if (isMobile) {
     return (
       <>
-        <div ref={spacerRef} />
-        <div className="fixed inset-0 z-[98] bg-[var(--green)] animate-fadeOutGreen" />
-        <div className="w-full flex justify-center items-center px-[var(--spacing-lg)] pb-[var(--spacing-lg)] animate-fadeIn bg-white">
-        <Image 
-          src="/Photos/RihaHartWebsitePhoto.jpg" 
-          alt="Riha Hart" 
-          width={400}
-          height={540}
-          className="w-full h-auto object-cover object-top rounded-[var(--radius-xs)]"
-        />
+        <div className="w-full flex justify-center items-center px-[var(--spacing-lg)] pb-[var(--spacing-lg)] animate-fadeIn">
+          <Image 
+            src="/Photos/RihaHartWebsitePhoto.jpg" 
+            alt="Riha Hart" 
+            width={400}
+            height={540}
+            className="w-full h-auto object-cover object-top rounded-[var(--radius-xs)]"
+          />
         </div>
       </>
     )
@@ -236,9 +120,7 @@ export default function Home() {
   if (isTablet) {
     return (
       <>
-        <div ref={spacerRef} />
-        <div className="fixed inset-0 z-[98] bg-[var(--green)] animate-fadeOutGreen" />
-        <div className="w-full flex justify-center items-center px-[var(--spacing-5xl)] pb-[var(--spacing-5xl)] pt-[var(--spacing-lg)] animate-fadeIn bg-white">
+        <div className="w-full flex justify-center items-center px-[var(--spacing-5xl)] pb-[var(--spacing-5xl)] pt-[var(--spacing-lg)] animate-fadeIn">
           <Image 
             src="/Photos/RihaHartWebsitePhoto.jpg" 
             alt="Riha Hart" 
@@ -254,16 +136,14 @@ export default function Home() {
   if (isDesktop1440px) {
     return (
       <>
-        <div ref={spacerRef} />
-        <div className="fixed inset-0 z-[98] bg-[var(--green)] animate-fadeOutGreen" />
-        <div className="w-full flex justify-center items-center px-[var(--spacing-5xl)] pb-[var(--spacing-5xl)] pt-[var(--spacing-lg)] animate-fadeIn bg-white">
-        <Image 
-          src="/Photos/RihaHartWebsitePhoto.jpg" 
-          alt="Riha Hart" 
-          width={800}
-          height={1000}
-          className="w-full h-auto max-h-[1000px] object-cover object-top rounded-[var(--radius-m)]"
-        />
+        <div className="w-full flex justify-center items-center px-[var(--spacing-5xl)] pb-[var(--spacing-5xl)] pt-[var(--spacing-lg)] animate-fadeIn">
+          <Image 
+            src="/Photos/RihaHartWebsitePhoto.jpg" 
+            alt="Riha Hart" 
+            width={800}
+            height={1000}
+            className="w-full h-auto max-h-[1000px] object-cover object-top rounded-[var(--radius-m)]"
+          />
         </div>
       </>
     )
@@ -271,16 +151,14 @@ export default function Home() {
   
   return (
     <>
-      <div ref={spacerRef} />
-      <div className="fixed inset-0 z-[98] bg-[var(--green)] animate-fadeOutGreen" />
-      <div className="w-full flex justify-center items-center mx-auto pt-[var(--spacing-2xl)] pb-[var(--spacing-12xl)] px-[var(--spacing-12xl)] animate-fadeIn bg-white">
-          <Image 
-            src="/Photos/RihaHartWebsitePhoto.jpg" 
-            alt="Riha Hart" 
-            width={1000}
-            height={1000}
-            className="w-full h-auto  object-cover object-top rounded-[var(--radius-m)]"
-          />
+      <div className="w-full flex justify-center items-center mx-auto pt-[var(--spacing-2xl)] pb-[var(--spacing-12xl)] px-[var(--spacing-12xl)] animate-fadeIn">
+        <Image 
+          src="/Photos/RihaHartWebsitePhoto.jpg" 
+          alt="Riha Hart" 
+          width={1000}
+          height={1000}
+          className="w-full h-auto object-cover object-top rounded-[var(--radius-m)]"
+        />
       </div>
     </>
   )
