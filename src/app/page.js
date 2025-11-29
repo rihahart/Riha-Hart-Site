@@ -7,14 +7,7 @@ import useMobileDetection from '@/_utilities/useMobileDetection'
 export default function Home() {
   const { isMobile, isTablet, isDesktop1440px, isDesktop } = useMobileDetection()
   const [navHeight, setNavHeight] = useState(0)
-  const [isLoading, setIsLoading] = useState(() => {
-    // Check sessionStorage immediately during state initialization
-    if (typeof window !== 'undefined') {
-      const hasSeenVideo = sessionStorage.getItem('riha-hart-video-played')
-      return !hasSeenVideo // If video has been played, don't show loading
-    }
-    return true // Default to showing video on first load
-  })
+  const [isLoading, setIsLoading] = useState(true)
   const [videoLoaded, setVideoLoaded] = useState(false)
   const [isFadingOut, setIsFadingOut] = useState(false)
   const spacerRef = useRef(null)
@@ -26,6 +19,10 @@ export default function Home() {
     
     const video = videoRef.current
     if (!video) return
+
+    // Ensure video plays completely
+    video.currentTime = 0
+    video.loop = false
 
     const handleLoadedData = () => {
       setVideoLoaded(true)
@@ -47,14 +44,10 @@ export default function Home() {
     }
 
     const handleEnded = () => {
-      sessionStorage.setItem('riha-hart-video-played', 'true')
-      // Start fade-out animation
+      // Start fade-out animation immediately
       setIsFadingOut(true)
-      // After fade-out completes, hide loading screen
-      setTimeout(() => {
-        setIsLoading(false)
-        setIsFadingOut(false)
-      }, 2000) // 2 seconds to match fade-out duration
+      // Show homepage immediately while fade-out happens
+      setIsLoading(false)
     }
 
     const handleError = (e) => {
@@ -63,29 +56,29 @@ export default function Home() {
       setIsLoading(false)
     }
 
+    // Prevent video from being paused
+    const handlePause = () => {
+      if (!video.ended) {
+        video.play()
+      }
+    }
+
     // Add multiple event listeners for better compatibility
     video.addEventListener('loadeddata', handleLoadedData)
     video.addEventListener('canplaythrough', handleCanPlayThrough)
     video.addEventListener('ended', handleEnded)
     video.addEventListener('error', handleError)
-
-    // Fallback: if video doesn't load within 5 seconds, skip it
-    const timeout = setTimeout(() => {
-      if (isLoading) {
-        console.warn('Video loading timeout, skipping...')
-        setIsLoading(false)
-      }
-    }, 5000)
+    video.addEventListener('pause', handlePause)
 
     // Try to load the video
     video.load()
 
     return () => {
-      clearTimeout(timeout)
       video.removeEventListener('loadeddata', handleLoadedData)
       video.removeEventListener('canplaythrough', handleCanPlayThrough)
       video.removeEventListener('ended', handleEnded)
       video.removeEventListener('error', handleError)
+      video.removeEventListener('pause', handlePause)
     }
   }, [isLoading, videoLoaded])
 
