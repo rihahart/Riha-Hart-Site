@@ -1,5 +1,6 @@
 import '../styles/global.css'
 import Navigation from '@/components/Navigation'
+import { VideoProvider } from '@/contexts/VideoContext'
 
 export const metadata = {
   title: 'Riha Hart - Product Designer',
@@ -10,8 +11,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-white">
-        <Navigation />
-        <main>{children}</main>
+        <VideoProvider>
+          <Navigation />
+          <main>{children}</main>
+        </VideoProvider>
       </body>
     </html>
   )

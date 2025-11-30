@@ -1,16 +1,18 @@
 "use client"
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import useMobileDetection from '@/_utilities/useMobileDetection'
+import { useVideo } from '@/contexts/VideoContext'
 
 const Navigation = () => {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { showVideo } = useVideo()
 
   // Mobile Navigation (≤768px)
   if (isMobile) {
     return (
-      <nav className="w-full py-4 px-4 fixed top-0 left-0 bg-white z-50">
+      <nav className={`w-full py-4 px-4 fixed top-0 left-0 bg-white z-50 transition-opacity duration-300 ${showVideo ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         <div className="flex justify-between items-center py-[var(--spacing-lg)] px-[var(--spacing-lg)]">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
