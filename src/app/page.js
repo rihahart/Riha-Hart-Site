@@ -19,15 +19,25 @@ export default function Home() {
     const video = videoRef.current
     if (!video) return
 
-    // Only reset video state on initial load, not when showGreenBackground changes
-    if (video.currentTime === 0 || video.paused) {
-      video.currentTime = 0
-      video.loop = false
-      video.muted = true
-      video.playsInline = true
-    }
+    // Reset video state
+    video.currentTime = 0
+    video.loop = false
+    video.muted = true
+    video.playsInline = true
 
     let hasStartedPlaying = false
+
+    const handleLoadedMetadata = () => {
+      // Video metadata loaded, ready to play
+      if (!hasStartedPlaying) {
+        hasStartedPlaying = true
+        setVideoLoaded(true)
+        video.play().catch((error) => {
+          console.error('Video play error:', error)
+          setIsLoading(false)
+        })
+      }
+    }
 
     const handleCanPlay = () => {
       if (!hasStartedPlaying && video.paused) {
@@ -70,31 +80,26 @@ export default function Home() {
       setIsLoading(false)
     }
 
-    // Check if video is already ready to play
-    if (video.readyState >= 3 && video.paused) { // HAVE_FUTURE_DATA or higher
-      handleCanPlay()
-    }
-
     // Add event listeners
+    video.addEventListener('loadedmetadata', handleLoadedMetadata)
     video.addEventListener('canplay', handleCanPlay)
     video.addEventListener('playing', handlePlaying)
     video.addEventListener('timeupdate', handleTimeUpdate)
     video.addEventListener('ended', handleEnded)
     video.addEventListener('error', handleError)
 
-    // Only load if video hasn't started
-    if (video.readyState === 0) {
-      video.load()
-    }
+    // Always load the video to ensure it starts loading
+    video.load()
 
     return () => {
+      video.removeEventListener('loadedmetadata', handleLoadedMetadata)
       video.removeEventListener('canplay', handleCanPlay)
       video.removeEventListener('playing', handlePlaying)
       video.removeEventListener('timeupdate', handleTimeUpdate)
       video.removeEventListener('ended', handleEnded)
       video.removeEventListener('error', handleError)
     }
-  }, [isLoading])
+  }, [isLoading, isMobile, isTablet]) // Add isMobile and isTablet to dependencies
 
   // Loading screen with video
   if (isLoading) {
