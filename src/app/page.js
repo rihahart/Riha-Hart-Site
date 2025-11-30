@@ -9,6 +9,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
   const [videoLoaded, setVideoLoaded] = useState(false)
   const [isFadingOut, setIsFadingOut] = useState(false)
+  const [greenBackgroundOpacity, setGreenBackgroundOpacity] = useState(0)
   const videoRef = useRef(null)
 
   // Handle video loading and playback
@@ -18,16 +19,18 @@ export default function Home() {
     const video = videoRef.current
     if (!video) return
 
-    // Reset video state
-    video.currentTime = 0
-    video.loop = false
-    video.muted = true
-    video.playsInline = true
+    // Only reset video state on initial load, not when showGreenBackground changes
+    if (video.currentTime === 0 || video.paused) {
+      video.currentTime = 0
+      video.loop = false
+      video.muted = true
+      video.playsInline = true
+    }
 
     let hasStartedPlaying = false
 
     const handleCanPlay = () => {
-      if (!hasStartedPlaying) {
+      if (!hasStartedPlaying && video.paused) {
         hasStartedPlaying = true
         setVideoLoaded(true)
         video.play().catch((error) => {
@@ -40,6 +43,18 @@ export default function Home() {
     const handlePlaying = () => {
       // Video is actually playing
       setVideoLoaded(true)
+    }
+
+    const handleTimeUpdate = () => {
+      // Fade green background from 0% at 2.5s to 100% at 3.5s
+      if (video.currentTime >= 2.5 && video.currentTime <= 3.5) {
+        const progress = (video.currentTime - 2.5) / (3.5 - 2.5) // 0 to 1
+        setGreenBackgroundOpacity(progress)
+      } else if (video.currentTime > 3.5) {
+        setGreenBackgroundOpacity(1)
+      } else {
+        setGreenBackgroundOpacity(0)
+      }
     }
 
     const handleEnded = () => {
@@ -56,22 +71,26 @@ export default function Home() {
     }
 
     // Check if video is already ready to play
-    if (video.readyState >= 3) { // HAVE_FUTURE_DATA or higher
+    if (video.readyState >= 3 && video.paused) { // HAVE_FUTURE_DATA or higher
       handleCanPlay()
     }
 
     // Add event listeners
     video.addEventListener('canplay', handleCanPlay)
     video.addEventListener('playing', handlePlaying)
+    video.addEventListener('timeupdate', handleTimeUpdate)
     video.addEventListener('ended', handleEnded)
     video.addEventListener('error', handleError)
 
-    // Load the video
-    video.load()
+    // Only load if video hasn't started
+    if (video.readyState === 0) {
+      video.load()
+    }
 
     return () => {
       video.removeEventListener('canplay', handleCanPlay)
       video.removeEventListener('playing', handlePlaying)
+      video.removeEventListener('timeupdate', handleTimeUpdate)
       video.removeEventListener('ended', handleEnded)
       video.removeEventListener('error', handleError)
     }
@@ -79,19 +98,34 @@ export default function Home() {
 
   // Loading screen with video
   if (isLoading) {
+    const videoSource = (isMobile || isTablet) ? '/Photos/Logo_Mobile.mp4' : '/Photos/LogoVideo.mp4?v=2'
+    
     return (
       <div 
-        className={`fixed inset-0 z-[100] bg-white flex items-center justify-center ${
+        className={`fixed inset-0 z-[100] bg-white ${
           isFadingOut ? 'animate-fadeOutVideo' : ''
         }`}
       >
+        <div 
+          className="fixed inset-0 z-0 relative"
+          style={{ 
+            opacity: 1,
+            filter: 'blur(10px)'
+          }}
+        >
+          <img 
+            src="/Photos/RihaHartWebsitePhoto.jpg" 
+            alt="Riha Hart" 
+            className="w-full h-full object-cover"
+          />
+        </div>
         {isFadingOut && (
           <div className="fixed inset-0 z-[99] bg-[var(--green)] animate-fadeOutGreen" />
         )}
         <video
           ref={videoRef}
-          src="/Photos/LogoVideo.mp4?v=2"
-          className="w-full h-full object-contain"
+          src={videoSource}
+          className="absolute inset-0 w-full h-full object-cover z-10"
           muted
           playsInline
           autoPlay
