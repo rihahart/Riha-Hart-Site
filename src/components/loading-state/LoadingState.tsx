@@ -6,6 +6,7 @@ import { useVideo } from "@/contexts/VideoContext"
 
 export default function LoadingState() {
   const { showVideo, setShowVideo } = useVideo() as { showVideo: boolean; setShowVideo: (value: boolean) => void }
+  const { isMobile } = useMobileDetection()
   const videoRef = useRef<HTMLVideoElement | null>(null)
 
   const videoSource = "/Photos/Logo_Black.mp4"
@@ -302,7 +303,22 @@ export default function LoadingState() {
     >
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-contain"
+        className="object-contain"
+        style={isMobile ? {
+          position: 'absolute',
+          top: '40%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          maxWidth: '100%',
+          maxHeight: '100%',
+          width: 'auto',
+          height: 'auto'
+        } : {
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%'
+        }}
         muted
         playsInline
         autoPlay
