@@ -225,7 +225,7 @@ export default function Home() {
           src="/Photos/Homepage/PhotoWebsiteVideoMobile.mp4"
           muted
           playsInline
-          className="w-full h-full object-contain animate-fadeInHomepage"
+          className="w-full h-full object-contain"
           style={{ 
             width: '100%',
             height: '100%',
@@ -253,7 +253,7 @@ export default function Home() {
           src="/Photos/Homepage/PhotoWebsiteVideoScreen.mp4"
           muted
           playsInline
-          className="w-full h-full object-contain animate-fadeInHomepage"
+          className="w-full h-full object-contain"
           style={{ height: '100%' }}
         />
       </div>
@@ -277,7 +277,7 @@ export default function Home() {
           src="/Photos/Homepage/PhotoWebsiteVideoScreen.mp4"
           muted
           playsInline
-          className="w-full h-full object-contain animate-fadeInHomepage"
+          className="w-full h-full object-contain"
           style={{ height: '100%' }}
         />
       </div>
