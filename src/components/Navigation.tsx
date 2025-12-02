@@ -12,7 +12,7 @@ const Navigation = () => {
   // Mobile Navigation (≤768px)
   if (isMobile) {
     return (
-      <nav className={`w-full py-4 px-4 fixed top-0 left-0 bg-white z-50 transition-opacity duration-300 ${showVideo ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+      <nav className={`w-full py-4 px-4 fixed top-0 left-0 z-50 transition-opacity duration-300 ${showVideo ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         <div className="flex justify-between items-center py-[var(--spacing-lg)] px-[var(--spacing-lg)]">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -41,7 +41,7 @@ const Navigation = () => {
   // Tablet Navigation (769px - 1024px)
   if (isTablet) {
     return (
-      <nav className={`w-full py-6 px-6 fixed top-0 left-0 bg-white z-50 transition-opacity duration-300 ${showVideo ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+      <nav className={`w-full py-6 px-6 fixed top-0 left-0 z-50 transition-opacity duration-300 ${showVideo ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         <div className="flex justify-between items-center">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -70,7 +70,7 @@ const Navigation = () => {
   // Desktop 1440px (1025px - 1440px)
   if (isDesktop1440px) {
     return (
-      <nav className={`w-full fixed top-0 left-0 bg-white z-50 transition-opacity duration-300 ${showVideo ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+      <nav className={`w-full fixed top-0 left-0 z-50 transition-opacity duration-300 ${showVideo ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         <div className="w-full mx-auto flex justify-between items-center py-[var(--spacing-xl)] px-[var(--spacing-5xl)]">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -98,7 +98,7 @@ const Navigation = () => {
 
   // Large Desktop (>1440px)
   return (
-    <nav className={`w-full fixed top-0 left-0 z-50 bg-white transition-opacity duration-300 ${showVideo ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+    <nav className={`w-full fixed top-0 left-0 z-50 transition-opacity duration-300 ${showVideo ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
       <div className="flex justify-between py-[var(--spacing-2xl)] px-[var(--spacing-12xl)]">
         <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
