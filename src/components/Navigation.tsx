@@ -7,10 +7,10 @@ import { useVideo } from '@/contexts/VideoContext'
 const Navigation = () => {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { showVideo, isHomepageVideoPaused } = useVideo()
+  const { showVideo } = useVideo()
   
-  // Hide navigation if loading video is showing OR homepage video is paused
-  const shouldHideNav = showVideo || isHomepageVideoPaused
+  // Hide navigation only if loading video is showing
+  const shouldHideNav = showVideo
 
   // Mobile Navigation (≤768px)
   if (isMobile) {

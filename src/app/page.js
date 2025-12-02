@@ -65,43 +65,138 @@ export default function Home() {
     if (!showVideo && videoRef.current) {
       const video = videoRef.current
       
+      // Set mobile-specific attributes for better mobile playback
+      video.muted = true
+      video.playsInline = true
+      video.preload = "auto"
+      video.setAttribute("webkit-playsinline", "true")
+      video.setAttribute("x5-playsinline", "true")
+      video.setAttribute("x5-video-player-type", "h5")
+      video.setAttribute("playsinline", "true")
+      
       const updatePausedState = () => {
         setIsHomepageVideoPaused(video.paused)
       }
       
-      const playVideo = async () => {
-        if (video.paused) {
-          try {
+      let hasStartedPlaying = false
+      let playAttempts = 0
+      const maxPlayAttempts = 5
+      
+      const attemptPlay = async () => {
+        if (hasStartedPlaying) return
+        
+        playAttempts++
+        console.log(`Homepage video play attempt ${playAttempts}/${maxPlayAttempts}`)
+
+        try {
+          // Check if video format is supported
+          if (video.error && video.error.code === video.error.MEDIA_ERR_SRC_NOT_SUPPORTED) {
+            console.error("Video format not supported by browser")
+            setIsHomepageVideoPaused(false) // Show navigation anyway
+            return
+          }
+
+          // Try to play immediately, even if video isn't fully loaded
+          await video.play()
+          hasStartedPlaying = true
+          updatePausedState()
+          console.log("Homepage video playing successfully")
+          // Double-check that video is actually playing
+          if (video.paused) {
+            console.warn("Video.play() succeeded but video is still paused, attempting to resume")
             await video.play()
             updatePausedState()
-            console.log("Homepage video started playing")
-          } catch (err) {
-            console.error("Failed to play homepage video:", err)
-            updatePausedState()
+          }
+        } catch (err) {
+          console.log("Play attempt failed:", err instanceof Error ? err.name : "Unknown", err instanceof Error ? err.message : String(err))
+          
+          // If video isn't ready yet, retry more aggressively
+          if (video.readyState < 2 && playAttempts < maxPlayAttempts) {
+            // Retry immediately with requestAnimationFrame
+            requestAnimationFrame(() => attemptPlay())
+          } else if (playAttempts < maxPlayAttempts) {
+            // Use requestAnimationFrame for retry
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => attemptPlay())
+            })
+          } else if (!hasStartedPlaying) {
+            console.log("All play attempts failed, showing navigation anyway")
+            // If all attempts failed, show navigation anyway so homepage is visible
+            setIsHomepageVideoPaused(false)
           }
         }
       }
       
-      // Try to play when video is ready
+      // Handle playing event - ensure video is not paused
+      const handlePlaying = () => {
+        hasStartedPlaying = true
+        updatePausedState()
+        // Ensure video is not paused
+        if (video.paused) {
+          console.log("Video was paused, resuming playback")
+          video.play().catch(err => {
+            console.error("Failed to resume video playback:", err)
+          })
+        }
+      }
+      
+      // Try to play immediately
+      attemptPlay()
+      
+      // Also try when video is ready
       if (video.readyState >= 2) {
-        playVideo()
+        attemptPlay()
       } else {
         const handleCanPlay = () => {
-          playVideo()
+          if (!hasStartedPlaying) {
+            attemptPlay()
+          }
+        }
+        const handleLoadedData = () => {
+          if (!hasStartedPlaying && video.readyState >= 2) {
+            attemptPlay()
+          }
+        }
+        const handleCanPlayThrough = () => {
+          if (!hasStartedPlaying) {
+            attemptPlay()
+          }
         }
         video.addEventListener('canplay', handleCanPlay, { once: true })
+        video.addEventListener('loadeddata', handleLoadedData, { once: true })
+        video.addEventListener('canplaythrough', handleCanPlayThrough, { once: true })
       }
+      
+      // Listen for playing event
+      video.addEventListener('playing', handlePlaying)
       
       // Update state on pause/play events
       video.addEventListener('pause', updatePausedState)
-      video.addEventListener('playing', updatePausedState)
+      
+      // Check periodically if video gets paused
+      const checkVideoPlaying = () => {
+        updatePausedState()
+        if (video && !video.paused && hasStartedPlaying && !video.ended) {
+          // Video is playing, all good
+          return
+        }
+        if (video && video.paused && hasStartedPlaying && !video.ended && video.readyState >= 2) {
+          console.log("Video was paused unexpectedly, attempting to resume")
+          video.play().catch(err => {
+            console.error("Failed to resume paused video:", err)
+          })
+        }
+      }
+      
+      const playingCheckInterval = setInterval(checkVideoPlaying, 500)
       
       // Initial state
       updatePausedState()
       
       return () => {
+        clearInterval(playingCheckInterval)
+        video.removeEventListener('playing', handlePlaying)
         video.removeEventListener('pause', updatePausedState)
-        video.removeEventListener('playing', updatePausedState)
       }
     } else if (showVideo && videoRef.current) {
       // If LoadingState is still showing, ensure homepage video is paused
@@ -117,10 +212,10 @@ export default function Home() {
   if (isMobile) {
     return (
       <div 
-        className="fixed left-0 right-0 bottom-0 z-0 w-full m-0 p-0"
+        className="fixed left-0 right-0 z-0 w-full m-0 p-0"
         style={{ 
           top: `${navHeight}px`,
-          height: navHeight > 0 ? `calc(100vh - ${navHeight}px)` : '100vh',
+          bottom: 0,
           margin: 0,
           padding: 0
         }}
@@ -131,6 +226,11 @@ export default function Home() {
           muted
           playsInline
           className="w-full h-full object-contain animate-fadeInHomepage"
+          style={{ 
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain'
+          }}
         />
       </div>
     )
@@ -140,7 +240,7 @@ export default function Home() {
   if (isTablet) {
     return (
       <div 
-        className="fixed left-0 right-0 bottom-0 z-0 w-full m-0 p-0"
+        className="fixed left-0 right-0 bottom-0 z-0 w-full h-full m-0 p-0"
         style={{ 
           top: `${navHeight}px`,
           height: navHeight > 0 ? `calc(100vh - ${navHeight}px)` : '100vh',
@@ -154,6 +254,7 @@ export default function Home() {
           muted
           playsInline
           className="w-full h-full object-contain animate-fadeInHomepage"
+          style={{ height: '100%' }}
         />
       </div>
     )
@@ -163,7 +264,7 @@ export default function Home() {
   if (isDesktop1440px) {
     return (
       <div 
-        className="fixed left-0 right-0 bottom-0 z-0 w-full m-0 p-0"
+        className="fixed left-0 right-0 bottom-0 z-0 w-full h-full m-0 p-0"
         style={{ 
           top: `${navHeight}px`,
           height: navHeight > 0 ? `calc(100vh - ${navHeight}px)` : '100vh',
@@ -177,6 +278,7 @@ export default function Home() {
           muted
           playsInline
           className="w-full h-full object-contain animate-fadeInHomepage"
+          style={{ height: '100%' }}
         />
       </div>
     )
@@ -185,7 +287,7 @@ export default function Home() {
   // Large Desktop (>1440px)
   return (
     <div 
-      className="fixed left-0 right-0 bottom-0 z-0 w-full"
+      className="fixed left-0 right-0 bottom-0 z-0 w-full h-full"
       style={{ 
         top: `${navHeight}px`,
         height: navHeight > 0 ? `calc(100vh - ${navHeight}px)` : '100vh'
@@ -196,7 +298,8 @@ export default function Home() {
         src="/Photos/Homepage/PhotoWebsiteVideoScreen.mp4"
         muted
         playsInline
-        className="w-full h-full object-cover animate-fadeInHomepage"
+        className="w-full h-full object-contain animate-fadeInHomepage"
+        style={{ height: '100%' }}
       />
     </div>
   )

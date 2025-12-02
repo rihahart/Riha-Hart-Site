@@ -293,11 +293,11 @@ export default function LoadingState() {
 
   return (
     <div
-      className="fixed inset-0 z-[9999]"
+      className="fixed inset-0 z-[9999] w-full h-full"
     >
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-contain"
         muted
         playsInline
         autoPlay
