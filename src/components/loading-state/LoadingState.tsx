@@ -294,6 +294,11 @@ export default function LoadingState() {
   return (
     <div
       className="fixed inset-0 z-[9999] w-full h-full"
+      style={{ 
+        backgroundColor: 'var(--darkblack)',
+        width: '100vw',
+        height: '100vh'
+      }}
     >
       <video
         ref={videoRef}
