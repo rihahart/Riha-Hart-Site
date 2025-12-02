@@ -5,15 +5,10 @@ import useMobileDetection from "@/_utilities/useMobileDetection"
 import { useVideo } from "@/contexts/VideoContext"
 
 export default function LoadingState() {
-  const { isMobile, isTablet } = useMobileDetection()
   const { showVideo, setShowVideo } = useVideo() as { showVideo: boolean; setShowVideo: (value: boolean) => void }
-  const [isFadingOut, setIsFadingOut] = useState(false)
   const videoRef = useRef<HTMLVideoElement | null>(null)
 
-  const isSmallScreen = isMobile || isTablet
-  const videoSource = isSmallScreen
-    ? "/Photos/LogoMobile.mp4"
-    : "/Photos/LogoVideo.mp4"
+  const videoSource = "/Photos/Logo_Black.mp4"
 
   // Handle video playback for both mobile and desktop
   useEffect(() => {
@@ -69,7 +64,7 @@ export default function LoadingState() {
       return cleanup
     }
 
-    console.log("Setting up video, source:", videoSource, "isMobile:", isMobile)
+    console.log("Setting up video, source:", videoSource)
 
     let hasFinished = false
     let hasStartedPlaying = false
@@ -83,18 +78,6 @@ export default function LoadingState() {
       console.log(`Play attempt ${playAttempts}/${maxPlayAttempts}`)
 
       try {
-        // Ensure video is ready
-        if (video.readyState < 2) {
-          console.log("Video not ready yet, readyState:", video.readyState)
-          if (playAttempts < maxPlayAttempts) {
-            // Use requestAnimationFrame for next attempt instead of setTimeout
-            requestAnimationFrame(() => {
-              requestAnimationFrame(() => attemptPlay())
-            })
-          }
-          return
-        }
-
         // Check if video format is supported
         if (video.error && video.error.code === video.error.MEDIA_ERR_SRC_NOT_SUPPORTED) {
           console.error("Video format not supported by browser")
@@ -102,14 +85,24 @@ export default function LoadingState() {
           return
         }
 
+        // Try to play immediately, even if video isn't fully loaded
         await video.play()
         hasStartedPlaying = true
         console.log("Video playing successfully")
+        // Double-check that video is actually playing
+        if (video.paused) {
+          console.warn("Video.play() succeeded but video is still paused, attempting to resume")
+          await video.play()
+        }
       } catch (err) {
         console.log("Play attempt failed:", err instanceof Error ? err.name : "Unknown", err instanceof Error ? err.message : String(err))
         
-        if (playAttempts < maxPlayAttempts && !hasFinished) {
-          // Use requestAnimationFrame for retry instead of setTimeout
+        // If video isn't ready yet, retry more aggressively
+        if (video.readyState < 2 && playAttempts < maxPlayAttempts && !hasFinished) {
+          // Retry immediately with requestAnimationFrame
+          requestAnimationFrame(() => attemptPlay())
+        } else if (playAttempts < maxPlayAttempts && !hasFinished) {
+          // Use requestAnimationFrame for retry
           requestAnimationFrame(() => {
             requestAnimationFrame(() => attemptPlay())
           })
@@ -125,19 +118,9 @@ export default function LoadingState() {
       if (hasFinished) return
       
       hasFinished = true
-      setIsFadingOut(true)
       
-      // Listen for animation end event instead of using timeout
-      const container = video.parentElement
-      if (container) {
-        handleAnimationEnd = () => {
-          setShowVideo(false)
-        }
-        container.addEventListener("animationend", handleAnimationEnd)
-      } else {
-        // Fallback: if no container, hide immediately
-        setShowVideo(false)
-      }
+      // Hide immediately - no fade-out animation
+      setShowVideo(false)
     }
 
     const showHomepageOnError = () => {
@@ -213,6 +196,13 @@ export default function LoadingState() {
     handlePlaying = () => {
       hasStartedPlaying = true
       console.log("Video is now playing")
+      // Ensure video is not paused
+      if (video.paused) {
+        console.log("Video was paused, resuming playback")
+        video.play().catch(err => {
+          console.error("Failed to resume video playback:", err)
+        })
+      }
     }
 
     // Set video properties for mobile autoplay BEFORE setting src
@@ -248,19 +238,53 @@ export default function LoadingState() {
     video.addEventListener("loadstart", handleLoadStart)
     video.addEventListener("playing", handlePlaying)
 
-    // Load the video
+    // Try to play immediately without waiting
+    attemptPlay()
+
+    // Load the video (this will trigger events)
     video.load()
 
-    // Initial play attempt - use requestAnimationFrame instead of setTimeout
-    requestAnimationFrame(() => {
-      if (!hasStartedPlaying && video.readyState >= 2) {
+    // Also try to play on any ready state
+    const tryPlayImmediate = () => {
+      if (!hasStartedPlaying && !hasFinished) {
         attemptPlay()
       }
-    })
+    }
+    
+    // Try playing immediately and on various events
+    tryPlayImmediate()
+
+    // Add a check to ensure video plays if it gets paused
+    let playingCheckInterval: NodeJS.Timeout | null = null
+    
+    const checkVideoPlaying = () => {
+      if (video && !video.paused && hasStartedPlaying && !hasFinished) {
+        // Video is playing, all good
+        return
+      }
+      if (video && video.paused && hasStartedPlaying && !hasFinished && video.readyState >= 2) {
+        console.log("Video was paused unexpectedly, attempting to resume")
+        video.play().catch(err => {
+          console.error("Failed to resume paused video:", err)
+        })
+      }
+    }
+
+    // Check periodically if video gets paused
+    playingCheckInterval = setInterval(checkVideoPlaying, 500)
+    
+    // Enhanced cleanup that includes interval cleanup
+    const enhancedCleanup = () => {
+      if (playingCheckInterval) {
+        clearInterval(playingCheckInterval)
+        playingCheckInterval = null
+      }
+      cleanup()
+    }
 
     // Always return cleanup function
-    return cleanup
-  }, [showVideo, isSmallScreen, videoSource, isMobile, setShowVideo])
+    return enhancedCleanup
+  }, [showVideo, videoSource, setShowVideo])
 
   // Only render video overlay if showVideo is true
   if (!showVideo) {
@@ -269,9 +293,7 @@ export default function LoadingState() {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] ${
-        isFadingOut ? "animate-fadeOutVideo" : ""
-      }`}
+      className="fixed inset-0 z-[9999]"
     >
       <video
         ref={videoRef}

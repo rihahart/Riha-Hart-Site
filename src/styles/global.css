@@ -51,11 +51,11 @@
 }
 
 body {
-  background-color: white;
+  background-color: var(--darkblack);
 }
 
 html {
-  background-color: white;
+  background-color: var(--darkblack);
 }
 
 @keyframes fadeIn {

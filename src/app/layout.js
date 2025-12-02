@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-white">
+      <body style={{ backgroundColor: 'var(--darkblack)' }}>
         <VideoProvider>
           <Navigation />
           <main>{children}</main>
