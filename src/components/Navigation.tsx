@@ -1,12 +1,11 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import useMobileDetection from '@/_utilities/useMobileDetection'
 import { useVideo } from '@/contexts/VideoContext'
 
 const Navigation = () => {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { showVideo } = useVideo()
   
   // Hide navigation only if loading video is showing
@@ -18,7 +17,6 @@ const Navigation = () => {
       <nav className={`w-full fixed top-0 left-0 z-[100] transition-opacity duration-300 ${shouldHideNav ? 'opacity-0 pointer-events-none' : 'opacity-100'}`} style={{ backgroundColor: 'rgba(12, 12, 12, 0)' }}>
         <div className="flex gap-[var(--spacing-m)] items-center py-[var(--spacing-m)] px-[var(--spacing-m)]">
           <button 
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="cursor-pointer translate-y-[8px] brightness-0 invert"
           >
             <Image 
@@ -49,7 +47,6 @@ const Navigation = () => {
       <nav className={`w-full py-6 px-6 fixed top-0 left-0 z-[100] transition-opacity duration-300 ${shouldHideNav ? 'opacity-0 pointer-events-none' : 'opacity-100'}`} style={{ backgroundColor: 'rgba(12, 12, 12, 0)' }}>
         <div className="flex gap-[var(--spacing-lg)] items-center">
           <button 
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="cursor-pointer translate-y-[6px] brightness-0 invert"
           >
             <Image 
@@ -80,7 +77,6 @@ const Navigation = () => {
       <nav className={`w-full fixed top-0 left-0 z-[100] transition-opacity duration-300 ${shouldHideNav ? 'opacity-0 pointer-events-none' : 'opacity-100'}`} style={{ backgroundColor: 'rgba(12, 12, 12, 0)' }}>
         <div className="w-full mx-auto flex gap-[var(--spacing-xl)] items-center py-[var(--spacing-lg)] px-[var(--spacing-xl)]">
           <button 
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="cursor-pointer translate-y-[8px] brightness-0 invert"
           >
             <Image 
@@ -110,7 +106,6 @@ const Navigation = () => {
     <nav className={`w-full fixed top-0 left-0 z-[100] transition-opacity duration-300 ${shouldHideNav ? 'opacity-0 pointer-events-none' : 'opacity-100'}`} style={{ backgroundColor: 'rgba(12, 12, 12, 0)' }}>
       <div className="flex gap-[var(--spacing-2xl)] py-[var(--spacing-lg)] px-[var(--spacing-2xl)]">
         <button 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="cursor-pointer translate-y-[12px] brightness-0 invert"
         >
           <Image 
