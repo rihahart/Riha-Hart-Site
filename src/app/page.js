@@ -214,11 +214,12 @@ export default function Home() {
       <div 
         className="absolute left-0 right-0 z-0 w-full m-0 p-0"
         style={{ 
-          top: `${Math.max(0, navHeight - 60)}px`,
+          top: `${Math.max(0, navHeight - 150)}px`,
+          bottom: 0,
           margin: 0,
           padding: 0,
           backgroundColor: 'var(--black)',
-          overflow: 'visible'
+          overflow: 'hidden'
         }}
       >
         <video
@@ -226,10 +227,10 @@ export default function Home() {
           src="/Photos/Homepage/PhotoWebsiteVideoMobile.mp4"
           muted
           playsInline
-          className="w-full h-auto object-contain"
+          className="w-full h-full object-contain"
           style={{ 
             width: '100%',
-            height: 'auto',
+            height: '100%',
             objectFit: 'contain',
             display: 'block'
           }}
