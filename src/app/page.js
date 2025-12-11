@@ -212,12 +212,13 @@ export default function Home() {
   if (isMobile) {
     return (
       <div 
-        className="fixed left-0 right-0 z-0 w-full m-0 p-0"
+        className="absolute left-0 right-0 z-0 w-full m-0 p-0"
         style={{ 
-          top: `${navHeight}px`,
-          bottom: 0,
+          top: `${Math.max(0, navHeight - 60)}px`,
           margin: 0,
-          padding: 0
+          padding: 0,
+          backgroundColor: 'var(--black)',
+          overflow: 'visible'
         }}
       >
         <video
@@ -225,11 +226,12 @@ export default function Home() {
           src="/Photos/Homepage/PhotoWebsiteVideoMobile.mp4"
           muted
           playsInline
-          className="w-full h-full object-contain"
+          className="w-full h-auto object-contain"
           style={{ 
             width: '100%',
-            height: '100%',
-            objectFit: 'contain'
+            height: 'auto',
+            objectFit: 'contain',
+            display: 'block'
           }}
         />
       </div>
@@ -240,21 +242,22 @@ export default function Home() {
   if (isTablet) {
     return (
       <div 
-        className="fixed left-0 right-0 bottom-0 z-0 w-full h-full m-0 p-0"
+        className="absolute left-0 right-0 z-0 w-full m-0 p-0"
         style={{ 
-          top: `${navHeight}px`,
-          height: navHeight > 0 ? `calc(100vh - ${navHeight}px)` : '100vh',
+          top: `${Math.max(0, navHeight - 10)}px`,
           margin: 0,
-          padding: 0
+          padding: 0,
+          backgroundColor: 'var(--black)',
+          overflow: 'visible'
         }}
       >
         <video
           ref={videoRef}
-          src="/Photos/Homepage/PhotoWebsiteVideoScreen.mp4"
+          src="/Photos/Homepage/PhotoWebsiteVideoMobile.mp4"
           muted
           playsInline
-          className="w-full h-full object-contain"
-          style={{ height: '100%' }}
+          className="w-full h-auto object-contain"
+          style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }}
         />
       </div>
     )
@@ -264,12 +267,13 @@ export default function Home() {
   if (isDesktop1440px) {
     return (
       <div 
-        className="fixed left-0 right-0 bottom-0 z-0 w-full h-full m-0 p-0"
+        className="absolute left-0 right-0 z-0 w-full m-0 p-0"
         style={{ 
-          top: `${navHeight}px`,
-          height: navHeight > 0 ? `calc(100vh - ${navHeight}px)` : '100vh',
+          top: `${Math.max(0, navHeight - 10)}px`,
           margin: 0,
-          padding: 0
+          padding: 0,
+          backgroundColor: 'var(--black)',
+          overflow: 'visible'
         }}
       >
         <video
@@ -277,8 +281,8 @@ export default function Home() {
           src="/Photos/Homepage/PhotoWebsiteVideoScreen.mp4"
           muted
           playsInline
-          className="w-full h-full object-contain"
-          style={{ height: '100%' }}
+          className="w-full h-auto object-contain"
+          style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }}
         />
       </div>
     )
@@ -287,10 +291,11 @@ export default function Home() {
   // Large Desktop (>1440px)
   return (
     <div 
-      className="fixed left-0 right-0 bottom-0 z-0 w-full h-full"
+      className="absolute left-0 right-0 z-0 w-full"
       style={{ 
-        top: `${navHeight}px`,
-        height: navHeight > 0 ? `calc(100vh - ${navHeight}px)` : '100vh'
+        top: 0,
+        backgroundColor: 'var(--black)',
+        overflow: 'visible'
       }}
     >
       <video
@@ -298,8 +303,8 @@ export default function Home() {
         src="/Photos/Homepage/PhotoWebsiteVideoScreen.mp4"
         muted
         playsInline
-        className="w-full h-full object-contain animate-fadeInHomepage"
-        style={{ height: '100%' }}
+        className="w-full h-auto object-contain animate-fadeInHomepage"
+        style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }}
       />
     </div>
   )
