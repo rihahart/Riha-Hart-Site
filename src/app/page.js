@@ -6,7 +6,7 @@ import { useVideo } from "@/contexts/VideoContext"
 
 export default function Home() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
-  const { showVideo, setIsHomepageVideoPaused } = useVideo()
+  const { setIsHomepageVideoPaused } = useVideo()
   const [navHeight, setNavHeight] = useState(0)
   const videoRef = useRef(null)
 
@@ -60,9 +60,9 @@ export default function Home() {
     }
   }, [isMobile, isTablet, isDesktop1440px])
 
-  // Play homepage video only after LoadingState is completed
+  // Play homepage video
   useEffect(() => {
-    if (!showVideo && videoRef.current) {
+    if (videoRef.current) {
       const video = videoRef.current
       
       // Set mobile-specific attributes for better mobile playback
@@ -173,14 +173,16 @@ export default function Home() {
       // Update state on pause/play events
       video.addEventListener('pause', updatePausedState)
       
-      // Check periodically if video gets paused
+      // Check periodically if video gets paused (less frequently to avoid performance issues)
       const checkVideoPlaying = () => {
+        if (!video || !hasStartedPlaying) return
+        
         updatePausedState()
-        if (video && !video.paused && hasStartedPlaying && !video.ended) {
+        if (!video.paused && !video.ended) {
           // Video is playing, all good
           return
         }
-        if (video && video.paused && hasStartedPlaying && !video.ended && video.readyState >= 2) {
+        if (video.paused && !video.ended && video.readyState >= 2) {
           console.log("Video was paused unexpectedly, attempting to resume")
           video.play().catch(err => {
             console.error("Failed to resume paused video:", err)
@@ -188,7 +190,8 @@ export default function Home() {
         }
       }
       
-      const playingCheckInterval = setInterval(checkVideoPlaying, 500)
+      // Check less frequently to avoid performance issues
+      const playingCheckInterval = setInterval(checkVideoPlaying, 2000)
       
       // Initial state
       updatePausedState()
@@ -198,21 +201,14 @@ export default function Home() {
         video.removeEventListener('playing', handlePlaying)
         video.removeEventListener('pause', updatePausedState)
       }
-    } else if (showVideo && videoRef.current) {
-      // If LoadingState is still showing, ensure homepage video is paused
-      const video = videoRef.current
-      if (!video.paused) {
-        video.pause()
-      }
-      setIsHomepageVideoPaused(true)
     }
-  }, [showVideo, setIsHomepageVideoPaused])
+  }, [setIsHomepageVideoPaused])
 
   // Mobile (≤768px)
   if (isMobile) {
     return (
       <div 
-        className="absolute left-0 right-0 z-0 w-full m-0 p-0"
+        className="absolute left-0 right-0 z-0 w-full m-0 p-0 flex items-center justify-center"
         style={{ 
           top: `${Math.max(0, navHeight - 150)}px`,
           bottom: 0,
@@ -227,6 +223,8 @@ export default function Home() {
           src="/Photos/Homepage/PhotoWebsiteVideoMobile.mp4"
           muted
           playsInline
+          autoPlay
+          preload="auto"
           className="w-full h-full object-contain"
           style={{ 
             width: '100%',
@@ -243,7 +241,7 @@ export default function Home() {
   if (isTablet) {
     return (
       <div 
-        className="absolute left-0 right-0 z-0 w-full m-0 p-0"
+        className="absolute left-0 right-0 z-0 w-full m-0 p-0 flex items-center justify-center"
         style={{ 
           top: `${Math.max(0, navHeight - 10)}px`,
           margin: 0,
@@ -257,6 +255,8 @@ export default function Home() {
           src="/Photos/Homepage/PhotoWebsiteVideoMobile.mp4"
           muted
           playsInline
+          autoPlay
+          preload="auto"
           className="w-full h-auto object-contain"
           style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }}
         />
@@ -268,7 +268,7 @@ export default function Home() {
   if (isDesktop1440px) {
     return (
       <div 
-        className="absolute left-0 right-0 z-0 w-full m-0 p-0"
+        className="absolute left-0 right-0 z-0 w-full m-0 p-0 flex items-center justify-center"
         style={{ 
           top: `${Math.max(0, navHeight - 10)}px`,
           margin: 0,
@@ -282,6 +282,8 @@ export default function Home() {
           src="/Photos/Homepage/PhotoWebsiteVideoScreen.mp4"
           muted
           playsInline
+          autoPlay
+          preload="auto"
           className="w-full h-auto object-contain"
           style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }}
         />
@@ -292,7 +294,7 @@ export default function Home() {
   // Large Desktop (>1440px)
   return (
     <div 
-      className="absolute left-0 right-0 z-0 w-full"
+      className="absolute left-0 right-0 z-0 w-full flex items-center justify-center"
       style={{ 
         top: 0,
         backgroundColor: 'var(--black)',

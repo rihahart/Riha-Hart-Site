@@ -1,7 +1,6 @@
 import '../styles/global.css'
 import Navigation from '@/components/Navigation'
 import { VideoProvider } from '@/contexts/VideoContext'
-import LoadingState from '@/components/loading-state/LoadingState'
 
 export const metadata = {
   title: 'Riha Hart - Product Designer',
@@ -15,7 +14,6 @@ export default function RootLayout({ children }) {
         <VideoProvider>
           <Navigation />
           <main>{children}</main>
-          <LoadingState />
         </VideoProvider>
       </body>
     </html>

@@ -1,16 +1,14 @@
 "use client"
 
-import React, { createContext, useContext, useState } from "react"
+import React, { createContext, useContext, useState, useEffect } from "react"
 
 const VideoContext = createContext(undefined)
 
 export function VideoProvider({ children }) {
-  // Always show loading video on page load/refresh
-  const [showVideo, setShowVideo] = useState(true)
   const [isHomepageVideoPaused, setIsHomepageVideoPaused] = useState(true)
 
   return (
-    <VideoContext.Provider value={{ showVideo, setShowVideo, isHomepageVideoPaused, setIsHomepageVideoPaused }}>
+    <VideoContext.Provider value={{ isHomepageVideoPaused, setIsHomepageVideoPaused }}>
       {children}
     </VideoContext.Provider>
   )

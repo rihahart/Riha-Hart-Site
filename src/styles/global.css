@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url("https://use.typekit.net/yvy5tmy.css");
+@import url("https://use.typekit.net/zpt8xte.css");
 @import "tailwindcss";
 
 :root {
@@ -49,6 +50,11 @@
   --green: #64DBBE;
   --red: #f16762;
   
+  /* Fonts */
+  --font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-forma: "forma-djr-text", sans-serif;
+  --font-coyote: "coyote", sans-serif;
+  
 }
 
 body {
@@ -57,6 +63,7 @@ body {
   overflow-y: auto;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
+  font-family: var(--font-forma);
 }
 
 body::-webkit-scrollbar {
@@ -69,6 +76,7 @@ html {
   overflow-y: auto;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
+  font-family: var(--font-forma);
 }
 
 html::-webkit-scrollbar {
