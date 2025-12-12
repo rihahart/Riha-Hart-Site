@@ -46,8 +46,8 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose }) => {
       return
     }
 
-    const animationDuration = isMobile ? 800 : 1000
-    const startTime = animationDuration * 0.9 // 90% of animation
+    const animationDuration = isMobile ? 640 : 1000
+    const startTime = animationDuration * 0.2 // 20% of animation
 
     const timeout = setTimeout(() => {
       const video = isMobile 

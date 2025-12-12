@@ -240,10 +240,10 @@ html::-webkit-scrollbar {
 }
 
 .animate-slideInMenuMobile {
-  animation: slideInMenu 800ms ease-in-out forwards;
+  animation: slideInMenu 640ms ease-in-out forwards;
 }
 
 .animate-slideOutMenuMobile {
-  animation: slideOutMenu 800ms ease-in-out forwards;
+  animation: slideOutMenu 640ms ease-in-out forwards;
 }
 
