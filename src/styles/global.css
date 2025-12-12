@@ -213,3 +213,37 @@ html::-webkit-scrollbar {
   position: relative;
 }
 
+@keyframes slideInMenu {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideOutMenu {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slideInMenu {
+  animation: slideInMenu 1000ms ease-in-out forwards;
+}
+
+.animate-slideOutMenu {
+  animation: slideOutMenu 1000ms ease-in-out forwards;
+}
+
+.animate-slideInMenuMobile {
+  animation: slideInMenu 800ms ease-in-out forwards;
+}
+
+.animate-slideOutMenuMobile {
+  animation: slideOutMenu 800ms ease-in-out forwards;
+}
+
