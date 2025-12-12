@@ -35,15 +35,111 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose }) => {
     }
   }, [isOpen, onClose])
 
-  // Start video at 90% of animation (mobile: 800ms * 0.9 = 720ms, desktop: 1000ms * 0.9 = 900ms)
+  // Start video at 20% of animation and pause when menu closes
   useEffect(() => {
+    // Store reverse playback animation frame IDs for cleanup
+    const reverseAnimationIds: { [key: string]: number | null } = {}
+
+    // Pause and reset all videos when menu closes
+    const pauseAndReset = (video: HTMLVideoElement | null, videoKey: string) => {
+      if (video) {
+        video.pause()
+        video.currentTime = 0
+        // Cancel any reverse playback
+        if (reverseAnimationIds[videoKey]) {
+          cancelAnimationFrame(reverseAnimationIds[videoKey]!)
+          reverseAnimationIds[videoKey] = null
+        }
+      }
+    }
+
+    // Play video backward smoothly
+    const playBackward = (video: HTMLVideoElement, videoKey: string) => {
+      if (reverseAnimationIds[videoKey]) {
+        return // Already playing backward
+      }
+
+      // Store the end time (when video finished playing forward)
+      const endTime = video.currentTime || video.duration
+      const duration = endTime
+      let lastUpdateTime = performance.now()
+      const targetFPS = 60 // Target 60 FPS for smooth playback
+      const frameTime = 1000 / targetFPS // ~16.67ms per frame
+
+      const reversePlay = () => {
+        if (!video) {
+          reverseAnimationIds[videoKey] = null
+          return
+        }
+
+        const now = performance.now()
+        const deltaTime = (now - lastUpdateTime) / 1000 // Time since last frame in seconds
+        
+        // Get current video time
+        let currentTime = video.currentTime
+        
+        // Calculate new time (move backward)
+        const newTime = Math.max(0, currentTime - deltaTime)
+        
+        if (newTime > 0) {
+          video.currentTime = newTime
+          lastUpdateTime = now
+          // Continue immediately
+          reverseAnimationIds[videoKey] = requestAnimationFrame(reversePlay)
+        } else {
+          // Reached the beginning
+          video.currentTime = 0
+          reverseAnimationIds[videoKey] = null
+        }
+      }
+
+      // Start reverse playback immediately
+      lastUpdateTime = performance.now()
+      reverseAnimationIds[videoKey] = requestAnimationFrame(reversePlay)
+    }
+
+    // Handle video ended event - play backward after video finishes
+    const handleVideoEnded = (e: Event) => {
+      const video = e.target as HTMLVideoElement
+      if (video) {
+        const videoKey = video === videoRefMobile.current ? 'mobile' :
+                        video === videoRefTablet.current ? 'tablet' :
+                        video === videoRefDesktop.current ? 'desktop' : 'large'
+        playBackward(video, videoKey)
+      }
+    }
+
+    // Get all video refs
+    const videos = [
+      videoRefMobile.current,
+      videoRefTablet.current,
+      videoRefDesktop.current,
+      videoRefLarge.current
+    ]
+
+    // Add ended event listeners to all videos
+    videos.forEach(video => {
+      if (video) {
+        video.addEventListener('ended', handleVideoEnded)
+      }
+    })
+
     if (!isOpen) {
-      // Pause all videos when menu closes
-      videoRefMobile.current?.pause()
-      videoRefTablet.current?.pause()
-      videoRefDesktop.current?.pause()
-      videoRefLarge.current?.pause()
-      return
+      pauseAndReset(videoRefMobile.current, 'mobile')
+      pauseAndReset(videoRefTablet.current, 'tablet')
+      pauseAndReset(videoRefDesktop.current, 'desktop')
+      pauseAndReset(videoRefLarge.current, 'large')
+      return () => {
+        videos.forEach(video => {
+          if (video) {
+            video.removeEventListener('ended', handleVideoEnded)
+          }
+        })
+        // Cancel all reverse animations
+        Object.values(reverseAnimationIds).forEach(id => {
+          if (id) cancelAnimationFrame(id)
+        })
+      }
     }
 
     const animationDuration = isMobile ? 640 : 1000
@@ -58,7 +154,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose }) => {
         ? videoRefDesktop.current 
         : videoRefLarge.current
 
-      if (video) {
+      if (video && isOpen) {
         video.currentTime = 0
         video.play().catch(err => {
           console.error('Failed to play video:', err)
@@ -68,6 +164,23 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose }) => {
 
     return () => {
       clearTimeout(timeout)
+      // Also pause when component unmounts or isOpen changes
+      if (!isOpen) {
+        pauseAndReset(videoRefMobile.current, 'mobile')
+        pauseAndReset(videoRefTablet.current, 'tablet')
+        pauseAndReset(videoRefDesktop.current, 'desktop')
+        pauseAndReset(videoRefLarge.current, 'large')
+      }
+      // Clean up event listeners
+      videos.forEach(video => {
+        if (video) {
+          video.removeEventListener('ended', handleVideoEnded)
+        }
+      })
+      // Cancel all reverse animations
+      Object.values(reverseAnimationIds).forEach(id => {
+        if (id) cancelAnimationFrame(id)
+      })
     }
   }, [isOpen, isMobile, isTablet, isDesktop1440px])
 
@@ -118,7 +231,6 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose }) => {
                 src="/DolphinFinalShort.mp4"
                 muted
                 playsInline
-                loop
                 className="w-full h-auto object-contain"
                 style={{ objectFit: 'contain' }}
               />
@@ -176,7 +288,6 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose }) => {
                 src="/DolphinFinalShort.mp4"
                 muted
                 playsInline
-                loop
                 className="w-full h-auto object-contain"
                 style={{ objectFit: 'contain' }}
               />
@@ -234,7 +345,6 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose }) => {
                 src="/DolphinFinalShort.mp4"
                 muted
                 playsInline
-                loop
                 className="w-full h-auto object-contain"
                 style={{ objectFit: 'contain' }}
               />
