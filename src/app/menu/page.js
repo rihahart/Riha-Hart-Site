@@ -64,7 +64,7 @@ export default function MenuPage() {
               onClick={handleClose}
               className="cursor-pointer text-black hover:opacity-70 transition-opacity"
               aria-label="Close menu"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '41px', padding: 0, lineHeight: .9, fontWeight: 'bold' }}
+              style={{ fontFamily: 'var(--font-coyote)', fontSize: '41px', padding: 0, lineHeight: 1, fontWeight: 'bold' }}
             >
               EXIT<span style={{ fontWeight: 'bold' }}>.</span>
             </button>
