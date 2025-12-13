@@ -33,7 +33,7 @@ const Navigation = () => {
               onClick={handleMenuClick}
               className="cursor-pointer text-white hover:opacity-70 transition-opacity px-4 py-2"
               aria-label="About me"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '22px' }}
+              style={{ fontFamily: 'var(--font-coyote)', fontSize: '34px', padding: 0, lineHeight: .7 }}
             >
               ABOUT ME<span style={{ fontWeight: 'bold' }}>.</span>
             </button>
@@ -64,7 +64,7 @@ const Navigation = () => {
               onClick={handleMenuClick}
               className="cursor-pointer text-white hover:opacity-70 transition-opacity px-4 py-2"
               aria-label="About me"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '22px' }}
+              style={{ fontFamily: 'var(--font-coyote)', fontSize: '42px', padding: 0, lineHeight: .7 }}
             >
               ABOUT ME<span style={{ fontWeight: 'bold' }}>.</span>
             </button>
@@ -79,7 +79,7 @@ const Navigation = () => {
     return (
       <>
         <nav className="w-full fixed top-0 left-0 z-[100] opacity-100" style={{ backgroundColor: 'rgba(12, 12, 12, 0)' }}>
-          <div className="w-full mx-auto flex gap-[var(--spacing-xl)] items-end py-[var(--spacing-lg)] px-[var(--spacing-xl)]">
+          <div className="w-full mx-auto flex gap-[var(--spacing-lg)] items-end py-[var(--spacing-lg)] px-[var(--spacing-xl)]">
         
             <div>
               <Image 
@@ -94,7 +94,7 @@ const Navigation = () => {
               onClick={handleMenuClick}
               className="cursor-pointer text-white hover:opacity-70 transition-opacity px-4 py-2"
               aria-label="About me"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '40px' }}
+              style={{ fontFamily: 'var(--font-coyote)', fontSize: '48px', padding: 0, lineHeight: .7  }}
             >
               ABOUT ME<span style={{ fontWeight: 'bold' }}>.</span>
             </button>
@@ -108,7 +108,7 @@ const Navigation = () => {
   return (
     <>
       <nav className="w-full fixed top-0 left-0 z-[100] opacity-100" style={{ backgroundColor: 'rgba(12, 12, 12, 0)' }}>
-        <div className="flex gap-[var(--spacing-2xl)] items-end py-[var(--spacing-lg)] px-[var(--spacing-2xl)]">
+        <div className="flex gap-[var(--spacing-xl)] items-end py-[var(--spacing-lg)] px-[var(--spacing-2xl)]">
           <div>
             <Image 
               src="/Icons/Logo/RihaHartLogo.svg" 
@@ -120,9 +120,9 @@ const Navigation = () => {
           </div>
           <button 
             onClick={handleMenuClick}
-            className="cursor-pointer text-white hover:opacity-70 transition-opacity px-4 py-2"
+            className="cursor-pointer text-white hover:opacity-70 transition-opacity"
             aria-label="About me"
-            style={{ fontFamily: 'var(--font-coyote)', fontSize: '44px' }}
+            style={{ fontFamily: 'var(--font-coyote)', fontSize: '60px', padding: 0, lineHeight: .7 }}
           >
             ABOUT ME.
           </button>
