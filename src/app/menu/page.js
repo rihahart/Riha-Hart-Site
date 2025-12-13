@@ -42,13 +42,13 @@ export default function MenuPage() {
   // Mobile (≤768px)
   if (isMobile) {
     return (
-      <div className={`fixed top-0 left-0 w-full h-full bg-white z-[201] ${
+      <div className={`fixed top-0 left-0 w-full h-full bg-white z-[201] menu-container ${
         isAnimatingOut ? 'animate-slideOutMenuMobile' : 'animate-slideInMenuMobile'
-      }`} style={{ fontFamily: 'var(--font-forma)' }}>
+      }`}>
         {/* Navigation Bar */}
-        <nav className="w-full fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
+        <nav className="w-full fixed top-0 left-0 z-[202] opacity-100 menu-nav">
           <div className="flex gap-[var(--spacing-s)] items-end py-[var(--spacing-m)] px-[var(--spacing-2xl)]">
-            <div style={{ width: '120px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
+            <div className="logo-container-mobile">
               <video
                 ref={logoVideoRef}
                 src="/Photos/Homepage/Logo.mp4"
@@ -56,28 +56,26 @@ export default function MenuPage() {
                 playsInline
                 autoPlay
                 loop
-                className="w-full h-auto"
-                style={{ objectFit: 'contain', imageRendering: 'auto', transform: 'translateZ(0)' }}
+                className="w-full h-auto logo-video"
               />
             </div>
             <button
               onClick={handleClose}
-              className="cursor-pointer text-black hover:opacity-70 transition-opacity"
+              className="cursor-pointer text-black hover:opacity-70 transition-opacity exit-button-mobile"
               aria-label="Close menu"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '41px', padding: 0, lineHeight: 1, fontWeight: 'bold' }}
             >
-              EXIT<span style={{ fontWeight: 'bold' }}>.</span>
+              EXIT<span className="exit-period">.</span>
             </button>
           </div>
         </nav>
         <div className="h-full flex flex-col pt-24">
           <div className="flex flex-col p-[var(--spacing-2xl)]">
             {/* Menu Content */}
-            <nav className="flex flex-col gap-[var(--spacing-lg)]">
-              <p className="text-black text-lg" style={{ fontWeight: 300 }}>
+            <div className="flex flex-col gap-[var(--spacing-lg)]">
+              <p className="text-black text-[20px] leading-[36px] menu-text">
                 I'm a design and tech lead at Everest Federal Credit Union Bank. I am a co-founder and creative director at JH Mural Project. I love challenges and enjoy solving problems.
               </p>
-            </nav>
+            </div>
           </div>
         </div>
       </div>
@@ -87,13 +85,13 @@ export default function MenuPage() {
   // Tablet (769px - 1024px)
   if (isTablet) {
     return (
-      <div className={`fixed top-0 left-0 w-full h-full bg-white z-[201] ${
+      <div className={`fixed top-0 left-0 w-full h-full bg-white z-[201] menu-container ${
         isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
-      }`} style={{ fontFamily: 'var(--font-forma)' }}>
+      }`}>
         {/* Navigation Bar */}
-        <nav className="w-full py-6 fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
+        <nav className="w-full py-6 fixed top-0 left-0 z-[202] opacity-100 menu-nav">
           <div className="flex gap-[var(--spacing-m)] items-end px-[var(--spacing-3xl)]">
-            <div style={{ width: '154px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
+            <div className="logo-container-tablet">
               <video
                 ref={logoVideoRef}
                 src="/Photos/Homepage/Logo.mp4"
@@ -101,28 +99,26 @@ export default function MenuPage() {
                 playsInline
                 autoPlay
                 loop
-                className="w-full h-auto"
-                style={{ objectFit: 'contain', imageRendering: 'auto', transform: 'translateZ(0)' }}
+                className="w-full h-auto logo-video"
               />
             </div>
             <button
               onClick={handleClose}
-              className="cursor-pointer text-black hover:opacity-70 transition-opacity"
+              className="cursor-pointer text-black hover:opacity-70 transition-opacity exit-button-tablet"
               aria-label="Close menu"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '50px', padding: 0, lineHeight: .9, fontWeight: 'bold' }}
             >
-              EXIT<span style={{ fontWeight: 'bold' }}>.</span>
+              EXIT<span className="exit-period">.</span>
             </button>
           </div>
         </nav>
         <div className="h-full flex flex-col pt-28">
           <div className="flex flex-col p-[var(--spacing-3xl)]">
             {/* Menu Content */}
-            <nav className="flex flex-col gap-[var(--spacing-xl)]">
-              <p className="text-black text-xl" style={{ fontWeight: 300 }}>
+            <div className="flex flex-col gap-[var(--spacing-xl)]">
+              <p className="text-black text-[24px] leading-[42px] menu-text">
                 I'm a design and tech lead at Everest Federal Credit Union Bank. I am a co-founder and creative director at JH Mural Project. I love challenges and enjoy solving problems.
               </p>
-            </nav>
+            </div>
           </div>
         </div>
       </div>
@@ -132,13 +128,13 @@ export default function MenuPage() {
   // Desktop 1440px (1025px - 1440px)
   if (isDesktop1440px) {
     return (
-      <div className={`fixed top-0 left-0 w-full h-full bg-white z-[201] ${
+      <div className={`fixed top-0 left-0 w-full h-full bg-white z-[201] menu-container ${
         isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
-      }`} style={{ fontFamily: 'var(--font-forma)' }}>
+      }`}>
         {/* Navigation Bar */}
-        <nav className="w-full fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
+        <nav className="w-full fixed top-0 left-0 z-[202] opacity-100 menu-nav">
           <div className="w-full mx-auto flex gap-[var(--spacing-lg)] items-end py-[var(--spacing-lg)] px-[var(--spacing-3xl)]">
-            <div style={{ width: '168px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
+            <div className="logo-container-desktop">
               <video
                 ref={logoVideoRef}
                 src="/Photos/Homepage/Logo.mp4"
@@ -146,28 +142,26 @@ export default function MenuPage() {
                 playsInline
                 autoPlay
                 loop
-                className="w-full h-auto"
-                style={{ objectFit: 'contain', imageRendering: 'auto', transform: 'translateZ(0)' }}
+                className="w-full h-auto logo-video"
               />
             </div>
             <button
               onClick={handleClose}
-              className="cursor-pointer text-black hover:opacity-70 transition-opacity"
+              className="cursor-pointer text-black hover:opacity-70 transition-opacity exit-button-desktop"
               aria-label="Close menu"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '58px', padding: 0, lineHeight: .9, fontWeight: 'bold' }}
             >
-              EXIT<span style={{ fontWeight: 'bold' }}>.</span>
+              EXIT<span className="exit-period">.</span>
             </button>
           </div>
         </nav>
         <div className="h-full flex flex-col pt-28">
           <div className="flex flex-col p-[var(--spacing-3xl)]">
             {/* Menu Content */}
-            <nav className="flex flex-col gap-[var(--spacing-xl)]">
-              <p className="text-black text-xl" style={{ fontWeight: 300 }}>
+            <div className="flex flex-col gap-[var(--spacing-xl)]">
+              <p className="text-black text-[26px] leading-[48px] menu-text">
                 I'm a design and tech lead at Everest Federal Credit Union Bank. I am a co-founder and creative director at JH Mural Project. I love challenges and enjoy solving problems.
               </p>
-            </nav>
+            </div>
           </div>
         </div>
       </div>
@@ -176,13 +170,13 @@ export default function MenuPage() {
 
   // Large Desktop (>1440px)
   return (
-    <div className={`fixed top-0 left-0 w-full h-full bg-white z-[201] ${
+    <div className={`fixed top-0 left-0 w-full h-full bg-white z-[201] menu-container ${
       isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
-    }`} style={{ fontFamily: 'var(--font-forma)' }}>
+    }`}>
       {/* Navigation Bar */}
-      <nav className="w-full fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
+      <nav className="w-full fixed top-0 left-0 z-[202] opacity-100 menu-nav">
         <div className="flex gap-[var(--spacing-lg)] items-end py-[var(--spacing-lg)] px-[var(--spacing-4xl)]">
-          <div style={{ width: '210px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
+          <div className="logo-container-large">
             <video
               ref={logoVideoRef}
               src="/Photos/Homepage/Logo.mp4"
@@ -190,28 +184,26 @@ export default function MenuPage() {
               playsInline
               autoPlay
               loop
-              className="w-full h-auto"
-              style={{ objectFit: 'contain', opacity: 1, imageRendering: 'auto', transform: 'translateZ(0)' }}
+              className="w-full h-auto logo-video-large"
             />
           </div>
           <button
             onClick={handleClose}
-            className="cursor-pointer text-black hover:opacity-70 transition-opacity"
+            className="cursor-pointer text-black hover:opacity-70 transition-opacity exit-button-large"
             aria-label="Close menu"
-            style={{ fontFamily: 'var(--font-coyote)', fontSize: '72px', padding: 0, lineHeight: .9, fontWeight: 'bold' }}
           >
-            EXIT<span style={{ fontWeight: 'bold' }}>.</span>
+            EXIT<span className="exit-period">.</span>
           </button>
         </div>
       </nav>
       <div className="h-full flex flex-col pt-32">
         <div className="flex flex-col p-[var(--spacing-4xl)]">
           {/* Menu Content */}
-          <nav className="flex flex-col gap-[var(--spacing-2xl)]">
-            <p className="text-black text-2xl" style={{ fontWeight: 300 }}>
+          <div className="flex flex-col gap-[var(--spacing-2xl)]">
+            <p className="text-black text-[28px] leading-[52px] menu-text">
               I'm a design and tech lead at Everest Federal Credit Union Bank. I am a co-founder and creative director at JH Mural Project. I love challenges and enjoy solving problems.
             </p>
-          </nav>
+          </div>
         </div>
       </div>
     </div>

@@ -10,6 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/zpt8xte.css" />
+      </head>
       <body style={{ backgroundColor: 'var(--black)', position: 'relative', minHeight: '100vh' }}>
         <VideoProvider>
           <Navigation />

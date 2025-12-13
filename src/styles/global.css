@@ -51,8 +51,8 @@
   --red: #f16762;
   
   /* Fonts */
-  --font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-forma: "Myriad Pro", sans-serif;
+  --font-usual: "usual", sans-serif;
+ 
   --font-coyote: "coyote", sans-serif;
   
 }
@@ -253,5 +253,96 @@ html::-webkit-scrollbar {
 
 .animate-slideOutMenuMobile {
   animation: slideOutMenu 640ms ease-in-out forwards;
+}
+
+/* Menu page utility classes */
+.menu-container {
+  font-family: var(--font-forma);
+}
+
+.menu-nav {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.logo-container-mobile {
+  width: 120px;
+  height: auto;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.logo-container-tablet {
+  width: 154px;
+  height: auto;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.logo-container-desktop {
+  width: 168px;
+  height: auto;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.logo-container-large {
+  width: 210px;
+  height: auto;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.logo-video {
+  object-fit: contain;
+  image-rendering: auto;
+  transform: translateZ(0);
+}
+
+.logo-video-large {
+  object-fit: contain;
+  opacity: 1;
+  image-rendering: auto;
+  transform: translateZ(0);
+}
+
+.exit-button-mobile {
+  font-family: var(--font-coyote);
+  font-size: 41px;
+  padding: 0;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.exit-button-tablet {
+  font-family: var(--font-coyote);
+  font-size: 50px;
+  padding: 0;
+  line-height: 0.9;
+  font-weight: bold;
+}
+
+.exit-button-desktop {
+  font-family: var(--font-coyote);
+  font-size: 58px;
+  padding: 0;
+  line-height: 0.9;
+  font-weight: bold;
+}
+
+.exit-button-large {
+  font-family: var(--font-coyote);
+  font-size: 72px;
+  padding: 0;
+  line-height: 0.9;
+  font-weight: bold;
+}
+
+.exit-period {
+  font-weight: bold;
+}
+
+.menu-text {
+  font-weight: 300;
+  font-family: 'usual', sans-serif;
 }
 
