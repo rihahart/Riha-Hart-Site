@@ -1,6 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
+import React, { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import useMobileDetection from '@/_utilities/useMobileDetection'
 
@@ -8,6 +7,7 @@ export default function MenuPage() {
   const router = useRouter()
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const [isAnimatingOut, setIsAnimatingOut] = useState(false)
+  const logoVideoRef = useRef(null)
 
   // Close menu on escape key
   useEffect(() => {
@@ -49,14 +49,15 @@ export default function MenuPage() {
         <nav className="w-full fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
           <div className="flex gap-[var(--spacing-s)] items-end py-[var(--spacing-m)] px-[var(--spacing-m)]">
             <div style={{ width: '100px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
-              <Image
-                src="/Photos/Homepage/Logo.gif"
-                alt="Riha Hart Logo"
-                width={100}
-                height={43}
+              <video
+                ref={logoVideoRef}
+                src="/Photos/Homepage/Logo.mp4"
+                muted
+                playsInline
+                autoPlay
+                loop
                 className="w-full h-auto"
                 style={{ objectFit: 'contain', imageRendering: 'auto', transform: 'translateZ(0)' }}
-                unoptimized
               />
             </div>
             <button
@@ -93,14 +94,15 @@ export default function MenuPage() {
         <nav className="w-full py-6 px-6 fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
           <div className="flex gap-[var(--spacing-m)] items-end">
             <div style={{ width: '128px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
-              <Image
-                src="/Photos/Homepage/Logo.gif"
-                alt="Riha Hart Logo"
-                width={128}
-                height={54}
+              <video
+                ref={logoVideoRef}
+                src="/Photos/Homepage/Logo.mp4"
+                muted
+                playsInline
+                autoPlay
+                loop
                 className="w-full h-auto"
                 style={{ objectFit: 'contain', imageRendering: 'auto', transform: 'translateZ(0)' }}
-                unoptimized
               />
             </div>
             <button
@@ -137,14 +139,15 @@ export default function MenuPage() {
         <nav className="w-full fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
           <div className="w-full mx-auto flex gap-[var(--spacing-lg)] items-end py-[var(--spacing-lg)] px-[var(--spacing-xl)]">
             <div style={{ width: '140px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
-              <Image
-                src="/Photos/Homepage/Logo.gif"
-                alt="Riha Hart Logo"
-                width={140}
-                height={100}
+              <video
+                ref={logoVideoRef}
+                src="/Photos/Homepage/Logo.mp4"
+                muted
+                playsInline
+                autoPlay
+                loop
                 className="w-full h-auto"
                 style={{ objectFit: 'contain', imageRendering: 'auto', transform: 'translateZ(0)' }}
-                unoptimized
               />
             </div>
             <button
@@ -180,14 +183,15 @@ export default function MenuPage() {
       <nav className="w-full fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
         <div className="flex gap-[var(--spacing-lg)] items-end py-[var(--spacing-lg)] px-[var(--spacing-2xl)]">
           <div style={{ width: '175px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
-            <Image
-              src="/Photos/Homepage/Logo.gif"
-              alt="Riha Hart Logo"
-              width={175}
-              height={109}
+            <video
+              ref={logoVideoRef}
+              src="/Photos/Homepage/Logo.mp4"
+              muted
+              playsInline
+              autoPlay
+              loop
               className="w-full h-auto"
-              style={{ objectFit: 'contain', imageRendering: 'auto', transform: 'translateZ(0)' }}
-              unoptimized
+              style={{ objectFit: 'contain', opacity: 1, imageRendering: 'auto', transform: 'translateZ(0)' }}
             />
           </div>
           <button
