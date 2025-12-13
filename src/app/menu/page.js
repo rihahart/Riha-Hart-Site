@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useState, useRef } from 'react'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import useMobileDetection from '@/_utilities/useMobileDetection'
 
@@ -46,37 +45,33 @@ export default function MenuPage() {
       <div className={`fixed top-0 left-0 w-full h-full bg-white z-[201] ${
         isAnimatingOut ? 'animate-slideOutMenuMobile' : 'animate-slideInMenuMobile'
       }`} style={{ fontFamily: 'var(--font-forma)' }}>
-        {/* Logo Video in Corner */}
-        <div className="absolute top-4 right-4 w-20 h-auto z-10">
-          <video
-            ref={logoVideoRef}
-            src="/Photos/Homepage/Logo.mp4"
-            muted
-            playsInline
-            autoPlay
-            loop
-            className="w-full h-auto"
-            style={{ objectFit: 'contain' }}
-          />
-        </div>
-        <div className="h-full flex flex-col">
-          <div className="flex flex-col p-[var(--spacing-2xl)]">
-            {/* Close Button */}
-            <div className="flex justify-end mb-[var(--spacing-xl)]">
-              <button
-                onClick={handleClose}
-                className="cursor-pointer hover:opacity-70 transition-opacity p-2 -m-2 "
-                aria-label="Close menu"
-              >
-                <Image
-                  src="/Icons/Exit/ExitXSmall.svg"
-                  alt="Close menu"
-                  width={16}
-                  height={16}
-                />
-              </button>
+        {/* Navigation Bar */}
+        <nav className="w-full fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
+          <div className="flex gap-[var(--spacing-s)] items-end py-[var(--spacing-m)] px-[var(--spacing-m)]">
+            <div style={{ width: '100px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
+              <video
+                ref={logoVideoRef}
+                src="/Photos/Homepage/Logo.mp4"
+                muted
+                playsInline
+                autoPlay
+                loop
+                className="w-full h-auto"
+                style={{ objectFit: 'contain', imageRendering: 'auto', transform: 'translateZ(0)' }}
+              />
             </div>
-
+            <button
+              onClick={handleClose}
+              className="cursor-pointer text-black hover:opacity-70 transition-opacity"
+              aria-label="Close menu"
+              style={{ fontFamily: 'var(--font-coyote)', fontSize: '34px', padding: 0, lineHeight: .9 }}
+            >
+              EXIT<span style={{ fontWeight: 'bold' }}>.</span>
+            </button>
+          </div>
+        </nav>
+        <div className="h-full flex flex-col pt-24">
+          <div className="flex flex-col p-[var(--spacing-2xl)]">
             {/* Menu Content */}
             <nav className="flex flex-col gap-[var(--spacing-lg)]">
               <p className="text-black text-lg">
@@ -95,37 +90,33 @@ export default function MenuPage() {
       <div className={`fixed top-0 left-0 w-full h-full bg-white z-[201] ${
         isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
       }`} style={{ fontFamily: 'var(--font-forma)' }}>
-        {/* Logo Video in Corner */}
-        <div className="absolute top-6 right-6 w-24 h-auto z-10">
-          <video
-            ref={logoVideoRef}
-            src="/Photos/Homepage/Logo.mp4"
-            muted
-            playsInline
-            autoPlay
-            loop
-            className="w-full h-auto"
-            style={{ objectFit: 'contain' }}
-          />
-        </div>
-        <div className="h-full flex flex-col">
-          <div className="flex flex-col p-[var(--spacing-3xl)]">
-            {/* Close Button */}
-            <div className="flex justify-end mb-[var(--spacing-2xl)]">
-              <button
-                onClick={handleClose}
-                className="cursor-pointer hover:opacity-70 transition-opacity p-3 -m-3 "
-                aria-label="Close menu"
-              >
-                <Image
-                  src="/Icons/Exit/ExitSmall.svg"
-                  alt="Close menu"
-                  width={20}
-                  height={20}
-                />
-              </button>
+        {/* Navigation Bar */}
+        <nav className="w-full py-6 px-6 fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
+          <div className="flex gap-[var(--spacing-m)] items-end">
+            <div style={{ width: '128px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
+              <video
+                ref={logoVideoRef}
+                src="/Photos/Homepage/Logo.mp4"
+                muted
+                playsInline
+                autoPlay
+                loop
+                className="w-full h-auto"
+                style={{ objectFit: 'contain', imageRendering: 'auto', transform: 'translateZ(0)' }}
+              />
             </div>
-
+            <button
+              onClick={handleClose}
+              className="cursor-pointer text-black hover:opacity-70 transition-opacity"
+              aria-label="Close menu"
+              style={{ fontFamily: 'var(--font-coyote)', fontSize: '42px', padding: 0, lineHeight: .9 }}
+            >
+              EXIT<span style={{ fontWeight: 'bold' }}>.</span>
+            </button>
+          </div>
+        </nav>
+        <div className="h-full flex flex-col pt-28">
+          <div className="flex flex-col p-[var(--spacing-3xl)]">
             {/* Menu Content */}
             <nav className="flex flex-col gap-[var(--spacing-xl)]">
               <p className="text-black text-xl">
@@ -144,37 +135,33 @@ export default function MenuPage() {
       <div className={`fixed top-0 left-0 w-full h-full bg-white z-[201] ${
         isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
       }`} style={{ fontFamily: 'var(--font-forma)' }}>
-        {/* Logo Video in Corner */}
-        <div className="absolute top-8 right-8 w-32 h-auto z-10">
-          <video
-            ref={logoVideoRef}
-            src="/Photos/Homepage/Logo.mp4"
-            muted
-            playsInline
-            autoPlay
-            loop
-            className="w-full h-auto"
-            style={{ objectFit: 'contain' }}
-          />
-        </div>
-        <div className="h-full flex flex-col">
-          <div className="flex flex-col p-[var(--spacing-3xl)]">
-            {/* Close Button */}
-            <div className="flex justify-end mb-[var(--spacing-2xl)]">
-              <button
-                onClick={handleClose}
-                className="cursor-pointer hover:opacity-70 transition-opacity p-4 -m-4 "
-                aria-label="Close menu"
-              >
-                <Image
-                  src="/Icons/Exit/ExitMedium.svg"
-                  alt="Close menu"
-                  width={24}
-                  height={24}
-                />
-              </button>
+        {/* Navigation Bar */}
+        <nav className="w-full fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
+          <div className="w-full mx-auto flex gap-[var(--spacing-lg)] items-end py-[var(--spacing-lg)] px-[var(--spacing-xl)]">
+            <div style={{ width: '140px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
+              <video
+                ref={logoVideoRef}
+                src="/Photos/Homepage/Logo.mp4"
+                muted
+                playsInline
+                autoPlay
+                loop
+                className="w-full h-auto"
+                style={{ objectFit: 'contain', imageRendering: 'auto', transform: 'translateZ(0)' }}
+              />
             </div>
-
+            <button
+              onClick={handleClose}
+              className="cursor-pointer text-black hover:opacity-70 transition-opacity"
+              aria-label="Close menu"
+              style={{ fontFamily: 'var(--font-coyote)', fontSize: '48px', padding: 0, lineHeight: .9 }}
+            >
+              EXIT<span style={{ fontWeight: 'bold' }}>.</span>
+            </button>
+          </div>
+        </nav>
+        <div className="h-full flex flex-col pt-28">
+          <div className="flex flex-col p-[var(--spacing-3xl)]">
             {/* Menu Content */}
             <nav className="flex flex-col gap-[var(--spacing-xl)]">
               <p className="text-black text-xl">
@@ -192,37 +179,33 @@ export default function MenuPage() {
     <div className={`fixed top-0 left-0 w-full h-full bg-white z-[201] ${
       isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
     }`} style={{ fontFamily: 'var(--font-forma)' }}>
-      {/* Logo Video in Corner */}
-      <div className="absolute top-8 right-8 w-40 h-auto z-10">
-        <video
-          ref={logoVideoRef}
-          src="/Photos/Homepage/Logo.mp4"
-          muted
-          playsInline
-          autoPlay
-          loop
-          className="w-full h-auto"
-          style={{ objectFit: 'contain' }}
-        />
-      </div>
-      <div className="h-full flex flex-col">
-        <div className="flex flex-col p-[var(--spacing-4xl)]">
-          {/* Close Button */}
-          <div className="flex justify-end mb-[var(--spacing-6xl)]">
-            <button
-              onClick={handleClose}
-              className="cursor-pointer hover:opacity-70 transition-opacity p-4 -m-4 "
-              aria-label="Close menu"
-            >
-              <Image
-                src="/Icons/Exit/ExitLarge.svg"
-                alt="Close menu"
-                width={30}
-                height={40}
-              />
-            </button>
+      {/* Navigation Bar */}
+      <nav className="w-full fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
+        <div className="flex gap-[var(--spacing-lg)] items-end py-[var(--spacing-lg)] px-[var(--spacing-2xl)]">
+          <div style={{ width: '175px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
+            <video
+              ref={logoVideoRef}
+              src="/Photos/Homepage/Logo.mp4"
+              muted
+              playsInline
+              autoPlay
+              loop
+              className="w-full h-auto"
+              style={{ objectFit: 'contain', opacity: 1, imageRendering: 'auto', transform: 'translateZ(0)' }}
+            />
           </div>
-
+          <button
+            onClick={handleClose}
+            className="cursor-pointer text-black hover:opacity-70 transition-opacity"
+            aria-label="Close menu"
+            style={{ fontFamily: 'var(--font-coyote)', fontSize: '60px', padding: 0, lineHeight: .9 }}
+          >
+            EXIT<span style={{ fontWeight: 'bold' }}>.</span>
+          </button>
+        </div>
+      </nav>
+      <div className="h-full flex flex-col pt-32">
+        <div className="flex flex-col p-[var(--spacing-4xl)]">
           {/* Menu Content */}
           <nav className="flex flex-col gap-[var(--spacing-2xl)]">
             <p className="text-black text-2xl">
