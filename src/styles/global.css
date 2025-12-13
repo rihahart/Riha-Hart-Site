@@ -353,7 +353,7 @@ html::-webkit-scrollbar {
   font-family: var(--font-coyote);
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1.75em;
 }
 
 .menu-text a:hover {

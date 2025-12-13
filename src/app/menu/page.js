@@ -72,7 +72,7 @@ export default function MenuPage() {
           <div className="flex flex-col p-[var(--spacing-2xl)]">
             {/* Menu Content */}
             <div className="flex flex-col gap-[var(--spacing-lg)]">
-              <p className="text-black text-[20px] leading-[36px] menu-text">
+              <p className="text-black text-[20px] leading-[42px] menu-text">
                 I'm a design and tech lead at <a href="https://www.everestfcu.org/" target="_blank" rel="noopener noreferrer">EVEREST FEDERAL CREDIT UNION BANK</a>. I am a co-founder and creative director at <a href="https://jhmuralproject.com" target="_blank" rel="noopener noreferrer">JH MURAL PROJECT</a>. I love challenges and enjoy solving problems.
               </p>
             </div>
@@ -115,7 +115,7 @@ export default function MenuPage() {
           <div className="flex flex-col p-[var(--spacing-3xl)]">
             {/* Menu Content */}
             <div className="flex flex-col gap-[var(--spacing-xl)]">
-              <p className="text-black text-[24px] leading-[42px] menu-text">
+              <p className="text-black text-[24px] leading-[52px] menu-text">
                 I'm a design and tech lead at <a href="https://www.everestfcu.org/" target="_blank" rel="noopener noreferrer">EVEREST FEDERAL CREDIT UNION BANK</a>. I am a co-founder and creative director at <a href="https://jhmuralproject.com" target="_blank" rel="noopener noreferrer">JH MURAL PROJECT</a>. I love challenges and enjoy solving problems.
               </p>
             </div>
@@ -158,7 +158,7 @@ export default function MenuPage() {
           <div className="flex flex-col p-[var(--spacing-3xl)]">
             {/* Menu Content */}
             <div className="flex flex-col gap-[var(--spacing-xl)]">
-              <p className="text-black text-[26px] leading-[48px] menu-text">
+              <p className="text-black text-[26px] leading-[62px] menu-text">
                 I'm a design and tech lead at <a href="https://www.everestfcu.org/" target="_blank" rel="noopener noreferrer">EVEREST FEDERAL CREDIT UNION BANK</a>. I am a co-founder and creative director at <a href="https://jhmuralproject.com" target="_blank" rel="noopener noreferrer">JH MURAL PROJECT</a>. I love challenges and enjoy solving problems.
               </p>
             </div>
@@ -200,7 +200,7 @@ export default function MenuPage() {
         <div className="flex flex-col p-[var(--spacing-4xl)]">
           {/* Menu Content */}
           <div className="flex flex-col gap-[var(--spacing-2xl)]">
-            <p className="text-black text-[28px] leading-[52px] menu-text">
+            <p className="text-black text-[28px] leading-[72px] menu-text">
               I'm a design and tech lead at <a href="https://www.everestfcu.org/" target="_blank" rel="noopener noreferrer">EVEREST FEDERAL CREDIT UNION BANK</a>. I am a co-founder and creative director at <a href="https://jhmuralproject.com" target="_blank" rel="noopener noreferrer">JH MURAL PROJECT</a>. I love challenges and enjoy solving problems.
             </p>
           </div>
