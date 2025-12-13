@@ -47,8 +47,8 @@ export default function MenuPage() {
       }`} style={{ fontFamily: 'var(--font-forma)' }}>
         {/* Navigation Bar */}
         <nav className="w-full fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
-          <div className="flex gap-[var(--spacing-s)] items-end py-[var(--spacing-m)] px-[var(--spacing-m)]">
-            <div style={{ width: '100px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
+          <div className="flex gap-[var(--spacing-s)] items-end py-[var(--spacing-m)] px-[var(--spacing-2xl)]">
+            <div style={{ width: '120px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
               <video
                 ref={logoVideoRef}
                 src="/Photos/Homepage/Logo.mp4"
@@ -64,7 +64,7 @@ export default function MenuPage() {
               onClick={handleClose}
               className="cursor-pointer text-black hover:opacity-70 transition-opacity"
               aria-label="Close menu"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '34px', padding: 0, lineHeight: .9 }}
+              style={{ fontFamily: 'var(--font-coyote)', fontSize: '41px', padding: 0, lineHeight: .9, fontWeight: 'bold' }}
             >
               EXIT<span style={{ fontWeight: 'bold' }}>.</span>
             </button>
@@ -74,7 +74,7 @@ export default function MenuPage() {
           <div className="flex flex-col p-[var(--spacing-2xl)]">
             {/* Menu Content */}
             <nav className="flex flex-col gap-[var(--spacing-lg)]">
-              <p className="text-black text-lg">
+              <p className="text-black text-lg" style={{ fontWeight: 300 }}>
                 I'm a design and tech lead at Everest Federal Credit Union Bank. I am a co-founder and creative director at JH Mural Project. I love challenges and enjoy solving problems.
               </p>
             </nav>
@@ -91,9 +91,9 @@ export default function MenuPage() {
         isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
       }`} style={{ fontFamily: 'var(--font-forma)' }}>
         {/* Navigation Bar */}
-        <nav className="w-full py-6 px-6 fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
-          <div className="flex gap-[var(--spacing-m)] items-end">
-            <div style={{ width: '128px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
+        <nav className="w-full py-6 fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
+          <div className="flex gap-[var(--spacing-m)] items-end px-[var(--spacing-3xl)]">
+            <div style={{ width: '154px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
               <video
                 ref={logoVideoRef}
                 src="/Photos/Homepage/Logo.mp4"
@@ -109,7 +109,7 @@ export default function MenuPage() {
               onClick={handleClose}
               className="cursor-pointer text-black hover:opacity-70 transition-opacity"
               aria-label="Close menu"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '42px', padding: 0, lineHeight: .9 }}
+              style={{ fontFamily: 'var(--font-coyote)', fontSize: '50px', padding: 0, lineHeight: .9, fontWeight: 'bold' }}
             >
               EXIT<span style={{ fontWeight: 'bold' }}>.</span>
             </button>
@@ -119,7 +119,7 @@ export default function MenuPage() {
           <div className="flex flex-col p-[var(--spacing-3xl)]">
             {/* Menu Content */}
             <nav className="flex flex-col gap-[var(--spacing-xl)]">
-              <p className="text-black text-xl">
+              <p className="text-black text-xl" style={{ fontWeight: 300 }}>
                 I'm a design and tech lead at Everest Federal Credit Union Bank. I am a co-founder and creative director at JH Mural Project. I love challenges and enjoy solving problems.
               </p>
             </nav>
@@ -137,8 +137,8 @@ export default function MenuPage() {
       }`} style={{ fontFamily: 'var(--font-forma)' }}>
         {/* Navigation Bar */}
         <nav className="w-full fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
-          <div className="w-full mx-auto flex gap-[var(--spacing-lg)] items-end py-[var(--spacing-lg)] px-[var(--spacing-xl)]">
-            <div style={{ width: '140px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
+          <div className="w-full mx-auto flex gap-[var(--spacing-lg)] items-end py-[var(--spacing-lg)] px-[var(--spacing-3xl)]">
+            <div style={{ width: '168px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
               <video
                 ref={logoVideoRef}
                 src="/Photos/Homepage/Logo.mp4"
@@ -154,7 +154,7 @@ export default function MenuPage() {
               onClick={handleClose}
               className="cursor-pointer text-black hover:opacity-70 transition-opacity"
               aria-label="Close menu"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '48px', padding: 0, lineHeight: .9 }}
+              style={{ fontFamily: 'var(--font-coyote)', fontSize: '58px', padding: 0, lineHeight: .9, fontWeight: 'bold' }}
             >
               EXIT<span style={{ fontWeight: 'bold' }}>.</span>
             </button>
@@ -164,7 +164,7 @@ export default function MenuPage() {
           <div className="flex flex-col p-[var(--spacing-3xl)]">
             {/* Menu Content */}
             <nav className="flex flex-col gap-[var(--spacing-xl)]">
-              <p className="text-black text-xl">
+              <p className="text-black text-xl" style={{ fontWeight: 300 }}>
                 I'm a design and tech lead at Everest Federal Credit Union Bank. I am a co-founder and creative director at JH Mural Project. I love challenges and enjoy solving problems.
               </p>
             </nav>
@@ -181,8 +181,8 @@ export default function MenuPage() {
     }`} style={{ fontFamily: 'var(--font-forma)' }}>
       {/* Navigation Bar */}
       <nav className="w-full fixed top-0 left-0 z-[202] opacity-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}>
-        <div className="flex gap-[var(--spacing-lg)] items-end py-[var(--spacing-lg)] px-[var(--spacing-2xl)]">
-          <div style={{ width: '175px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
+        <div className="flex gap-[var(--spacing-lg)] items-end py-[var(--spacing-lg)] px-[var(--spacing-4xl)]">
+          <div style={{ width: '210px', height: 'auto', transform: 'translateZ(0)', willChange: 'transform' }}>
             <video
               ref={logoVideoRef}
               src="/Photos/Homepage/Logo.mp4"
@@ -198,7 +198,7 @@ export default function MenuPage() {
             onClick={handleClose}
             className="cursor-pointer text-black hover:opacity-70 transition-opacity"
             aria-label="Close menu"
-            style={{ fontFamily: 'var(--font-coyote)', fontSize: '60px', padding: 0, lineHeight: .9 }}
+            style={{ fontFamily: 'var(--font-coyote)', fontSize: '72px', padding: 0, lineHeight: .9, fontWeight: 'bold' }}
           >
             EXIT<span style={{ fontWeight: 'bold' }}>.</span>
           </button>
@@ -208,7 +208,7 @@ export default function MenuPage() {
         <div className="flex flex-col p-[var(--spacing-4xl)]">
           {/* Menu Content */}
           <nav className="flex flex-col gap-[var(--spacing-2xl)]">
-            <p className="text-black text-2xl">
+            <p className="text-black text-2xl" style={{ fontWeight: 300 }}>
               I'm a design and tech lead at Everest Federal Credit Union Bank. I am a co-founder and creative director at JH Mural Project. I love challenges and enjoy solving problems.
             </p>
           </nav>
