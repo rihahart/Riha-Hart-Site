@@ -75,6 +75,24 @@ export default function MenuPage() {
               <p className="text-black text-[20px] leading-[42px] menu-text">
                 I'm a design and tech lead at <a href="https://www.everestfcu.org/" target="_blank" rel="noopener noreferrer">EVEREST FEDERAL CREDIT UNION BANK</a>. I am a co-founder and creative director at <a href="https://jhmuralproject.com" target="_blank" rel="noopener noreferrer">JH MURAL PROJECT</a>. I love challenges and enjoy solving problems.
               </p>
+              <div className="flex flex-row gap-[var(--spacing-xl)] py-[var(--spacing-xl)] self-start">
+                <a
+                  href="https://linkedin.com/in/rihahart"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer text-black hover:opacity-70 transition-opacity exit-button-mobile"
+                >
+                  LINKEDIN<span className="exit-period">.</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/riha.hart"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer text-black hover:opacity-70 transition-opacity exit-button-mobile"
+                >
+                  INSTAGRAM<span className="exit-period">.</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -118,6 +136,24 @@ export default function MenuPage() {
               <p className="text-black text-[24px] leading-[52px] menu-text">
                 I'm a design and tech lead at <a href="https://www.everestfcu.org/" target="_blank" rel="noopener noreferrer">EVEREST FEDERAL CREDIT UNION BANK</a>. I am a co-founder and creative director at <a href="https://jhmuralproject.com" target="_blank" rel="noopener noreferrer">JH MURAL PROJECT</a>. I love challenges and enjoy solving problems.
               </p>
+              <div className="flex flex-row gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)] self-start">
+                <a
+                  href="https://linkedin.com/in/rihahart"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer text-black hover:opacity-70 transition-opacity exit-button-tablet"
+                >
+                  LINKEDIN<span className="exit-period">.</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/riha.hart"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer text-black hover:opacity-70 transition-opacity exit-button-tablet"
+                >
+                  INSTAGRAM<span className="exit-period">.</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -161,6 +197,24 @@ export default function MenuPage() {
               <p className="text-black text-[26px] leading-[62px] menu-text">
                 I'm a design and tech lead at <a href="https://www.everestfcu.org/" target="_blank" rel="noopener noreferrer">EVEREST FEDERAL CREDIT UNION BANK</a>. I am a co-founder and creative director at <a href="https://jhmuralproject.com" target="_blank" rel="noopener noreferrer">JH MURAL PROJECT</a>. I love challenges and enjoy solving problems.
               </p>
+              <div className="flex flex-row gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)] self-start">
+                <a
+                  href="https://linkedin.com/in/rihahart"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer text-black hover:opacity-70 transition-opacity exit-button-desktop"
+                >
+                  LINKEDIN<span className="exit-period">.</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/riha.hart"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer text-black hover:opacity-70 transition-opacity exit-button-desktop"
+                >
+                  INSTAGRAM<span className="exit-period">.</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -203,6 +257,24 @@ export default function MenuPage() {
             <p className="text-black text-[28px] leading-[72px] menu-text">
               I'm a design and tech lead at <a href="https://www.everestfcu.org/" target="_blank" rel="noopener noreferrer">EVEREST FEDERAL CREDIT UNION BANK</a>. I am a co-founder and creative director at <a href="https://jhmuralproject.com" target="_blank" rel="noopener noreferrer">JH MURAL PROJECT</a>. I love challenges and enjoy solving problems.
             </p>
+            <div className="flex flex-row gap-[var(--spacing-4xl)] py-[var(--spacing-2xl)] self-start">
+              <a
+                href="https://linkedin.com/in/rihahart"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer text-black hover:opacity-70 transition-opacity exit-button-large"
+              >
+                LINKEDIN<span className="exit-period">.</span>
+              </a>
+              <a
+                href="https://www.instagram.com/riha.hart"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer text-black hover:opacity-70 transition-opacity exit-button-large"
+              >
+                INSTAGRAM<span className="exit-period">.</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
