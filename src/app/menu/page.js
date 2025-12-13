@@ -68,7 +68,7 @@ export default function MenuPage() {
             </button>
           </div>
         </nav>
-        <div className="h-full flex flex-col pt-24">
+        <div className="h-full flex flex-col pt-18">
           <div className="flex flex-col p-[var(--spacing-2xl)]">
             {/* Menu Content */}
             <div className="flex flex-col gap-[var(--spacing-lg)]">
@@ -111,7 +111,7 @@ export default function MenuPage() {
             </button>
           </div>
         </nav>
-        <div className="h-full flex flex-col pt-28">
+        <div className="h-full flex flex-col pt-24">
           <div className="flex flex-col p-[var(--spacing-3xl)]">
             {/* Menu Content */}
             <div className="flex flex-col gap-[var(--spacing-xl)]">
@@ -154,7 +154,7 @@ export default function MenuPage() {
             </button>
           </div>
         </nav>
-        <div className="h-full flex flex-col pt-28">
+        <div className="h-full flex flex-col pt-24">
           <div className="flex flex-col p-[var(--spacing-3xl)]">
             {/* Menu Content */}
             <div className="flex flex-col gap-[var(--spacing-xl)]">
@@ -196,7 +196,7 @@ export default function MenuPage() {
           </button>
         </div>
       </nav>
-      <div className="h-full flex flex-col pt-32">
+      <div className="h-full flex flex-col pt-28">
         <div className="flex flex-col p-[var(--spacing-4xl)]">
           {/* Menu Content */}
           <div className="flex flex-col gap-[var(--spacing-2xl)]">
