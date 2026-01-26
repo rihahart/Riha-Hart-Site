@@ -3,22 +3,22 @@
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 
-export default function Home() {
+export default function Homepage() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
 
   // Mobile (≤768px)
   if (isMobile) {
     return (
-      <div className="flex flex-col items-center px-[var(--spacing-lg)] py-[var(--spacing-xl)]">
-        <div className="flex justify-center w-full max-w-[700px]">
+      <div className="flex flex-col items-center px-[var(--spacing-lg)] py-[var(--spacing-m)]">
+        <div className="flex justify-center w-full max-w-[600px]">
           <video
             src="/Photos/Homepage/PhotoWebsiteVideoMobile.mp4"
             autoPlay
             muted
             playsInline
             loop
-            width="700"
-            height="1260"
+            width="600"
+            height="1140"
             className="w-full h-auto object-contain"
           />
         </div>
@@ -43,22 +43,23 @@ export default function Home() {
           />
         </div>
       </div>
+
     )
   }
 
   // Desktop 1440px (1025px - 1440px)
   if (isDesktop1440px) {
     return (
-      <div className="flex flex-col items-center px-[var(--spacing-6xl)] py-[var(--spacing-xl)]">
-        <div className="flex justify-center w-full max-w-[1050px]">
+      <div className="flex flex-col items-center px-[var(--spacing-4xl)] py-[var(--spacing-2xl)]">
+        <div className="flex justify-center w-full max-w-[1000px]">
           <video
             src="/Photos/Homepage/PhotoWebsiteVideoScreen.mp4"
             autoPlay
             muted
             playsInline
             loop
-            width="1920"
-            height="1080"
+            width="1050"
+            height="590"
             className="w-full h-auto object-contain"
           />
         </div>
@@ -68,18 +69,19 @@ export default function Home() {
 
   // Large Desktop (>1440px)
   return (
-    <div className="flex flex-col items-center px-[var(--spacing-6xl)] py-[var(--spacing-4xl)]">
-      <div className="w-fit">
+    <div className="flex flex-col items-center px-[var(--spacing-6xl)] py-[var(--spacing-xl)]">
+      <div className="flex justify-center w-fit">
         <video
           src="/Photos/Homepage/PhotoWebsiteVideoScreen.mp4"
           autoPlay
           muted
           playsInline
           loop
-          className="max-w-[1200px] h-auto object-contain"
+          width="1920"
+          height="1080"
+          className="max-w-[1920px] h-auto object-contain"
         />
       </div>
     </div>
   )
 }
-

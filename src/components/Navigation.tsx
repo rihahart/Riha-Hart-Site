@@ -1,136 +1,163 @@
 "use client"
-import React from 'react'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { useRef, useEffect } from 'react'
 import useMobileDetection from '@/_utilities/useMobileDetection'
 
 const Navigation = () => {
   const router = useRouter()
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
+  const logoRef = useRef<HTMLImageElement>(null)
 
   const handleMenuClick = () => {
     router.push('/menu')
   }
 
-  // Mobile Navigation (≤768px)
+  // Force GIF to reload on mount (page refresh)
+  useEffect(() => {
+    if (logoRef.current) {
+      const img = logoRef.current
+      const src = img.src
+      // Force reload by temporarily removing and re-adding src
+      img.src = ''
+      img.src = src
+    }
+  }, [])
+
+  // Mobile (≤768px)
   if (isMobile) {
     return (
-      <>
-        <nav className="w-full fixed top-0 left-0 z-[100] opacity-100" style={{ backgroundColor: 'rgba(12, 12, 12, 0)' }}>
-          <div className="flex gap-[var(--spacing-m)] items-end py-[var(--spacing-m)] px-[var(--spacing-m)]">
-           
-            
-            <div>
-              <Image 
-                src="/Icons/Logo/RihaHartLogo.svg" 
-                alt="Riha Hart Logo" 
-                width={100}
-                height={43}
-                priority
-              />
-            </div>
-            <button 
-              onClick={handleMenuClick}
-              className="cursor-pointer text-white hover:opacity-70 transition-opacity px-4 py-2"
-              aria-label="About me"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '34px', padding: 0, lineHeight: .7 }}
-            >
-              ABOUT ME<span style={{ fontWeight: 'bold' }}>.</span>
-            </button>
-          </div>
-        </nav>
-      </>
+      <nav className="fixed w-full top-0 left-0 right-0 z-[100]">
+        <div className='flex items-center justify-between py-[var(--spacing-m)] px-[var(--spacing-lg)] bg-[var(--white)]'>
+
+          <img
+            ref={logoRef}
+            src="/Photos/Homepage/LogoOneCount.gif"
+            alt="Riha Hart Logo"
+            style={{
+              height: '70px',
+              width: 'auto',
+              objectFit: 'contain'
+            }}
+            loading="eager"
+          />
+
+          <button
+            onClick={handleMenuClick}
+            className="cursor-pointer"
+            aria-label="Menu"
+            style={{ transform: 'translateY(10px)' }}
+          >
+            <img
+              src="/Icons/Hamburger/HamburgerLarge.svg"
+              alt="Menu"
+              style={{ height: '12px', width: 'auto' }}
+            />
+          </button>
+        </div>
+      </nav>
     )
   }
 
-  // Tablet Navigation (769px - 1024px)
+  // Tablet (769px - 1024px)
   if (isTablet) {
     return (
-      <>
-        <nav className="w-full py-6 px-6 fixed top-0 left-0 z-[100] opacity-100" style={{ backgroundColor: 'rgba(12, 12, 12, 0)' }}>
-          <div className="flex gap-[var(--spacing-lg)] items-end">
-          
-            
-            <div>
-              <Image 
-                src="/Icons/Logo/RihaHartLogo.svg" 
-                alt="Riha Hart Logo" 
-                width={128}
-                height={54}
-                priority
-              />
-            </div>
-            <button 
-              onClick={handleMenuClick}
-              className="cursor-pointer text-white hover:opacity-70 transition-opacity px-4 py-2"
-              aria-label="About me"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '42px', padding: 0, lineHeight: .7 }}
-            >
-              ABOUT ME<span style={{ fontWeight: 'bold' }}>.</span>
-            </button>
-          </div>
-        </nav>
-      </>
+      <nav className="w-full fixed top-0 left-0 right-0 z-[100]">
+        <div className='flex items-center justify-between py-[var(--spacing-lg)] bg-[var(--white)]' style={{ paddingLeft: 'clamp(4rem, 6rem, 10rem)', paddingRight: 'clamp(4rem, 6rem, 10rem)' }}>
+          <img
+            ref={logoRef}
+            src="/Photos/Homepage/LogoOneCount.gif"
+            alt="Riha Hart Logo"
+            style={{
+              height: '80px',
+              width: 'auto',
+              objectFit: 'contain'
+            }}
+            loading="eager"
+          />
+          <button
+            onClick={handleMenuClick}
+            className="cursor-pointer"
+            aria-label="Menu"
+            style={{ transform: 'translateY(20px)' }}
+          >
+            <img
+              src="/Icons/Hamburger/HamburgerLarge.svg"
+              alt="Menu"
+              style={{ height: '16px', width: 'auto' }}
+            />
+          </button>
+        </div>
+      </nav>
     )
   }
 
   // Desktop 1440px (1025px - 1440px)
   if (isDesktop1440px) {
     return (
-      <>
-        <nav className="w-full fixed top-0 left-0 z-[100] opacity-100" style={{ backgroundColor: 'rgba(12, 12, 12, 0)' }}>
-          <div className="w-full mx-auto flex gap-[var(--spacing-lg)] items-end py-[var(--spacing-lg)] px-[var(--spacing-xl)]">
-        
-            <div>
-              <Image 
-                src="/Icons/Logo/RihaHartLogo.svg" 
-                alt="Riha Hart Logo" 
-                width={140}
-                height={100}
-                priority
-              />
-            </div>
-            <button 
-              onClick={handleMenuClick}
-              className="cursor-pointer text-white hover:opacity-70 transition-opacity px-4 py-2"
-              aria-label="About me"
-              style={{ fontFamily: 'var(--font-coyote)', fontSize: '48px', padding: 0, lineHeight: .7  }}
-            >
-              ABOUT ME<span style={{ fontWeight: 'bold' }}>.</span>
-            </button>
+      <nav className="w-full fixed top-0 left-0 right-0 z-[100]">
+        <div className='flex items-center justify-between py-[var(--spacing-xl)] px-[var(--spacing-8xl)] bg-[var(--white)]'>
+          <div className='flex items-center w-full justify-center'>
+            <img
+              ref={logoRef}
+              src="/Photos/Homepage/LogoOneCount.gif"
+              alt="Riha Hart Logo"
+              style={{
+                height: '100px',
+                width: 'auto',
+                objectFit: 'contain'
+              }}
+              loading="eager"
+            />
           </div>
-        </nav>
-      </>
+          <button
+            onClick={handleMenuClick}
+            className="cursor-pointer"
+            aria-label="Menu"
+            style={{ transform: 'translateY(20px)' }}
+          >
+            <img
+              src="/Icons/Hamburger/HamburgerLarge.svg"
+              alt="Menu"
+              style={{ height: '20px', width: 'auto' }}
+            />
+          </button>
+        </div>
+      </nav>
     )
   }
 
   // Large Desktop (>1440px)
   return (
-    <>
-      <nav className="w-full fixed top-0 left-0 z-[100] opacity-100" style={{ backgroundColor: 'rgba(12, 12, 12, 0)' }}>
-        <div className="flex gap-[var(--spacing-xl)] items-end py-[var(--spacing-lg)] px-[var(--spacing-2xl)]">
-          <div>
-            <Image 
-              src="/Icons/Logo/RihaHartLogo.svg" 
-              alt="Riha Hart Logo" 
-              width={175}
-              height={109}
-              priority
-            />
-          </div>
-          <button 
-            onClick={handleMenuClick}
-            className="cursor-pointer text-white hover:opacity-70 transition-opacity"
-            aria-label="About me"
-            style={{ fontFamily: 'var(--font-coyote)', fontSize: '60px', padding: 0, lineHeight: .7 }}
-          >
-            ABOUT ME.
-          </button>
+    <nav className="w-full fixed top-0 left-0 right-0 z-[100]">
+      <div className='flex items-center justify-between py-[var(--spacing-xl)] px-[var(--spacing-12xl)] bg-[var(--white)]'>
+        <div className='flex items-center w-full justify-center'>
+          <img
+            ref={logoRef}
+            src="/Photos/Homepage/LogoOneCount.gif"
+            alt="Riha Hart Logo"
+            style={{
+              height: '120px',
+              width: 'auto',
+              objectFit: 'contain'
+            }}
+            loading="eager"
+          />
         </div>
-      </nav>
-    </>
+        <button
+          onClick={handleMenuClick}
+          className="cursor-pointer"
+          aria-label="Menu"
+          style={{ transform: 'translateY(20px)' }}
+        >
+          <img
+            src="/Icons/Hamburger/HamburgerLarge.svg"
+            alt="Menu"
+            style={{ height: '24px', width: 'auto' }}
+          />
+        </button>
+      </div>
+    </nav>
   )
 }
 
 export default Navigation
-
