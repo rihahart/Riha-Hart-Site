@@ -13,7 +13,7 @@ export default function GetToKnowMe() {
     if (isMobile) {
         return (
             <div className="w-[1020px] flex justify-center align-center">
-                <div className="flex flex-col items-start justify-center max-w-[380px] gap-[var(--spacing-xl)] py-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
+                <div className="flex flex-col items-start justify-center max-w-[380px] gap-[var(--spacing-lg)] py-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
                     <p
                         className="text-[var(--lightblack)] text-[24px] font-black leading-[36px]"
                     >
