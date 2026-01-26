@@ -2,6 +2,7 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
+import GetToKnowMe from "@/components/GetToKnowMe"
 
 export default function Homepage() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
@@ -22,6 +23,7 @@ export default function Homepage() {
             className="w-full h-auto object-contain"
           />
         </div>
+        <GetToKnowMe />
       </div>
     )
   }
@@ -42,8 +44,8 @@ export default function Homepage() {
             className="w-full h-auto object-contain"
           />
         </div>
+        <GetToKnowMe />
       </div>
-
     )
   }
 
@@ -63,6 +65,7 @@ export default function Homepage() {
             className="w-full h-auto object-contain"
           />
         </div>
+        <GetToKnowMe />
       </div>
     )
   }
@@ -82,6 +85,7 @@ export default function Homepage() {
           className="max-w-[1920px] h-auto object-contain"
         />
       </div>
+      <GetToKnowMe />
     </div>
   )
 }
