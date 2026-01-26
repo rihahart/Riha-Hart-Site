@@ -120,6 +120,32 @@ html::-webkit-scrollbar {
   animation: slideOutMenu 640ms ease-in-out forwards;
 }
 
+/* Footer Scroll Animation */
+@keyframes scrollFrames {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-scroll {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.footer-scroll>div {
+  display: inline-flex;
+  animation: scrollFrames 10000ms linear infinite;
+  will-change: transform;
+  white-space: nowrap;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
 /* Button Styles */
 .button {
   position: relative;

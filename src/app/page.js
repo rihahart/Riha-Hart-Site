@@ -10,7 +10,7 @@ export default function Home() {
   // Mobile (≤768px)
   if (isMobile) {
     return (
-      <div className="flex flex-col items-center px-[var(--spacing-lg)] py-[var(--spacing-xl)]">
+      <div className="flex flex-col items-center px-[var(--spacing-lg)] py-[var(--spacing-xl)]" style={{ touchAction: 'pan-y' }}>
         <div className="flex justify-center w-full max-w-[700px]">
           <video
             src="/Photos/Homepage/PhotoWebsiteVideoMobile.mp4"
@@ -21,6 +21,7 @@ export default function Home() {
             width="700"
             height="1260"
             className="w-full h-auto object-contain"
+            style={{ touchAction: 'pan-y' }}
           />
         </div>
         <GetToKnowMe />
