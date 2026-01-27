@@ -15,11 +15,11 @@ export default function GetToKnowMe() {
             <div className="w-[1020px] flex justify-center align-center">
                 <div className="flex flex-col items-start justify-center max-w-[380px] gap-[var(--spacing-lg)] py-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
                     <p
-                        className="text-[var(--lightblack)] text-[24px] font-black leading-[36px]"
+                        className="text-[var(--lightblack)] text-[26px] font-black leading-[40px]"
                     >
                         I am a designer by training, project manager by necessity, and an occasional developer who makes things happen behind the scenes.
                     </p>
-                    <Button text="Get to know me" alternateText="Get to know me" onClick={() => router.push('/bio')} />
+                    <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
                 </div>
             </div>
         )
@@ -35,7 +35,7 @@ export default function GetToKnowMe() {
                     >
                         I am a designer by training, project manager by necessity, and an occasional developer who makes things happen behind the scenes.
                     </p>
-                    <Button text="Get to know me" alternateText="Get to know me" onClick={() => router.push('/bio')} />
+                    <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
                 </div>
             </div>
         )
@@ -51,7 +51,7 @@ export default function GetToKnowMe() {
                     >
                         I am a designer by training, project manager by necessity, and an occasional developer who makes things happen behind the scenes.
                     </p>
-                    <Button text="Get to know me" alternateText="Get to know me" onClick={() => router.push('/bio')} />
+                    <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
                 </div>
             </div>
         )
@@ -66,7 +66,7 @@ export default function GetToKnowMe() {
                 >
                     I am a designer by training, project manager by necessity, and an occasional developer who makes things happen behind the scenes.
                 </p>
-                <Button text="Get to know me" alternateText="Get to know me" onClick={() => router.push('/bio')} />
+                <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
             </div>
         </div>
     )

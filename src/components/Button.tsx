@@ -7,6 +7,7 @@ interface ButtonProps {
   onClick?: () => void
   type?: 'button' | 'submit' | 'reset'
   className?: string
+  inverted?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -14,11 +15,12 @@ const Button: React.FC<ButtonProps> = ({
   alternateText,
   onClick,
   type = 'button',
-  className = ''
+  className = '',
+  inverted = false
 }) => {
   return (
     <button
-      className={`button ${className}`}
+      className={`button ${inverted ? 'button-inverted' : ''} ${className}`}
       role="button"
       onClick={onClick}
       type={type}
