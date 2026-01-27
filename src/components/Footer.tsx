@@ -40,7 +40,7 @@ export default function Footer() {
                                 key={index}
                                 src={frame}
                                 alt={`Frame ${index + 1}`}
-                                style={{ width: '34px', height: '40px', flexShrink: 0 }}
+                                style={{ width: '38px', height: '46px', flexShrink: 0 }}
                             />
                         ))}
                     </div>
