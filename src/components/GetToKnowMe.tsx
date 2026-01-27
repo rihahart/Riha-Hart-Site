@@ -17,7 +17,7 @@ export default function GetToKnowMe() {
                     <p
                         className="text-[var(--lightblack)] text-[26px] font-black leading-[40px]"
                     >
-                        I am a designer by training, project manager by necessity, and an occasional developer who makes things happen behind the scenes.
+                        I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
                     </p>
                     <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
                 </div>
@@ -33,7 +33,7 @@ export default function GetToKnowMe() {
                     <p
                         className="text-[var(--lightblack)] text-[32px] font-black leading-[48px]"
                     >
-                        I am a designer by training, project manager by necessity, and an occasional developer who makes things happen behind the scenes.
+                        I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
                     </p>
                     <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
                 </div>
@@ -49,7 +49,7 @@ export default function GetToKnowMe() {
                     <p
                         className="text-[var(--lightblack)] text-[40px] font-black leading-[64px]"
                     >
-                        I am a designer by training, project manager by necessity, and an occasional developer who makes things happen behind the scenes.
+                        I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
                     </p>
                     <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
                 </div>
@@ -64,7 +64,7 @@ export default function GetToKnowMe() {
                 <p
                     className=" text-[var(--lightblack)] text-[48px] font-black leading-[74px]"
                 >
-                    I am a designer by training, project manager by necessity, and an occasional developer who makes things happen behind the scenes.
+                    I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
                 </p>
                 <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
             </div>
