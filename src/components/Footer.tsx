@@ -27,7 +27,7 @@ export default function Footer() {
     // Mobile (≤768px)
     if (isMobile) {
         return (
-            <footer className="w-full py-[var(--spacing-m)] bg-[var(--darkblack)] overflow-hidden">
+            <footer className="w-full py-[var(--spacing-lg)] bg-[var(--darkblack)] overflow-hidden">
                 <div className="flex flex-col w-[400px] items-start gap-[var(--spacing-xl)] px-[var(--spacing-2xl)] py-[var(--spacing-lg)] mx-auto">
                     <div className="flex flex-col items-start gap-[var(--spacing-xl)]">
                         <p className="text-[var(--white)] text-[26px] leading-[40px]">
@@ -71,8 +71,8 @@ export default function Footer() {
     // Tablet (769px - 1024px)
     if (isTablet) {
         return (
-            <footer className="w-full py-[var(--spacing-lg)] bg-[var(--darkblack)] overflow-hidden">
-                <div className="flex max-w-[820px] items-center justify-between px-[var(--spacing-2xl)] py-[var(--spacing-lg)] mx-auto">
+            <footer className="w-full py-[var(--spacing-xl)] bg-[var(--darkblack)] overflow-hidden">
+                <div className="flex max-w-[820px] items-center justify-between px-[var(--spacing-2xl)] py-[var(--spacing-xl)] mx-auto">
                     <div className="flex items-start justify-between py-[var(--spacing-xl)]">
                         <video
                             src="/DolphinFinalShort.mp4"
@@ -113,8 +113,8 @@ export default function Footer() {
     // Desktop 1440px (1025px - 1440px)
     if (isDesktop1440px) {
         return (
-            <footer className="w-full py-[var(--spacing-xl)] bg-[var(--darkblack)] overflow-hidden">
-                <div className="flex max-w-[1050px] px-[var(--spacing-2xl)] items-center justify-between py-[var(--spacing-lg)] mx-auto">
+            <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
+                <div className="flex max-w-[1050px] px-[var(--spacing-2xl)] items-center justify-between py-[var(--spacing-2xl)] mx-auto">
                     <div className="flex items-start justify-between py-[var(--spacing-xl)]">
                         <video
                             src="/DolphinFinalShort.mp4"
@@ -154,8 +154,8 @@ export default function Footer() {
 
     // Large Desktop (>1440px)
     return (
-        <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden ">
-            <div className="flex w-[1200px] items-center justify-between py-[var(--spacing-lg)] mx-auto">
+        <footer className="w-full py-[var(--spacing-4xl)] bg-[var(--darkblack)] overflow-hidden ">
+            <div className="flex w-[1200px] items-center justify-between py-[var(--spacing-3xl)] mx-auto">
                 <div className="flex items-start justify-between py-[var(--spacing-2xl)]">
                     <video
                         src="/DolphinFinalShort.mp4"
