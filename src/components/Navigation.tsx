@@ -83,7 +83,7 @@ const Navigation = () => {
             <img
               src="/Icons/Hamburger/HamburgerLarge.svg"
               alt="Menu"
-              style={{ height: '16px', width: 'auto' }}
+              style={{ height: '15px', width: 'auto' }}
             />
           </button>
         </div>
@@ -118,7 +118,7 @@ const Navigation = () => {
             <img
               src="/Icons/Hamburger/HamburgerLarge.svg"
               alt="Menu"
-              style={{ height: '20px', width: 'auto' }}
+              style={{ height: '18px', width: 'auto' }}
             />
           </button>
         </div>
@@ -152,7 +152,7 @@ const Navigation = () => {
           <img
             src="/Icons/Hamburger/HamburgerLarge.svg"
             alt="Menu"
-            style={{ height: '24px', width: 'auto' }}
+            style={{ height: '20px', width: 'auto' }}
           />
         </button>
       </div>

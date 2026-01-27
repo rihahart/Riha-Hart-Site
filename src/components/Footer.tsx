@@ -15,15 +15,32 @@ export default function Footer() {
     if (isMobile) {
         return (
             <footer className="w-full py-[var(--spacing-m)] bg-[var(--darkblack)] overflow-hidden">
+                <div className="flex flex-col w-[400px] items-start justify-between gap-[var(--spacing-2xl)] px-[var(--spacing-2xl)] py-[var(--spacing-lg)] mx-auto">
+                    <div className="flex flex-col items-start">
+                        <p className="text-[var(--white)] text-[26px] px-[var(--spacing-m)] leading-[34px]">
+                            Get in touch with me!
+                        </p>
+                    </div>
+                    <div className="flex items-start justify-between py-[var(--spacing-xl)]">
+                        <video
+                            src="/DolphinFinalShort.mp4"
+                            autoPlay
+                            muted
+                            playsInline
+                            loop
+                            className="h-[160px] w-[300px] object-contain"
+                        />
+                    </div>
+
+                </div>
                 <div className="footer-scroll">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                         {duplicatedFrames.map((frame, index) => (
-                            <Image
+                            <img
                                 key={index}
                                 src={frame}
                                 alt={`Frame ${index + 1}`}
-                                width={25}
-                                height={29}
+                                style={{ width: '34px', height: '40px', flexShrink: 0 }}
                             />
                         ))}
                     </div>
@@ -36,15 +53,31 @@ export default function Footer() {
     if (isTablet) {
         return (
             <footer className="w-full py-[var(--spacing-lg)] bg-[var(--darkblack)] overflow-hidden">
+                <div className="flex max-w-[820px] items-center justify-between px-[var(--spacing-2xl)] mx-auto">
+                    <div className="flex items-start justify-between py-[var(--spacing-xl)]">
+                        <video
+                            src="/DolphinFinalShort.mp4"
+                            autoPlay
+                            muted
+                            playsInline
+                            loop
+                            className="h-[160px] w-[300px] object-contain"
+                        />
+                    </div>
+                    <div className="flex flex-col h-[160px] items-start">
+                        <p className="text-[var(--white)] text-[26px] leading-[34px]">
+                            Get in touch with me!
+                        </p>
+                    </div>
+                </div>
                 <div className="footer-scroll">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                         {duplicatedFrames.map((frame, index) => (
-                            <Image
+                            <img
                                 key={index}
                                 src={frame}
                                 alt={`Frame ${index + 1}`}
-                                width={25}
-                                height={29}
+                                style={{ width: '40px', height: '48px', flexShrink: 0 }}
                             />
                         ))}
                     </div>
@@ -57,15 +90,31 @@ export default function Footer() {
     if (isDesktop1440px) {
         return (
             <footer className="w-full py-[var(--spacing-xl)] bg-[var(--darkblack)] overflow-hidden">
+                <div className="flex max-w-[1050px] px-[var(--spacing-2xl)] items-center justify-between mx-auto">
+                    <div className="flex items-start justify-between py-[var(--spacing-xl)]">
+                        <video
+                            src="/DolphinFinalShort.mp4"
+                            autoPlay
+                            muted
+                            playsInline
+                            loop
+                            className="h-[160px] w-[300px] object-contain"
+                        />
+                    </div>
+                    <div className="flex flex-col h-[200px] items-start">
+                        <p className="text-[var(--white)] text-[32px] leading-[84px]">
+                            Get in touch with me!
+                        </p>
+                    </div>
+                </div>
                 <div className="footer-scroll">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                         {duplicatedFrames.map((frame, index) => (
-                            <Image
+                            <img
                                 key={index}
                                 src={frame}
                                 alt={`Frame ${index + 1}`}
-                                width={25}
-                                height={29}
+                                style={{ width: '48px', height: '56px', flexShrink: 0 }}
                             />
                         ))}
                     </div>
@@ -76,21 +125,38 @@ export default function Footer() {
 
     // Large Desktop (>1440px)
     return (
-        <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
+        <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden ">
+            <div className="flex w-[1200px] items-center justify-between mx-auto">
+                <div className="flex items-start justify-between py-[var(--spacing-2xl)]">
+                    <video
+                        src="/DolphinFinalShort.mp4"
+                        autoPlay
+                        muted
+                        playsInline
+                        loop
+                        className="h-[200px] w-[350px] object-contain"
+                    />
+                </div>
+                <div className="flex flex-col h-[230px] items-start">
+                    <p className="text-[var(--white)] text-[36px] leading-[84px]">
+                        Get in touch with me!
+                    </p>
+                </div>
+            </div>
             <div className="footer-scroll">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                     {duplicatedFrames.map((frame, index) => (
-                        <Image
+                        <img
                             key={index}
                             src={frame}
                             alt={`Frame ${index + 1}`}
-                            width={25}
-                            height={29}
+                            style={{ width: '56px', height: '64px', flexShrink: 0 }}
                         />
                     ))}
                 </div>
             </div>
-        </footer>
+
+        </footer >
     )
 }
 
