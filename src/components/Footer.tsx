@@ -27,28 +27,30 @@ export default function Footer() {
     // Mobile (≤768px)
     if (isMobile) {
         return (
-            <footer className="w-full py-[var(--spacing-lg)] bg-[var(--darkblack)] overflow-hidden">
-                <div className="flex flex-col w-[400px] items-start gap-[var(--spacing-xl)] px-[var(--spacing-2xl)] py-[var(--spacing-lg)] mx-auto">
-                    <div className="flex flex-col items-start gap-[var(--spacing-xl)]">
-                        <p className="text-[var(--white)] text-[26px] leading-[40px]">
+            <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
+                <div className="flex flex-col items-center px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-4xl)] mx-auto">
+                    <div className="flex flex-col items-start gap-[var(--spacing-4xl)] mx-auto">
+                        <div className="flex flex-col items-start gap-[var(--spacing-2xl)]">
+                            <p className="text-[var(--white)] text-[32px] leading-[48px]">
 
-                            Connect with me!
-                        </p>
-                        <div className="flex items-start gap-[var(--spacing-xl)]">
-                            <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
-                            <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
-                            <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                                Connect with me!
+                            </p>
+                            <div className="flex items-start gap-[var(--spacing-xl)]">
+                                <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
+                                <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
+                                <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                            </div>
                         </div>
-                    </div>
-                    <div className="flex items-start justify-between py-[var(--spacing-xl)]">
-                        <video
-                            src="/DolphinFinalShort.mp4"
-                            autoPlay
-                            muted
-                            playsInline
-                            loop
-                            className="h-[180px] w-[full] object-contain"
-                        />
+                        <div className="flex items-start justify-between">
+                            <video
+                                src="/DolphinFinalShort.mp4"
+                                autoPlay
+                                muted
+                                playsInline
+                                loop
+                                className="h-[full] w-[full] object-contain"
+                            />
+                        </div>
                     </div>
 
                 </div>
@@ -71,9 +73,9 @@ export default function Footer() {
     // Tablet (769px - 1024px)
     if (isTablet) {
         return (
-            <footer className="w-full py-[var(--spacing-xl)] bg-[var(--darkblack)] overflow-hidden">
-                <div className="flex max-w-[820px] items-center justify-between px-[var(--spacing-2xl)] py-[var(--spacing-xl)] mx-auto">
-                    <div className="flex items-start justify-between py-[var(--spacing-xl)]">
+            <footer className="w-full py-[var(--spacing-4xl)] bg-[var(--darkblack)] overflow-hidden">
+                <div className="flex items-center justify-between px-[var(--spacing-2xl)] pt-[var(--spacing-4xl)] pb-[var(--spacing-6xl)] mx-auto">
+                    <div className="flex items-start justify-between py-[var(--spacing-3xl)]">
                         <video
                             src="/DolphinFinalShort.mp4"
                             autoPlay
@@ -83,8 +85,8 @@ export default function Footer() {
                             className="h-[160px] w-[full] object-contain"
                         />
                     </div>
-                    <div className="flex flex-col h-[160px] items-start gap-[var(--spacing-xl)]">
-                        <p className="text-[var(--white)] text-[32px] leading-[48px]">
+                    <div className="flex flex-col h-full items-start gap-[var(--spacing-2xl)]">
+                        <p className="text-[var(--white)] text-[40px] leading-[64px]">
                             Connect with me!
                         </p>
                         <div className="flex items-start gap-[var(--spacing-lg)]">
@@ -113,20 +115,20 @@ export default function Footer() {
     // Desktop 1440px (1025px - 1440px)
     if (isDesktop1440px) {
         return (
-            <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
-                <div className="flex max-w-[1050px] px-[var(--spacing-2xl)] items-center justify-between py-[var(--spacing-2xl)] mx-auto">
-                    <div className="flex items-start justify-between py-[var(--spacing-xl)]">
+            <footer className="w-full py-[var(--spacing-5xl)] bg-[var(--darkblack)] overflow-hidden">
+                <div className="flex items-center justify-between px-[var(--spacing-2xl)] pt-[var(--spacing-4xl)] pb-[var(--spacing-6xl)] mx-auto">
+                    <div className="flex items-start justify-between py-[var(--spacing-3xl)]">
                         <video
                             src="/DolphinFinalShort.mp4"
                             autoPlay
                             muted
                             playsInline
                             loop
-                            className="h-[160px] w-[full] object-contain"
+                            className="h-[180px] w-[full] object-contain"
                         />
                     </div>
-                    <div className="flex flex-col h-[160px] items-start gap-[var(--spacing-xl)]">
-                        <p className="text-[var(--white)] text-[40px] leading-[64px]">
+                    <div className="flex flex-col h-[180px] items-start gap-[var(--spacing-2xl)]">
+                        <p className="text-[var(--white)] text-[48px] leading-[72px]">
                             Connect with me!
                         </p>
                         <div className="flex items-start gap-[var(--spacing-xl)]">
@@ -155,8 +157,8 @@ export default function Footer() {
     // Large Desktop (>1440px)
     return (
         <footer className="w-full py-[var(--spacing-4xl)] bg-[var(--darkblack)] overflow-hidden ">
-            <div className="flex w-[1200px] items-center justify-between py-[var(--spacing-3xl)] mx-auto">
-                <div className="flex items-start justify-between py-[var(--spacing-2xl)]">
+            <div className="flex max-w-[1600px] items-center justify-between px-[var(--spacing-2xl)] pt-[var(--spacing-4xl)] pb-[var(--spacing-8xl)] mx-auto">
+                <div className="flex items-start justify-between py-[var(--spacing-3xl)]">
                     <video
                         src="/DolphinFinalShort.mp4"
                         autoPlay
@@ -166,8 +168,8 @@ export default function Footer() {
                         className="h-[200px] w-[full] object-contain"
                     />
                 </div>
-                <div className="flex flex-col h-[200px] gap-[var(--spacing-2xl)] items-start">
-                    <p className="text-[var(--white)] text-[48px] leading-[72px]">
+                <div className="flex flex-col h-full gap-[var(--spacing-3xl)] items-start">
+                    <p className="text-[var(--white)] text-[64px] leading-[96px]">
                         Connect with me!
                     </p>
                     <div className="flex items-start gap-[var(--spacing-2xl)]">

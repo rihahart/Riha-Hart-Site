@@ -71,11 +71,7 @@ body::-webkit-scrollbar {
 html {
   background-color: var(--black);
   overflow-x: hidden;
-  overflow-y: auto;
-  scrollbar-width: none;
-  /* Firefox */
-  -ms-overflow-style: none;
-  /* IE and Edge */
+  height: 100%;
   font-family: var(--font-sofia);
 }
 
