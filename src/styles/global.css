@@ -505,7 +505,7 @@ html::-webkit-scrollbar {
     font-family: "sofia-pro-comp", sans-serif;
     font-size: 20px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 32px;
   }
 }
@@ -518,7 +518,7 @@ html::-webkit-scrollbar {
     font-family: "sofia-pro-comp", sans-serif;
     font-size: 24px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 36px;
   }
 }
@@ -531,7 +531,7 @@ html::-webkit-scrollbar {
     font-family: "sofia-pro-comp", sans-serif;
     font-size: 28px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 40px;
   }
 }
