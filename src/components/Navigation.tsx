@@ -13,6 +13,7 @@ const Navigation = () => {
   const navRef = useRef<HTMLElement>(null)
 
   const handleMenuClick = () => router.push("/menu")
+  const handleLogoClick = () => router.push("/")
 
   // Force GIF reload on mount
   useEffect(() => {
@@ -55,7 +56,9 @@ const Navigation = () => {
     return (
       <nav ref={navRef} className={navClass}>
         <div className="flex items-center justify-between py-[var(--spacing-lg)] px-[var(--spacing-lg)]">
-          <img ref={logoRef} src="/Photos/Homepage/LogoOneCount.gif" alt="Riha Hart Logo" style={{ height: "70px", width: "auto", objectFit: "contain" }} loading="eager" />
+          <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
+            <img ref={logoRef} src="/Photos/Homepage/LogoOneCount.gif" alt="Riha Hart Logo" style={{ height: "70px", width: "auto", objectFit: "contain" }} loading="eager" />
+          </button>
           <button onClick={handleMenuClick} className="cursor-pointer" aria-label="Menu" style={{ transform: "translateY(10px)" }}>
             <img src="/Icons/Hamburger/HamburgerLarge.svg" alt="Menu" style={{ height: "12px", width: "auto" }} />
           </button>
@@ -69,7 +72,9 @@ const Navigation = () => {
     return (
       <nav ref={navRef} className={navClass}>
         <div className="flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-2xl)]">
-          <img ref={logoRef} src="/Photos/Homepage/LogoOneCount.gif" alt="Riha Hart Logo" style={{ height: "80px", width: "auto", objectFit: "contain" }} loading="eager" />
+          <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
+            <img ref={logoRef} src="/Photos/Homepage/LogoOneCount.gif" alt="Riha Hart Logo" style={{ height: "80px", width: "auto", objectFit: "contain" }} loading="eager" />
+          </button>
           <button onClick={handleMenuClick} className="cursor-pointer" aria-label="Menu" style={{ transform: "translateY(20px)" }}>
             <img src="/Icons/Hamburger/HamburgerLarge.svg" alt="Menu" style={{ height: "15px", width: "auto" }} />
           </button>
@@ -84,7 +89,9 @@ const Navigation = () => {
       <nav ref={navRef} className={navClass}>
         <div className="flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-3xl)] ">
           <div className="flex items-center w-full justify-center">
-            <img ref={logoRef} src="/Photos/Homepage/LogoOneCount.gif" alt="Riha Hart Logo" style={{ height: "100px", width: "auto", objectFit: "contain" }} loading="eager" />
+            <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
+              <img ref={logoRef} src="/Photos/Homepage/LogoOneCount.gif" alt="Riha Hart Logo" style={{ height: "100px", width: "auto", objectFit: "contain" }} loading="eager" />
+            </button>
           </div>
           <button onClick={handleMenuClick} className="cursor-pointer" aria-label="Menu" style={{ transform: "translateY(20px)" }}>
             <img src="/Icons/Hamburger/HamburgerLarge.svg" alt="Menu" style={{ height: "18px", width: "auto" }} />
@@ -99,7 +106,9 @@ const Navigation = () => {
     <nav ref={navRef} className={navClass}>
       <div className="flex w-full max-w-[1600px] mx-auto items-center justify-between py-[var(--spacing-3xl)] px-[var(--spacing-4xl)]">
         <div className="flex items-center w-full justify-center">
-          <img ref={logoRef} src="/Photos/Homepage/LogoOneCount.gif" alt="Riha Hart Logo" style={{ height: "120px", width: "auto", objectFit: "contain" }} loading="eager" />
+          <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
+            <img ref={logoRef} src="/Photos/Homepage/LogoOneCount.gif" alt="Riha Hart Logo" style={{ height: "120px", width: "auto", objectFit: "contain" }} loading="eager" />
+          </button>
         </div>
         <button onClick={handleMenuClick} className="cursor-pointer" aria-label="Menu" style={{ transform: "translateY(20px)" }}>
           <img src="/Icons/Hamburger/HamburgerLarge.svg" alt="Menu" style={{ height: "20px", width: "auto" }} />

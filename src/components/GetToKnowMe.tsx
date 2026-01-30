@@ -14,11 +14,9 @@ export default function GetToKnowMe() {
         return (
             <div className="w-full flex justify-center align-center">
                 <div className="flex flex-col items-start justify-center gap-[var(--spacing-xl)] py-[var(--spacing-xl)]">
-                    <p
-                        className="text-[var(--lightblack)] text-[32px] font-black leading-[48px]"
-                    >
+                    <h2 className="h2 text-[var(--lightblack)]">
                         I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
-                    </p>
+                    </h2>
                     <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
                 </div>
             </div>
@@ -30,11 +28,9 @@ export default function GetToKnowMe() {
         return (
             <div className="flex w-full align-center justify-center">
                 <div className="flex flex-col items-start justify-center  gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)]">
-                    <p
-                        className="text-[var(--lightblack)] text-[40px] font-black leading-[64px]"
-                    >
+                    <h2 className="h2 text-[var(--lightblack)]">
                         I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
-                    </p>
+                    </h2>
                     <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
                 </div>
             </div>
@@ -44,13 +40,11 @@ export default function GetToKnowMe() {
     // Desktop 1440px (1025px - 1440px)
     if (isDesktop1440px) {
         return (
-            <div className="w-[1020px] flex justify-end">
-                <div className="flex flex-col items-start justify-center w-[750px] gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)]">
-                    <p
-                        className="text-[var(--lightblack)] text-[48px] font-black leading-[74px]"
-                    >
+            <div className="w-full flex justify-end">
+                <div className="flex flex-col items-start justify-center w-[70%] gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)]">
+                    <h2 className="h2 text-[var(--lightblack)]">
                         I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
-                    </p>
+                    </h2>
                     <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
                 </div>
             </div>
@@ -60,12 +54,10 @@ export default function GetToKnowMe() {
     // Large Desktop (>1440px)
     return (
         <div className="w-full flex justify-end">
-            <div className="flex flex-col items-start justify-center w-[900px] gap-[var(--spacing-2xl)] py-[var(--spacing-3xl)]">
-                <p
-                    className=" text-[var(--lightblack)] text-[64px] font-black leading-[96px]"
-                >
+            <div className="flex flex-col items-start justify-center w-[70%] gap-[var(--spacing-3xl)] py-[var(--spacing-3xl)]">
+                <h2 className="h2 text-[var(--lightblack)]">
                     I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
-                </p>
+                </h2>
                 <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
             </div>
         </div>

@@ -273,3 +273,309 @@ html::-webkit-scrollbar {
     line-height: 20px;
   }
 }
+
+/* Typography Styles */
+
+/* H1 - Mobile (≤768px) */
+@media (max-width: 768px) {
+
+  h1,
+  .h1 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 56px;
+  }
+}
+
+/* H1 - Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  h1,
+  .h1 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 88px;
+  }
+}
+
+/* H1 - Desktop 1440px (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+  h1,
+  .h1 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 104px;
+  }
+}
+
+/* H1 - Large Desktop (>1440px) */
+@media (min-width: 1441px) {
+
+  h1,
+  .h1 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120px;
+  }
+}
+
+/* H2 - Mobile (≤768px) */
+@media (max-width: 768px) {
+
+  h2,
+  .h2 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 48px;
+  }
+}
+
+/* H2 - Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  h2,
+  .h2 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 64px;
+  }
+}
+
+/* H2 - Desktop 1440px (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+  h2,
+  .h2 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 80px;
+  }
+}
+
+/* H2 - Large Desktop (>1440px) */
+@media (min-width: 1441px) {
+
+  h2,
+  .h2 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 88px;
+  }
+}
+
+/* H3 - Mobile (≤768px) */
+@media (max-width: 768px) {
+
+  h3,
+  .h3 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 36px;
+  }
+}
+
+/* H3 - Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  h3,
+  .h3 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 48px;
+  }
+}
+
+/* H3 - Desktop 1440px (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+  h3,
+  .h3 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 56px;
+  }
+}
+
+/* H3 - Large Desktop (>1440px) */
+@media (min-width: 1441px) {
+
+  h3,
+  .h3 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 64px;
+  }
+}
+
+/* H4 - Mobile (≤768px) */
+@media (max-width: 768px) {
+
+  h4,
+  .h4 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 32px;
+  }
+}
+
+/* H4 - Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  h4,
+  .h4 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 36px;
+  }
+}
+
+/* H4 - Desktop 1440px (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+  h4,
+  .h4 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 40px;
+  }
+}
+
+/* H4 - Large Desktop (>1440px) */
+@media (min-width: 1441px) {
+
+  h4,
+  .h4 {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 48px;
+  }
+}
+
+/* Body - Mobile (≤768px) */
+@media (max-width: 768px) {
+
+  body,
+  .body {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}
+
+/* Body - Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  body,
+  .body {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+  }
+}
+
+/* Body - Desktop 1440px (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+  body,
+  .body {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+  }
+}
+
+/* Body - Large Desktop (>1440px) */
+@media (min-width: 1441px) {
+
+  body,
+  .body {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+  }
+}
+
+/* Caption - Mobile (≤768px) */
+@media (max-width: 768px) {
+  .caption {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+
+/* Caption - Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .caption {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+
+/* Caption - Desktop 1440px (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .caption {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+  }
+}
+
+/* Caption - Large Desktop (>1440px) */
+@media (min-width: 1441px) {
+  .caption {
+    font-family: "sofia-pro-comp", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+  }
+}
