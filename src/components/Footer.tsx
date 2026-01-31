@@ -4,6 +4,7 @@ import React from "react"
 import Image from "next/image"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import Button from "./Button"
+import DolphinAnimation from "./DolphinAnimation"
 
 export default function Footer() {
     const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
@@ -28,8 +29,9 @@ export default function Footer() {
     if (isMobile) {
         return (
             <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
-                <div className="flex flex-col items-center px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-4xl)] mx-auto">
-                    <div className="flex flex-col items-start gap-[var(--spacing-4xl)] mx-auto">
+                <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-2xl)]">
+                    <div className="flex flex-col items-start justify-between gap-[var(--spacing-4xl)] mx-auto">
+
                         <div className="flex flex-col items-start gap-[var(--spacing-2xl)]">
                             <p className="text-[var(--white)] text-[32px] leading-[48px]">
 
@@ -41,16 +43,9 @@ export default function Footer() {
                                 <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
                             </div>
                         </div>
-                        <div className="flex items-start justify-between">
-                            <video
-                                src="/DolphinFinalShort.mp4"
-                                autoPlay
-                                muted
-                                playsInline
-                                loop
-                                className="h-[full] w-[full] object-contain"
-                            />
-                        </div>
+
+                        <DolphinAnimation className="h-full max-w-[300px]" />
+
                     </div>
 
                 </div>
@@ -74,17 +69,8 @@ export default function Footer() {
     if (isTablet) {
         return (
             <footer className="w-full py-[var(--spacing-4xl)] bg-[var(--darkblack)] overflow-hidden">
-                <div className="flex items-center justify-between px-[var(--spacing-2xl)] pt-[var(--spacing-4xl)] pb-[var(--spacing-6xl)] mx-auto">
-                    <div className="flex items-start justify-between py-[var(--spacing-3xl)]">
-                        <video
-                            src="/DolphinFinalShort.mp4"
-                            autoPlay
-                            muted
-                            playsInline
-                            loop
-                            className="h-[160px] w-[full] object-contain"
-                        />
-                    </div>
+                <div className="flex items-center justify-between px-[var(--spacing-4xl)] pt-[var(--spacing-lg)] pb-[var(--spacing-6xl)] mx-auto">
+
                     <div className="flex flex-col h-full items-start gap-[var(--spacing-2xl)]">
                         <p className="text-[var(--white)] text-[40px] leading-[64px]">
                             Connect with me!
@@ -94,6 +80,9 @@ export default function Footer() {
                             <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
                             <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
                         </div>
+                    </div>
+                    <div className="flex items-start justify-between]">
+                        <DolphinAnimation className="h-[250px] w-full" />
                     </div>
                 </div>
                 <div className="footer-scroll">
@@ -116,18 +105,8 @@ export default function Footer() {
     if (isDesktop1440px) {
         return (
             <footer className="w-full py-[var(--spacing-5xl)] bg-[var(--darkblack)] overflow-hidden">
-                <div className="flex items-center justify-between px-[var(--spacing-2xl)] pt-[var(--spacing-4xl)] pb-[var(--spacing-6xl)] mx-auto">
-                    <div className="flex items-start justify-between py-[var(--spacing-3xl)]">
-                        <video
-                            src="/DolphinFinalShort.mp4"
-                            autoPlay
-                            muted
-                            playsInline
-                            loop
-                            className="h-[180px] w-[full] object-contain"
-                        />
-                    </div>
-                    <div className="flex flex-col h-[180px] items-start gap-[var(--spacing-2xl)]">
+                <div className="flex items-center justify-between px-[var(--spacing-6xl)] pt-[var(--spacing-xl)] pb-[var(--spacing-6xl)] mx-auto">
+                    <div className="flex flex-col h-[281px] items-start gap-[var(--spacing-2xl)]">
                         <p className="text-[var(--white)] text-[48px] leading-[72px]">
                             Connect with me!
                         </p>
@@ -136,6 +115,10 @@ export default function Footer() {
                             <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
                             <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
                         </div>
+
+                    </div>
+                    <div className="flex items-start justify-between">
+                        <DolphinAnimation className="h-[300px] w-full" />
                     </div>
                 </div>
                 <div className="footer-scroll">
@@ -157,17 +140,7 @@ export default function Footer() {
     // Large Desktop (>1440px)
     return (
         <footer className="w-full py-[var(--spacing-4xl)] bg-[var(--darkblack)] overflow-hidden ">
-            <div className="flex max-w-[1600px] items-center justify-between px-[var(--spacing-2xl)] pt-[var(--spacing-4xl)] pb-[var(--spacing-8xl)] mx-auto">
-                <div className="flex items-start justify-between py-[var(--spacing-3xl)]">
-                    <video
-                        src="/DolphinFinalShort.mp4"
-                        autoPlay
-                        muted
-                        playsInline
-                        loop
-                        className="h-[200px] w-[full] object-contain"
-                    />
-                </div>
+            <div className="flex max-w-[1600px] items-center justify-between px-[var(--spacing-8xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-8xl)] mx-auto">
                 <div className="flex flex-col h-full gap-[var(--spacing-3xl)] items-start">
                     <p className="text-[var(--white)] text-[64px] leading-[96px]">
                         Connect with me!
@@ -177,6 +150,9 @@ export default function Footer() {
                         <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
                         <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
                     </div>
+                </div>
+                <div className="flex items-start justify-between]">
+                    <DolphinAnimation className="h-[350px] w-full " />
                 </div>
             </div>
             <div className="footer-scroll">

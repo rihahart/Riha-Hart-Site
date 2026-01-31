@@ -6,7 +6,7 @@ export const bioData = {
     heading: "Hi, again!",
     paragraphs: [
         " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Suspendisse potenti. Mauris euismod, lorem at volutpat tincidunt, arcu metus faucibus purus, sed facilisis erat turpis a odio. Aenean vel turpis non risus viverra pretium. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+        "I’m a co-founder and Creative Director of the JH Mural Project, a community arts nonprofit I built from the ground where I manage much of the day-to-day work, including branding, grant writing, contracts, budgets, and outreach."
     ]
 }
 
