@@ -48,7 +48,7 @@ export default function Footer() {
                     </div>
 
                 </div>
-                <div className="footer-scroll mt-[var(--spacing-4xl)]">
+                <div className="footer-scroll mt-[var(--spacing-6xl)]">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                         {duplicatedFrames.map((frame, index) => (
                             <img
@@ -87,7 +87,7 @@ export default function Footer() {
                     </div>
 
                 </div>
-                <div className="footer-scroll mt-[var(--spacing-8xl)]">
+                <div className="footer-scroll mt-[var(--spacing-10xl)]">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                         {duplicatedFrames.map((frame, index) => (
                             <img
@@ -126,7 +126,7 @@ export default function Footer() {
                     </div>
 
                 </div>
-                <div className="footer-scroll mt-[var(--spacing-10xl)]">
+                <div className="footer-scroll mt-[var(--spacing-12xl)]">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                         {duplicatedFrames.map((frame, index) => (
                             <img
@@ -164,7 +164,7 @@ export default function Footer() {
                 </div>
 
             </div>
-            <div className="footer-scroll mt-[var(--spacing-12xl)]">
+            <div className="footer-scroll mt-[140px]">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                     {duplicatedFrames.map((frame, index) => (
                         <img
