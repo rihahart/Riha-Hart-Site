@@ -9,7 +9,7 @@ interface DolphinAnimationProps {
 export default function DolphinAnimation({ className = '' }: DolphinAnimationProps) {
     const [currentFrame, setCurrentFrame] = useState(1)
     const directionRef = useRef<'forward' | 'backward'>('forward')
-    const frameCount = 121 // Frame1.png through Frame121.png
+    const frameCount = 119 // Frame1.png through Frame119.png
     const fps = 24
     const frameInterval = 1000 / fps // ~41.67ms per frame
     const intervalRef = useRef<NodeJS.Timeout | null>(null)
