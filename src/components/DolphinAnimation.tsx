@@ -7,9 +7,10 @@ interface DolphinAnimationProps {
 }
 
 export default function DolphinAnimation({ className = '' }: DolphinAnimationProps) {
-    const [currentFrame, setCurrentFrame] = useState(1)
+    const [currentFrame, setCurrentFrame] = useState(48)
     const directionRef = useRef<'forward' | 'backward'>('forward')
-    const frameCount = 119 // Frame1.png through Frame119.png
+    const minFrame = 48 // Start from frame 48
+    const maxFrame = 119 // End at frame 119
     const fps = 24
     const frameInterval = 1000 / fps // ~41.67ms per frame
     const intervalRef = useRef<NodeJS.Timeout | null>(null)
@@ -19,15 +20,15 @@ export default function DolphinAnimation({ className = '' }: DolphinAnimationPro
         intervalRef.current = setInterval(() => {
             setCurrentFrame((prev) => {
                 if (directionRef.current === 'forward') {
-                    if (prev >= frameCount) {
+                    if (prev >= maxFrame) {
                         directionRef.current = 'backward'
-                        return frameCount - 1
+                        return maxFrame - 1
                     }
                     return prev + 1
                 } else {
-                    if (prev <= 1) {
+                    if (prev <= minFrame) {
                         directionRef.current = 'forward'
-                        return 2
+                        return minFrame + 1
                     }
                     return prev - 1
                 }
@@ -40,7 +41,7 @@ export default function DolphinAnimation({ className = '' }: DolphinAnimationPro
                 clearInterval(intervalRef.current)
             }
         }
-    }, [frameCount, frameInterval])
+    }, [minFrame, maxFrame, frameInterval])
 
     const frameSrc = `/Photos/DolphinPhotos/Frame${currentFrame}.png`
 

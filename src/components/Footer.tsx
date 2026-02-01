@@ -48,14 +48,14 @@ export default function Footer() {
                     </div>
 
                 </div>
-                <div className="footer-scroll mt-[var(--spacing-10xl)]">
+                <div className="footer-scroll mt-[var(--spacing-4xl)]">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                         {duplicatedFrames.map((frame, index) => (
                             <img
                                 key={index}
                                 src={frame}
                                 alt={`Frame ${index + 1}`}
-                                style={{ width: '18px', height: '24px', flexShrink: 0 }}
+                                style={{ width: '20px', height: '28px', flexShrink: 0 }}
                             />
                         ))}
                     </div>
@@ -67,31 +67,34 @@ export default function Footer() {
     // Tablet (769px - 1024px)
     if (isTablet) {
         return (
-            <footer className="w-full py-[var(--spacing-4xl)] bg-[var(--darkblack)] overflow-hidden">
-                <div className="flex items-center justify-between px-[var(--spacing-4xl)] pt-[var(--spacing-lg)] pb-[var(--spacing-6xl)] mx-auto">
+            <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
+                <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-md)] pb-[var(--spacing-2xl)]">
+                    <div className="relative flex flex-col items-start justify-between gap-[var(--spacing-4xl)] mx-auto w-full">
+                        <div style={{ transform: 'scaleX(-1)' }}>
+                            <DolphinAnimation className="h-full max-w-[400px] px-[var(--spacing-lg)]" />
+                        </div>
+                        <div className="absolute bottom-[-40%] left-0 w-full z-10 flex flex-col items-start gap-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
+                            { /* <p className="text-[var(--white)] text-[32px] leading-[48px]">
 
-                    <div className="flex flex-col h-full items-start gap-[var(--spacing-2xl)]">
-                        <p className="text-[var(--white)] text-[40px] leading-[64px]">
-                            Connect with me!
-                        </p>
-                        <div className="flex items-start gap-[var(--spacing-lg)]">
-                            <Button text="Email" alternateText="Email me " onClick={handleEmailClick} inverted={true} />
-                            <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
-                            <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                                Connect with me!
+                            </p>*/}
+                            <div className="flex items-start gap-[var(--spacing-xl)]">
+                                <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
+                                <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
+                                <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                            </div>
                         </div>
                     </div>
-                    <div className="flex items-start justify-between]">
-                        <DolphinAnimation className="h-[250px] w-full" />
-                    </div>
+
                 </div>
-                <div className="footer-scroll">
+                <div className="footer-scroll mt-[var(--spacing-8xl)]">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                         {duplicatedFrames.map((frame, index) => (
                             <img
                                 key={index}
                                 src={frame}
                                 alt={`Frame ${index + 1}`}
-                                style={{ width: '28px', height: '32px', flexShrink: 0 }}
+                                style={{ width: '32px', height: '40px', flexShrink: 0 }}
                             />
                         ))}
                     </div>
@@ -103,31 +106,34 @@ export default function Footer() {
     // Desktop 1440px (1025px - 1440px)
     if (isDesktop1440px) {
         return (
-            <footer className="w-full py-[var(--spacing-5xl)] bg-[var(--darkblack)] overflow-hidden">
-                <div className="flex items-center justify-between px-[var(--spacing-6xl)] pt-[var(--spacing-xl)] pb-[var(--spacing-6xl)] mx-auto">
-                    <div className="flex flex-col h-[281px] items-start gap-[var(--spacing-2xl)]">
-                        <p className="text-[var(--white)] text-[48px] leading-[72px]">
-                            Connect with me!
-                        </p>
-                        <div className="flex items-start gap-[var(--spacing-xl)]">
-                            <Button text="Email" alternateText="Email me " onClick={handleEmailClick} inverted={true} />
-                            <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
-                            <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+            <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
+                <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-md)] pb-[var(--spacing-2xl)]">
+                    <div className="relative flex flex-col items-start justify-between gap-[var(--spacing-4xl)] mx-auto w-full">
+                        <div style={{ transform: 'scaleX(-1)' }}>
+                            <DolphinAnimation className="h-full max-w-[450px] px-[var(--spacing-lg)]" />
                         </div>
+                        <div className="absolute bottom-[-40%] left-0 w-full z-10 flex flex-col items-start gap-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
+                            { /* <p className="text-[var(--white)] text-[32px] leading-[48px]">
 
+                                Connect with me!
+                            </p>*/}
+                            <div className="flex items-start gap-[var(--spacing-xl)]">
+                                <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
+                                <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
+                                <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                            </div>
+                        </div>
                     </div>
-                    <div className="flex items-start justify-between">
-                        <DolphinAnimation className="h-[300px] w-full" />
-                    </div>
+
                 </div>
-                <div className="footer-scroll">
+                <div className="footer-scroll mt-[var(--spacing-10xl)]">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                         {duplicatedFrames.map((frame, index) => (
                             <img
                                 key={index}
                                 src={frame}
                                 alt={`Frame ${index + 1}`}
-                                style={{ width: '46px', height: '56px', flexShrink: 0 }}
+                                style={{ width: '38px', height: '48px', flexShrink: 0 }}
                             />
                         ))}
                     </div>
@@ -138,30 +144,34 @@ export default function Footer() {
 
     // Large Desktop (>1440px)
     return (
-        <footer className="w-full py-[var(--spacing-4xl)] bg-[var(--darkblack)] overflow-hidden ">
-            <div className="flex max-w-[1600px] items-center justify-between px-[var(--spacing-8xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-8xl)] mx-auto">
-                <div className="flex flex-col h-full gap-[var(--spacing-3xl)] items-start">
-                    <p className="text-[var(--white)] text-[64px] leading-[96px]">
-                        Connect with me!
-                    </p>
-                    <div className="flex items-start gap-[var(--spacing-2xl)]">
-                        <Button text="Email" alternateText="Email me " onClick={handleEmailClick} inverted={true} />
-                        <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
-                        <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+        <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
+            <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-md)] pb-[var(--spacing-2xl)]">
+                <div className="relative flex flex-col items-start justify-between gap-[var(--spacing-4xl)] mx-auto w-full max-w-[1600px]">
+                    <div style={{ transform: 'scaleX(-1)' }}>
+                        <DolphinAnimation className="h-full max-w-[500px] px-[var(--spacing-lg)]" />
+                    </div>
+                    <div className="absolute bottom-[-40%] left-0 w-full z-10 flex flex-col items-start gap-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
+                        { /* <p className="text-[var(--white)] text-[32px] leading-[48px]">
+
+                            Connect with me!
+                        </p>*/}
+                        <div className="flex items-start gap-[var(--spacing-xl)]">
+                            <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
+                            <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
+                            <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                        </div>
                     </div>
                 </div>
-                <div className="flex items-start justify-between]">
-                    <DolphinAnimation className="h-[350px] w-full " />
-                </div>
+
             </div>
-            <div className="footer-scroll">
+            <div className="footer-scroll mt-[var(--spacing-12xl)]">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                     {duplicatedFrames.map((frame, index) => (
                         <img
                             key={index}
                             src={frame}
                             alt={`Frame ${index + 1}`}
-                            style={{ width: '52px', height: '64px', flexShrink: 0 }}
+                            style={{ width: '48px', height: '64px', flexShrink: 0 }}
                         />
                     ))}
                 </div>
