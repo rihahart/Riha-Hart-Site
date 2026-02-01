@@ -29,10 +29,12 @@ export default function Footer() {
     if (isMobile) {
         return (
             <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
-                <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-2xl)]">
-                    <div className="flex flex-col items-start justify-between gap-[var(--spacing-4xl)] mx-auto">
-
-                        <div className="flex flex-col items-start gap-[var(--spacing-2xl)]">
+                <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-md)] pb-[var(--spacing-2xl)]">
+                    <div className="relative flex flex-col items-start justify-between gap-[var(--spacing-4xl)] mx-auto w-full">
+                        <div style={{ transform: 'scaleX(-1)' }}>
+                            <DolphinAnimation className="h-full max-w-[300px] px-[var(--spacing-lg)]" />
+                        </div>
+                        <div className="absolute bottom-[-70%] left-0 w-full z-10 flex flex-col items-start gap-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
                             <p className="text-[var(--white)] text-[32px] leading-[48px]">
 
                                 Connect with me!
@@ -43,20 +45,17 @@ export default function Footer() {
                                 <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
                             </div>
                         </div>
-
-                        <DolphinAnimation className="h-full max-w-[300px]" />
-
                     </div>
 
                 </div>
-                <div className="footer-scroll">
+                <div className="footer-scroll mt-[140px]">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                         {duplicatedFrames.map((frame, index) => (
                             <img
                                 key={index}
                                 src={frame}
                                 alt={`Frame ${index + 1}`}
-                                style={{ width: '38px', height: '46px', flexShrink: 0 }}
+                                style={{ width: '28px', height: '46px', flexShrink: 0 }}
                             />
                         ))}
                     </div>
@@ -92,7 +91,7 @@ export default function Footer() {
                                 key={index}
                                 src={frame}
                                 alt={`Frame ${index + 1}`}
-                                style={{ width: '40px', height: '48px', flexShrink: 0 }}
+                                style={{ width: '38px', height: '48px', flexShrink: 0 }}
                             />
                         ))}
                     </div>
@@ -128,7 +127,7 @@ export default function Footer() {
                                 key={index}
                                 src={frame}
                                 alt={`Frame ${index + 1}`}
-                                style={{ width: '48px', height: '56px', flexShrink: 0 }}
+                                style={{ width: '46px', height: '56px', flexShrink: 0 }}
                             />
                         ))}
                     </div>
@@ -162,7 +161,7 @@ export default function Footer() {
                             key={index}
                             src={frame}
                             alt={`Frame ${index + 1}`}
-                            style={{ width: '56px', height: '64px', flexShrink: 0 }}
+                            style={{ width: '52px', height: '64px', flexShrink: 0 }}
                         />
                     ))}
                 </div>
