@@ -34,11 +34,11 @@ export default function Footer() {
                         <div style={{ transform: 'scaleX(-1)' }}>
                             <DolphinAnimation className="h-full max-w-[300px] px-[var(--spacing-lg)]" />
                         </div>
-                        <div className="absolute bottom-[-70%] left-0 w-full z-10 flex flex-col items-start gap-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
-                            <p className="text-[var(--white)] text-[32px] leading-[48px]">
+                        <div className="absolute bottom-[-40%] left-0 w-full z-10 flex flex-col items-start gap-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
+                            { /* <p className="text-[var(--white)] text-[32px] leading-[48px]">
 
                                 Connect with me!
-                            </p>
+                            </p>*/}
                             <div className="flex items-start gap-[var(--spacing-xl)]">
                                 <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
                                 <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
@@ -48,14 +48,14 @@ export default function Footer() {
                     </div>
 
                 </div>
-                <div className="footer-scroll mt-[140px]">
+                <div className="footer-scroll mt-[var(--spacing-10xl)]">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.26775rem' }}>
                         {duplicatedFrames.map((frame, index) => (
                             <img
                                 key={index}
                                 src={frame}
                                 alt={`Frame ${index + 1}`}
-                                style={{ width: '28px', height: '46px', flexShrink: 0 }}
+                                style={{ width: '18px', height: '24px', flexShrink: 0 }}
                             />
                         ))}
                     </div>
@@ -91,7 +91,7 @@ export default function Footer() {
                                 key={index}
                                 src={frame}
                                 alt={`Frame ${index + 1}`}
-                                style={{ width: '38px', height: '48px', flexShrink: 0 }}
+                                style={{ width: '28px', height: '32px', flexShrink: 0 }}
                             />
                         ))}
                     </div>
