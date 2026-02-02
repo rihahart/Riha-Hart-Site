@@ -8,6 +8,7 @@ interface MenuButtonProps {
     type?: 'button' | 'submit' | 'reset'
     className?: string
     inverted?: boolean
+    isActive?: boolean
 }
 
 const MenuButton: React.FC<MenuButtonProps> = ({
@@ -16,11 +17,12 @@ const MenuButton: React.FC<MenuButtonProps> = ({
     onClick,
     type = 'button',
     className = '',
-    inverted = false
+    inverted = false,
+    isActive = false
 }) => {
     return (
         <button
-            className={`menu-button ${className}`}
+            className={`menu-button ${isActive ? 'active' : ''} ${className}`}
             role="button"
             onClick={(e) => {
                 e.preventDefault()

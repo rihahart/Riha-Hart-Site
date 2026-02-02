@@ -126,8 +126,13 @@ export default function Menu() {
     }
 
     const handleEverestFederal = () => {
-        handleClose()
-        // TODO: Add navigation when page is created
+        // If already on everest-federal-credit-union page, just close the menu
+        if (pathname === '/everest-federal-credit-union') {
+            handleClose()
+            return
+        }
+        // Start navigation immediately, menu stays open during navigation
+        router.push('/everest-federal-credit-union')
     }
 
     const handleOtherWork = () => {
@@ -186,18 +191,21 @@ export default function Menu() {
                                 alternateText="See my bio"
                                 onClick={handleGetToKnowMe}
                                 inverted={true}
+                                isActive={pathname === '/bio'}
                             />
                             <MenuButton
                                 text="JH Mural Project"
                                 alternateText="View project"
                                 onClick={handleJHMuralProject}
                                 inverted={true}
+                                isActive={pathname === '/jh-mural-project'}
                             />
                             <MenuButton
                                 text="Everest Federal Credit Union"
                                 alternateText="View project"
                                 onClick={handleEverestFederal}
                                 inverted={true}
+                                isActive={pathname === '/everest-federal-credit-union'}
                             />
                             <MenuButton
                                 text="Other work"
@@ -259,18 +267,21 @@ export default function Menu() {
                                     alternateText="See my bio"
                                     onClick={handleGetToKnowMe}
                                     inverted={true}
+                                    isActive={pathname === '/bio'}
                                 />
                                 <MenuButton
                                     text="JH Mural Project"
                                     alternateText="View project"
                                     onClick={handleJHMuralProject}
                                     inverted={true}
+                                    isActive={pathname === '/jh-mural-project'}
                                 />
                                 <MenuButton
                                     text="Everest Federal Credit Union"
                                     alternateText="View project"
                                     onClick={handleEverestFederal}
                                     inverted={true}
+                                    isActive={pathname === '/everest-federal-credit-union'}
                                 />
                                 <MenuButton
                                     text="Other work"
@@ -333,18 +344,21 @@ export default function Menu() {
                                     alternateText="See my bio"
                                     onClick={handleGetToKnowMe}
                                     inverted={true}
+                                    isActive={pathname === '/bio'}
                                 />
                                 <MenuButton
                                     text="JH Mural Project"
                                     alternateText="See my work"
                                     onClick={handleJHMuralProject}
                                     inverted={true}
+                                    isActive={pathname === '/jh-mural-project'}
                                 />
                                 <MenuButton
                                     text="Everest Federal Credit Union"
                                     alternateText="See my work"
                                     onClick={handleEverestFederal}
                                     inverted={true}
+                                    isActive={pathname === '/everest-federal-credit-union'}
                                 />
                                 <MenuButton
                                     text="Other work"
@@ -406,18 +420,21 @@ export default function Menu() {
                                 alternateText="See my bio"
                                 onClick={handleGetToKnowMe}
                                 inverted={true}
+                                isActive={pathname === '/bio'}
                             />
                             <MenuButton
                                 text="JH Mural Project"
                                 alternateText="View project"
                                 onClick={handleJHMuralProject}
                                 inverted={true}
+                                isActive={pathname === '/jh-mural-project'}
                             />
                             <MenuButton
                                 text="Everest Federal Credit Union"
                                 alternateText="View project"
                                 onClick={handleEverestFederal}
                                 inverted={true}
+                                isActive={pathname === '/everest-federal-credit-union'}
                             />
                             <MenuButton
                                 text="Other work"
