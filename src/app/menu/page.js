@@ -52,15 +52,17 @@ export default function MenuPage() {
   }
 
   const handleGetToKnowMe = () => {
-    handleClose()
+    setIsAnimatingOut(true)
     setTimeout(() => {
       router.push('/bio')
     }, isMobile ? 640 : 1000)
   }
 
   const handleJHMuralProject = () => {
-    handleClose()
-    // TODO: Add navigation when page is created
+    setIsAnimatingOut(true)
+    setTimeout(() => {
+      router.push('/jh-mural-project')
+    }, isMobile ? 640 : 1000)
   }
 
   const handleEverestFederal = () => {

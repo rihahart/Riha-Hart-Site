@@ -22,7 +22,11 @@ const MenuButton: React.FC<MenuButtonProps> = ({
         <button
             className={`menu-button ${className}`}
             role="button"
-            onClick={onClick}
+            onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                onClick?.()
+            }}
             type={type}
         >
             <span className="text">{text}</span>
