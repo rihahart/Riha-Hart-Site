@@ -46,15 +46,18 @@ export default function JumpingAnimation({ className = '' }: JumpingAnimationPro
     const frameSrc = `/Photos/Jumping/Jumping${currentFrame}.png`
 
     return (
-        <div className={className}>
+        <div className={className} style={{ overflow: 'hidden', position: 'relative' }}>
             <img
                 src={frameSrc}
                 alt="Jumping animation"
                 style={{
-                    width: '100%',
+                    width: '140%',
                     height: '100%',
                     objectFit: 'contain',
-                    display: 'block'
+                    display: 'block',
+                    objectPosition: 'center',
+                    marginLeft: '-20%',
+                    marginRight: '-20%'
                 }}
             />
         </div>

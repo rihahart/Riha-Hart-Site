@@ -76,7 +76,7 @@ export default function MenuPage() {
   // Mobile (≤768px)
   if (isMobile) {
     return (
-      <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] ${isAnimatingOut ? 'animate-slideOutMenuMobile' : 'animate-slideInMenuMobile'
+      <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenuMobile' : 'animate-slideInMenuMobile'
         }`}>
         <div><div className='flex items-center justify-between py-[var(--spacing-xl)] px-[var(--spacing-xl)]'>
           <img
@@ -103,7 +103,7 @@ export default function MenuPage() {
           </button>
         </div></div>
         <div className="flex items-start justify-center h-[calc(100vh-120px)] ">
-          <div className="flex flex-col items-start px-[var(--spacing-lg)] py-[var(--spacing-lg)] gap-[var(--spacing-6xl)] w-full">
+          <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-8xl)] gap-[var(--spacing-md)] w-full">
             <div className="flex flex-col items-center gap-[var(--spacing-xl)] w-full">
               <MenuButton
                 text="Get to know me"
@@ -131,8 +131,8 @@ export default function MenuPage() {
               />
             </div>
             <div className="relative w-full">
-              <JumpingAnimation className="h-full max-w-[300px] px-[var(--spacing-lg)]" />
-              <div className="absolute bottom-[-40%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
+              <JumpingAnimation className="h-full max-w-[320px] px-[var(--spacing-lg)]" />
+              <div className="absolute bottom-[-30%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
                 <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
                 <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
                 <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
@@ -147,7 +147,7 @@ export default function MenuPage() {
   // Tablet (769px - 1024px)
   if (isTablet) {
     return (
-      <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
+      <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
         }`}>
         <div className="max-w-[900px] mx-auto">
           <div><div className='flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-6xl)]'>
@@ -175,7 +175,7 @@ export default function MenuPage() {
             </button>
           </div></div>
           <div className="flex items-start justify-center py-[var(--spacing-2xl)] px-[var(--spacing-6xl)] h-[calc(100vh-140px)]">
-            <div className="flex flex-col items-start px-[var(--spacing-lg)] gap-[var(--spacing-6xl)] w-full">
+            <div className="flex flex-col items-start px-[var(--spacing-lg)] pb-[var(--spacing-10xl)] gap-[var(--spacing-md)] w-full">
               <div className="flex flex-col items-center gap-[var(--spacing-3xl)] w-full">
                 <MenuButton
                   text="Get to know me"
@@ -204,7 +204,7 @@ export default function MenuPage() {
               </div>
               <div className="relative w-full">
                 <JumpingAnimation className="h-full max-w-[400px] px-[var(--spacing-lg)]" />
-                <div className="absolute bottom-[-40%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
+                <div className="absolute bottom-[-30%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
                   <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
                   <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
                   <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
@@ -220,7 +220,7 @@ export default function MenuPage() {
   // Desktop 1440px (1025px - 1440px)
   if (isDesktop1440px) {
     return (
-      <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
+      <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
         }`}>
         <div className="max-w-[1200px] mx-auto">
           <div><div className='flex items-center justify-between py-[var(--spacing-4xl)] px-[var(--spacing-8xl)]'>
@@ -248,8 +248,8 @@ export default function MenuPage() {
             </button>
           </div></div>
           <div className="flex items-start justify-center h-[calc(100vh-160px)]">
-            <div className="flex flex-col items-start py-[var(--spacing-2xl)] px-[var(--spacing-8xl)] w-full gap-[var(--spacing-6xl)]">
-              <div className="flex flex-col items-center gap-[var(--spacing-3xl)] w-full">
+            <div className="flex flex-col items-start pt-[var(--spacing-2xl)] pb-[var(--spacing-12xl)] px-[var(--spacing-8xl)] w-full gap-[var(--spacing-sm)]">
+              <div className="flex flex-col items-center gap-[var(--spacing-2xl)] w-full">
                 <MenuButton
                   text="Get to know me"
                   alternateText="See my bio"
@@ -276,8 +276,8 @@ export default function MenuPage() {
                 />
               </div>
               <div className="relative w-full">
-                <JumpingAnimation className="h-full max-w-[450px] px-[var(--spacing-lg)]" />
-                <div className="absolute bottom-[-40%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
+                <JumpingAnimation className="h-full max-w-[400px] px-[var(--spacing-lg)]" />
+                <div className="absolute bottom-[-20%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
                   <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
                   <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
                   <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
@@ -292,7 +292,7 @@ export default function MenuPage() {
 
   // Large Desktop (>1440px)
   return (
-    <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
+    <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
       }`}>
       <div className="max-w-[1400px] mx-auto ">
         <div> <div className='flex items-center justify-between py-[var(--spacing-6xl)] px-[var(--spacing-12xl)]'>
@@ -320,7 +320,7 @@ export default function MenuPage() {
           </button>
         </div></div>
         <div className="flex items-start justify-center  h-[calc(100vh-180px)]">
-          <div className="flex flex-col items-start py-[var(--spacing-2xl)] px-[var(--spacing-12xl)] w-full h-full gap-[var(--spacing-6xl)]">
+          <div className="flex flex-col items-start pt-[var(--spacing-2xl)] pb-[var(--spacing-12xl)] px-[var(--spacing-12xl)] w-full h-full gap-[var(--spacing-md)]">
             <div className="flex flex-col items-center gap-[var(--spacing-3xl)] w-full">
               <MenuButton
                 text="Get to know me"
@@ -348,8 +348,8 @@ export default function MenuPage() {
               />
             </div>
             <div className="relative w-full">
-              <JumpingAnimation className="h-full max-w-[500px] px-[var(--spacing-lg)]" />
-              <div className="absolute bottom-[-40%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
+              <JumpingAnimation className="h-full max-w-[450px] px-[var(--spacing-lg)]" />
+              <div className="absolute bottom-[-20%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
                 <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
                 <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
                 <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
