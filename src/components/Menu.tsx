@@ -106,11 +106,21 @@ export default function Menu() {
     }
 
     const handleGetToKnowMe = () => {
+        // If already on bio page, just close the menu
+        if (pathname === '/bio') {
+            handleClose()
+            return
+        }
         // Start navigation immediately, menu stays open during navigation
         router.push('/bio')
     }
 
     const handleJHMuralProject = () => {
+        // If already on jh-mural-project page, just close the menu
+        if (pathname === '/jh-mural-project') {
+            handleClose()
+            return
+        }
         // Start navigation immediately, menu stays open during navigation
         router.push('/jh-mural-project')
     }
@@ -126,6 +136,11 @@ export default function Menu() {
     }
 
     const handleLogoClick = () => {
+        // If already on homepage, just close the menu
+        if (pathname === '/') {
+            handleClose()
+            return
+        }
         // Start navigation immediately, menu stays open during navigation
         router.push('/')
     }
