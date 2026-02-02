@@ -125,6 +125,11 @@ export default function Menu() {
         // TODO: Add navigation when page is created
     }
 
+    const handleLogoClick = () => {
+        // Start navigation immediately, menu stays open during navigation
+        router.push('/')
+    }
+
     // Don't render if menu is not open
     if (!isMenuOpen) return null
 
@@ -133,16 +138,18 @@ export default function Menu() {
         return (
             <div className={`fixed inset-0 bg-[var(--darkblack)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenuMobile' : 'animate-slideInMenuMobile'}`}>
                 <div><div className='flex items-center justify-between py-[var(--spacing-xl)] px-[var(--spacing-xl)]'>
-                    <img
-                        src="/Icons/Logo/RihaHartLogo.svg"
-                        alt="Riha Hart Logo"
-                        style={{
-                            height: '40px',
-                            width: 'auto',
-                            objectFit: 'contain'
-                        }}
-                        loading="eager"
-                    />
+                    <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
+                        <img
+                            src="/Icons/Logo/RihaHartLogo.svg"
+                            alt="Riha Hart Logo"
+                            style={{
+                                height: '40px',
+                                width: 'auto',
+                                objectFit: 'contain'
+                            }}
+                            loading="eager"
+                        />
+                    </button>
                     <button
                         onClick={handleClose}
                         className="cursor-pointer"
@@ -204,16 +211,18 @@ export default function Menu() {
             <div className={`fixed inset-0 bg-[var(--darkblack)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
                 <div className="max-w-[900px] mx-auto">
                     <div><div className='flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-6xl)]'>
-                        <img
-                            src="/Icons/Logo/RihaHartLogo.svg"
-                            alt="Riha Hart Logo"
-                            style={{
-                                height: '50px',
-                                width: 'auto',
-                                objectFit: 'contain'
-                            }}
-                            loading="eager"
-                        />
+                        <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
+                            <img
+                                src="/Icons/Logo/RihaHartLogo.svg"
+                                alt="Riha Hart Logo"
+                                style={{
+                                    height: '50px',
+                                    width: 'auto',
+                                    objectFit: 'contain'
+                                }}
+                                loading="eager"
+                            />
+                        </button>
                         <button
                             onClick={handleClose}
                             className="cursor-pointer"
@@ -276,16 +285,18 @@ export default function Menu() {
             <div className={`fixed inset-0 bg-[var(--darkblack)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
                 <div className="max-w-[1200px] mx-auto">
                     <div><div className='flex items-center justify-between py-[var(--spacing-4xl)] px-[var(--spacing-8xl)]'>
-                        <img
-                            src="/Icons/Logo/RihaHartLogo.svg"
-                            alt="Riha Hart Logo"
-                            style={{
-                                height: '60px',
-                                width: 'auto',
-                                objectFit: 'contain'
-                            }}
-                            loading="eager"
-                        />
+                        <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
+                            <img
+                                src="/Icons/Logo/RihaHartLogo.svg"
+                                alt="Riha Hart Logo"
+                                style={{
+                                    height: '60px',
+                                    width: 'auto',
+                                    objectFit: 'contain'
+                                }}
+                                loading="eager"
+                            />
+                        </button>
                         <button
                             onClick={handleClose}
                             className="cursor-pointer"
@@ -347,16 +358,18 @@ export default function Menu() {
         <div className={`fixed inset-0 bg-[var(--darkblack)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
             <div className="max-w-[1400px] mx-auto ">
                 <div> <div className='flex items-center justify-between py-[var(--spacing-6xl)] px-[var(--spacing-12xl)]'>
-                    <img
-                        src="/Icons/Logo/RihaHartLogo.svg"
-                        alt="Riha Hart Logo"
-                        style={{
-                            height: '70px',
-                            width: 'auto',
-                            objectFit: 'contain'
-                        }}
-                        loading="eager"
-                    />
+                    <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
+                        <img
+                            src="/Icons/Logo/RihaHartLogo.svg"
+                            alt="Riha Hart Logo"
+                            style={{
+                                height: '70px',
+                                width: 'auto',
+                                objectFit: 'contain'
+                            }}
+                            loading="eager"
+                        />
+                    </button>
                     <button
                         onClick={handleClose}
                         className="cursor-pointer"
