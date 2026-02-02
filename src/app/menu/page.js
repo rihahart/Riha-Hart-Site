@@ -2,8 +2,20 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import useMobileDetection from '@/_utilities/useMobileDetection'
+import MenuButton from '@/components/MenuButton'
+import Button from '@/components/Button'
+import JumpingAnimation from '@/components/JumpingAnimation'
 
 export default function MenuPage() {
+  const handleEmailClick = () => {
+    window.open('mailto:riha@rihahart.com', '_blank')
+  }
+  const handleLinkedInClick = () => {
+    window.open('https://www.linkedin.com/in/riha-hart/', '_blank')
+  }
+  const handleInstagramClick = () => {
+    window.open('https://www.instagram.com/riha_hart/', '_blank')
+  }
   const router = useRouter()
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const [isAnimatingOut, setIsAnimatingOut] = useState(false)
@@ -39,6 +51,28 @@ export default function MenuPage() {
     handleClose()
   }
 
+  const handleGetToKnowMe = () => {
+    handleClose()
+    setTimeout(() => {
+      router.push('/bio')
+    }, isMobile ? 640 : 1000)
+  }
+
+  const handleJHMuralProject = () => {
+    handleClose()
+    // TODO: Add navigation when page is created
+  }
+
+  const handleEverestFederal = () => {
+    handleClose()
+    // TODO: Add navigation when page is created
+  }
+
+  const handleOtherWork = () => {
+    handleClose()
+    // TODO: Add navigation when page is created
+  }
+
   // Mobile (≤768px)
   if (isMobile) {
     return (
@@ -68,8 +102,43 @@ export default function MenuPage() {
             />
           </button>
         </div></div>
-        <div className="flex items-center justify-center h-[calc(100vh-120px)]">
-          <p className="text-[var(--white)] text-2xl">Coming Soon</p>
+        <div className="flex items-start justify-center h-[calc(100vh-120px)] ">
+          <div className="flex flex-col items-start px-[var(--spacing-lg)] py-[var(--spacing-lg)] gap-[var(--spacing-6xl)] w-full">
+            <div className="flex flex-col items-center gap-[var(--spacing-xl)] w-full">
+              <MenuButton
+                text="Get to know me"
+                alternateText="See my bio"
+                onClick={handleGetToKnowMe}
+                inverted={true}
+              />
+              <MenuButton
+                text="JH Mural Project"
+                alternateText="View project"
+                onClick={handleJHMuralProject}
+                inverted={true}
+              />
+              <MenuButton
+                text="Everest Federal Credit Union"
+                alternateText="View project"
+                onClick={handleEverestFederal}
+                inverted={true}
+              />
+              <MenuButton
+                text="Other work"
+                alternateText="View my work"
+                onClick={handleOtherWork}
+                inverted={true}
+              />
+            </div>
+            <div className="relative w-full">
+              <JumpingAnimation className="h-full max-w-[300px] px-[var(--spacing-lg)]" />
+              <div className="absolute bottom-[-40%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
+                <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
+                <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
+                <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -80,32 +149,69 @@ export default function MenuPage() {
     return (
       <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
         }`}>
-        <div><div className='flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-6xl)]'>
-          <img
-            src="/Icons/Logo/RihaHartLogo.svg"
-            alt="Riha Hart Logo"
-            style={{
-              height: '50px',
-              width: 'auto',
-              objectFit: 'contain'
-            }}
-            loading="eager"
-          />
-          <button
-            onClick={handleMenuClick}
-            className="cursor-pointer"
-            aria-label="Close Menu"
-            style={{ transform: 'translateY(20px)' }}
-          >
+        <div className="max-w-[900px] mx-auto">
+          <div><div className='flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-6xl)]'>
             <img
-              src="/Icons/Exit/Exit.svg"
-              alt="Close Menu"
-              style={{ height: '20px', width: 'auto' }}
+              src="/Icons/Logo/RihaHartLogo.svg"
+              alt="Riha Hart Logo"
+              style={{
+                height: '50px',
+                width: 'auto',
+                objectFit: 'contain'
+              }}
+              loading="eager"
             />
-          </button>
-        </div></div>
-        <div className="flex items-center justify-center h-[calc(100vh-140px)]">
-          <p className="text-[var(--white)] text-3xl">Coming Soon</p>
+            <button
+              onClick={handleMenuClick}
+              className="cursor-pointer"
+              aria-label="Close Menu"
+              style={{ transform: 'translateY(20px)' }}
+            >
+              <img
+                src="/Icons/Exit/Exit.svg"
+                alt="Close Menu"
+                style={{ height: '20px', width: 'auto' }}
+              />
+            </button>
+          </div></div>
+          <div className="flex items-start justify-center py-[var(--spacing-2xl)] px-[var(--spacing-6xl)] h-[calc(100vh-140px)]">
+            <div className="flex flex-col items-start px-[var(--spacing-lg)] gap-[var(--spacing-6xl)] w-full">
+              <div className="flex flex-col items-center gap-[var(--spacing-3xl)] w-full">
+                <MenuButton
+                  text="Get to know me"
+                  alternateText="See my bio"
+                  onClick={handleGetToKnowMe}
+                  inverted={true}
+                />
+                <MenuButton
+                  text="JH Mural Project"
+                  alternateText="View project"
+                  onClick={handleJHMuralProject}
+                  inverted={true}
+                />
+                <MenuButton
+                  text="Everest Federal Credit Union"
+                  alternateText="View project"
+                  onClick={handleEverestFederal}
+                  inverted={true}
+                />
+                <MenuButton
+                  text="Other work"
+                  alternateText="View my work"
+                  onClick={handleOtherWork}
+                  inverted={true}
+                />
+              </div>
+              <div className="relative w-full">
+                <JumpingAnimation className="h-full max-w-[400px] px-[var(--spacing-lg)]" />
+                <div className="absolute bottom-[-40%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
+                  <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
+                  <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
+                  <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -116,12 +222,85 @@ export default function MenuPage() {
     return (
       <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
         }`}>
-        <div><div className='flex items-center justify-between py-[var(--spacing-4xl)] px-[var(--spacing-8xl)]'>
+        <div className="max-w-[1200px] mx-auto">
+          <div><div className='flex items-center justify-between py-[var(--spacing-4xl)] px-[var(--spacing-8xl)]'>
+            <img
+              src="/Icons/Logo/RihaHartLogo.svg"
+              alt="Riha Hart Logo"
+              style={{
+                height: '60px',
+                width: 'auto',
+                objectFit: 'contain'
+              }}
+              loading="eager"
+            />
+            <button
+              onClick={handleMenuClick}
+              className="cursor-pointer"
+              aria-label="Close Menu"
+              style={{ transform: 'translateY(20px)' }}
+            >
+              <img
+                src="/Icons/Exit/Exit.svg"
+                alt="Close Menu"
+                style={{ height: '24px', width: 'auto' }}
+              />
+            </button>
+          </div></div>
+          <div className="flex items-start justify-center h-[calc(100vh-160px)]">
+            <div className="flex flex-col items-start py-[var(--spacing-2xl)] px-[var(--spacing-8xl)] w-full gap-[var(--spacing-6xl)]">
+              <div className="flex flex-col items-center gap-[var(--spacing-3xl)] w-full">
+                <MenuButton
+                  text="Get to know me"
+                  alternateText="See my bio"
+                  onClick={handleGetToKnowMe}
+                  inverted={true}
+                />
+                <MenuButton
+                  text="JH Mural Project"
+                  alternateText="See my work"
+                  onClick={handleJHMuralProject}
+                  inverted={true}
+                />
+                <MenuButton
+                  text="Everest Federal Credit Union"
+                  alternateText="See my work"
+                  onClick={handleEverestFederal}
+                  inverted={true}
+                />
+                <MenuButton
+                  text="Other work"
+                  alternateText="See my work"
+                  onClick={handleOtherWork}
+                  inverted={true}
+                />
+              </div>
+              <div className="relative w-full">
+                <JumpingAnimation className="h-full max-w-[450px] px-[var(--spacing-lg)]" />
+                <div className="absolute bottom-[-40%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
+                  <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
+                  <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
+                  <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // Large Desktop (>1440px)
+  return (
+    <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
+      }`}>
+      <div className="max-w-[1400px] mx-auto ">
+        <div> <div className='flex items-center justify-between py-[var(--spacing-6xl)] px-[var(--spacing-12xl)]'>
           <img
             src="/Icons/Logo/RihaHartLogo.svg"
             alt="Riha Hart Logo"
             style={{
-              height: '60px',
+              height: '70px',
               width: 'auto',
               objectFit: 'contain'
             }}
@@ -136,47 +315,48 @@ export default function MenuPage() {
             <img
               src="/Icons/Exit/Exit.svg"
               alt="Close Menu"
-              style={{ height: '24px', width: 'auto' }}
+              style={{ height: '34px', width: 'auto' }}
             />
           </button>
         </div></div>
-        <div className="flex items-center justify-center h-[calc(100vh-160px)]">
-          <p className="text-[var(--white)] text-4xl">Coming Soon</p>
+        <div className="flex items-start justify-center  h-[calc(100vh-180px)]">
+          <div className="flex flex-col items-start py-[var(--spacing-2xl)] px-[var(--spacing-12xl)] w-full h-full gap-[var(--spacing-6xl)]">
+            <div className="flex flex-col items-center gap-[var(--spacing-3xl)] w-full">
+              <MenuButton
+                text="Get to know me"
+                alternateText="See my bio"
+                onClick={handleGetToKnowMe}
+                inverted={true}
+              />
+              <MenuButton
+                text="JH Mural Project"
+                alternateText="View project"
+                onClick={handleJHMuralProject}
+                inverted={true}
+              />
+              <MenuButton
+                text="Everest Federal Credit Union"
+                alternateText="View project"
+                onClick={handleEverestFederal}
+                inverted={true}
+              />
+              <MenuButton
+                text="Other work"
+                alternateText="View work"
+                onClick={handleOtherWork}
+                inverted={true}
+              />
+            </div>
+            <div className="relative w-full">
+              <JumpingAnimation className="h-full max-w-[500px] px-[var(--spacing-lg)]" />
+              <div className="absolute bottom-[-40%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
+                <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
+                <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
+                <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    )
-  }
-
-  // Large Desktop (>1440px)
-  return (
-    <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
-      }`}>
-      <div> <div className='flex items-center justify-between py-[var(--spacing-6xl)] px-[var(--spacing-12xl)]'>
-        <img
-          src="/Icons/Logo/RihaHartLogo.svg"
-          alt="Riha Hart Logo"
-          style={{
-            height: '70px',
-            width: 'auto',
-            objectFit: 'contain'
-          }}
-          loading="eager"
-        />
-        <button
-          onClick={handleMenuClick}
-          className="cursor-pointer"
-          aria-label="Close Menu"
-          style={{ transform: 'translateY(20px)' }}
-        >
-          <img
-            src="/Icons/Exit/Exit.svg"
-            alt="Close Menu"
-            style={{ height: '34px', width: 'auto' }}
-          />
-        </button>
-      </div></div>
-      <div className="flex items-center justify-center h-[calc(100vh-180px)]">
-        <p className="text-[var(--white)] text-5xl">Coming Soon</p>
       </div>
     </div>
   )
