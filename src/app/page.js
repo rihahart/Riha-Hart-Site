@@ -40,7 +40,7 @@ export default function Home() {
               src="/Photos/Homepage/PhotoWebsiteVideoMobile.mp4"
               autoPlay
               muted
-              playsInli
+              playsInline
               loop
               width="1000"
               height="1260"

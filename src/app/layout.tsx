@@ -1,7 +1,9 @@
 import '../styles/global.css'
 import Navigation from '@/components/Navigation'
 import { VideoProvider } from '@/contexts/VideoContext'
+import { MenuProvider } from '@/contexts/MenuContext'
 import Footer from '@/components/Footer'
+import Menu from '@/components/Menu'
 import { ReactNode } from 'react'
 
 export const metadata = {
@@ -17,11 +19,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body style={{ backgroundColor: 'var(--black)', position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <VideoProvider>
-          <Navigation />
-          <main style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', marginTop: 'var(--nav-h)' }}>
-            {children}
-          </main>
-          <Footer />
+          <MenuProvider>
+            <Navigation />
+            <main style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', marginTop: 'var(--nav-h)' }}>
+              {children}
+            </main>
+            <Footer />
+            <Menu />
+          </MenuProvider>
         </VideoProvider>
       </body>
     </html>

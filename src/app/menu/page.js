@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import useMobileDetection from '@/_utilities/useMobileDetection'
 import MenuButton from '@/components/MenuButton'
@@ -19,6 +19,23 @@ export default function MenuPage() {
   const router = useRouter()
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const [isAnimatingOut, setIsAnimatingOut] = useState(false)
+  const scrollYRef = useRef(0)
+
+  // Prevent body scroll while menu is open
+  useEffect(() => {
+    // Store current scroll position
+    scrollYRef.current = window.scrollY
+
+    // Simply prevent scrolling without changing body position
+    // The menu overlay will cover the content
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      // Restore overflow
+      document.body.style.overflow = originalOverflow || ''
+    }
+  }, [])
 
   // Close menu on escape key
   useEffect(() => {
@@ -32,11 +49,8 @@ export default function MenuPage() {
     }
 
     document.addEventListener('keydown', handleEscape)
-    document.body.style.overflow = 'hidden'
-
     return () => {
       document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'unset'
     }
   }, [router, isMobile])
 
@@ -78,7 +92,7 @@ export default function MenuPage() {
   // Mobile (≤768px)
   if (isMobile) {
     return (
-      <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenuMobile' : 'animate-slideInMenuMobile'
+      <div className={`fixed inset-0 bg-[var(--darkblack)] z-[201] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenuMobile' : 'animate-slideInMenuMobile'
         }`}>
         <div><div className='flex items-center justify-between py-[var(--spacing-xl)] px-[var(--spacing-xl)]'>
           <img
@@ -149,7 +163,7 @@ export default function MenuPage() {
   // Tablet (769px - 1024px)
   if (isTablet) {
     return (
-      <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
+      <div className={`fixed inset-0 bg-[var(--darkblack)] z-[201] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
         }`}>
         <div className="max-w-[900px] mx-auto">
           <div><div className='flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-6xl)]'>
@@ -222,7 +236,7 @@ export default function MenuPage() {
   // Desktop 1440px (1025px - 1440px)
   if (isDesktop1440px) {
     return (
-      <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
+      <div className={`fixed inset-0 bg-[var(--darkblack)] z-[201] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
         }`}>
         <div className="max-w-[1200px] mx-auto">
           <div><div className='flex items-center justify-between py-[var(--spacing-4xl)] px-[var(--spacing-8xl)]'>
@@ -294,7 +308,7 @@ export default function MenuPage() {
 
   // Large Desktop (>1440px)
   return (
-    <div className={`fixed top-0 left-0 w-full h-full bg-[var(--darkblack)] z-[201] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
+    <div className={`fixed inset-0 bg-[var(--darkblack)] z-[201] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'
       }`}>
       <div className="max-w-[1400px] mx-auto ">
         <div> <div className='flex items-center justify-between py-[var(--spacing-6xl)] px-[var(--spacing-12xl)]'>

@@ -3,16 +3,18 @@
 import { useRouter } from "next/navigation"
 import { useRef, useEffect, useLayoutEffect, useState } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
+import { useMenu } from "@/contexts/MenuContext"
 
 const Navigation = () => {
   const router = useRouter()
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const [isScrolled, setIsScrolled] = useState(false)
+  const { openMenu } = useMenu()
 
   const logoRef = useRef<HTMLImageElement>(null)
   const navRef = useRef<HTMLElement>(null)
 
-  const handleMenuClick = () => router.push("/menu")
+  const handleMenuClick = () => openMenu()
   const handleLogoClick = () => router.push("/")
 
   // Force GIF reload on mount
