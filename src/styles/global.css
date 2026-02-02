@@ -331,7 +331,7 @@ html::-webkit-scrollbar {
 
 .menu-button:hover:after {
   transform-origin: bottom center;
-  transform: skewY(4.3deg) scaleY(2);
+  transform: skewY(2.3deg) scaleY(2);
 }
 
 .menu-button:hover span:first-child {
