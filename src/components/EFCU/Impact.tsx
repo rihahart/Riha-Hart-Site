@@ -72,7 +72,7 @@ export default function Impact() {
     if (isDesktop1440px) {
         return (
             <div className="w-full flex justify-end">
-                <div className="flex flex-col items-start justify-center w-[70%] gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)]">
+                <div className="flex flex-col items-start justify-center w-[70%] gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)] px-[var(--spacing-5xl)]">
                     <div className="inline-block">
                         <div className="h-[12px] bg-[var(--red)] w-full mb-[var(--spacing-2xl)]"></div>
                         <h2 className="h2 text-[var(--lightblack)] inline-block">
@@ -99,7 +99,7 @@ export default function Impact() {
     // Large Desktop (>1440px)
     return (
         <div className="w-full flex justify-end">
-            <div className="flex flex-col items-start justify-center w-[70%] gap-[var(--spacing-3xl)] py-[var(--spacing-3xl)]">
+            <div className="flex flex-col items-start justify-center w-[70%] gap-[var(--spacing-3xl)] py-[var(--spacing-3xl) px-[var(--spacing-5xl)]">
                 <div className="inline-block">
                     <div className="h-[16px] bg-[var(--red)] w-full mb-[var(--spacing-3xl)]"></div>
                     <h2 className="h2 text-[var(--lightblack)] inline-block">
