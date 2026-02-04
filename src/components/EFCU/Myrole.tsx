@@ -13,9 +13,6 @@ export default function Myrole() {
             <div className="w-full flex justify-center align-center">
                 <div className="flex flex-col items-center justify-center gap-[var(--spacing-2xl)] py-[var(--spacing-xl)] ">
                     <div className="flex flex-col items-start justify-center gap-[var(--spacing-xl)]">
-                        <h2 className="h2 text-[var(--lightblack)]">
-                            {myRole.h2}
-                        </h2>
                         <p className="body text-[var(--lightblack)]">
                             {myRole.body1}
                         </p>
@@ -27,6 +24,9 @@ export default function Myrole() {
                         </p>
                         <p className="body text-[var(--lightblack)]">
                             {myRole.body4}
+                        </p>
+                        <p className="body text-[var(--lightblack)]">
+                            {myRole.body5}
                         </p>
                     </div>
                     <div className="flex flex-col items-start justify-center gap-[var(--spacing-xl)] h3 text-[var(--lightblack)]">
@@ -60,6 +60,9 @@ export default function Myrole() {
                         <p className="body text-[var(--lightblack)]">
                             {myRole.body4}
                         </p>
+                        <p className="body text-[var(--lightblack)]">
+                            {myRole.body5}
+                        </p>
                     </div>
                     <div className="flex flex-col items-start justify-center gap-[var(--spacing-2xl)] h3 text-[var(--lightblack)]">
                         <div className="h-[12px] bg-[var(--red)] w-full"></div>
@@ -90,7 +93,9 @@ export default function Myrole() {
                         <p className="body text-[var(--lightblack)]">
                             {myRole.body4}
                         </p>
-
+                        <p className="body text-[var(--lightblack)]">
+                            {myRole.body5}
+                        </p>
                     </div>
                     <div className="flex flex-col items-start justify-center gap-[var(--spacing-2xl)] h3 text-[var(--lightblack)]">
                         <div className="h-[12px] bg-[var(--red)] w-full"></div>
@@ -121,6 +126,9 @@ export default function Myrole() {
                     </p>
                     <p className="body text-[var(--lightblack)]">
                         {myRole.body4}
+                    </p>
+                    <p className="body text-[var(--lightblack)]">
+                        {myRole.body5}
                     </p>
                 </div>
                 <div className="flex flex-col items-start justify-center gap-[var(--spacing-2xl)] h3 text-[var(--lightblack)]">

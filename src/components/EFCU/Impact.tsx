@@ -44,7 +44,7 @@ export default function Impact() {
     if (isTablet) {
         return (
             <div className="flex w-full align-center justify-center">
-                <div className="flex flex-col items-start justify-center gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)]">
+                <div className="flex flex-col items-start justify-center gap-[var(--spacing-2xl)] py-[var(--spacing-2xl) px-[var(--spacing-2xl)]">
                     <div className="inline-block">
                         <div className="h-[10px] bg-[var(--red)] w-full mb-[var(--spacing-2xl)]"></div>
                         <h2 className="h2 text-[var(--lightblack)] inline-block">
