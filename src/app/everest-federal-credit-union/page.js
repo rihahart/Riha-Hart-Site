@@ -2,6 +2,7 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
+import Impact from "@/components/EFCU/Impact"
 
 export default function EverestFederalCreditUnion() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
@@ -20,6 +21,7 @@ export default function EverestFederalCreditUnion() {
             className="w-full h-full object-contain"
           />
         </div>
+        <Impact />
       </div>
     )
   }
@@ -38,6 +40,7 @@ export default function EverestFederalCreditUnion() {
             className="w-full h-full object-contain"
           />
         </div>
+        <Impact />
       </div>
     )
   }
@@ -56,6 +59,7 @@ export default function EverestFederalCreditUnion() {
             className="w-full h-full object-contain"
           />
         </div>
+        <Impact />
       </div>
     )
   }
@@ -73,6 +77,7 @@ export default function EverestFederalCreditUnion() {
           className="w-full h-full object-contain"
         />
       </div>
+      <Impact />
     </div>
   )
 }

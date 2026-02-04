@@ -188,8 +188,8 @@ html::-webkit-scrollbar {
   content: "";
   position: absolute;
   bottom: -50%;
-  left: 0;
-  width: 100%;
+  left: -1px;
+  width: calc(100% + 2px);
   height: 100%;
   background-color: var(--red);
   transform-origin: bottom center;
