@@ -11,7 +11,7 @@ export default function EverestScroll() {
         return (
             <div className="w-screen bg-[#1C4483] py-[var(--spacing-m)] overflow-hidden" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw' }}>
                 <div className="footer-scroll">
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', animation: 'scrollFrames 10000ms linear infinite', willChange: 'transform', whiteSpace: 'nowrap', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', animation: 'scrollFrames 5000ms linear infinite', willChange: 'transform', whiteSpace: 'nowrap', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
                         {Array.from({ length: 20 }, (_, i) => (
                             <React.Fragment key={i}>
                                 <img
@@ -43,7 +43,7 @@ export default function EverestScroll() {
         return (
             <div className="w-screen bg-[#1C4483] py-[var(--spacing-lg)] overflow-hidden" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw' }}>
                 <div className="footer-scroll">
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '3rem', animation: 'scrollFrames 10000ms linear infinite', willChange: 'transform', whiteSpace: 'nowrap', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '3rem', animation: 'scrollFrames 5000ms linear infinite', willChange: 'transform', whiteSpace: 'nowrap', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
                         {Array.from({ length: 20 }, (_, i) => (
                             <React.Fragment key={i}>
                                 <img
@@ -75,7 +75,7 @@ export default function EverestScroll() {
         return (
             <div className="w-screen bg-[#1C4483] py-[var(--spacing-xl)] overflow-hidden" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw' }}>
                 <div className="footer-scroll">
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '4rem', animation: 'scrollFrames 10000ms linear infinite', willChange: 'transform', whiteSpace: 'nowrap', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '4rem', animation: 'scrollFrames 5000ms linear infinite', willChange: 'transform', whiteSpace: 'nowrap', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
                         {Array.from({ length: 20 }, (_, i) => (
                             <React.Fragment key={i}>
                                 <img
@@ -106,7 +106,7 @@ export default function EverestScroll() {
     return (
         <div className="w-screen bg-[#1C4483] py-[var(--spacing-2xl)] overflow-hidden" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw' }}>
             <div className="footer-scroll">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '5rem', animation: 'scrollFrames 10000ms linear infinite', willChange: 'transform', whiteSpace: 'nowrap', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '5rem', animation: 'scrollFrames 5000ms linear infinite', willChange: 'transform', whiteSpace: 'nowrap', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
                     {Array.from({ length: 20 }, (_, i) => (
                         <React.Fragment key={i}>
                             <img
