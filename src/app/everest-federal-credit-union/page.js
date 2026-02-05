@@ -4,6 +4,7 @@ import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import Impact from "@/components/EFCU/Impact"
 import Myrole from "@/components/EFCU/Myrole"
+import EverestScroll from "@/components/EFCU/EverestScroll"
 
 
 export default function EverestFederalCreditUnion() {
@@ -24,6 +25,7 @@ export default function EverestFederalCreditUnion() {
           />
         </div>
         <Impact />
+        <EverestScroll />
         <Myrole />
       </div>
     )
@@ -44,6 +46,7 @@ export default function EverestFederalCreditUnion() {
           />
         </div>
         <Impact />
+        <EverestScroll />
         <Myrole />
       </div>
     )
@@ -64,6 +67,7 @@ export default function EverestFederalCreditUnion() {
           />
         </div>
         <Impact />
+        <EverestScroll />
         <Myrole />
       </div>
     )
@@ -83,9 +87,8 @@ export default function EverestFederalCreditUnion() {
         />
       </div>
       <Impact />
+      <EverestScroll />
       <Myrole />
-
-
     </div>
   )
 }
