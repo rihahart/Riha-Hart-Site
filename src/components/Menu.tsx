@@ -156,7 +156,7 @@ export default function Menu() {
     // Mobile (≤768px)
     if (isMobile) {
         return (
-            <div className={`fixed inset-0 bg-[var(--darkblack)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenuMobile' : 'animate-slideInMenuMobile'}`}>
+            <div className={`fixed inset-0 bg-[var(--neutral-1000)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenuMobile' : 'animate-slideInMenuMobile'}`}>
                 <div><div className='flex items-center justify-between py-[var(--spacing-xl)] px-[var(--spacing-xl)]'>
                     <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
                         <img
@@ -231,7 +231,7 @@ export default function Menu() {
     // Tablet (769px - 1024px)
     if (isTablet) {
         return (
-            <div className={`fixed inset-0 bg-[var(--darkblack)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
+            <div className={`fixed inset-0 bg-[var(--neutral-1000)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
                 <div className="max-w-[900px] mx-auto">
                     <div><div className='flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-6xl)]'>
                         <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
@@ -308,7 +308,7 @@ export default function Menu() {
     // Desktop 1440px (1025px - 1440px)
     if (isDesktop1440px) {
         return (
-            <div className={`fixed inset-0 bg-[var(--darkblack)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
+            <div className={`fixed inset-0 bg-[var(--neutral-1000)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
                 <div className="max-w-[1200px] mx-auto">
                     <div><div className='flex items-center justify-between py-[var(--spacing-4xl)] px-[var(--spacing-8xl)]'>
                         <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
@@ -384,7 +384,7 @@ export default function Menu() {
 
     // Large Desktop (>1440px)
     return (
-        <div className={`fixed inset-0 bg-[var(--darkblack)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
+        <div className={`fixed inset-0 bg-[var(--neutral-1000)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
             <div className="max-w-[1400px] mx-auto ">
                 <div> <div className='flex items-center justify-between py-[var(--spacing-6xl)] px-[var(--spacing-12xl)]'>
                     <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">

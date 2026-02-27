@@ -8,6 +8,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
   className?: string
   inverted?: boolean
+  variant?: 'default' | 'redPrimary'
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -16,11 +17,12 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   type = 'button',
   className = '',
-  inverted = false
+  inverted = false,
+  variant = 'default'
 }) => {
   return (
     <button
-      className={`button ${inverted ? 'button-inverted' : ''} ${className}`}
+      className={`button ${inverted ? 'button-inverted' : ''} ${variant === 'redPrimary' ? 'button-red-primary' : ''} ${className}`}
       role="button"
       onClick={onClick}
       type={type}

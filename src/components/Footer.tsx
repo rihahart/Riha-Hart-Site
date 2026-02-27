@@ -28,14 +28,14 @@ export default function Footer() {
     // Mobile (≤768px)
     if (isMobile) {
         return (
-            <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
+            <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--neutral-1000)] overflow-hidden">
                 <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-md)] pb-[var(--spacing-2xl)]">
                     <div className="relative flex flex-col items-start justify-between gap-[var(--spacing-4xl)] mx-auto w-full">
                         <div style={{ transform: 'scaleX(-1)' }}>
                             <DolphinAnimation className="h-full max-w-[300px] px-[var(--spacing-lg)]" />
                         </div>
                         <div className="absolute bottom-[-40%] left-0 w-full z-10 flex flex-col items-start gap-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
-                            { /* <p className="text-[var(--white)] text-[32px] leading-[48px]">
+                            { /* <p className="text-[var(--color-primary-inverse)] text-[32px] leading-[48px]">
 
                                 Connect with me!
                             </p>*/}
@@ -67,14 +67,14 @@ export default function Footer() {
     // Tablet (769px - 1024px)
     if (isTablet) {
         return (
-            <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
+            <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--neutral-1000)] overflow-hidden">
                 <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-md)] pb-[var(--spacing-2xl)]">
                     <div className="relative flex flex-col items-start justify-between gap-[var(--spacing-4xl)] mx-auto w-full">
                         <div style={{ transform: 'scaleX(-1)' }}>
                             <DolphinAnimation className="h-full max-w-[400px] px-[var(--spacing-lg)]" />
                         </div>
                         <div className="absolute bottom-[-40%] left-0 w-full z-10 flex flex-col items-start gap-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
-                            { /* <p className="text-[var(--white)] text-[32px] leading-[48px]">
+                            { /* <p className="text-[var(--color-primary-inverse)] text-[32px] leading-[48px]">
 
                                 Connect with me!
                             </p>*/}
@@ -106,14 +106,14 @@ export default function Footer() {
     // Desktop 1440px (1025px - 1440px)
     if (isDesktop1440px) {
         return (
-            <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
+            <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--neutral-1000)] overflow-hidden">
                 <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-md)] pb-[var(--spacing-2xl)]">
                     <div className="relative flex flex-col items-start justify-between gap-[var(--spacing-4xl)] mx-auto w-full">
                         <div style={{ transform: 'scaleX(-1)' }}>
                             <DolphinAnimation className="h-full max-w-[450px] px-[var(--spacing-lg)]" />
                         </div>
                         <div className="absolute bottom-[-40%] left-0 w-full z-10 flex flex-col items-start gap-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
-                            { /* <p className="text-[var(--white)] text-[32px] leading-[48px]">
+                            { /* <p className="text-[var(--color-primary-inverse)] text-[32px] leading-[48px]">
 
                                 Connect with me!
                             </p>*/}
@@ -144,14 +144,14 @@ export default function Footer() {
 
     // Large Desktop (>1440px)
     return (
-        <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--darkblack)] overflow-hidden">
+        <footer className="w-full py-[var(--spacing-2xl)] bg-[var(--neutral-1000)] overflow-hidden">
             <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-md)] pb-[var(--spacing-2xl)]">
                 <div className="relative flex flex-col items-start justify-between gap-[var(--spacing-4xl)] mx-auto w-full max-w-[1600px]">
                     <div style={{ transform: 'scaleX(-1)' }}>
                         <DolphinAnimation className="h-full max-w-[500px] px-[var(--spacing-lg)]" />
                     </div>
                     <div className="absolute bottom-[-40%] left-0 w-full z-10 flex flex-col items-start gap-[var(--spacing-2xl)] px-[var(--spacing-lg)]">
-                        { /* <p className="text-[var(--white)] text-[32px] leading-[48px]">
+                        { /* <p className="text-[var(--color-primary-inverse)] text-[32px] leading-[48px]">
 
                             Connect with me!
                         </p>*/}

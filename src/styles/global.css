@@ -40,12 +40,53 @@
   --breakpoint-md: 768px;
   --breakpoint-sm: 393px;
 
-  --darkblack: #131313;
-  --lightblack: #474646;
-  --white: #fdfffe;
-  --gray: #d9d9d9;
-  --green: #64DBBE;
-  --red: #f16762;
+  /* Red palette */
+  --red-100: #F16762;
+  --red-200: #E5342D;
+  --red-300: #A64669;
+  --red-400: #A61F2B;
+  --red-500: #400409;
+
+  --blue-100: #85DEF2;
+  --blue-200: #7ED0D9;
+  --blue-300: #66B8DA;
+  --blue-400: #4AA9CF;
+  --blue-500: #2E8FB6;
+
+  /* Green palette */
+  --green-100: #A7D9BD;
+  --green-200: #64DBBE;
+  --green-300: #78BF91;
+  --green-400: #012611;
+
+  /* Neutrals palette */
+  --neutral-100: #FDFFFE;
+  --neutral-150: #FAFAFA;
+  --neutral-200: #F0F1F1;
+  --neutral-300: #E9E9E9;
+  --neutral-400: #E1E1E1;
+  --neutral-500: #D9D9D9;
+  --neutral-600: #A4A5A6;
+  --neutral-700: #8C8C91;
+  --neutral-800: #616161;
+  --neutral-900: #474646;
+  --neutral-1000: #131313;
+
+  /* Semantic colors (UI roles) */
+  --color-primary: var(--neutral-900);
+  --color-secondary: var(--neutral-800);
+  --color-tertiary: var(--neutral-700);
+  --color-primary-inverse: var(--neutral-100);
+  --color-secondary-inverse: var(--neutral-200);
+  --color-tertiary-inverse: var(--neutral-400);
+  --color-disabled: var(--neutral-500);
+  --color-focus: var(--green-200);
+  --color-brand: var(--red-100);
+  --color-brand-pressed: var(--red-200);
+  --color-brand-hover: var(--red-400);
+  --color-link: var(--blue-300);
+  --color-link-hover: var(--blue-400);
+  --color-link-pressed: var(--blue-500);
 
   /* Fonts */
   --font-sofia: "sofia-pro-comp", sans-serif;
@@ -147,7 +188,7 @@ html::-webkit-scrollbar {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--lightblack);
-  color: var(--lightblack);
+  color: var(--color-primary);
   display: inline-flex;
   padding: var(--Spacing-L, 1rem);
   justify-content: center;
@@ -156,7 +197,7 @@ html::-webkit-scrollbar {
   line-height: 24px;
   text-decoration: none;
   cursor: pointer;
-  background: var(--white);
+  background: var(--color-primary-inverse);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -170,7 +211,7 @@ html::-webkit-scrollbar {
 }
 
 .button span:last-child {
-  color: var(--white);
+  color: var(--color-primary-inverse);
   display: block;
   position: absolute;
   bottom: 0;
@@ -191,7 +232,7 @@ html::-webkit-scrollbar {
   left: -1px;
   width: calc(100% + 2px);
   height: 100%;
-  background-color: var(--red);
+  background-color: var(--color-brand);
   transform-origin: bottom center;
   transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
   transform: skewY(9.3deg) scaleY(0);
@@ -199,7 +240,7 @@ html::-webkit-scrollbar {
 }
 
 .button:hover {
-  border-color: var(--red);
+  border-color: var(--color-brand);
 }
 
 .button:hover:after {
@@ -211,6 +252,44 @@ html::-webkit-scrollbar {
   transform: translateX(-50%) translateY(-100%);
   opacity: 1;
   transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+/* Visit website button: red default, primary on hover */
+.button-red-primary {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+  color: var(--color-primary-inverse);
+}
+
+.button-red-primary span:first-child {
+  color: var(--color-primary-inverse);
+}
+
+.button-red-primary span:last-child {
+  color: var(--color-primary-inverse);
+}
+
+.button-red-primary:after {
+  background-color: var(--color-primary);
+  transform: skewY(9.3deg) scaleY(0);
+}
+
+.button-red-primary:hover {
+  border-color: var(--color-primary);
+}
+
+.button-red-primary:hover:after {
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-red-primary:hover span:first-child {
+  color: var(--color-primary-inverse);
+}
+
+.button-red-primary:hover span:last-child {
+  color: var(--color-primary-inverse);
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
 }
 
 /* Button font size for tablet and mobile */
@@ -228,8 +307,8 @@ html::-webkit-scrollbar {
 
 /* Inverted Button Styles (black to white, red to black) */
 .button-inverted {
-  border: 1px solid var(--white);
-  color: var(--white);
+  border: 1px solid var(--color-primary-inverse);
+  color: var(--color-primary-inverse);
   background: var(--black);
 }
 
@@ -238,15 +317,15 @@ html::-webkit-scrollbar {
 }
 
 .button-inverted span:last-child {
-  color: var(--lightblack);
+  color: var(--color-primary);
 }
 
 .button-inverted:after {
-  background-color: var(--white);
+  background-color: var(--color-primary-inverse);
 }
 
 .button-inverted:hover {
-  border-color: var(--white);
+  border-color: var(--color-primary-inverse);
 }
 
 .button-inverted:hover:after {
@@ -255,7 +334,7 @@ html::-webkit-scrollbar {
 }
 
 .button-inverted:hover span:first-child {
-  color: var(--lightblack);
+  color: var(--color-primary);
   transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
 }
 
@@ -270,8 +349,8 @@ html::-webkit-scrollbar {
   position: relative;
   overflow: hidden;
   border: none;
-  border-bottom: 1px solid var(--white);
-  color: var(--white);
+  border-bottom: 1px solid var(--color-primary-inverse);
+  color: var(--color-primary-inverse);
   display: flex;
   width: 100%;
   padding: var(--Spacing-L, 1rem);
@@ -296,7 +375,7 @@ html::-webkit-scrollbar {
 }
 
 .menu-button span:last-child {
-  color: var(--white);
+  color: var(--color-primary-inverse);
   display: block;
   position: absolute;
   bottom: 0;
@@ -318,7 +397,7 @@ html::-webkit-scrollbar {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--red);
+  background-color: var(--color-brand);
   transform-origin: bottom center;
   transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
   transform: skewY(4.3deg) scaleY(0);
@@ -335,12 +414,12 @@ html::-webkit-scrollbar {
 }
 
 .menu-button:hover span:first-child {
-  color: var(--white);
+  color: var(--color-primary-inverse);
   transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
 }
 
 .menu-button:hover span:last-child {
-  color: var(--white);
+  color: var(--color-primary-inverse);
   transform: translateY(-100%) translateX(-50%);
   opacity: 1;
   transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
@@ -357,7 +436,7 @@ html::-webkit-scrollbar {
 }
 
 .menu-button.active span:first-child {
-  color: var(--white);
+  color: var(--color-primary-inverse);
   z-index: 100;
   position: relative;
 }
@@ -743,7 +822,7 @@ div[class*="animate-slideOutMenu"],
 div[class*="animate-slideInMenuMobile"],
 div[class*="animate-slideOutMenuMobile"] {
   scrollbar-width: thin !important;
-  scrollbar-color: var(--white) var(--darkblack) !important;
+  scrollbar-color: var(--color-primary-inverse) var(--darkblack) !important;
   -ms-overflow-style: auto !important;
 }
 
@@ -766,6 +845,6 @@ div[class*="animate-slideInMenu"]::-webkit-scrollbar-thumb,
 div[class*="animate-slideOutMenu"]::-webkit-scrollbar-thumb,
 div[class*="animate-slideInMenuMobile"]::-webkit-scrollbar-thumb,
 div[class*="animate-slideOutMenuMobile"]::-webkit-scrollbar-thumb {
-  background-color: var(--white);
+  background-color: var(--color-primary-inverse);
   border-radius: 4px;
 }

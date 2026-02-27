@@ -51,7 +51,7 @@ const Navigation = () => {
   }, [])
 
   // IMPORTANT: fixed classes must be on EVERY return branch
-  const navClass = `w-full fixed top-0 left-0 z-50 bg-[var(--white)] ${isScrolled ? "shadow-md" : ""}`
+  const navClass = `w-full fixed top-0 left-0 z-50 bg-[var(--color-primary-inverse)] ${isScrolled ? "shadow-md" : ""}`
 
   // Mobile
   if (isMobile) {

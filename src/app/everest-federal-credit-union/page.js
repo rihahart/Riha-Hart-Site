@@ -2,10 +2,10 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import Impact from "@/components/EFCU/Impact"
-import Myrole from "@/components/EFCU/Myrole"
-import EverestScroll from "@/components/EFCU/EverestScroll"
-
+import IntroToEFCU from "@/components/EFCU/IntroToEFCU"
+import ImpactBox from "@/components/EFCU/ImpactBox"
+import GroundLevelResearch from "@/components/EFCU/GroundLevelResearch"
+import InternalOperationsResearch from "@/components/EFCU/InternalOperationsResearch"
 
 export default function EverestFederalCreditUnion() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
@@ -24,9 +24,18 @@ export default function EverestFederalCreditUnion() {
             className="w-full h-full object-contain"
           />
         </div>
-        <Impact />
-        <EverestScroll />
-        <Myrole />
+        <IntroToEFCU />
+        <ImpactBox />
+        <div
+          className="w-full flex flex-col px-[var(--spacing-lg)] py-[var(--spacing-2xl)] gap-[var(--spacing-xl)]"
+          style={{
+            backgroundColor: "#F6F6F8",
+            borderLeft: "4px solid var(--blue-300)"
+          }}
+        >
+          <GroundLevelResearch />
+          <InternalOperationsResearch />
+        </div>
       </div>
     )
   }
@@ -45,9 +54,18 @@ export default function EverestFederalCreditUnion() {
             className="w-full h-full object-contain"
           />
         </div>
-        <Impact />
-        <EverestScroll />
-        <Myrole />
+        <IntroToEFCU />
+        <ImpactBox />
+        <div
+          className="w-full flex flex-col px-[var(--spacing-2xl)] py-[var(--spacing-3xl)] gap-[var(--spacing-2xl)]"
+          style={{
+            backgroundColor: "#F6F6F8",
+            borderLeft: "4px solid var(--blue-300)"
+          }}
+        >
+          <GroundLevelResearch />
+          <InternalOperationsResearch />
+        </div>
       </div>
     )
   }
@@ -66,9 +84,18 @@ export default function EverestFederalCreditUnion() {
             className="w-full h-full object-contain"
           />
         </div>
-        <Impact />
-        <EverestScroll />
-        <Myrole />
+        <IntroToEFCU />
+        <ImpactBox />
+        <div
+          className="w-full flex flex-col px-[var(--spacing-2xl)] py-[var(--spacing-4xl)] gap-[var(--spacing-2xl)]"
+          style={{
+            backgroundColor: "#F6F6F8",
+            borderLeft: "4px solid var(--blue-300)"
+          }}
+        >
+          <GroundLevelResearch />
+          <InternalOperationsResearch />
+        </div>
       </div>
     )
   }
@@ -86,9 +113,18 @@ export default function EverestFederalCreditUnion() {
           className="w-full h-full object-contain"
         />
       </div>
-      <Impact />
-      <EverestScroll />
-      <Myrole />
+      <IntroToEFCU />
+      <ImpactBox />
+      <div
+        className="w-full flex flex-col px-[var(--spacing-3xl)] py-[var(--spacing-4xl)] gap-[var(--spacing-2xl)]"
+        style={{
+          backgroundColor: "#F6F6F8",
+          borderLeft: "4px solid var(--blue-300)"
+        }}
+      >
+        <GroundLevelResearch />
+        <InternalOperationsResearch />
+      </div>
     </div>
   )
 }

@@ -16,11 +16,11 @@ export default function Bio() {
         <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-2xl)]">
           <img src={bioData.image.src} alt={bioData.image.alt} />
           <div className="flex flex-col items-start justify-center gap-[var(--spacing-lg)]">
-            <h2 className="h2 text-[var(--lightblack)]">
+            <h2 className="h2 text-[var(--color-primary)]">
               {bioData.heading}
             </h2>
             {bioData.paragraphs.map((paragraph, index) => (
-              <p key={index} className="body text-[var(--lightblack)]">
+              <p key={index} className="body text-[var(--color-primary)]">
                 {paragraph}
               </p>
             ))}
@@ -37,11 +37,11 @@ export default function Bio() {
         <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)]">
           <img src={bioData.image.src} alt={bioData.image.alt} />
           <div className="flex flex-col items-start justify-center gap-[var(--spacing-xl)]">
-            <h2 className="h2 text-[var(--lightblack)]">
+            <h2 className="h2 text-[var(--color-primary)]">
               {bioData.heading}
             </h2>
             {bioData.paragraphs.map((paragraph, index) => (
-              <p key={index} className="body text-[var(--lightblack)]">
+              <p key={index} className="body text-[var(--color-primary)]">
                 {paragraph}
               </p>
             ))}
@@ -58,11 +58,11 @@ export default function Bio() {
         <div className="w-full flex items-center justify-center gap-[var(--spacing-5xl)] py-[var(--spacing-xl)]">
           <img src={bioData.image.src} alt={bioData.image.alt} className="w-[50%]" />
           <div className="w-[50%] flex flex-col items-start justify-center gap-[var(--spacing-2xl)]">
-            <h2 className="h2 text-[var(--lightblack)]">
+            <h2 className="h2 text-[var(--color-primary)]">
               {bioData.heading}
             </h2>
             {bioData.paragraphs.map((paragraph, index) => (
-              <p key={index} className="body text-[var(--lightblack)]">
+              <p key={index} className="body text-[var(--color-primary)]">
                 {paragraph}
               </p>
             ))}
@@ -78,11 +78,11 @@ export default function Bio() {
       <div className="w-full flex items-center justify-center gap-[var(--spacing-6xl)] py-[var(--spacing-3xl)]">
         <img src={bioData.image.src} alt={bioData.image.alt} className="w-[50%]" />
         <div className="w-[50%] flex flex-col items-start justify-center gap-[var(--spacing-3xl)]">
-          <h2 className="h2 text-[var(--lightblack)]">
+          <h2 className="h2 text-[var(--color-primary)]">
             {bioData.heading}
           </h2>
           {bioData.paragraphs.map((paragraph, index) => (
-            <p key={index} className="body text-[var(--lightblack)]">
+            <p key={index} className="body text-[var(--color-primary)]">
               {paragraph}
             </p>
           ))}

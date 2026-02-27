@@ -1,9 +1,0 @@
-export const myRole = {
-    body1: "I was brought in to fix issues with the existing membership and loan applications, which had high abandonment rates and were widely criticized by staff.",
-    body2: "The forms were long, repetitive, and asked for information that wasn't always necessary, which frustrated potential members, and that frustration often landed on employees. Not only were employees dealing with member frustrations, they were also stuck processing piles of avoidable paperwork, which wasted time and increased errors. As a result, both employees and members preferred in-person applications, so more than 80% of membership and loan applications were being handled in person.",
-    body3: "For a new bank serving members across the country with only three physical locations at the time, this not only crowded their small offices but also limited their growth. Nepalese Americans are the fastest-growing South Asian community in the U.S., and Everest FCU is the first and only credit union serving this community. The establishment of this bank was an important moment for the community.",
-    body4: "But the issue was that awareness of the benefits, or even a general understanding of what a credit union like Everest FCU is, was low. Many Nepalese Americans didn't know what it meant to be a member of Everest FCU, how to apply for membership, or the benefits that a credit union membership offered.",
-    body5: "They were incredulous. The website offered very little to ease their concerns. The poor online experiences, the crowded offices, and errors of overwhelmed employees fueled negative perceptions and lack of trust within the community. And this kept their membership numbers low.",
-    h3: "My job was to build trust and improve the online experiences. Everest FCU is secure and federally insured by the National Credit Union Share Insurance Fund, and that's what my designs needed to communicate."
-}
-

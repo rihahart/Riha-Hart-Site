@@ -11,7 +11,7 @@ export default function JHMuralProject() {
     return (
       <div className="w-full flex flex-col items-center px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-8xl)] gap-[var(--spacing-xl)]">
         <div className="flex flex-col items-center justify-center gap-[var(--spacing-2xl)]">
-          <h2 className="h2 text-[var(--lightblack)]">
+          <h2 className="h2 text-[var(--color-primary)]">
             Coming soon
           </h2>
         </div>
@@ -24,7 +24,7 @@ export default function JHMuralProject() {
     return (
       <div className="flex flex-col items-center px-[var(--spacing-2xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-10xl)] gap-[var(--spacing-4xl)] w-full mx-auto">
         <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)]">
-          <h2 className="h2 text-[var(--lightblack)]">
+          <h2 className="h2 text-[var(--color-primary)]">
             Coming soon
           </h2>
         </div>
@@ -38,7 +38,7 @@ export default function JHMuralProject() {
       <div className="flex flex-col items-center px-[var(--spacing-2xl)] gap-[var(--spacing-4xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-10xl)] w-full mx-auto">
         <div className="w-full flex items-center justify-center gap-[var(--spacing-5xl)] py-[var(--spacing-2xl)]">
           <div className="flex flex-col items-center justify-center gap-[var(--spacing-3xl)]">
-            <h2 className="h2 text-[var(--lightblack)]">
+            <h2 className="h2 text-[var(--color-primary)]">
               Coming soon
             </h2>
           </div>
@@ -52,7 +52,7 @@ export default function JHMuralProject() {
     <div className="flex flex-col items-center px-[var(--spacing-3xl)] gap-[var(--spacing-5xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-12xl)] w-full max-w-[1600px] mx-auto">
       <div className="w-full flex items-center justify-center gap-[var(--spacing-6xl)] py-[var(--spacing-3xl)]">
         <div className="flex flex-col items-center justify-center gap-[var(--spacing-3xl)]">
-          <h2 className="h2 text-[var(--lightblack)]">
+          <h2 className="h2 text-[var(--color-primary)]">
             Coming soon
           </h2>
         </div>
