@@ -2,24 +2,28 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import { internalOperationsResearch } from "@/data/EFCU/internalOperationsResearch"
+import { bottleneck } from "@/data/EFCU/researchData/bottleneck"
+import Style from "./Style"
 
-export default function InternalOperationsResearch() {
+export default function Bottleneck() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
-  const section = internalOperationsResearch
+  const section = bottleneck
 
   if (isMobile) {
     return (
-      <section className="w-full flex flex-col gap-[var(--spacing-2xl)] items-start">
+      <Style>
         <div className="flex flex-col gap-[var(--spacing-m)]">
-          <h2
-            className="h3 text-[var(--blue-500)] uppercase"
-          >
-            {section.heading}
+          <h2 className="h3 text-[var(--color-primary)]">
+            {section.title}
           </h2>
-          <p className="body text-[var(--color-primary)]">{section.intro}</p>
+          <p className="body text-[var(--color-primary)]">{section.description}</p>
         </div>
-        <div className="w-full flex flex-col gap-[var(--spacing-2xl)] items-start">
+        <div className="w-full flex flex-col gap-[var(--spacing-xl)] items-start">
+        <img
+            src={section.image}
+            alt=""
+            className="max-w-[200px] h-auto object-contain flex-shrink-0 mx-auto"
+          />
           <ul className="flex flex-col gap-[var(--spacing-lg)] list-none pl-0 flex-1 min-w-0">
             {section.bullets.map((item, i) => (
               <li
@@ -38,31 +42,23 @@ export default function InternalOperationsResearch() {
               </li>
             ))}
           </ul>
-          {section.note && (
-            <p className="body text-[var(--color-primary)]">{section.note}</p>
-          )}
-          <img
-            src="/EFCU/EmployeeActivities.png"
-            alt={section.media.alt ?? ""}
-            className="w-full max-w-[full] h-auto object-contain flex-shrink-0"
-          />
+      
         </div>
-      </section>
+      </Style>
     )
   }
 
   if (isTablet) {
     return (
-      <section className="w-full flex flex-col gap-[var(--spacing-2xl)] items-start">
+      <Style>
         <div className="flex flex-col gap-[var(--spacing-m)]">
-          <h2
-            className="h3 text-[var(--blue-500)] uppercase"
-          >
-            {section.heading}
+          <h2 className="h3 text-[var(--color-primary)]">
+            {section.title}
           </h2>
-          <p className="body text-[var(--color-primary)]">{section.intro}</p>
+          <p className="body text-[var(--color-primary)]">{section.description}</p>
         </div>
-        <div className="w-full flex flex-col gap-[var(--spacing-2xl)] items-start">
+        <div className="w-full flex flex-row gap-[var(--spacing-2xl)] px-[var(--spacing-4xl)] items-center">
+          <div className="flex flex-col gap-[var(--spacing-xl)] flex-1 min-w-0">
           <ul className="flex flex-col gap-[var(--spacing-s)] list-none pl-0 flex-1 min-w-0">
             {section.bullets.map((item, i) => (
               <li
@@ -81,32 +77,28 @@ export default function InternalOperationsResearch() {
               </li>
             ))}
           </ul>
-          {section.note && (
-            <p className="body text-[var(--color-primary)]">{section.note}</p>
-          )}
+          </div>
           <img
-            src="/EFCU/EmployeeActivities.png"
-            alt={section.media.alt ?? ""}
-            className="w-full max-w-[full] h-auto object-contain flex-shrink-0"
+            src={section.image}
+            alt=""
+            className="max-w-[275px] h-auto object-contain flex-shrink-0"
           />
         </div>
-      </section>
+      </Style>
     )
   }
 
   if (isDesktop1440px) {
     return (
-      <section className="w-full flex flex-col gap-[var(--spacing-4xl)] items-start">
+      <Style>
         <div className="flex flex-col gap-[var(--spacing-xl)]">
-          <h2
-            className="h3 text-[var(--blue-500)] uppercase"
-          >
-            {section.heading}
+          <h2 className="h3 text-[var(--color-primary)]">
+            {section.title}
           </h2>
-          <p className="body text-[var(--color-primary)]">{section.intro}</p>
+          <p className="body text-[var(--color-primary)]">{section.description}</p>
         </div>
-        <div className="flex flex-row gap-[var(--spacing-2xl)] items-center ">
-          <div className="flex flex-col gap-[var(--spacing-6xl)] px-[var(--spacing-2xl)] w-[50%] ">
+        <div className="flex flex-row gap-[var(--spacing-2xl)] items-center w-full">
+          <div className="flex flex-col gap-[var(--spacing-xl)] px-[var(--spacing-2xl)] w-[50%] min-w-0">
             <ul className="flex flex-col gap-[var(--spacing-xl)] list-none">
               {section.bullets.map((item, i) => (
                 <li
@@ -125,29 +117,24 @@ export default function InternalOperationsResearch() {
                 </li>
               ))}
             </ul>
-            {section.note && (
-              <p className="body text-[var(--color-primary)]">{section.note}</p>
-            )}
           </div>
           <img
-            src="/EFCU/EmployeeActivities.png"
-            alt={section.media.alt ?? ""}
-            className="w-[50%] max-w-[450px] h-auto object-contain flex-shrink-0"
+            src={section.image}
+            alt=""
+            className="max-w-[325px] h-auto object-contain flex-shrink-0"
           />
         </div>
-      </section>
+      </Style>
     )
   }
 
   return (
-    <section className="w-full flex flex-col gap-[var(--spacing-6xl)] items-start">
+    <Style>
       <div className="flex flex-col gap-[var(--spacing-xl)]">
-        <h2
-          className="h3 text-[var(--blue-500)] uppercase"
-        >
-          {section.heading}
+        <h2 className="h3 text-[var(--color-primary)]">
+          {section.title}
         </h2>
-        <p className="body text-[var(--color-primary)]">{section.intro}</p>
+        <p className="body text-[var(--color-primary)]">{section.description}</p>
       </div>
       <div className="flex flex-row justify-between items-center w-full">
         <div className="flex flex-col gap-[var(--spacing-2xl)] flex-1 min-w-0">
@@ -169,16 +156,13 @@ export default function InternalOperationsResearch() {
               </li>
             ))}
           </ul>
-          {section.note && (
-            <p className="body text-[var(--color-primary)]">{section.note}</p>
-          )}
         </div>
         <img
-          src="/EFCU/EmployeeActivities.png"
-          alt={section.media.alt ?? ""}
-          className="w-full max-w-[550px] h-auto object-contain flex-shrink-0"
+          src={section.image}
+          alt=""
+          className="max-w-[375px] h-auto object-contain flex-shrink-0"
         />
       </div>
-    </section>
+    </Style>
   )
 }

@@ -5,7 +5,7 @@ export const impactBox = [
   },
   {
     metric: "160%",
-    description: "Growth in membership applications following launch, with online submissions rising from 13% to 84%."
+    description: "Growth in membership applications following launch, with online submissions rising from 13% to 84%"
   },
   {
     metric: "3 days to 1 hr",
