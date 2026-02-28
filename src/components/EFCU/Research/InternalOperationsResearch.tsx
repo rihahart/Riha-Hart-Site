@@ -2,7 +2,7 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import { internalOperationsResearch } from "@/data/EFCU/internalOperationsResearch"
+import { internalOperationsResearch } from "@/data/EFCU/Research/internalOperationsResearch"
 
 export default function InternalOperationsResearch() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()

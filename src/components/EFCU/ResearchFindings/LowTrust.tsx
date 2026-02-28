@@ -2,7 +2,7 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import { lowTrust } from "@/data/EFCU/researchData/lowTrust"
+import { lowTrust } from "@/data/EFCU/ResearchFindings/lowTrust"
 import Style from "./Style"
 
 export default function LowTrust() {

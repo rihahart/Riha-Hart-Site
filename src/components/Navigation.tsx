@@ -17,15 +17,21 @@ const Navigation = () => {
   const handleMenuClick = () => openMenu()
   const handleLogoClick = () => router.push("/")
 
-  // Force GIF reload on mount
+  const logoSrc = "/Photos/Homepage/LogoOneCount.gif"
+
+  // Force GIF reload on mount and every 3 minutes so animation restarts
   useEffect(() => {
-    if (logoRef.current) {
-      const img = logoRef.current
-      const src = img.src
-      img.src = ""
-      img.src = src
+    const reloadLogo = () => {
+      if (logoRef.current) {
+        const img = logoRef.current
+        img.src = ""
+        img.src = logoSrc
+      }
     }
-  }, [])
+    reloadLogo()
+    const interval = setInterval(reloadLogo, 3 * 60 * 1000) // 3 minutes
+    return () => clearInterval(interval)
+  }, [logoSrc])
 
   // Set --nav-h to nav height (for fixed header offset)
   useLayoutEffect(() => {
@@ -59,7 +65,7 @@ const Navigation = () => {
       <nav ref={navRef} className={navClass}>
         <div className="flex items-center justify-between py-[var(--spacing-lg)] px-[var(--spacing-lg)]">
           <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
-            <img ref={logoRef} src="/Photos/Homepage/LogoOneCount.gif" alt="Riha Hart Logo" style={{ height: "70px", width: "auto", objectFit: "contain" }} loading="eager" />
+            <img ref={logoRef} src={logoSrc} alt="Riha Hart Logo" style={{ height: "70px", width: "auto", objectFit: "contain" }} loading="eager" />
           </button>
           <button onClick={handleMenuClick} className="cursor-pointer" aria-label="Menu" style={{ transform: "translateY(10px)" }}>
             <img src="/Icons/Hamburger/HamburgerLarge.svg" alt="Menu" style={{ height: "12px", width: "auto" }} />
@@ -75,7 +81,7 @@ const Navigation = () => {
       <nav ref={navRef} className={navClass}>
         <div className="flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-2xl)]">
           <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
-            <img ref={logoRef} src="/Photos/Homepage/LogoOneCount.gif" alt="Riha Hart Logo" style={{ height: "80px", width: "auto", objectFit: "contain" }} loading="eager" />
+            <img ref={logoRef} src={logoSrc} alt="Riha Hart Logo" style={{ height: "80px", width: "auto", objectFit: "contain" }} loading="eager" />
           </button>
           <button onClick={handleMenuClick} className="cursor-pointer" aria-label="Menu" style={{ transform: "translateY(20px)" }}>
             <img src="/Icons/Hamburger/HamburgerLarge.svg" alt="Menu" style={{ height: "15px", width: "auto" }} />
@@ -92,7 +98,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-3xl)] ">
           <div className="flex items-center w-full justify-center">
             <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
-              <img ref={logoRef} src="/Photos/Homepage/LogoOneCount.gif" alt="Riha Hart Logo" style={{ height: "100px", width: "auto", objectFit: "contain" }} loading="eager" />
+              <img ref={logoRef} src={logoSrc} alt="Riha Hart Logo" style={{ height: "100px", width: "auto", objectFit: "contain" }} loading="eager" />
             </button>
           </div>
           <button onClick={handleMenuClick} className="cursor-pointer" aria-label="Menu" style={{ transform: "translateY(20px)" }}>
@@ -109,7 +115,7 @@ const Navigation = () => {
       <div className="flex w-full max-w-[1600px] mx-auto items-center justify-between py-[var(--spacing-3xl)] px-[var(--spacing-4xl)]">
         <div className="flex items-center w-full justify-center">
           <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
-            <img ref={logoRef} src="/Photos/Homepage/LogoOneCount.gif" alt="Riha Hart Logo" style={{ height: "120px", width: "auto", objectFit: "contain" }} loading="eager" />
+            <img ref={logoRef} src={logoSrc} alt="Riha Hart Logo" style={{ height: "120px", width: "auto", objectFit: "contain" }} loading="eager" />
           </button>
         </div>
         <button onClick={handleMenuClick} className="cursor-pointer" aria-label="Menu" style={{ transform: "translateY(20px)" }}>

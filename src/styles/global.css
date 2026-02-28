@@ -1,46 +1,52 @@
 @import url("https://use.typekit.net/zpt8xte.css");
 @import "tailwindcss";
+@import "./buttons.css";
+
+/* ============================================================
+   Design Tokens
+   ============================================================ */
 
 :root {
+  /* Letter Spacing */
   --letter-spacing-none: 0;
-  --letter-spacing-s: -0.5px;
-  --letter-spacing-m: 1px;
-  --letter-spacing-l: 2px;
+  --letter-spacing-s:    -0.5px;
+  --letter-spacing-m:    1px;
+  --letter-spacing-l:    2px;
 
   /* Spacing */
-  --spacing-2xs: 2px;
-  --spacing-xs: 4px;
-  --spacing-s: 8px;
-  --spacing-m: 12px;
-  --spacing-lg: 16px;
-  --spacing-xl: 24px;
-  --spacing-2xl: 32px;
-  --spacing-3xl: 40px;
-  --spacing-4xl: 48px;
-  --spacing-5xl: 56px;
-  --spacing-6xl: 64px;
-  --spacing-7xl: 72px;
-  --spacing-8xl: 80px;
-  --spacing-9xl: 88px;
+  --spacing-2xs:  2px;
+  --spacing-xs:   4px;
+  --spacing-s:    8px;
+  --spacing-m:    12px;
+  --spacing-lg:   16px;
+  --spacing-xl:   24px;
+  --spacing-2xl:  32px;
+  --spacing-3xl:  40px;
+  --spacing-4xl:  48px;
+  --spacing-5xl:  56px;
+  --spacing-6xl:  64px;
+  --spacing-7xl:  72px;
+  --spacing-8xl:  80px;
+  --spacing-9xl:  88px;
   --spacing-10xl: 96px;
   --spacing-11xl: 104px;
   --spacing-12xl: 112px;
 
   /* Border Radius */
-  --radius-xs: 4px;
-  --radius-s: 8px;
-  --radius-m: 12px;
-  --radius-lg: 16px;
-  --radius-pill: 999px;
+  --radius-xs:     4px;
+  --radius-s:      8px;
+  --radius-m:      12px;
+  --radius-lg:     16px;
+  --radius-pill:   999px;
   --radius-circle: 50%;
 
   /* Breakpoints */
-  --breakpoint-xl: 1440px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-md: 768px;
   --breakpoint-sm: 393px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
 
-  /* Red palette */
+  /* Color Palettes */
   --red-100: #F16762;
   --red-200: #E5342D;
   --red-300: #A64669;
@@ -53,120 +59,92 @@
   --blue-400: #4AA9CF;
   --blue-500: #2E8FB6;
 
-  /* Green palette */
   --green-100: #A7D9BD;
   --green-200: #64DBBE;
   --green-300: #78BF91;
   --green-400: #012611;
 
-  /* Neutrals palette */
-  --neutral-100: #FDFFFE;
-  --neutral-150: #FAFAFA;
-  --neutral-200: #F0F1F1;
-  --neutral-300: #E9E9E9;
-  --neutral-400: #E1E1E1;
-  --neutral-500: #D9D9D9;
-  --neutral-600: #A4A5A6;
-  --neutral-700: #8C8C91;
-  --neutral-800: #616161;
-  --neutral-900: #474646;
+  --neutral-100:  #FDFFFE;
+  --neutral-150:  #FAFAFA;
+  --neutral-200:  #F0F1F1;
+  --neutral-300:  #E9E9E9;
+  --neutral-400:  #E1E1E1;
+  --neutral-500:  #D9D9D9;
+  --neutral-600:  #A4A5A6;
+  --neutral-700:  #8C8C91;
+  --neutral-800:  #616161;
+  --neutral-900:  #474646;
   --neutral-1000: #131313;
 
-  /* Semantic colors (UI roles) */
-  --color-primary: var(--neutral-900);
-  --color-secondary: var(--neutral-800);
-  --color-tertiary: var(--neutral-700);
-  --color-primary-inverse: var(--neutral-100);
-  --color-secondary-inverse: var(--neutral-200);
+  /* Semantic Colors */
+  --color-primary:          var(--neutral-900);
+  --color-secondary:        var(--neutral-800);
+  --color-tertiary:         var(--neutral-700);
+  --color-primary-inverse:  var(--neutral-100);
+  --color-secondary-inverse:var(--neutral-200);
   --color-tertiary-inverse: var(--neutral-400);
-  --color-disabled: var(--neutral-500);
-  --color-focus: var(--green-200);
-  --color-brand: var(--red-100);
-  --color-brand-pressed: var(--red-200);
-  --color-brand-hover: var(--red-400);
-  --color-link: var(--blue-300);
-  --color-link-hover: var(--blue-400);
-  --color-link-pressed: var(--blue-500);
+  --color-disabled:         var(--neutral-500);
+  --color-focus:            var(--green-200);
+  --color-brand:            var(--red-100);
+  --color-brand-pressed:    var(--red-200);
+  --color-brand-hover:      var(--red-400);
+  --color-link:             var(--blue-300);
+  --color-link-hover:       var(--blue-400);
+  --color-link-pressed:     var(--blue-500);
 
   /* Fonts */
   --font-sofia: "sofia-pro-comp", sans-serif;
-
 }
 
+/* ============================================================
+   Base
+   ============================================================ */
+
+html,
 body {
   background-color: var(--black);
-  overflow-x: hidden;
-  overflow-y: auto;
-  scrollbar-width: none;
-  /* Firefox */
-  -ms-overflow-style: none;
-  /* IE and Edge */
   font-family: var(--font-sofia);
-}
-
-body::-webkit-scrollbar {
-  display: none;
-  /* Chrome, Safari, Opera */
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 html {
-  background-color: var(--black);
-  overflow-x: hidden;
   height: 100%;
-  font-family: var(--font-sofia);
 }
 
-html::-webkit-scrollbar {
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
   display: none;
-  /* Chrome, Safari, Opera */
 }
+
+/* ============================================================
+   Animations
+   ============================================================ */
 
 @keyframes slideInMenu {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(0%);
-  }
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0%); }
 }
 
 @keyframes slideOutMenu {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
+  from { transform: translateX(0%); }
+  to   { transform: translateX(-100%); }
 }
 
-.animate-slideInMenu {
-  animation: slideInMenu 1000ms ease-in-out forwards;
-}
-
-.animate-slideOutMenu {
-  animation: slideOutMenu 1000ms ease-in-out forwards;
-}
-
-.animate-slideInMenuMobile {
-  animation: slideInMenu 640ms ease-in-out forwards;
-}
-
-.animate-slideOutMenuMobile {
-  animation: slideOutMenu 640ms ease-in-out forwards;
-}
-
-/* Footer Scroll Animation */
 @keyframes scrollFrames {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
+
+.animate-slideInMenu       { animation: slideInMenu  1000ms ease-in-out forwards; }
+.animate-slideOutMenu      { animation: slideOutMenu 1000ms ease-in-out forwards; }
+.animate-slideInMenuMobile { animation: slideInMenu   640ms ease-in-out forwards; }
+.animate-slideOutMenuMobile{ animation: slideOutMenu  640ms ease-in-out forwards; }
+
+/* ============================================================
+   Footer Scroll
+   ============================================================ */
 
 .footer-scroll {
   overflow: hidden;
@@ -174,677 +152,112 @@ html::-webkit-scrollbar {
   position: relative;
 }
 
-.footer-scroll>div {
+.footer-scroll > div {
   display: inline-flex;
+  white-space: nowrap;
   animation: scrollFrames 10000ms linear infinite;
   will-change: transform;
-  white-space: nowrap;
   backface-visibility: hidden;
   transform: translateZ(0);
 }
 
-/* Button Styles */
-.button {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--lightblack);
-  color: var(--color-primary);
-  display: inline-flex;
-  padding: var(--Spacing-L, 1rem);
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  line-height: 24px;
-  text-decoration: none;
-  cursor: pointer;
-  background: var(--color-primary-inverse);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  transition: border-color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+/* ============================================================
+   Typography
+   All headings share the same font-family, font-style, and
+   font-weight — only size and line-height change per breakpoint.
+   ============================================================ */
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  font-family: var(--font-sofia);
+  font-style: normal;
+  font-weight: 900;
 }
 
-.button span:first-child {
-  position: relative;
-  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
-  z-index: 10;
+body, .body {
+  font-family: var(--font-sofia);
+  font-style: normal;
+  font-weight: 500;
 }
 
-.button span:last-child {
-  color: var(--color-primary-inverse);
-  display: block;
-  position: absolute;
-  bottom: 0;
-  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
-  z-index: 100;
-  opacity: 0;
-  top: 50%;
-  left: 50%;
-  transform: translateY(225%) translateX(-50%);
-  height: 24px;
-  line-height: 24px;
+.caption {
+  font-family: var(--font-sofia);
+  font-style: normal;
+  font-weight: 400;
 }
 
-.button:after {
-  content: "";
-  position: absolute;
-  bottom: -50%;
-  left: -1px;
-  width: calc(100% + 2px);
-  height: 100%;
-  background-color: var(--color-brand);
-  transform-origin: bottom center;
-  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
-  transform: skewY(9.3deg) scaleY(0);
-  z-index: 50;
-}
-
-.button:hover {
-  border-color: var(--color-brand);
-}
-
-.button:hover:after {
-  transform-origin: bottom center;
-  transform: skewY(9.3deg) scaleY(2);
-}
-
-.button:hover span:last-child {
-  transform: translateX(-50%) translateY(-100%);
-  opacity: 1;
-  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
-}
-
-/* Visit website button: red default, primary on hover */
-.button-red-primary {
-  background: var(--color-brand);
-  border-color: var(--color-brand);
-  color: var(--color-primary-inverse);
-}
-
-.button-red-primary span:first-child {
-  color: var(--color-primary-inverse);
-}
-
-.button-red-primary span:last-child {
-  color: var(--color-primary-inverse);
-}
-
-.button-red-primary:after {
-  background-color: var(--color-primary);
-  transform: skewY(9.3deg) scaleY(0);
-}
-
-.button-red-primary:hover {
-  border-color: var(--color-primary);
-}
-
-.button-red-primary:hover:after {
-  transform: skewY(9.3deg) scaleY(2);
-}
-
-.button-red-primary:hover span:first-child {
-  color: var(--color-primary-inverse);
-}
-
-.button-red-primary:hover span:last-child {
-  color: var(--color-primary-inverse);
-  transform: translateX(-50%) translateY(-100%);
-  opacity: 1;
-}
-
-/* Button font size for tablet and mobile */
-@media (max-width: 1024px) {
-  .button {
-    font-size: 20px;
-    line-height: 20px;
-  }
-
-  .button span:last-child {
-    height: 20px;
-    line-height: 20px;
-  }
-}
-
-/* Inverted Button Styles (black to white, red to black) */
-.button-inverted {
-  border: 1px solid var(--color-primary-inverse);
-  color: var(--color-primary-inverse);
-  background: var(--black);
-}
-
-.button-inverted span:first-child {
-  letter-spacing: var(--letter-spacing-sm);
-}
-
-.button-inverted span:last-child {
-  color: var(--color-primary);
-}
-
-.button-inverted:after {
-  background-color: var(--color-primary-inverse);
-}
-
-.button-inverted:hover {
-  border-color: var(--color-primary-inverse);
-}
-
-.button-inverted:hover:after {
-  transform-origin: bottom center;
-  transform: skewY(9.3deg) scaleY(2);
-}
-
-.button-inverted:hover span:first-child {
-  color: var(--color-primary);
-  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
-}
-
-.button-inverted:hover span:last-child {
-  transform: translateX(-50%) translateY(-100%);
-  opacity: 1;
-  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
-}
-
-/* Menu Button Styles */
-.menu-button {
-  position: relative;
-  overflow: hidden;
-  border: none;
-  border-bottom: 1px solid var(--color-primary-inverse);
-  color: var(--color-primary-inverse);
-  display: flex;
-  width: 100%;
-  padding: var(--Spacing-L, 1rem);
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: var(--letter-spacing-sm);
-  text-decoration: none;
-  cursor: pointer;
-  background: var(--black);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  transition: border-color 600ms cubic-bezier(0.48, 0, 0.12, 1);
-}
-
-.menu-button span:first-child {
-  position: relative;
-  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
-  z-index: 10;
-}
-
-.menu-button span:last-child {
-  color: var(--color-primary-inverse);
-  display: block;
-  position: absolute;
-  bottom: 0;
-  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
-  z-index: 100;
-  opacity: 0;
-  top: 50%;
-  left: 50%;
-  transform: translateY(225%) translateX(-50%);
-  height: 24px;
-  line-height: 24px;
-  max-width: 60px;
-}
-
-.menu-button:after {
-  content: "";
-  position: absolute;
-  bottom: -50%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-brand);
-  transform-origin: bottom center;
-  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
-  transform: skewY(4.3deg) scaleY(0);
-  z-index: 50;
-}
-
-.menu-button:hover {
-  border-bottom: none;
-}
-
-.menu-button:hover:after {
-  transform-origin: bottom center;
-  transform: skewY(2.3deg) scaleY(2);
-}
-
-.menu-button:hover span:first-child {
-  color: var(--color-primary-inverse);
-  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
-}
-
-.menu-button:hover span:last-child {
-  color: var(--color-primary-inverse);
-  transform: translateY(-100%) translateX(-50%);
-  opacity: 1;
-  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
-}
-
-/* Menu Button Active State */
-.menu-button.active {
-  border-bottom: none;
-}
-
-.menu-button.active:after {
-  transform-origin: bottom center;
-  transform: skewY(2.3deg) scaleY(2);
-}
-
-.menu-button.active span:first-child {
-  color: var(--color-primary-inverse);
-  z-index: 100;
-  position: relative;
-}
-
-.menu-button.active span:last-child {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(225%) translateX(-50%);
-  display: none;
-}
-
-/* Menu Button font size for tablet and mobile */
-@media (max-width: 1024px) {
-  .menu-button {
-    font-size: 20px;
-    line-height: 20px;
-  }
-
-  .menu-button span:last-child {
-    height: 20px;
-    line-height: 20px;
-    font-size: 20px;
-  }
-}
-
-/* Menu Button H2 styles for tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .menu-button span:first-child {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px;
-  }
-
-}
-
-/* Menu Button H2 styles for desktop 1440px */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .menu-button span:first-child {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px;
-  }
-}
-
-/* Menu Button H2 styles for large desktop */
-@media (min-width: 1441px) {
-  .menu-button span:first-child {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px;
-  }
-}
-
-/* Button font size for tablet and mobile - inverted */
-@media (max-width: 1024px) {
-  .button-inverted {
-    font-size: 20px;
-    line-height: 20px;
-  }
-
-  .button-inverted span:last-child {
-    height: 20px;
-    line-height: 20px;
-  }
-}
-
-/* Typography Styles */
-
-/* H1 - Mobile (≤768px) */
+/* Mobile (≤768px) */
 @media (max-width: 768px) {
-
-  h1,
-  .h1 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 44px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 56px;
-  }
+  h1, .h1      { font-size: 44px; line-height: 56px; }
+  h2, .h2      { font-size: 32px; line-height: 48px; }
+  h3, .h3      { font-size: 24px; line-height: 36px; }
+  h4, .h4      { font-size: 20px; line-height: 32px; }
+  body, .body  { font-size: 18px; line-height: 28px; }
+  .caption     { font-size: 14px; line-height: 20px; }
 }
 
-/* H1 - Tablet (769px - 1024px) */
+/* Tablet (769px–1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-
-  h1,
-  .h1 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 88px;
-  }
+  h1, .h1      { font-size: 64px;  line-height: 88px; }
+  h2, .h2      { font-size: 48px;  line-height: 64px; }
+  h3, .h3      { font-size: 32px;  line-height: 48px; }
+  h4, .h4      { font-size: 24px;  line-height: 36px; }
+  body, .body  { font-size: 20px;  line-height: 32px; }
+  .caption     { font-size: 16px;  line-height: 24px; }
 }
 
-/* H1 - Desktop 1440px (1025px - 1440px) */
+/* Desktop (1025px–1440px) */
 @media (min-width: 1025px) and (max-width: 1440px) {
-
-  h1,
-  .h1 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 80px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 104px;
-  }
+  h1, .h1      { font-size: 80px;  line-height: 104px; }
+  h2, .h2      { font-size: 56px;  line-height: 80px;  }
+  h3, .h3      { font-size: 40px;  line-height: 56px;  }
+  h4, .h4      { font-size: 28px;  line-height: 40px;  }
+  body, .body  { font-size: 24px;  line-height: 36px;  }
+  .caption     { font-size: 18px;  line-height: 28px;  }
 }
 
-/* H1 - Large Desktop (>1440px) */
+/* Large Desktop (>1440px) */
 @media (min-width: 1441px) {
-
-  h1,
-  .h1 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 96px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 120px;
-  }
+  h1, .h1      { font-size: 96px;  line-height: 120px; }
+  h2, .h2      { font-size: 64px;  line-height: 88px;  }
+  h3, .h3      { font-size: 48px;  line-height: 64px;  }
+  h4, .h4      { font-size: 32px;  line-height: 48px;  }
+  body, .body  { font-size: 28px;  line-height: 40px;  }
+  .caption     { font-size: 20px;  line-height: 32px;  }
 }
 
-/* H2 - Mobile (≤768px) */
-@media (max-width: 768px) {
+/* ============================================================
+   Menu Scrollbar
+   Show a thin scrollbar inside sliding menu panels
+   ============================================================ */
 
-  h2,
-  .h2 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 48px;
-  }
-}
-
-/* H2 - Tablet (769px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  h2,
-  .h2 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 64px;
-  }
-}
-
-/* H2 - Desktop 1440px (1025px - 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-
-  h2,
-  .h2 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 56px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 80px;
-  }
-}
-
-/* H2 - Large Desktop (>1440px) */
-@media (min-width: 1441px) {
-
-  h2,
-  .h2 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 88px;
-  }
-}
-
-/* H3 - Mobile (≤768px) */
-@media (max-width: 768px) {
-
-  h3,
-  .h3 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 36px;
-  }
-}
-
-/* H3 - Tablet (769px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  h3,
-  .h3 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 48px;
-  }
-}
-
-/* H3 - Desktop 1440px (1025px - 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-
-  h3,
-  .h3 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 56px;
-  }
-}
-
-/* H3 - Large Desktop (>1440px) */
-@media (min-width: 1441px) {
-
-  h3,
-  .h3 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 64px;
-  }
-}
-
-/* H4 - Mobile (≤768px) */
-@media (max-width: 768px) {
-
-  h4,
-  .h4 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 32px;
-  }
-}
-
-/* H4 - Tablet (769px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  h4,
-  .h4 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 36px;
-  }
-}
-
-/* H4 - Desktop 1440px (1025px - 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-
-  h4,
-  .h4 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 40px;
-  }
-}
-
-/* H4 - Large Desktop (>1440px) */
-@media (min-width: 1441px) {
-
-  h4,
-  .h4 {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 48px;
-  }
-}
-
-/* Body - Mobile (≤768px) */
-@media (max-width: 768px) {
-
-  body,
-  .body {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 28px;
-  }
-}
-
-/* Body - Tablet (769px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  body,
-  .body {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 32px;
-  }
-}
-
-/* Body - Desktop 1440px (1025px - 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-
-  body,
-  .body {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
-  }
-}
-
-/* Body - Large Desktop (>1440px) */
-@media (min-width: 1441px) {
-
-  body,
-  .body {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 40px;
-  }
-}
-
-/* Caption - Mobile (≤768px) */
-@media (max-width: 768px) {
-  .caption {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-  }
-}
-
-/* Caption - Tablet (769px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .caption {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-  }
-}
-
-/* Caption - Desktop 1440px (1025px - 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .caption {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
-  }
-}
-
-/* Caption - Large Desktop (>1440px) */
-@media (min-width: 1441px) {
-  .caption {
-    font-family: "sofia-pro-comp", sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 32px;
-  }
-}
-
-/* Menu Scrollbar Styles - Show scrollbar for menu containers */
-div[class*="animate-slideInMenu"],
-div[class*="animate-slideOutMenu"],
-div[class*="animate-slideInMenuMobile"],
-div[class*="animate-slideOutMenuMobile"] {
+[class*="animate-slideInMenu"],
+[class*="animate-slideOutMenu"],
+[class*="animate-slideInMenuMobile"],
+[class*="animate-slideOutMenuMobile"] {
   scrollbar-width: thin !important;
   scrollbar-color: var(--color-primary-inverse) var(--darkblack) !important;
   -ms-overflow-style: auto !important;
 }
 
-div[class*="animate-slideInMenu"]::-webkit-scrollbar,
-div[class*="animate-slideOutMenu"]::-webkit-scrollbar,
-div[class*="animate-slideInMenuMobile"]::-webkit-scrollbar,
-div[class*="animate-slideOutMenuMobile"]::-webkit-scrollbar {
+[class*="animate-slideInMenu"]::-webkit-scrollbar,
+[class*="animate-slideOutMenu"]::-webkit-scrollbar,
+[class*="animate-slideInMenuMobile"]::-webkit-scrollbar,
+[class*="animate-slideOutMenuMobile"]::-webkit-scrollbar {
   display: block !important;
   width: 8px;
 }
 
-div[class*="animate-slideInMenu"]::-webkit-scrollbar-track,
-div[class*="animate-slideOutMenu"]::-webkit-scrollbar-track,
-div[class*="animate-slideInMenuMobile"]::-webkit-scrollbar-track,
-div[class*="animate-slideOutMenuMobile"]::-webkit-scrollbar-track {
+[class*="animate-slideInMenu"]::-webkit-scrollbar-track,
+[class*="animate-slideOutMenu"]::-webkit-scrollbar-track,
+[class*="animate-slideInMenuMobile"]::-webkit-scrollbar-track,
+[class*="animate-slideOutMenuMobile"]::-webkit-scrollbar-track {
   background: var(--darkblack);
 }
 
-div[class*="animate-slideInMenu"]::-webkit-scrollbar-thumb,
-div[class*="animate-slideOutMenu"]::-webkit-scrollbar-thumb,
-div[class*="animate-slideInMenuMobile"]::-webkit-scrollbar-thumb,
-div[class*="animate-slideOutMenuMobile"]::-webkit-scrollbar-thumb {
+[class*="animate-slideInMenu"]::-webkit-scrollbar-thumb,
+[class*="animate-slideOutMenu"]::-webkit-scrollbar-thumb,
+[class*="animate-slideInMenuMobile"]::-webkit-scrollbar-thumb,
+[class*="animate-slideOutMenuMobile"]::-webkit-scrollbar-thumb {
   background-color: var(--color-primary-inverse);
   border-radius: 4px;
 }

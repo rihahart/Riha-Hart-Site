@@ -3,7 +3,7 @@
 import React from "react"
 import Image from "next/image"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import Button from "./Button"
+import Button from "../Button"
 import DolphinAnimation from "./DolphinAnimation"
 
 export default function Footer() {
@@ -40,9 +40,9 @@ export default function Footer() {
                                 Connect with me!
                             </p>*/}
                             <div className="flex items-start gap-[var(--spacing-xl)]">
-                                <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
-                                <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
-                                <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                                <Button text="Email" onClick={handleEmailClick} inverted={true} />
+                                <Button text="LinkedIn" onClick={handleLinkedInClick} inverted={true} />
+                                <Button text="Instagram" onClick={handleInstagramClick} inverted={true} />
                             </div>
                         </div>
                     </div>
@@ -79,9 +79,9 @@ export default function Footer() {
                                 Connect with me!
                             </p>*/}
                             <div className="flex items-start gap-[var(--spacing-xl)]">
-                                <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
-                                <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
-                                <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                                <Button text="Email" onClick={handleEmailClick} inverted={true} />
+                                <Button text="LinkedIn" onClick={handleLinkedInClick} inverted={true} />
+                                <Button text="Instagram" onClick={handleInstagramClick} inverted={true} />
                             </div>
                         </div>
                     </div>
@@ -118,9 +118,9 @@ export default function Footer() {
                                 Connect with me!
                             </p>*/}
                             <div className="flex items-start gap-[var(--spacing-xl)]">
-                                <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
-                                <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
-                                <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                                <Button text="Email" onClick={handleEmailClick} inverted={true} />
+                                <Button text="LinkedIn" onClick={handleLinkedInClick} inverted={true} />
+                                <Button text="Instagram" onClick={handleInstagramClick} inverted={true} />
                             </div>
                         </div>
                     </div>
@@ -156,9 +156,9 @@ export default function Footer() {
                             Connect with me!
                         </p>*/}
                         <div className="flex items-start gap-[var(--spacing-xl)]">
-                            <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
-                            <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
-                            <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                            <Button text="Email" onClick={handleEmailClick} inverted={true} />
+                            <Button text="LinkedIn" onClick={handleLinkedInClick} inverted={true} />
+                            <Button text="Instagram" onClick={handleInstagramClick} inverted={true} />
                         </div>
                     </div>
                 </div>
@@ -180,4 +180,3 @@ export default function Footer() {
         </footer >
     )
 }
-

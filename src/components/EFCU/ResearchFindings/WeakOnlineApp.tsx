@@ -2,7 +2,7 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import { weakOnlineApp } from "@/data/EFCU/researchData/weakOnlineApp"
+import { weakOnlineApp } from "@/data/EFCU/ResearchFindings/weakOnlineApp"
 import Style from "./Style"
 
 export default function WeakOnlineApp() {

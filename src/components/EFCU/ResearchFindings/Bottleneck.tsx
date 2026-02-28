@@ -2,7 +2,7 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import { bottleneck } from "@/data/EFCU/researchData/bottleneck"
+import { bottleneck } from "@/data/EFCU/ResearchFindings/bottleneck"
 import Style from "./Style"
 
 export default function Bottleneck() {

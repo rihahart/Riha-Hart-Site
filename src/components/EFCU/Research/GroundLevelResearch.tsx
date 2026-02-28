@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import { groundLevelResearch } from "@/data/EFCU/groundLevelResearch"
+import { groundLevelResearch } from "@/data/EFCU/Research/groundLevelResearch"
 
 function ScrollTriggerVideo({
   src,

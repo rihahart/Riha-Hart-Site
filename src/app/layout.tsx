@@ -2,7 +2,7 @@ import '../styles/global.css'
 import Navigation from '@/components/Navigation'
 import { VideoProvider } from '@/contexts/VideoContext'
 import { MenuProvider } from '@/contexts/MenuContext'
-import Footer from '@/components/Footer'
+import Footer from '@/components/Footer/Footer'
 import Menu from '@/components/Menu'
 import { ReactNode } from 'react'
 

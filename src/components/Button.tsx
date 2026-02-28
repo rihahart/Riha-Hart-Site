@@ -3,7 +3,6 @@ import React from 'react'
 
 interface ButtonProps {
   text: string
-  alternateText: string
   onClick?: () => void
   type?: 'button' | 'submit' | 'reset'
   className?: string
@@ -13,7 +12,6 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({
   text,
-  alternateText,
   onClick,
   type = 'button',
   className = '',
@@ -22,13 +20,12 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`button ${inverted ? 'button-inverted' : ''} ${variant === 'redPrimary' ? 'button-red-primary' : ''} ${className}`}
+      className={`button ${inverted ? 'button--inverted' : ''} ${variant === 'redPrimary' ? 'button--red' : ''} ${className}`}
       role="button"
       onClick={onClick}
       type={type}
     >
-      <span className="text">{text}</span>
-      <span>{alternateText}</span>
+      <span>{text}</span>
     </button>
   )
 }

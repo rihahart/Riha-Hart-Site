@@ -2,7 +2,7 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import { introToEFCU } from "@/data/EFCU/introToEFCU"
+import { introToEFCU } from "@/data/EFCU/IntroImpact/introToEFCU"
 import Button from "@/components/Button"
 
 export default function IntroToEFCU() {
@@ -30,7 +30,6 @@ export default function IntroToEFCU() {
                     </p>
                     <Button
                         text="Visit site"
-                        alternateText="Click me"
                         onClick={handleVisitWebsite}
                         variant="redPrimary"
                     />
@@ -57,7 +56,6 @@ export default function IntroToEFCU() {
                     </p>
                     <Button
                         text="Visit site"
-                        alternateText="Click me"
                         onClick={handleVisitWebsite}
                         variant="redPrimary"
                     />
@@ -84,7 +82,6 @@ export default function IntroToEFCU() {
                     </p>
                     <Button
                         text="Visit site"
-                        alternateText="Click me"
                         onClick={handleVisitWebsite}
                         variant="redPrimary"
                     />
@@ -110,7 +107,6 @@ export default function IntroToEFCU() {
                 </p>
                 <Button
                     text="Visit site"
-                    alternateText="Click me"
                     onClick={handleVisitWebsite}
                     variant="redPrimary"
                 />

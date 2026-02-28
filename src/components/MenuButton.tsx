@@ -3,7 +3,6 @@ import React from 'react'
 
 interface MenuButtonProps {
     text: string
-    alternateText: string
     onClick?: () => void
     type?: 'button' | 'submit' | 'reset'
     className?: string
@@ -13,7 +12,6 @@ interface MenuButtonProps {
 
 const MenuButton: React.FC<MenuButtonProps> = ({
     text,
-    alternateText,
     onClick,
     type = 'button',
     className = '',
@@ -31,8 +29,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({
             }}
             type={type}
         >
-            <span className="text">{text}</span>
-            <span>{alternateText}</span>
+            <span>{text}</span>
         </button>
     )
 }

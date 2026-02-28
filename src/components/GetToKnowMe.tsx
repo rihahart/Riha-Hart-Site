@@ -17,7 +17,7 @@ export default function GetToKnowMe() {
                     <h2 className="h2 text-[var(--color-primary)]">
                         I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
                     </h2>
-                    <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
+                    <Button text="Get to know me" onClick={() => router.push('/bio')} variant="redPrimary" />
                 </div>
             </div>
         )
@@ -31,7 +31,7 @@ export default function GetToKnowMe() {
                     <h2 className="h2 text-[var(--color-primary)]">
                         I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
                     </h2>
-                    <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
+                    <Button text="Get to know me" onClick={() => router.push('/bio')} variant="redPrimary" />
                 </div>
             </div>
         )
@@ -45,7 +45,7 @@ export default function GetToKnowMe() {
                     <h2 className="h2 text-[var(--color-primary)]">
                         I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
                     </h2>
-                    <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
+                    <Button text="Get to know me" onClick={() => router.push('/bio')} variant="redPrimary" />
                 </div>
             </div>
         )
@@ -58,7 +58,7 @@ export default function GetToKnowMe() {
                 <h2 className="h2 text-[var(--color-primary)]">
                     I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
                 </h2>
-                <Button text="Get to know me" alternateText="See my bio" onClick={() => router.push('/bio')} />
+                <Button text="Get to know me" onClick={() => router.push('/bio')} variant="redPrimary" />
             </div>
         </div>
     )

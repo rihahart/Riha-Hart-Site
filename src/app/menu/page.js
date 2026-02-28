@@ -123,25 +123,21 @@ export default function MenuPage() {
             <div className="flex flex-col items-center gap-[var(--spacing-xl)] w-full">
               <MenuButton
                 text="Get to know me"
-                alternateText="See my bio"
                 onClick={handleGetToKnowMe}
                 inverted={true}
               />
               <MenuButton
                 text="JH Mural Project"
-                alternateText="View project"
                 onClick={handleJHMuralProject}
                 inverted={true}
               />
               <MenuButton
                 text="Everest Federal Credit Union"
-                alternateText="View project"
                 onClick={handleEverestFederal}
                 inverted={true}
               />
               <MenuButton
                 text="Other work"
-                alternateText="View my work"
                 onClick={handleOtherWork}
                 inverted={true}
               />
@@ -149,9 +145,9 @@ export default function MenuPage() {
             <div className="relative w-full">
               <JumpingAnimation className="h-full max-w-[320px] px-[var(--spacing-lg)]" />
               <div className="absolute bottom-[-30%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
-                <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
-                <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
-                <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                <Button text="Email" onClick={handleEmailClick} inverted={true} />
+                <Button text="LinkedIn" onClick={handleLinkedInClick} inverted={true} />
+                <Button text="Instagram" onClick={handleInstagramClick} inverted={true} />
               </div>
             </div>
           </div>
@@ -195,25 +191,21 @@ export default function MenuPage() {
               <div className="flex flex-col items-center gap-[var(--spacing-3xl)] w-full">
                 <MenuButton
                   text="Get to know me"
-                  alternateText="See my bio"
                   onClick={handleGetToKnowMe}
                   inverted={true}
                 />
                 <MenuButton
                   text="JH Mural Project"
-                  alternateText="View project"
                   onClick={handleJHMuralProject}
                   inverted={true}
                 />
                 <MenuButton
                   text="Everest Federal Credit Union"
-                  alternateText="View project"
                   onClick={handleEverestFederal}
                   inverted={true}
                 />
                 <MenuButton
                   text="Other work"
-                  alternateText="View my work"
                   onClick={handleOtherWork}
                   inverted={true}
                 />
@@ -221,9 +213,9 @@ export default function MenuPage() {
               <div className="relative w-full">
                 <JumpingAnimation className="h-full max-w-[400px] px-[var(--spacing-lg)]" />
                 <div className="absolute bottom-[-30%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
-                  <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
-                  <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
-                  <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                  <Button text="Email" onClick={handleEmailClick} inverted={true} />
+                  <Button text="LinkedIn" onClick={handleLinkedInClick} inverted={true} />
+                  <Button text="Instagram" onClick={handleInstagramClick} inverted={true} />
                 </div>
               </div>
             </div>
@@ -268,25 +260,21 @@ export default function MenuPage() {
               <div className="flex flex-col items-center gap-[var(--spacing-2xl)] w-full">
                 <MenuButton
                   text="Get to know me"
-                  alternateText="See my bio"
                   onClick={handleGetToKnowMe}
                   inverted={true}
                 />
                 <MenuButton
                   text="JH Mural Project"
-                  alternateText="See my work"
                   onClick={handleJHMuralProject}
                   inverted={true}
                 />
                 <MenuButton
                   text="Everest Federal Credit Union"
-                  alternateText="See my work"
                   onClick={handleEverestFederal}
                   inverted={true}
                 />
                 <MenuButton
                   text="Other work"
-                  alternateText="See my work"
                   onClick={handleOtherWork}
                   inverted={true}
                 />
@@ -294,9 +282,9 @@ export default function MenuPage() {
               <div className="relative w-full">
                 <JumpingAnimation className="h-full max-w-[400px] px-[var(--spacing-lg)]" />
                 <div className="absolute bottom-[-20%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
-                  <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
-                  <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
-                  <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                  <Button text="Email" onClick={handleEmailClick} inverted={true} />
+                  <Button text="LinkedIn" onClick={handleLinkedInClick} inverted={true} />
+                  <Button text="Instagram" onClick={handleInstagramClick} inverted={true} />
                 </div>
               </div>
             </div>
@@ -340,25 +328,21 @@ export default function MenuPage() {
             <div className="flex flex-col items-center gap-[var(--spacing-3xl)] w-full">
               <MenuButton
                 text="Get to know me"
-                alternateText="See my bio"
                 onClick={handleGetToKnowMe}
                 inverted={true}
               />
               <MenuButton
                 text="JH Mural Project"
-                alternateText="View project"
                 onClick={handleJHMuralProject}
                 inverted={true}
               />
               <MenuButton
                 text="Everest Federal Credit Union"
-                alternateText="View project"
                 onClick={handleEverestFederal}
                 inverted={true}
               />
               <MenuButton
                 text="Other work"
-                alternateText="View work"
                 onClick={handleOtherWork}
                 inverted={true}
               />
@@ -366,9 +350,9 @@ export default function MenuPage() {
             <div className="relative w-full">
               <JumpingAnimation className="h-full max-w-[450px] px-[var(--spacing-lg)]" />
               <div className="absolute bottom-[-20%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
-                <Button text="Email" alternateText="Email me" onClick={handleEmailClick} inverted={true} />
-                <Button text="LinkedIn" alternateText="Add me" onClick={handleLinkedInClick} inverted={true} />
-                <Button text="Instagram" alternateText="Follow me" onClick={handleInstagramClick} inverted={true} />
+                <Button text="Email" onClick={handleEmailClick} inverted={true} />
+                <Button text="LinkedIn" onClick={handleLinkedInClick} inverted={true} />
+                <Button text="Instagram" onClick={handleInstagramClick} inverted={true} />
               </div>
             </div>
           </div>

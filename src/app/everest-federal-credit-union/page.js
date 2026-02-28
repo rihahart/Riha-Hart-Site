@@ -2,11 +2,14 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import IntroToEFCU from "@/components/EFCU/IntroToEFCU"
-import ImpactBox from "@/components/EFCU/ImpactBox"
-import GroundLevelResearch from "@/components/EFCU/GroundLevelResearch"
-import InternalOperationsResearch from "@/components/EFCU/InternalOperationsResearch"
-import BankScale from "@/components/EFCU/BankScale"
+import IntroToEFCU from "@/components/EFCU/IntroImpact/IntroToEFCU"
+import ImpactBox from "@/components/EFCU/IntroImpact/ImpactBox"
+import GroundLevelResearch from "@/components/EFCU/Research/GroundLevelResearch"
+import InternalOperationsResearch from "@/components/EFCU/Research/InternalOperationsResearch"
+import BankScale from "@/components/EFCU/ResearchFindings/BankScale"
+import ClarifyingMembership from "@/components/EFCU/Membershiploans/ClarifyingMembership"
+import LoanMap from "@/components/EFCU/Membershiploans/LoanMap"
+
 
 export default function EverestFederalCreditUnion() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
@@ -38,6 +41,15 @@ export default function EverestFederalCreditUnion() {
           <InternalOperationsResearch />
         </div>
         <BankScale />
+        <div
+          className="w-full flex flex-col px-[var(--spacing-lg)] py-[var(--spacing-2xl)] gap-[var(--spacing-4xl)]"
+          style={{
+            backgroundColor: "#F6F6F8",
+            borderLeft: "4px solid var(--blue-300)"
+          }}
+        >
+          <ClarifyingMembership />
+        </div>
       </div>
     )
   }
@@ -69,6 +81,15 @@ export default function EverestFederalCreditUnion() {
           <InternalOperationsResearch />
         </div>
         <BankScale />
+        <div
+          className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-6xl)]"
+          style={{
+            backgroundColor: "#F6F6F8",
+            borderLeft: "6px solid var(--blue-300)"
+          }}
+        >
+          <ClarifyingMembership />
+        </div>
       </div>
     )
   }
@@ -100,6 +121,16 @@ export default function EverestFederalCreditUnion() {
           <InternalOperationsResearch />
         </div>
         <BankScale />
+        <div
+          className="w-full flex flex-col px-[var(--spacing-2xl)] py-[var(--spacing-4xl)] gap-[var(--spacing-8xl)]"
+          style={{
+            backgroundColor: "#F6F6F8",
+            borderLeft: "8px solid var(--blue-300)"
+          }}
+        >
+          <ClarifyingMembership />
+        </div>
+
       </div>
     )
   }
@@ -130,6 +161,15 @@ export default function EverestFederalCreditUnion() {
         <InternalOperationsResearch />
       </div>
       <BankScale />
+      <div
+        className="w-full flex flex-col px-[var(--spacing-6xl)] py-[var(--spacing-4xl)] gap-[var(--spacing-9xl)]"
+        style={{
+          backgroundColor: "#F6F6F8",
+          borderLeft: "12px solid var(--blue-300)"
+        }}
+      >
+        <ClarifyingMembership />
+      </div>
     </div>
   )
 }

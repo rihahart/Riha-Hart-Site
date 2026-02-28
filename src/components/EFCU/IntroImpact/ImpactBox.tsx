@@ -2,7 +2,7 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import { impactBox } from "@/data/EFCU/impactBox"
+import { impactBox } from "@/data/EFCU/IntroImpact/impactBox"
 
 type ScreenSize = "mobile" | "tablet" | "desktop1440" | "large"
 
