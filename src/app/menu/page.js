@@ -2,9 +2,9 @@
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import useMobileDetection from '@/_utilities/useMobileDetection'
-import MenuButton from '@/components/MenuButton'
+import MenuButton from '@/components/HamburgerNav/MenuButton'
 import Button from '@/components/Button'
-import JumpingAnimation from '@/components/JumpingAnimation'
+import JumpingAnimation from '@/components/HamburgerNav/JumpingAnimation'
 
 export default function MenuPage() {
   const handleEmailClick = () => {

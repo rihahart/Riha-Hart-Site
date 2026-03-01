@@ -63,4 +63,3 @@ export default function JumpingAnimation({ className = '' }: JumpingAnimationPro
         </div>
     )
 }
-

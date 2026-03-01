@@ -2,9 +2,9 @@
 import { useEffect, useState, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import useMobileDetection from '@/_utilities/useMobileDetection'
-import MenuButton from '@/components/MenuButton'
+import MenuButton from './MenuButton'
 import Button from '@/components/Button'
-import JumpingAnimation from '@/components/JumpingAnimation'
+import JumpingAnimation from './JumpingAnimation'
 import { useMenu } from '@/contexts/MenuContext'
 
 export default function Menu() {
@@ -441,4 +441,3 @@ export default function Menu() {
         </div>
     )
 }
-
