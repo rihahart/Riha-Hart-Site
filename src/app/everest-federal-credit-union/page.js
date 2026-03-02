@@ -7,8 +7,8 @@ import ImpactBox from "@/components/EFCU/IntroImpact/ImpactBox"
 import GroundLevelResearch from "@/components/EFCU/Research/GroundLevelResearch"
 import InternalOperationsResearch from "@/components/EFCU/Research/InternalOperationsResearch"
 import BankScale from "@/components/EFCU/ResearchFindings/BankScale"
-import ClarifyingMembership from "@/components/EFCU/Membershiploans/ClarifyingMembership"
-import LoanMap from "@/components/EFCU/Membershiploans/LoanMap"
+import ClarifyingMembership from "@/components/EFCU/MembershipLoans/ClarifyingMembership"
+import LoanMap from "@/components/EFCU/MembershipLoans/LoanMap"
 
 
 export default function EverestFederalCreditUnion() {
