@@ -14,9 +14,9 @@ export default function GetToKnowMe() {
         return (
             <div className="w-full flex justify-center align-center">
                 <div className="flex flex-col items-start justify-center gap-[var(--spacing-xl)] py-[var(--spacing-xl)]">
-                    <h2 className="h2 text-[var(--color-primary)]">
+                    <h3 className="h3 text-[var(--color-primary)]">
                         I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
-                    </h2>
+                    </h3>
                     <Button text="Get to know me" onClick={() => router.push('/bio')} variant="redPrimary" />
                 </div>
             </div>
@@ -28,9 +28,9 @@ export default function GetToKnowMe() {
         return (
             <div className="flex w-full align-center justify-center">
                 <div className="flex flex-col items-start justify-center  gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)]">
-                    <h2 className="h2 text-[var(--color-primary)]">
+                    <h3 className="h3 text-[var(--color-primary)]">
                         I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
-                    </h2>
+                    </h3>
                     <Button text="Get to know me" onClick={() => router.push('/bio')} variant="redPrimary" />
                 </div>
             </div>
@@ -42,9 +42,9 @@ export default function GetToKnowMe() {
         return (
             <div className="w-full flex justify-end">
                 <div className="flex flex-col items-start justify-center w-[70%] gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)]">
-                    <h2 className="h2 text-[var(--color-primary)]">
+                    <h3 className="h3 text-[var(--color-primary)]">
                         I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
-                    </h2>
+                    </h3>
                     <Button text="Get to know me" onClick={() => router.push('/bio')} variant="redPrimary" />
                 </div>
             </div>
@@ -55,9 +55,9 @@ export default function GetToKnowMe() {
     return (
         <div className="w-full flex justify-end">
             <div className="flex flex-col items-start justify-center w-[70%] gap-[var(--spacing-3xl)] py-[var(--spacing-3xl)]">
-                <h2 className="h2 text-[var(--color-primary)]">
+                <h3 className="h3 text-[var(--color-primary)]">
                     I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
-                </h2>
+                </h3>
                 <Button text="Get to know me" onClick={() => router.push('/bio')} variant="redPrimary" />
             </div>
         </div>
