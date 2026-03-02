@@ -29,7 +29,7 @@ export default function GetToKnowMe() {
             <div className="flex w-full align-center justify-center">
                 <div className="flex flex-col items-start justify-center  gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)]">
                     <h2 className="h2 text-[var(--color-primary)]">
-                        I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.
+                        I am a designer by training, project manager by necessity, and an occasional developer who makes things happen
                     </h2>
                     <Button text="Get to know me" onClick={() => router.push('/bio')} variant="redPrimary" />
                 </div>
