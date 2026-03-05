@@ -6,8 +6,11 @@ interface ButtonProps {
   onClick?: () => void
   type?: 'button' | 'submit' | 'reset'
   className?: string
+  /** @deprecated Use variant="inverse" */
   inverted?: boolean
-  variant?: 'default' | 'redPrimary'
+  /** @deprecated Use variant="primary" */
+  variant?: 'default' | 'redPrimary' | 'primary' | 'inverse' | 'link'
+  size?: 'large' | 'small'
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -16,11 +19,26 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   className = '',
   inverted = false,
-  variant = 'default'
+  variant = 'default',
+  size = 'large'
 }) => {
+  const resolvedVariant =
+    variant === 'redPrimary' ? 'primary' : inverted ? 'inverse' : variant === 'default' ? 'primary' : variant
+
+  const variantClass =
+    resolvedVariant === 'primary'
+      ? 'button--primary'
+      : resolvedVariant === 'inverse'
+        ? 'button--inverse'
+        : resolvedVariant === 'link'
+          ? 'button--link'
+          : 'button--primary'
+
+  const sizeClass = size === 'small' ? 'button--small' : 'button--large'
+
   return (
     <button
-      className={`button ${inverted ? 'button--inverted' : ''} ${variant === 'redPrimary' ? 'button--red' : ''} ${className}`}
+      className={`button ${variantClass} ${sizeClass} ${className}`.trim()}
       role="button"
       onClick={onClick}
       type={type}
@@ -31,4 +49,3 @@ const Button: React.FC<ButtonProps> = ({
 }
 
 export default Button
-

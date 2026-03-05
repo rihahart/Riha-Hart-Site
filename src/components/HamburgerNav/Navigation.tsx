@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import { useRef, useEffect, useLayoutEffect, useState } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import { useMenu } from "@/contexts/MenuContext"
+import HamburgerButton from "./HamburgerButton"
 
 const Navigation = () => {
   const router = useRouter()
@@ -67,9 +68,9 @@ const Navigation = () => {
           <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
             <img ref={logoRef} src={logoSrc} alt="Riha Hart Logo" style={{ height: "70px", width: "auto", objectFit: "contain" }} loading="eager" />
           </button>
-          <button onClick={handleMenuClick} className="cursor-pointer" aria-label="Menu" style={{ transform: "translateY(10px)" }}>
-            <img src="/Icons/Hamburger/HamburgerLarge.svg" alt="Menu" style={{ height: "12px", width: "auto" }} />
-          </button>
+          <div className="nav-hamburger-wrap flex items-center justify-center">
+            <HamburgerButton onClick={handleMenuClick} size="small" />
+          </div>
         </div>
       </nav>
     )
@@ -79,13 +80,13 @@ const Navigation = () => {
   if (isTablet) {
     return (
       <nav ref={navRef} className={navClass}>
-        <div className="flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-2xl)]">
+        <div className="flex items-center justify-between py-[var(--spacing-m)] px-[var(--spacing-3xl)]">
           <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
             <img ref={logoRef} src={logoSrc} alt="Riha Hart Logo" style={{ height: "80px", width: "auto", objectFit: "contain" }} loading="eager" />
           </button>
-          <button onClick={handleMenuClick} className="cursor-pointer" aria-label="Menu" style={{ transform: "translateY(20px)" }}>
-            <img src="/Icons/Hamburger/HamburgerLarge.svg" alt="Menu" style={{ height: "15px", width: "auto" }} />
-          </button>
+          <div className="nav-hamburger-wrap flex items-center justify-center">
+            <HamburgerButton onClick={handleMenuClick} size="small" />
+          </div>
         </div>
       </nav>
     )
@@ -95,15 +96,15 @@ const Navigation = () => {
   if (isDesktop1440px) {
     return (
       <nav ref={navRef} className={navClass}>
-        <div className="flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-3xl)] ">
+        <div className="flex items-center justify-between py-[var(--spacing-m)] px-[var(--spacing-3xl)] ">
           <div className="flex items-center w-full justify-center">
             <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
               <img ref={logoRef} src={logoSrc} alt="Riha Hart Logo" style={{ height: "100px", width: "auto", objectFit: "contain" }} loading="eager" />
             </button>
           </div>
-          <button onClick={handleMenuClick} className="cursor-pointer" aria-label="Menu" style={{ transform: "translateY(20px)" }}>
-            <img src="/Icons/Hamburger/HamburgerLarge.svg" alt="Menu" style={{ height: "18px", width: "auto" }} />
-          </button>
+          <div className="nav-hamburger-wrap flex items-center justify-center">
+            <HamburgerButton onClick={handleMenuClick} size="large" />
+          </div>
         </div>
       </nav>
     )
@@ -112,15 +113,15 @@ const Navigation = () => {
   // Large Desktop
   return (
     <nav ref={navRef} className={navClass}>
-      <div className="flex w-full max-w-[1600px] mx-auto items-center justify-between py-[var(--spacing-3xl)] px-[var(--spacing-4xl)]">
+      <div className="flex w-full max-w-[1600px] mx-auto items-center justify-between py-[var(--spacing-m)] px-[var(--spacing-3xl)]">
         <div className="flex items-center w-full justify-center">
           <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
             <img ref={logoRef} src={logoSrc} alt="Riha Hart Logo" style={{ height: "120px", width: "auto", objectFit: "contain" }} loading="eager" />
           </button>
         </div>
-        <button onClick={handleMenuClick} className="cursor-pointer" aria-label="Menu" style={{ transform: "translateY(20px)" }}>
-          <img src="/Icons/Hamburger/HamburgerLarge.svg" alt="Menu" style={{ height: "20px", width: "auto" }} />
-        </button>
+        <div className="nav-hamburger-wrap flex items-center justify-center">
+          <HamburgerButton onClick={handleMenuClick} size="large" />
+        </div>
       </div>
     </nav>
   )

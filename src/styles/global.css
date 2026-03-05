@@ -1,6 +1,8 @@
 @import url("https://use.typekit.net/zpt8xte.css");
 @import "tailwindcss";
 @import "./buttons.css";
+@import "./icons.css";
+@import "./spacing.css";
 
 /* ============================================================
    Design Tokens
@@ -12,25 +14,6 @@
   --letter-spacing-s:    -0.5px;
   --letter-spacing-m:    1px;
   --letter-spacing-l:    2px;
-
-  /* Spacing */
-  --spacing-2xs:  2px;
-  --spacing-xs:   4px;
-  --spacing-s:    8px;
-  --spacing-m:    12px;
-  --spacing-lg:   16px;
-  --spacing-xl:   24px;
-  --spacing-2xl:  32px;
-  --spacing-3xl:  40px;
-  --spacing-4xl:  48px;
-  --spacing-5xl:  56px;
-  --spacing-6xl:  64px;
-  --spacing-7xl:  72px;
-  --spacing-8xl:  80px;
-  --spacing-9xl:  88px;
-  --spacing-10xl: 96px;
-  --spacing-11xl: 104px;
-  --spacing-12xl: 112px;
 
   /* Border Radius */
   --radius-xs:     4px;
@@ -77,23 +60,29 @@
   --neutral-1000: #131313;
 
   /* Semantic Colors */
-  --color-primary:          var(--neutral-900);
-  --color-secondary:        var(--neutral-800);
-  --color-tertiary:         var(--neutral-700);
-  --color-primary-inverse:  var(--neutral-100);
-  --color-secondary-inverse:var(--neutral-200);
-  --color-tertiary-inverse: var(--neutral-400);
-  --color-disabled:         var(--neutral-500);
-  --color-focus:            var(--green-200);
-  --color-brand:            var(--red-100);
-  --color-brand-pressed:    var(--red-200);
-  --color-brand-hover:      var(--red-400);
-  --color-link:             var(--blue-300);
-  --color-link-hover:       var(--blue-400);
-  --color-link-pressed:     var(--blue-500);
+  --color-primary:           var(--neutral-900);
+  --color-secondary:         var(--neutral-800);
+  --color-tertiary:          var(--neutral-700);
+  --color-primary-inverse:   var(--neutral-100);
+  --color-secondary-inverse: var(--neutral-200);
+  --color-tertiary-inverse:  var(--neutral-400);
+  --color-disabled:          var(--neutral-500);
+  --color-focus:             var(--green-200);
+  --color-brand:             var(--red-100);
+  --color-brand-pressed:     var(--red-200);
+  --color-brand-hover:       var(--red-400);
+  --color-link:              var(--blue-300);
+  --color-link-hover:        var(--blue-400);
+  --color-link-pressed:      var(--blue-500);
 
   /* Fonts */
   --font-sofia: "sofia-pro-comp", sans-serif;
+
+  /* Responsive Typography — values update per breakpoint below */
+  --font-size-body:      18px;
+  --line-height-body:    28px;
+  --font-size-caption:   14px;
+  --line-height-caption: 20px;
 }
 
 /* ============================================================
@@ -119,6 +108,73 @@ body::-webkit-scrollbar {
 }
 
 /* ============================================================
+   Navigation — hamburger hover
+   ============================================================ */
+
+.nav-hamburger-btn:hover {
+  background-color: var(--color-tertiary-inverse);
+}
+
+.nav-hamburger-wrap {
+  transform: translateY(var(--spacing-s));
+}
+
+/* ============================================================
+   HamburgerButton & ExitButton (shared design)
+   ============================================================ */
+
+.hamburger-btn,
+.exit-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hamburger-btn::after,
+.exit-btn::after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: 100%;
+  background-color: var(--color-tertiary-inverse);
+  transform: skewY(9.3deg) scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 0;
+}
+
+.hamburger-btn:hover::after,
+.exit-btn:hover::after {
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.hamburger-btn img,
+.exit-btn img {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.hamburger-btn--large,
+.exit-btn--large {
+  padding: 12px;
+}
+
+
+.hamburger-btn--small,
+.exit-btn--small {
+  padding: 8px;
+}
+
+/* ============================================================
    Animations
    ============================================================ */
 
@@ -137,10 +193,10 @@ body::-webkit-scrollbar {
   to   { transform: translateX(-50%); }
 }
 
-.animate-slideInMenu       { animation: slideInMenu  1000ms ease-in-out forwards; }
-.animate-slideOutMenu      { animation: slideOutMenu 1000ms ease-in-out forwards; }
-.animate-slideInMenuMobile { animation: slideInMenu   640ms ease-in-out forwards; }
-.animate-slideOutMenuMobile{ animation: slideOutMenu  640ms ease-in-out forwards; }
+.animate-slideInMenu        { animation: slideInMenu  1000ms ease-in-out forwards; }
+.animate-slideOutMenu       { animation: slideOutMenu 1000ms ease-in-out forwards; }
+.animate-slideInMenuMobile  { animation: slideInMenu   640ms ease-in-out forwards; }
+.animate-slideOutMenuMobile { animation: slideOutMenu  640ms ease-in-out forwards; }
 
 /* ============================================================
    Footer Scroll
@@ -163,8 +219,9 @@ body::-webkit-scrollbar {
 
 /* ============================================================
    Typography
-   All headings share the same font-family, font-style, and
-   font-weight — only size and line-height change per breakpoint.
+   Shared properties declared once; size/line-height vars
+   update at each breakpoint and flow through to any component
+   that consumes --font-size-body / --font-size-caption.
    ============================================================ */
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
@@ -177,52 +234,76 @@ body, .body {
   font-family: var(--font-sofia);
   font-style: normal;
   font-weight: 500;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }
 
 .caption {
   font-family: var(--font-sofia);
   font-style: normal;
   font-weight: 400;
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
 }
 
-/* Mobile (≤768px) */
+/* Mobile (≤768px) — default, matches :root values */
 @media (max-width: 768px) {
-  h1, .h1      { font-size: 44px; line-height: 56px; }
-  h2, .h2      { font-size: 32px; line-height: 48px; }
-  h3, .h3      { font-size: 24px; line-height: 36px; }
-  h4, .h4      { font-size: 20px; line-height: 32px; }
-  body, .body  { font-size: 18px; line-height: 28px; }
-  .caption     { font-size: 14px; line-height: 20px; }
+  :root {
+    --font-size-body:      18px;
+    --line-height-body:    28px;
+    --font-size-caption:   14px;
+    --line-height-caption: 20px;
+  }
+
+  h1, .h1 { font-size: 44px; line-height: 56px; }
+  h2, .h2 { font-size: 32px; line-height: 48px; }
+  h3, .h3 { font-size: 24px; line-height: 36px; }
+  h4, .h4 { font-size: 20px; line-height: 32px; }
 }
 
 /* Tablet (769px–1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  h1, .h1      { font-size: 64px;  line-height: 88px; }
-  h2, .h2      { font-size: 48px;  line-height: 64px; }
-  h3, .h3      { font-size: 32px;  line-height: 48px; }
-  h4, .h4      { font-size: 24px;  line-height: 36px; }
-  body, .body  { font-size: 20px;  line-height: 32px; }
-  .caption     { font-size: 16px;  line-height: 24px; }
+  :root {
+    --font-size-body:      20px;
+    --line-height-body:    32px;
+    --font-size-caption:   16px;
+    --line-height-caption: 24px;
+  }
+
+  h1, .h1 { font-size: 64px; line-height: 88px; }
+  h2, .h2 { font-size: 48px; line-height: 64px; }
+  h3, .h3 { font-size: 32px; line-height: 48px; }
+  h4, .h4 { font-size: 24px; line-height: 36px; }
 }
 
 /* Desktop (1025px–1440px) */
 @media (min-width: 1025px) and (max-width: 1440px) {
-  h1, .h1      { font-size: 80px;  line-height: 104px; }
-  h2, .h2      { font-size: 56px;  line-height: 80px;  }
-  h3, .h3      { font-size: 40px;  line-height: 56px;  }
-  h4, .h4      { font-size: 28px;  line-height: 40px;  }
-  body, .body  { font-size: 24px;  line-height: 36px;  }
-  .caption     { font-size: 18px;  line-height: 28px;  }
+  :root {
+    --font-size-body:      24px;
+    --line-height-body:    36px;
+    --font-size-caption:   18px;
+    --line-height-caption: 28px;
+  }
+
+  h1, .h1 { font-size: 80px;  line-height: 104px; }
+  h2, .h2 { font-size: 56px;  line-height: 80px;  }
+  h3, .h3 { font-size: 40px;  line-height: 56px;  }
+  h4, .h4 { font-size: 28px;  line-height: 40px;  }
 }
 
 /* Large Desktop (>1440px) */
 @media (min-width: 1441px) {
-  h1, .h1      { font-size: 96px;  line-height: 120px; }
-  h2, .h2      { font-size: 64px;  line-height: 88px;  }
-  h3, .h3      { font-size: 48px;  line-height: 64px;  }
-  h4, .h4      { font-size: 32px;  line-height: 48px;  }
-  body, .body  { font-size: 28px;  line-height: 40px;  }
-  .caption     { font-size: 20px;  line-height: 32px;  }
+  :root {
+    --font-size-body:      28px;
+    --line-height-body:    40px;
+    --font-size-caption:   20px;
+    --line-height-caption: 32px;
+  }
+
+  h1, .h1 { font-size: 96px; line-height: 120px; }
+  h2, .h2 { font-size: 64px; line-height: 88px;  }
+  h3, .h3 { font-size: 48px; line-height: 64px;  }
+  h4, .h4 { font-size: 32px; line-height: 48px;  }
 }
 
 /* ============================================================

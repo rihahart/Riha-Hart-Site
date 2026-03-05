@@ -1,0 +1,129 @@
+/* ============================================================
+   Responsive Spacing
+   Base scale (raw) + responsive mapping at 1024 / 1400 / 1600.
+   Use --spacing-xs, --spacing-s, etc.; they scale by viewport.
+   Fixed values: --spacing-raw-xs, --spacing-raw-s, etc.
+   ============================================================ */
+
+:root {
+  /* -------------------------------------------------------------------
+     Raw (base) scale — fixed pixel values
+     ------------------------------------------------------------------- */
+  --spacing-raw-2xs:  2px;
+  --spacing-raw-xs:   4px;
+  --spacing-raw-s:    8px;
+  --spacing-raw-m:    12px;
+  --spacing-raw-l:    16px;
+  --spacing-raw-xl:   24px;
+  --spacing-raw-2xl:  32px;
+  --spacing-raw-3xl:  40px;
+  --spacing-raw-4xl:  48px;
+  --spacing-raw-5xl:  56px;
+  --spacing-raw-6xl:  64px;
+  --spacing-raw-7xl:  72px;
+  --spacing-raw-8xl:  80px;
+  --spacing-raw-9xl:  88px;
+  --spacing-raw-10xl: 96px;
+  --spacing-raw-11xl: 104px;
+  --spacing-raw-12xl: 112px;
+
+  /* Aliases used in components (fixed, not in responsive table) */
+  --spacing-raw-sm: 8px;
+  --spacing-raw-md: 12px;
+
+  /* -------------------------------------------------------------------
+     Responsive spacing (Mobile default)
+     XS→XS, S→S, M→M, L→L, XL→XL, … 9XL→9XL
+     ------------------------------------------------------------------- */
+  --spacing-2xs:  var(--spacing-raw-2xs);
+  --spacing-xs:   var(--spacing-raw-xs);
+  --spacing-s:    var(--spacing-raw-s);
+  --spacing-m:    var(--spacing-raw-m);
+  --spacing-l:    var(--spacing-raw-l);
+  --spacing-lg:   var(--spacing-raw-l);
+  --spacing-xl:   var(--spacing-raw-xl);
+  --spacing-2xl:  var(--spacing-raw-2xl);
+  --spacing-3xl:  var(--spacing-raw-3xl);
+  --spacing-4xl:  var(--spacing-raw-4xl);
+  --spacing-5xl:  var(--spacing-raw-5xl);
+  --spacing-6xl:  var(--spacing-raw-6xl);
+  --spacing-7xl:  var(--spacing-raw-7xl);
+  --spacing-8xl:  var(--spacing-raw-8xl);
+  --spacing-9xl:  var(--spacing-raw-9xl);
+  --spacing-10xl: var(--spacing-raw-10xl);
+  --spacing-11xl: var(--spacing-raw-11xl);
+  --spacing-12xl: var(--spacing-raw-12xl);
+
+  --spacing-sm: var(--spacing-raw-sm);
+  --spacing-md: var(--spacing-raw-md);
+
+  /* Breakpoint: Mobile → S */
+  --spacing-breakpoint: var(--spacing-raw-s);
+  --spacing: var(--spacing-breakpoint);
+}
+
+/* 1024: XS→S, S→M, M→L, L→XL, … 9XL→10XL; Breakpoint → L */
+@media (min-width: 1024px) {
+  :root {
+    --spacing-xs:   var(--spacing-raw-s);
+    --spacing-s:    var(--spacing-raw-m);
+    --spacing-m:    var(--spacing-raw-l);
+    --spacing-l:    var(--spacing-raw-xl);
+    --spacing-lg:   var(--spacing-raw-xl);
+    --spacing-xl:   var(--spacing-raw-2xl);
+    --spacing-2xl:  var(--spacing-raw-3xl);
+    --spacing-3xl:  var(--spacing-raw-4xl);
+    --spacing-4xl:  var(--spacing-raw-5xl);
+    --spacing-5xl:  var(--spacing-raw-6xl);
+    --spacing-6xl:  var(--spacing-raw-7xl);
+    --spacing-7xl:  var(--spacing-raw-8xl);
+    --spacing-8xl:  var(--spacing-raw-9xl);
+    --spacing-9xl:  var(--spacing-raw-10xl);
+    --spacing-breakpoint: var(--spacing-raw-l);
+    --spacing: var(--spacing-breakpoint);
+  }
+}
+
+/* 1400: XS→M, S→L, M→XL, L→2XL, … 9XL→11XL; Breakpoint → XL */
+@media (min-width: 1400px) {
+  :root {
+    --spacing-xs:   var(--spacing-raw-m);
+    --spacing-s:    var(--spacing-raw-l);
+    --spacing-m:    var(--spacing-raw-xl);
+    --spacing-l:    var(--spacing-raw-2xl);
+    --spacing-lg:   var(--spacing-raw-2xl);
+    --spacing-xl:   var(--spacing-raw-3xl);
+    --spacing-2xl:  var(--spacing-raw-4xl);
+    --spacing-3xl:  var(--spacing-raw-5xl);
+    --spacing-4xl:  var(--spacing-raw-6xl);
+    --spacing-5xl:  var(--spacing-raw-7xl);
+    --spacing-6xl:  var(--spacing-raw-8xl);
+    --spacing-7xl:  var(--spacing-raw-9xl);
+    --spacing-8xl:  var(--spacing-raw-10xl);
+    --spacing-9xl:  var(--spacing-raw-11xl);
+    --spacing-breakpoint: var(--spacing-raw-xl);
+    --spacing: var(--spacing-breakpoint);
+  }
+}
+
+/* 1600: XS→L, S→XL, M→2XL, L→3XL, … 9XL→12XL; Breakpoint → 2XL */
+@media (min-width: 1600px) {
+  :root {
+    --spacing-xs:   var(--spacing-raw-l);
+    --spacing-s:    var(--spacing-raw-xl);
+    --spacing-m:    var(--spacing-raw-2xl);
+    --spacing-l:    var(--spacing-raw-3xl);
+    --spacing-lg:   var(--spacing-raw-3xl);
+    --spacing-xl:   var(--spacing-raw-4xl);
+    --spacing-2xl:  var(--spacing-raw-5xl);
+    --spacing-3xl:  var(--spacing-raw-6xl);
+    --spacing-4xl:  var(--spacing-raw-7xl);
+    --spacing-5xl:  var(--spacing-raw-8xl);
+    --spacing-6xl:  var(--spacing-raw-9xl);
+    --spacing-7xl:  var(--spacing-raw-10xl);
+    --spacing-8xl:  var(--spacing-raw-11xl);
+    --spacing-9xl:  var(--spacing-raw-12xl);
+    --spacing-breakpoint: var(--spacing-raw-2xl);
+    --spacing: var(--spacing-breakpoint);
+  }
+}

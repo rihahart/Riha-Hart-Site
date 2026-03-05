@@ -4,6 +4,7 @@ import { useRouter, usePathname } from 'next/navigation'
 import useMobileDetection from '@/_utilities/useMobileDetection'
 import MenuButton from './MenuButton'
 import Button from '@/components/Button'
+import ExitButton from './ExitButton'
 import JumpingAnimation from './JumpingAnimation'
 import { useMenu } from '@/contexts/MenuContext'
 
@@ -170,18 +171,7 @@ export default function Menu() {
                             loading="eager"
                         />
                     </button>
-                    <button
-                        onClick={handleClose}
-                        className="cursor-pointer"
-                        aria-label="Close Menu"
-                        style={{ transform: 'translateY(10px)' }}
-                    >
-                        <img
-                            src="/Icons/Exit/Exit.svg"
-                            alt="Close Menu"
-                            style={{ height: '18px', width: 'auto' }}
-                        />
-                    </button>
+                    <ExitButton onClick={handleClose} size="small" aria-label="Close Menu" />
                 </div></div>
                 <div className="flex items-start justify-center h-[calc(100vh-120px)] ">
                     <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-8xl)] gap-[var(--spacing-md)] w-full">
@@ -242,18 +232,7 @@ export default function Menu() {
                                 loading="eager"
                             />
                         </button>
-                        <button
-                            onClick={handleClose}
-                            className="cursor-pointer"
-                            aria-label="Close Menu"
-                            style={{ transform: 'translateY(20px)' }}
-                        >
-                            <img
-                                src="/Icons/Exit/Exit.svg"
-                                alt="Close Menu"
-                                style={{ height: '20px', width: 'auto' }}
-                            />
-                        </button>
+                        <ExitButton onClick={handleClose} size="small" aria-label="Close Menu" />
                     </div></div>
                     <div className="flex items-start justify-center py-[var(--spacing-2xl)] px-[var(--spacing-6xl)] h-[calc(100vh-140px)]">
                         <div className="flex flex-col items-start px-[var(--spacing-lg)] pb-[var(--spacing-10xl)] gap-[var(--spacing-md)] w-full">
@@ -315,18 +294,7 @@ export default function Menu() {
                                 loading="eager"
                             />
                         </button>
-                        <button
-                            onClick={handleClose}
-                            className="cursor-pointer"
-                            aria-label="Close Menu"
-                            style={{ transform: 'translateY(20px)' }}
-                        >
-                            <img
-                                src="/Icons/Exit/Exit.svg"
-                                alt="Close Menu"
-                                style={{ height: '24px', width: 'auto' }}
-                            />
-                        </button>
+                        <ExitButton onClick={handleClose} size="large" aria-label="Close Menu" />
                     </div></div>
                     <div className="flex items-start justify-center h-[calc(100vh-160px)]">
                         <div className="flex flex-col items-start pt-[var(--spacing-2xl)] pb-[var(--spacing-12xl)] px-[var(--spacing-8xl)] w-full gap-[var(--spacing-sm)]">
@@ -387,18 +355,7 @@ export default function Menu() {
                             loading="eager"
                         />
                     </button>
-                    <button
-                        onClick={handleClose}
-                        className="cursor-pointer"
-                        aria-label="Close Menu"
-                        style={{ transform: 'translateY(20px)' }}
-                    >
-                        <img
-                            src="/Icons/Exit/Exit.svg"
-                            alt="Close Menu"
-                            style={{ height: '34px', width: 'auto' }}
-                        />
-                    </button>
+                    <ExitButton onClick={handleClose} size="large" aria-label="Close Menu" />
                 </div></div>
                 <div className="flex items-start justify-center  h-[calc(100vh-180px)]">
                     <div className="flex flex-col items-start pt-[var(--spacing-2xl)] pb-[var(--spacing-12xl)] px-[var(--spacing-12xl)] w-full h-full gap-[var(--spacing-md)]">

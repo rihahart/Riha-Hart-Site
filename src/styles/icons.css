@@ -1,0 +1,128 @@
+/* ============================================================
+   Icon Variables — Icon/[Name]/[Size]
+   Dimensions match the source SVGs in public/Icons exactly.
+   Use --Icon-{Name}-{Size}-width and --Icon-{Name}-{Size}-height.
+   ============================================================ */
+
+:root {
+  /* -------------------------------------------------------------------
+     Hamburger (XS, S, M, L)
+     XS/S from HamburgerSmall.svg; M/L from HamburgerLarge.svg
+     ------------------------------------------------------------------- */
+  --Icon-Hamburger-XS-width:  24px;
+  --Icon-Hamburger-XS-height: 8px;
+
+  --Icon-Hamburger-S-width:  32px;
+  --Icon-Hamburger-S-height: 11px;
+
+  --Icon-Hamburger-M-width:  64px;
+  --Icon-Hamburger-M-height: 20px;
+
+  --Icon-Hamburger-L-width:  128px;
+  --Icon-Hamburger-L-height: 40px;
+
+  /* -------------------------------------------------------------------
+     Exit (XS, S, M, L)
+     From ExitPrimary.svg / ExitPrimaryInverse.svg (81×91)
+     ------------------------------------------------------------------- */
+  --Icon-Exit-XS-width:  81px;
+  --Icon-Exit-XS-height: 91px;
+
+  --Icon-Exit-S-width:  81px;
+  --Icon-Exit-S-height: 91px;
+
+  --Icon-Exit-M-width:  81px;
+  --Icon-Exit-M-height: 91px;
+
+  --Icon-Exit-L-width:  81px;
+  --Icon-Exit-L-height: 91px;
+
+  /* -------------------------------------------------------------------
+     Logo (XS, S, M, L)
+     ------------------------------------------------------------------- */
+  --Icon-Logo-XS-width:  65px;
+  --Icon-Logo-XS-height: 24px;
+
+  --Icon-Logo-S-width:  161px;
+  --Icon-Logo-S-height: 58px;
+
+  --Icon-Logo-M-width:  201px;
+  --Icon-Logo-M-height: 73px;
+
+  --Icon-Logo-L-width:  281px;
+  --Icon-Logo-L-height: 102px;
+
+  /* -------------------------------------------------------------------
+     ArrowLeft (S, M, L)
+     ------------------------------------------------------------------- */
+  --Icon-ArrowLeft-S-width:  16px;
+  --Icon-ArrowLeft-S-height: 11px;
+
+  --Icon-ArrowLeft-M-width:  32px;
+  --Icon-ArrowLeft-M-height: 22px;
+
+  --Icon-ArrowLeft-L-width:  64px;
+  --Icon-ArrowLeft-L-height: 41px;
+
+  /* -------------------------------------------------------------------
+     ArrowRight (S, M, L)
+     ------------------------------------------------------------------- */
+  --Icon-ArrowRight-S-width:  16px;
+  --Icon-ArrowRight-S-height: 11px;
+
+  --Icon-ArrowRight-M-width:  32px;
+  --Icon-ArrowRight-M-height: 22px;
+
+  --Icon-ArrowRight-L-width:  64px;
+  --Icon-ArrowRight-L-height: 41px;
+
+  /* -------------------------------------------------------------------
+     Heart (S, M, L)
+     ------------------------------------------------------------------- */
+  --Icon-Heart-S-width:  18px;
+  --Icon-Heart-S-height: 15px;
+
+  --Icon-Heart-M-width:  34px;
+  --Icon-Heart-M-height: 27px;
+
+  --Icon-Heart-L-width:  68px;
+  --Icon-Heart-L-height: 53px;
+
+  /* -------------------------------------------------------------------
+     Check (S, M, L)
+     ------------------------------------------------------------------- */
+  --Icon-Check-S-width:  17px;
+  --Icon-Check-S-height: 6px;
+
+  --Icon-Check-M-width:  32px;
+  --Icon-Check-M-height: 10px;
+
+  --Icon-Check-L-width:  64px;
+  --Icon-Check-L-height: 21px;
+
+  /* -------------------------------------------------------------------
+     ChevronRight (S, M, L)
+     ------------------------------------------------------------------- */
+  --Icon-ChevronRight-S-width:  8px;
+  --Icon-ChevronRight-S-height: 11px;
+
+  --Icon-ChevronRight-M-width:  15px;
+  --Icon-ChevronRight-M-height: 22px;
+
+  --Icon-ChevronRight-L-width:  28px;
+  --Icon-ChevronRight-L-height: 41px;
+
+  /* -------------------------------------------------------------------
+     ChevronLeft (S, M, L)
+     Note: public/Icons/ChevronLeft currently contains Check SVGs.
+     Dimensions below match ChevronRight for when ChevronLeft SVGs are added.
+     ------------------------------------------------------------------- */
+  --Icon-ChevronLeft-S-width:  8px;
+  --Icon-ChevronLeft-S-height: 11px;
+
+  --Icon-ChevronLeft-M-width:  15px;
+  --Icon-ChevronLeft-M-height: 22px;
+
+  --Icon-ChevronLeft-L-width:  28px;
+  --Icon-ChevronLeft-L-height: 41px;
+}
