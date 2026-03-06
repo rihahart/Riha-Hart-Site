@@ -5,8 +5,8 @@ import useWindowWidth from "@/_utilities/useWindowWidth"
 
 const BASE_PATH = "/getToKnowMe/Re-educationAnimation/Re-educationAnimation_"
 const TOTAL_FRAMES = 144 // Re-educationAnimation_00000.png through Re-educationAnimation_00143.png
-const PRELOAD_BATCH = 8 // load 8 frames at a time to avoid overwhelming the browser
-const START_AFTER_FRAMES = 24 // start playing after first second of frames (at 24fps)
+const PRELOAD_BATCH = 16 // load 16 at a time so production stays ahead of playback
+const START_AFTER_FRAMES = 48 // start after 2s of frames so slow networks have buffer
 
 function buildFramePaths(): string[] {
   return Array.from({ length: TOTAL_FRAMES }, (_, i) =>
@@ -22,16 +22,20 @@ function getContainerWidth(windowWidth: number): number | string {
   return "100%"                          // mobile
 }
 
-/** Preload frames in batches; resolve when the first START_AFTER_FRAMES are loaded so playback can begin quickly */
+/** Preload frames in batches; call onFrameLoaded(index) when each frame is ready; call onFirstChunkLoaded when enough frames to start playback */
 function preloadInBatches(
   urls: string[],
-  onFirstChunkLoaded: () => void
+  onFirstChunkLoaded: () => void,
+  onFrameLoaded: (index: number) => void
 ): Promise<void> {
   let firstChunkDone = false
-  const loadOne = (src: string): Promise<void> =>
+  const loadOne = (src: string, index: number): Promise<void> =>
     new Promise((resolve) => {
       const img = new Image()
-      img.onload = () => resolve()
+      img.onload = () => {
+        onFrameLoaded(index)
+        resolve()
+      }
       img.onerror = () => resolve()
       img.src = src
     })
@@ -39,7 +43,7 @@ function preloadInBatches(
   const run = async () => {
     for (let i = 0; i < urls.length; i += PRELOAD_BATCH) {
       const batch = urls.slice(i, i + PRELOAD_BATCH)
-      await Promise.all(batch.map(loadOne))
+      await Promise.all(batch.map((src, j) => loadOne(src, i + j)))
       if (!firstChunkDone && i + PRELOAD_BATCH >= START_AFTER_FRAMES) {
         firstChunkDone = true
         onFirstChunkLoaded()
@@ -59,37 +63,57 @@ export default function ReEducationAnimation({
   fps = 24,
   className = "",
 }: ReEducationAnimationProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
   const [preloaded, setPreloaded] = useState(false)
   const rafRef = useRef<number | null>(null)
   const startTimeRef = useRef<number | null>(null)
+  const imgRef = useRef<HTMLImageElement>(null)
+  const loadedFramesRef = useRef<Set<number>>(new Set())
+  const lastDisplayedRef = useRef(0)
   const windowWidth = useWindowWidth()
 
   const framePaths = useMemo(() => buildFramePaths(), [])
 
-  // Preload in batches; start playing after first chunk so page feels fast
+  // Preload in batches; track loaded frames so we only show ready frames (smooth on slow networks)
   useEffect(() => {
     let cancelled = false
-    preloadInBatches(framePaths, () => {
-      if (!cancelled) setPreloaded(true)
-    })
+    const loaded = new Set<number>()
+    preloadInBatches(
+      framePaths,
+      () => {
+        if (!cancelled) setPreloaded(true)
+      },
+      (index) => {
+        loaded.add(index)
+      }
+    )
+    loadedFramesRef.current = loaded
     return () => {
       cancelled = true
     }
   }, [framePaths])
 
-  // requestAnimationFrame for smooth playback synced to display refresh
+  // requestAnimationFrame: update img.src only when frame is loaded (no setState = no re-render jank)
   useEffect(() => {
-    if (!preloaded) return
+    if (!preloaded || !imgRef.current) return
 
     const frameInterval = 1000 / fps
     startTimeRef.current = performance.now()
+    lastDisplayedRef.current = 0
 
     const tick = () => {
+      const img = imgRef.current
+      if (!img) return
       const start = startTimeRef.current ?? performance.now()
       const elapsed = performance.now() - start
-      const frame = Math.floor((elapsed / frameInterval) % TOTAL_FRAMES)
-      setCurrentIndex(frame)
+      const targetFrame = Math.floor((elapsed / frameInterval) % TOTAL_FRAMES)
+      const loaded = loadedFramesRef.current
+      // Only advance when this frame is loaded (avoids pause on production where network is slower)
+      if (loaded.has(targetFrame)) {
+        if (lastDisplayedRef.current !== targetFrame) {
+          img.src = framePaths[targetFrame]
+          lastDisplayedRef.current = targetFrame
+        }
+      }
       rafRef.current = requestAnimationFrame(tick)
     }
     rafRef.current = requestAnimationFrame(tick)
@@ -100,7 +124,7 @@ export default function ReEducationAnimation({
         rafRef.current = null
       }
     }
-  }, [preloaded, fps])
+  }, [preloaded, fps, framePaths])
 
   const containerWidth = getContainerWidth(windowWidth)
   const widthStyle =
@@ -115,7 +139,8 @@ export default function ReEducationAnimation({
       aria-label="Re-education animation"
     >
       <img
-        src={framePaths[currentIndex]}
+        ref={imgRef}
+        src={framePaths[0]}
         alt=""
         role="presentation"
         aria-hidden
