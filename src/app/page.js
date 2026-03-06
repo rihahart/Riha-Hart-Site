@@ -2,7 +2,7 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import GetToKnowMe from "@/components/GetToKnowMe"
+import GetToKnowMe from "@/components/Homepage/GetToKnowMe/GetToKnowMe"
 
 export default function Home() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
@@ -56,7 +56,7 @@ export default function Home() {
   // Desktop 1440px (1025px - 1440px)
   if (isDesktop1440px) {
     return (
-      <div className="flex flex-col items-center px-[var(--spacing-2xl)] gap-[var(--spacing-4xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-10xl)] w-full">
+      <div className="flex flex-col items-center px-[var(--spacing-3xl)] gap-[var(--spacing-6xl)] py-[var(--spacing-m)]  w-full">
         <div className="flex flex-col items-center gap-[var(--spacing-4xl)] w-full  mx-auto">
           <div className="flex justify-center w-full ">
             <video
@@ -79,7 +79,7 @@ export default function Home() {
 
   // Large Desktop (>1440px)
   return (
-    <div className="flex flex-col items-center px-[var(--spacing-3xl)] gap-[var(--spacing-5xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-12xl)] w-full max-w-[1600px]  mx-auto">
+    <div className="flex flex-col items-center px-[var(--spacing-3xl)] gap-[var(--spacing-6xl)] py-[var(--spacing-m)] w-full max-w-[1600px]  mx-auto">
       <div className="flex flex-col items-center gap-[var(--spacing-5xl)] w-full mx-auto">
         <div className="flex justify-center w-full">
           <video

@@ -166,12 +166,13 @@ body::-webkit-scrollbar {
 .hamburger-btn--large,
 .exit-btn--large {
   padding: 12px;
+  border-radius: 2px;
 }
-
 
 .hamburger-btn--small,
 .exit-btn--small {
   padding: 8px;
+  border-radius: 1px;
 }
 
 /* ============================================================
