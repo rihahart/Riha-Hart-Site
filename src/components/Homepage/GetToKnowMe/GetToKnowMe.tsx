@@ -41,11 +41,13 @@ export default function GetToKnowMe() {
             </div>
             <div className="flex flex-col items-center gap-[var(--spacing-xs)] relative z-0">
                 <ReEducationAnimation />
-                <Button text="Get to know me" onClick={() => router.push("/bio")} variant="primary" size="large" />
+                <div className="relative z-20">
+                    <Button text="Get to know me" onClick={() => router.push("/bio")} variant="primary" size="large" />
+                </div>
             </div>
-            <div className="flex justify-between items-end self-stretch relative z-10 -mt-[var(--spacing-2xl)]">
-                <Amrita src="/getToKnowMe/getToKnowMePhotos/Item2/Amrita.png" alt="Amrita" />
-                <VanGogh src="/getToKnowMe/getToKnowMePhotos/Item2/Van%20Gogh.png" alt="Van Gogh" />
+            <div className="flex justify-between items-end self-stretch relative z-10 -mt-[var(--spacing-2xl)] pointer-events-none">
+                <div className="pointer-events-auto"><Amrita src="/getToKnowMe/getToKnowMePhotos/Item2/Amrita.png" alt="Amrita" /></div>
+                <div className="pointer-events-auto"><VanGogh src="/getToKnowMe/getToKnowMePhotos/Item2/Van%20Gogh.png" alt="Van Gogh" /></div>
             </div>
             </div>
         )
@@ -61,11 +63,13 @@ export default function GetToKnowMe() {
             </div>
             <div className="flex flex-col items-center gap-[var(--spacing-xs)] relative z-0">
                 <ReEducationAnimation />
-                <Button text="Get to know me" onClick={() => router.push("/bio")} variant="primary" size="large" />
+                <div className="relative z-20">
+                    <Button text="Get to know me" onClick={() => router.push("/bio")} variant="primary" size="large" />
+                </div>
             </div>
-                <div className="flex justify-between items-end self-stretch relative z-10 -mt-[var(--spacing-12xl)]">
-                <Amrita src="/getToKnowMe/getToKnowMePhotos/Item2/Amrita.png" alt="Amrita" />
-                <VanGogh src="/getToKnowMe/getToKnowMePhotos/Item2/Van%20Gogh.png" alt="Van Gogh" />
+                <div className="flex justify-between items-end self-stretch relative z-10 -mt-[var(--spacing-12xl)] pointer-events-none">
+                <div className="pointer-events-auto"><Amrita src="/getToKnowMe/getToKnowMePhotos/Item2/Amrita.png" alt="Amrita" /></div>
+                <div className="pointer-events-auto"><VanGogh src="/getToKnowMe/getToKnowMePhotos/Item2/Van%20Gogh.png" alt="Van Gogh" /></div>
             </div>
             </div>
         )
@@ -80,11 +84,13 @@ export default function GetToKnowMe() {
             </div>
             <div className="flex flex-col items-center gap-[var(--spacing-xs)] relative z-0">
             <ReEducationAnimation />
-            <Button text="Get to know me" onClick={() => router.push("/bio")} variant="primary" size="large" />
+            <div className="relative z-20">
+                <Button text="Get to know me" onClick={() => router.push("/bio")} variant="primary" size="large" />
             </div>
-            <div className="flex justify-between items-end self-stretch relative z-10 -mt-[var(--spacing-8xl)]">
-                <Amrita src="/getToKnowMe/getToKnowMePhotos/Item2/Amrita.png" alt="Amrita" />
-                <VanGogh src="/getToKnowMe/getToKnowMePhotos/Item2/Van%20Gogh.png" alt="Van Gogh" />
+            </div>
+            <div className="flex justify-between items-end self-stretch relative z-10 -mt-[var(--spacing-8xl)] pointer-events-none">
+                <div className="pointer-events-auto"><Amrita src="/getToKnowMe/getToKnowMePhotos/Item2/Amrita.png" alt="Amrita" /></div>
+                <div className="pointer-events-auto"><VanGogh src="/getToKnowMe/getToKnowMePhotos/Item2/Van%20Gogh.png" alt="Van Gogh" /></div>
             </div>
         </div>
     )

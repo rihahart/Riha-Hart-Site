@@ -64,6 +64,7 @@ export function DesignAndType({ src, alt, className = "" }: ResponsivePhotoProps
       width={width}
       height={height}
       decoding="async"
+      loading="lazy"
       className={`object-contain object-center ${className}`.trim()}
       style={{ width, height: "auto", maxWidth: width }}
     />
@@ -79,6 +80,7 @@ export function Manet({ src, alt, className = "" }: ResponsivePhotoProps) {
       width={width}
       height={height}
       unoptimized
+      loading="lazy"
       className={`object-contain object-center ${className}`.trim()}
       style={{ width, height: "auto", maxWidth: width }}
     />
@@ -94,6 +96,7 @@ export function Amrita({ src, alt, className = "" }: ResponsivePhotoProps) {
       width={width}
       height={height}
       unoptimized
+      loading="lazy"
       className={`object-contain object-center ${className}`.trim()}
       style={{ width, height: "auto", maxWidth: width }}
     />
@@ -109,6 +112,7 @@ export function VanGogh({ src, alt, className = "" }: ResponsivePhotoProps) {
       width={width}
       height={height}
       unoptimized
+      loading="lazy"
       className={`object-contain object-center ${className}`.trim()}
       style={{ width, height: "auto", maxWidth: width }}
     />
