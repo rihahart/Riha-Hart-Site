@@ -68,12 +68,12 @@ export default function IntroToEFCU() {
     if (isDesktop1440px) {
         return (
             <div className="w-full flex justify-end">
-                <div className="flex flex-col items-start justify-center w-[70%] gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)] px-[var(--spacing-5xl)]">
-                    <div className="inline-block">
-                        <h2 className="h2 text-[var(--color-primary)] inline-block">
+                <div className="flex flex-col items-start justify-center w-[800px] p-[var(--spacing-lg)] gap-[var(--spacing-lg)]">
+                    <div className="flex flex-col items-start justify-center gap-[var(--spacing-xs)]">
+                        <h2 className="h2 text-[var(--color-primary)]">
                             {introToEFCU.heading}
                         </h2>
-                        <p className="h4 text-[var(--color-secondary)] mt-[var(--spacing-s)]">
+                        <p className="h4 text-[var(--color-secondary)]">
                             {introToEFCU.subtitle}
                         </p>
                     </div>
@@ -93,12 +93,12 @@ export default function IntroToEFCU() {
     // Large Desktop (>1440px)
     return (
         <div className="w-full flex justify-end">
-            <div className="flex flex-col items-start justify-center w-[70%] gap-[var(--spacing-3xl)] py-[var(--spacing-3xl) px-[var(--spacing-5xl)]">
-                <div className="inline-block">
-                    <h2 className="h2 text-[var(--color-primary)] inline-block">
+            <div className="flex flex-col items-start justify-center w-[1000px] p-[var(--spacing-lg)] gap-[var(--spacing-lg)]">
+                <div className="flex flex-col items-start justify-center gap-[var(--spacing-xs)]">
+                    <h2 className="h2 text-[var(--color-primary)]">
                         {introToEFCU.heading}
                     </h2>
-                    <p className="h4 text-[var(--color-secondary)] mt-[var(--spacing-m)]">
+                    <p className="h4 text-[var(--color-secondary)]">
                         {introToEFCU.subtitle}
                     </p>
                 </div>

@@ -17,18 +17,18 @@ export default function EverestFederalCreditUnion() {
   // Mobile (≤768px)
   if (isMobile) {
     return (
-      <div className="w-full flex flex-col items-center px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-8xl)] gap-[var(--spacing-xl)]">
-        <div className="flex justify-center h-full w-full">
+      <div className="flex flex-col items-center w-full px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-6xl)] gap-[var(--spacing-4xl)] mx-auto">
+        <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-lg)]">
           <video
             src="/EFCU/Everest FCU.mp4"
             autoPlay
-            muted
+            muted 
             playsInline
             loop
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain "
           />
+          <IntroToEFCU />
         </div>
-        <IntroToEFCU />
         <ImpactBox />
         <div
           className="w-full flex flex-col px-[var(--spacing-lg)] py-[var(--spacing-2xl)] gap-[var(--spacing-4xl)]"
@@ -57,18 +57,18 @@ export default function EverestFederalCreditUnion() {
   // Tablet (769px - 1024px)
   if (isTablet) {
     return (
-      <div className="flex flex-col items-center px-[var(--spacing-2xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-10xl)] gap-[var(--spacing-4xl)] w-full mx-auto">
-        <div className="flex justify-center h-full w-full">
+      <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-8xl)] gap-[var(--spacing-6xl)] mx-auto">
+        <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
           <video
             src="/EFCU/Everest FCU.mp4"
             autoPlay
-            muted
+            muted 
             playsInline
             loop
             className="w-full h-full object-contain"
           />
+          <IntroToEFCU />
         </div>
-        <IntroToEFCU />
         <ImpactBox />
         <div
           className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-6xl)]"
@@ -97,8 +97,8 @@ export default function EverestFederalCreditUnion() {
   // Desktop 1440px (1025px - 1440px)
   if (isDesktop1440px) {
     return (
-      <div className="flex flex-col items-center px-[var(--spacing-2xl)] gap-[var(--spacing-6xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-10xl)] w-full mx-auto">
-        <div className="flex justify-center h-full w-full">
+      <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-8xl)] gap-[var(--spacing-6xl)] mx-auto">
+        <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
           <video
             src="/EFCU/Everest FCU.mp4"
             autoPlay
@@ -107,8 +107,8 @@ export default function EverestFederalCreditUnion() {
             loop
             className="w-full h-full object-contain"
           />
-        </div>
-        <IntroToEFCU />
+          <IntroToEFCU />
+        </div>  
         <ImpactBox />
         <div
           className="w-full flex flex-col px-[var(--spacing-2xl)] py-[var(--spacing-4xl)] gap-[var(--spacing-8xl)]"
@@ -137,8 +137,8 @@ export default function EverestFederalCreditUnion() {
 
   // Large Desktop (>1440px)
   return (
-    <div className="flex flex-col items-center px-[var(--spacing-3xl)] gap-[var(--spacing-9xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-12xl)] w-full max-w-[1600px] mx-auto">
-      <div className="flex justify-center h-full w-full">
+    <div className="max-w-[1600px] flex flex-col items-center mx-auto px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-8xl)] gap-[var(--spacing-8xl)]">
+      <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
         <video
           src="/EFCU/Everest FCU.mp4"
           autoPlay
@@ -147,8 +147,9 @@ export default function EverestFederalCreditUnion() {
           loop
           className="w-full h-full object-contain"
         />
+         <IntroToEFCU />
       </div>
-      <IntroToEFCU />
+     
       <ImpactBox />
       <div
         className="w-full flex flex-col px-[var(--spacing-6xl)] py-[var(--spacing-4xl)] gap-[var(--spacing-9xl)]"

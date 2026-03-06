@@ -6,9 +6,7 @@ interface ButtonProps {
   onClick?: () => void
   type?: 'button' | 'submit' | 'reset'
   className?: string
-  /** @deprecated Use variant="inverse" */
   inverted?: boolean
-  /** @deprecated Use variant="primary" */
   variant?: 'default' | 'redPrimary' | 'primary' | 'inverse' | 'link'
   size?: 'large' | 'small'
 }
