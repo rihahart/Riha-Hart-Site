@@ -65,7 +65,7 @@ export default function GroundLevelResearch() {
   if (isMobile) {
     return (
       <section className="w-full flex flex-col gap-[var(--spacing-xl)] items-start">
-        <div className="flex flex-col gap-[var(--spacing-m)]">
+        <div className="flex flex-col gap-[var(--spacing-s)]">
           <h2
             className="h3 text-[var(--blue-500)] uppercase"
           
@@ -74,21 +74,14 @@ export default function GroundLevelResearch() {
           </h2>
           <p className="body text-[var(--color-primary)]">{section.intro}</p>
         </div>
-        <div className="w-full flex flex-col gap-[var(--spacing-2xl)] items-start">
-          <ul className="flex flex-col gap-[var(--spacing-lg)] list-none pl-0 flex-1 min-w-0">
+        <div className="w-full flex flex-col gap-[var(--spacing-xl)] items-start">
+          <ul className="flex flex-col gap-[var(--spacing-m)] list-none pl-0 flex-1 min-w-0">
             {section.bullets.map((item, i) => (
               <li
                 key={i}
                 className="body text-[var(--color-primary)] uppercase flex items-center gap-[var(--spacing-lg)]"
               >
-                <img
-                  src="/Icons/IconsBlue.svg"
-                  alt=""
-                  width={14}
-                  height={14}
-                  className="flex-shrink-0"
-                  aria-hidden
-                />
+                <span className="Icon--ArrowRight--S Icon--blue-500" aria-hidden />
                 {item}
               </li>
             ))}
@@ -105,8 +98,8 @@ export default function GroundLevelResearch() {
 
   if (isTablet) {
     return (
-      <section className="w-full flex flex-col gap-[var(--spacing-3xl)] py-[var(--spacing-2xl)] items-start">
-        <div className="flex flex-col gap-[var(--spacing-lg)]">
+      <section className="w-full flex flex-col gap-[var(--spacing-xl)] items-start">
+        <div className="flex flex-col gap-[var(--spacing-s)]">
           <h2
             className="h3 text-[var(--blue-500)] uppercase"
           >
@@ -114,21 +107,14 @@ export default function GroundLevelResearch() {
           </h2>
           <p className="body text-[var(--color-primary)]">{section.intro}</p>
         </div>
-        <div className="w-full flex flex-col gap-[var(--spacing-3xl)] px-[var(--spacing-lg)] items-start">
-          <ul className="flex flex-col gap-[var(--spacing-xl)] list-none pl-0 flex-1 min-w-0">
+        <div className="w-full flex flex-col gap-[var(--spacing-xl)] px-[var(--spacing-s)] items-start">
+          <ul className="flex flex-col gap-[var(--spacing-m)] list-none pl-0 flex-1 min-w-0">
             {section.bullets.map((item, i) => (
               <li
                 key={i}
-                className="body text-[var(--color-primary)]  uppercase flex items-center gap-[var(--spacing-lg)]"
+                className="body text-[var(--color-primary)]  uppercase flex items-center gap-[var(--spacing-m)]"
               >
-                <img
-                  src="/Icons/IconsBlue.svg"
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="flex-shrink-0"
-                  aria-hidden
-                />
+                <span className="Icon--ArrowRight--S Icon--blue-500" aria-hidden />
                 {item}
               </li>
             ))}
@@ -145,8 +131,8 @@ export default function GroundLevelResearch() {
 
   if (isDesktop1440px) {
     return (
-      <section className="w-full flex flex-col gap-[var(--spacing-5xl)] py-[var(--spacing-xl)] items-start">
-        <div className="flex flex-col gap-[var(--spacing-lg)]">
+      <section className="w -full flex flex-col gap-[var(--spacing-m)] items-start">
+        <div className="flex flex-col gap-[var(--spacing-s)]">
           <h2
             className="h3 text-[var(--blue-500)] uppercase"
           >
@@ -154,21 +140,14 @@ export default function GroundLevelResearch() {
           </h2>
           <p className="body text-[var(--color-primary)]">{section.intro}</p>
         </div>
-        <div className="flex flex-row justify-between items-center  w-full">
-          <ul className="flex flex-col gap-[var(--spacing-xl)] list-none px-[var(--spacing-lg)]">
+        <div className="flex flex-row justify-between items-center w-full">
+          <ul className="flex flex-col gap-[var(--spacing-m)] list-none px-[var(--spacing-s)]">
             {section.bullets.map((item, i) => (
               <li
                 key={i}
-                className="body text-[var(--color-primary)] uppercase flex items-center px-[var(--spacing-xl)] gap-[var(--spacing-lg)]"
+                className="body text-[var(--color-primary)] uppercase flex items-center gap-[var(--spacing-s)]"
               >
-                <img
-                  src="/Icons/IconsBlue.svg"
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="flex-shrink-0"
-                  aria-hidden
-                />
+                <span className="Icon--ArrowRight--M Icon--blue-500" aria-hidden />
                 {item}
               </li>
             ))}
@@ -184,8 +163,8 @@ export default function GroundLevelResearch() {
   }
 
   return (
-    <section className="w-full flex flex-col gap-[var(--spacing-6xl)] py-[var(--spacing-xl)] items-start">
-      <div className="flex flex-col gap-[var(--spacing-xl)]">
+    <section className="w-full flex flex-col gap-[var(--spacing-m)] items-start">
+      <div className="flex flex-col gap-[var(--spacing-s)]">
         <h2
           className="h3 text-[var(--blue-500)] uppercase "
       
@@ -195,20 +174,13 @@ export default function GroundLevelResearch() {
         <p className="body text-[var(--color-primary)]">{section.intro}</p>
       </div>
       <div className="flex flex-row justify-between items-center w-full ">
-        <ul className="flex flex-col gap-[var(--spacing-2xl)] px-[var(--spacing-2xl)] list-none ">
+        <ul className="flex flex-col gap-[var(--spacing-m)] px-[var(--spacing-s)] list-none ">
           {section.bullets.map((item, i) => (
             <li
               key={i}
-              className="body text-[var(--color-primary)] uppercase flex items-center gap-[var(--spacing-xl)]"
+              className="body text-[var(--color-primary)] uppercase flex items-center gap-[var(--spacing-s)]"
             >
-              <img
-                src="/Icons/IconsBlue.svg"
-                alt=""
-                width={24}
-                height={24}
-                className="flex-shrink-0"
-                aria-hidden
-              />
+              <span className="Icon--ArrowRight--M Icon--blue-500" aria-hidden />
               {item}
             </li>
           ))}

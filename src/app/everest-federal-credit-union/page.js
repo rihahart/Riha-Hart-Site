@@ -31,7 +31,7 @@ export default function EverestFederalCreditUnion() {
         </div>
         <ImpactBox />
         <div
-          className="w-full flex flex-col px-[var(--spacing-lg)] py-[var(--spacing-2xl)] gap-[var(--spacing-4xl)]"
+          className="w-full flex flex-col px-[var(--spacing-lg)] py-[var(--spacing-lg)] gap-[var(--spacing-3xl)]"
           style={{
             backgroundColor: "#F6F6F8",
             borderLeft: "4px solid var(--blue-300)"
@@ -42,7 +42,7 @@ export default function EverestFederalCreditUnion() {
         </div>
         <BankScale />
         <div
-          className="w-full flex flex-col px-[var(--spacing-lg)] py-[var(--spacing-2xl)] gap-[var(--spacing-4xl)]"
+          className="w-full flex flex-col px-[var(--spacing-lg)] py-[var(--spacing-lg)] gap-[var(--spacing-3xl)]"
           style={{
             backgroundColor: "#F6F6F8",
             borderLeft: "4px solid var(--blue-300)"
@@ -71,7 +71,7 @@ export default function EverestFederalCreditUnion() {
         </div>
         <ImpactBox />
         <div
-          className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-6xl)]"
+          className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
           style={{
             backgroundColor: "#F6F6F8",
             borderLeft: "6px solid var(--blue-300)"
@@ -82,7 +82,7 @@ export default function EverestFederalCreditUnion() {
         </div>
         <BankScale />
         <div
-          className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-6xl)]"
+          className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
           style={{
             backgroundColor: "#F6F6F8",
             borderLeft: "6px solid var(--blue-300)"
@@ -111,10 +111,10 @@ export default function EverestFederalCreditUnion() {
         </div>  
         <ImpactBox />
         <div
-          className="w-full flex flex-col px-[var(--spacing-2xl)] py-[var(--spacing-4xl)] gap-[var(--spacing-8xl)]"
+          className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
           style={{
             backgroundColor: "#F6F6F8",
-            borderLeft: "8px solid var(--blue-300)"
+            borderLeft: "6px solid var(--blue-300)"
           }}
         >
           <GroundLevelResearch />
@@ -122,10 +122,10 @@ export default function EverestFederalCreditUnion() {
         </div>
         <BankScale />
         <div
-          className="w-full flex flex-col px-[var(--spacing-2xl)] py-[var(--spacing-4xl)] gap-[var(--spacing-8xl)]"
+          className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
           style={{
             backgroundColor: "#F6F6F8",
-            borderLeft: "8px solid var(--blue-300)"
+            borderLeft: "6px solid var(--blue-300)"
           }}
         >
           <ClarifyingMembership />
@@ -152,10 +152,10 @@ export default function EverestFederalCreditUnion() {
      
       <ImpactBox />
       <div
-        className="w-full flex flex-col px-[var(--spacing-6xl)] py-[var(--spacing-4xl)] gap-[var(--spacing-9xl)]"
+        className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
         style={{
           backgroundColor: "#F6F6F8",
-          borderLeft: "12px solid var(--blue-300)"
+          borderLeft: "8px solid var(--blue-300)"
         }}
       >
         <GroundLevelResearch />
@@ -163,10 +163,10 @@ export default function EverestFederalCreditUnion() {
       </div>
       <BankScale />
       <div
-        className="w-full flex flex-col px-[var(--spacing-6xl)] py-[var(--spacing-4xl)] gap-[var(--spacing-9xl)]"
+        className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
         style={{
           backgroundColor: "#F6F6F8",
-          borderLeft: "12px solid var(--blue-300)"
+          borderLeft: "8px solid var(--blue-300)"
         }}
       >
         <ClarifyingMembership />

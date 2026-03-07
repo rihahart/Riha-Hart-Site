@@ -54,6 +54,7 @@ const cardStyles: Record<
   mobile: {
     arrowSize: "small",
     cardClass: "p-[var(--spacing-l)]",
+    iconTranslateY: 0,
     metricClass: "h2",
     descriptionClass: "body",
     metricGap: "gap-[var(--spacing-s)]",

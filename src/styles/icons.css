@@ -58,11 +58,11 @@
   --Icon-ArrowLeft-S-width:  16px;
   --Icon-ArrowLeft-S-height: 11px;
 
-  --Icon-ArrowLeft-M-width:  32px;
-  --Icon-ArrowLeft-M-height: 22px;
+  --Icon-ArrowLeft-M-width:  28px;
+  --Icon-ArrowLeft-M-height: 17px;
 
-  --Icon-ArrowLeft-L-width:  64px;
-  --Icon-ArrowLeft-L-height: 41px;
+  --Icon-ArrowLeft-L-width:  48px;
+  --Icon-ArrowLeft-L-height: 30px;
 
   /* -------------------------------------------------------------------
      ArrowRight (S, M, L)
@@ -70,11 +70,12 @@
   --Icon-ArrowRight-S-width:  16px;
   --Icon-ArrowRight-S-height: 11px;
 
-  --Icon-ArrowRight-M-width:  32px;
-  --Icon-ArrowRight-M-height: 22px;
+  --Icon-ArrowRight-M-width:  26px;
+  --Icon-ArrowRight-M-height: 17px;
+  --Icon-ArrowRight-M-stroke-width: 2px;
 
-  --Icon-ArrowRight-L-width:  64px;
-  --Icon-ArrowRight-L-height: 41px;
+  --Icon-ArrowRight-L-width:  48px;
+  --Icon-ArrowRight-L-height: 30px;
 
   /* -------------------------------------------------------------------
      Heart (S, M, L)
@@ -114,8 +115,6 @@
 
   /* -------------------------------------------------------------------
      ChevronLeft (S, M, L)
-     Note: public/Icons/ChevronLeft currently contains Check SVGs.
-     Dimensions below match ChevronRight for when ChevronLeft SVGs are added.
      ------------------------------------------------------------------- */
   --Icon-ChevronLeft-S-width:  8px;
   --Icon-ChevronLeft-S-height: 11px;
@@ -126,3 +125,56 @@
   --Icon-ChevronLeft-L-width:  28px;
   --Icon-ChevronLeft-L-height: 41px;
 }
+
+/* ArrowRight icon utility classes — use dimensions from variables, mask for color */
+.Icon--ArrowRight--S {
+  width: var(--Icon-ArrowRight-S-width);
+  height: var(--Icon-ArrowRight-S-height);
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-image: url("/Icons/RightArrow/RightArrowSmall.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("/Icons/RightArrow/RightArrowSmall.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+.Icon--ArrowRight--S.Icon--blue-500 { color: var(--blue-500); }
+
+.Icon--ArrowRight--M {
+  width: var(--Icon-ArrowRight-M-width);
+  height: var(--Icon-ArrowRight-M-height);
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  
+  mask-image: url("/Icons/RightArrow/RightArrowMedium.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("/Icons/RightArrow/RightArrowMedium.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+.Icon--ArrowRight--M.Icon--blue-500 { color: var(--blue-500); }
+
+.Icon--ArrowRight--L {
+  width: var(--Icon-ArrowRight-L-width);
+  height: var(--Icon-ArrowRight-L-height);
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-image: url("/Icons/RightArrow/RightArrowLarge.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("/Icons/RightArrow/RightArrowLarge.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+.Icon--ArrowRight--L.Icon--blue-500 { color: var(--blue-500); }
