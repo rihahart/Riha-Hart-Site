@@ -17,7 +17,8 @@ export default function EverestFederalCreditUnion() {
   // Mobile (≤768px)
   if (isMobile) {
     return (
-      <div className="flex flex-col items-center w-full px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-6xl)] gap-[var(--spacing-4xl)] mx-auto">
+      <div className="flex flex-col items-center w-full mx-auto">
+      <div className="flex flex-col items-center w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-lg)]">
           <video
             src="/EFCU/Everest FCU.mp4"
@@ -50,8 +51,35 @@ export default function EverestFederalCreditUnion() {
         >
           <ClarifyingMembership />
           <LoanMembershipFindings />
-          <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="w-full max-w-full max-h-[400px] object-contain" aria-hidden />
+          <div className="w-full flex items-center justify-center pb-[var(--spacing-6xl)]">
+            <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="w-full max-w-full max-h-[400px] object-contain" aria-hidden />
+          </div>
+      
+        
+        
         </div>
+
+        {/* this div closes the second div ends here*/}
+        </div>
+
+        {/* Branding Video Section new div starts here*/}
+        <div className="flex flex-col items-center w-full bg-[#1c4483] p-[var(--spacing-lg)]  mx-auto">
+        <video
+              src="/EFCU/BrandingVideo.mp4"
+              className="w-full h-auto object-cover"
+              muted
+              playsInline
+              autoPlay
+              loop
+              aria-label="Branding video"
+            />
+        </div>
+
+        {/* div back to normal here*/}
+        <div className="flex flex-col items-center w-full px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-6xl)] gap-[var(--spacing-4xl)] mx-auto">
+        </div>
+
+        {/* this div closes the first div ends here*/}
       </div>
     )
   }
@@ -59,7 +87,8 @@ export default function EverestFederalCreditUnion() {
   // Tablet (769px - 1024px)
   if (isTablet) {
     return (
-      <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-8xl)] gap-[var(--spacing-6xl)] mx-auto">
+      <div className="flex flex-col items-center w-full mx-auto">
+      <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-6xl)] gap-[var(--spacing-6xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
           <video
             src="/EFCU/Everest FCU.mp4"
@@ -92,16 +121,53 @@ export default function EverestFederalCreditUnion() {
         >
           <ClarifyingMembership />
           <LoanMembershipFindings />
-          <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="w-full max-w-full max-h-[400px] object-contain" aria-hidden />
+          <div className="w-full flex items-center justify-center pb-[var(--spacing-6xl)]">
+            <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="w-full max-w-full max-h-[400px] object-contain" aria-hidden />
+          </div>
+      
+          
         </div>
-      </div>
+
+        {/* this div closes the second div ends here*/}
+        </div>
+
+
+
+ {/* Branding Video Section new div starts here*/}
+ <div className="flex flex-col items-center w-full bg-[#1c4483] p-[var(--spacing-3xl)] mx-auto">
+        <video
+              src="/EFCU/BrandingVideo.mp4"
+              className="w-full h-auto object-cover"
+              muted
+              playsInline
+              autoPlay
+              loop
+              aria-label="Branding video"
+            />
+
+</div>
+
+{/* div back to normal here*/}
+
+<div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-3xl)] pb-[var(--spacing-8xl)] gap-[var(--spacing-6xl)] mx-auto">
+
+</div>
+
+
+
+{/* this div closes the first div ends here*/}
+</div>
     )
   }
 
   // Desktop 1440px (1025px - 1440px)
   if (isDesktop1440px) {
     return (
-      <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-8xl)] gap-[var(--spacing-6xl)] mx-auto">
+
+  <div className="flex flex-col items-center w-full mx-auto">
+
+    {/* div starts here*/}
+      <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-6xl)] gap-[var(--spacing-6xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
           <video
             src="/EFCU/Everest FCU.mp4"
@@ -135,14 +201,45 @@ export default function EverestFederalCreditUnion() {
           <ClarifyingMembership />
           <LoanMembershipFindings />
           <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="w-full max-w-full max-h-[600px] object-contain" aria-hidden />
-        </div>
+         
+          </div>
+    </div>
 
-      </div>
+    {/* div ends here*/}
+
+    {/* Branding Video Section new div starts here*/}
+
+  <div className="flex flex-col items-center w-full bg-[#1c4483] mx-auto">
+
+ <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] gap-[var(--spacing-6xl)] mx-auto">
+      <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
+      <video
+         src="/EFCU/BrandingVideo.mp4"
+         className="w-full h-auto object-cover"
+         muted
+         playsInline
+         autoPlay
+         loop
+         aria-label="Branding video"
+/>
+
+</div>
+</div>
+</div>
+
+
+{/* div back to normal here*/}
+<div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-3xl)] pb-[var(--spacing-8xl)] gap-[var(--spacing-6xl)] mx-auto">
+  </div>
+
+</div>
+
     )
   }
 
   // Large Desktop (>1440px)
   return (
+    <div className="flex flex-col items-center w-full mx-auto">
     <div className="max-w-[1600px] flex flex-col items-center mx-auto px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-8xl)] gap-[var(--spacing-8xl)]">
       <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
         <video
@@ -180,8 +277,32 @@ export default function EverestFederalCreditUnion() {
         <div className="w-full flex items-center justify-center">
           <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="max-w-full max-h-[800px] object-contain" aria-hidden />
         </div>
-      </div>
-    </div>
+        </div>
+</div>
+
+      {/* Branding Video Section new div starts here*/}
+
+<div className="flex flex-col items-center w-full bg-[#1c4483] mx-auto">
+      <div className="max-w-[1600px] flex flex-col items-center mx-auto">
+      <div className="flex flex-col items-center justify-center py-[var(--spacing-3xl)] h-full w-full gap-[var(--spacing-3xl)]">
+            <video
+            src="/EFCU/BrandingVideo.mp4"
+            className="w-full h-auto object-cover"
+            muted
+            playsInline
+            autoPlay
+            loop
+            aria-label="Branding video"
+          />
+          </div>
+          </div>
+          </div>
+
+       {/* div back to normal here*/}
+       <div className="max-w-[1600px] flex flex-col items-center mx-auto px-[var(--spacing-3xl)] pt-[var(--spacing-3xl)] pb-[var(--spacing-3xl)] gap-[var(--spacing-8xl)]">
+        </div>
+        </div>
+     
   )
 }
 
