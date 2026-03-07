@@ -15,13 +15,10 @@ export default function iklass() {
       {/* div with margins starts here*/}
       <div className="flex flex-col items-center w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-lg)]">
-          <video
-            src="/EFCU/Everest FCU.mp4"
-            autoPlay
-            muted
-            playsInline
-            loop
-            className="w-full h-full object-contain"
+          <img
+            src="/iklass/SummerLarge.gif"
+            alt="iKlass Summer"
+            className="w-full max-w-full h-auto object-contain"
           />
           <IntroToIKlass />
         </div>
@@ -40,13 +37,10 @@ export default function iklass() {
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full p-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
           <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-2xl)]">
-            <video
-              src="/EFCU/Everest FCU.mp4"
-              autoPlay
-              muted
-              playsInline
-              loop
-              className="w-full h-full object-contain"
+            <img
+              src="/iklass/SummerLarge.gif"
+              alt="iKlass Summer"
+              className="w-full max-w-full h-auto object-contain"
             />
             <IntroToIKlass />
           </div>
@@ -65,13 +59,10 @@ export default function iklass() {
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
           <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
-            <video
-              src="/EFCU/Everest FCU.mp4"
-              autoPlay
-              muted
-              playsInline
-              loop
-              className="w-full h-full object-contain"
+            <img
+              src="/iklass/SummerLarge.gif"
+              alt="iKlass Summer"
+              className="w-full max-w-full h-auto object-contain"
             />
             <IntroToIKlass />
           </div>
@@ -90,13 +81,10 @@ export default function iklass() {
 
       <div className="flex flex-col items-center max-w-[1600px] p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
-          <video
-            src="/EFCU/Everest FCU.mp4"
-            autoPlay
-            muted
-            playsInline
-            loop
-            className="w-full h-full object-contain"
+          <img
+            src="/iklass/SummerLarge.gif"
+            alt="iKlass Summer"
+            className="w-full max-w-full h-auto object-contain"
           />
           <IntroToIKlass />
         </div>
