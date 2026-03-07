@@ -9,6 +9,7 @@ import InternalOperationsResearch from "@/components/EFCU/Research/InternalOpera
 import BankScale from "@/components/EFCU/ResearchFindings/BankScale"
 import ClarifyingMembership from "@/components/EFCU/MembershipLoans/ClarifyingMembership"
 import LoanMembershipFindings from "@/components/EFCU/MembershipLoans/LoanMembershipFindings"
+import TrustandCommunity from "@/components/EFCU/TrustandCommunity/TrustandCommunity"
 
 
 export default function EverestFederalCreditUnion() {
@@ -76,7 +77,8 @@ export default function EverestFederalCreditUnion() {
         </div>
 
         {/* div back to normal here*/}
-        <div className="flex flex-col items-center w-full px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-6xl)] gap-[var(--spacing-4xl)] mx-auto">
+        <div className="flex flex-col items-center w-full px-[var(--spacing-lg)] pt-[var(--spacing-3xl)] pb-[var(--spacing-6xl)] gap-[var(--spacing-4xl)] mx-auto">
+          <TrustandCommunity />
         </div>
 
         {/* this div closes the first div ends here*/}
@@ -150,7 +152,7 @@ export default function EverestFederalCreditUnion() {
 {/* div back to normal here*/}
 
 <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-3xl)] pb-[var(--spacing-8xl)] gap-[var(--spacing-6xl)] mx-auto">
-
+<TrustandCommunity />
 </div>
 
 
@@ -230,6 +232,7 @@ export default function EverestFederalCreditUnion() {
 
 {/* div back to normal here*/}
 <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-3xl)] pb-[var(--spacing-8xl)] gap-[var(--spacing-6xl)] mx-auto">
+  <TrustandCommunity />
   </div>
 
 </div>
@@ -284,7 +287,7 @@ export default function EverestFederalCreditUnion() {
 
 <div className="flex flex-col items-center w-full bg-[#1c4483] mx-auto">
       <div className="max-w-[1600px] flex flex-col items-center mx-auto">
-      <div className="flex flex-col items-center justify-center py-[var(--spacing-3xl)] h-full w-full gap-[var(--spacing-3xl)]">
+      <div className="flex flex-col items-center justify-center p-[var(--spacing-3xl)] h-full w-full gap-[var(--spacing-3xl)]">
             <video
             src="/EFCU/BrandingVideo.mp4"
             className="w-full h-auto object-cover"
@@ -300,6 +303,7 @@ export default function EverestFederalCreditUnion() {
 
        {/* div back to normal here*/}
        <div className="max-w-[1600px] flex flex-col items-center mx-auto px-[var(--spacing-3xl)] pt-[var(--spacing-3xl)] pb-[var(--spacing-3xl)] gap-[var(--spacing-8xl)]">
+        <TrustandCommunity />
         </div>
         </div>
      

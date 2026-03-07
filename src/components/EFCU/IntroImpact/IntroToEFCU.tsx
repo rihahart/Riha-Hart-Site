@@ -68,7 +68,7 @@ export default function IntroToEFCU() {
     if (isDesktop1440px) {
         return (
             <div className="w-full flex justify-end">
-                <div className="flex flex-col items-start justify-center w-[800px] p-[var(--spacing-lg)] gap-[var(--spacing-lg)]">
+                <div className="flex flex-col items-start justify-center w-[800px] min-w-[800px] shrink-0 p-[var(--spacing-lg)] gap-[var(--spacing-lg)]">
                     <div className="flex flex-col items-start justify-center gap-[var(--spacing-xs)]">
                         <h2 className="h2 text-[var(--color-primary)]">
                             {introToEFCU.heading}
@@ -93,7 +93,7 @@ export default function IntroToEFCU() {
     // Large Desktop (>1440px)
     return (
         <div className="w-full flex justify-end">
-            <div className="flex flex-col items-start justify-center w-[1000px] p-[var(--spacing-lg)] gap-[var(--spacing-lg)]">
+            <div className="flex flex-col items-start justify-center w-[1000px] min-w-[1000px] shrink-0 p-[var(--spacing-lg)] gap-[var(--spacing-lg)]">
                 <div className="flex flex-col items-start justify-center gap-[var(--spacing-xs)]">
                     <h2 className="h2 text-[var(--color-primary)]">
                         {introToEFCU.heading}
