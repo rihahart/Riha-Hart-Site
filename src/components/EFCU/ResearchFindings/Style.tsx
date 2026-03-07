@@ -8,7 +8,7 @@ type Props = { children: React.ReactNode }
 // Section layout per screen size – edit gap/layout here
 const sectionClass = {
   mobile:
-    "w-full flex flex-col gap-[var(--spacing-2xl) px-[var(--spacing-lg)] py-[var(--spacing-lg)] items-start bg-[#FBF7FF] shadow-md",
+    "w-full flex flex-col gap-[var(--spacing-2xl)] px-[var(--spacing-lg)] py-[var(--spacing-lg)] items-start bg-[#FBF7FF] shadow-md",
   tablet:
     "w-full flex flex-col gap-[var(--spacing-xl)] px-[var(--spacing-xl)] py-[var(--spacing-xl)] items-start bg-[#FBF7FF] shadow-md",
   desktop1440:

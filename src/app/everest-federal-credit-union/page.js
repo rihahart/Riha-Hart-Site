@@ -8,7 +8,7 @@ import GroundLevelResearch from "@/components/EFCU/Research/GroundLevelResearch"
 import InternalOperationsResearch from "@/components/EFCU/Research/InternalOperationsResearch"
 import BankScale from "@/components/EFCU/ResearchFindings/BankScale"
 import ClarifyingMembership from "@/components/EFCU/MembershipLoans/ClarifyingMembership"
-import LoanMap from "@/components/EFCU/MembershipLoans/LoanMap"
+import LoanMembershipFindings from "@/components/EFCU/MembershipLoans/LoanMembershipFindings"
 
 
 export default function EverestFederalCreditUnion() {
@@ -49,6 +49,8 @@ export default function EverestFederalCreditUnion() {
           }}
         >
           <ClarifyingMembership />
+          <LoanMembershipFindings />
+          <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="w-full max-w-full max-h-[400px] object-contain" aria-hidden />
         </div>
       </div>
     )
@@ -89,6 +91,8 @@ export default function EverestFederalCreditUnion() {
           }}
         >
           <ClarifyingMembership />
+          <LoanMembershipFindings />
+          <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="w-full max-w-full max-h-[400px] object-contain" aria-hidden />
         </div>
       </div>
     )
@@ -129,6 +133,8 @@ export default function EverestFederalCreditUnion() {
           }}
         >
           <ClarifyingMembership />
+          <LoanMembershipFindings />
+          <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="w-full max-w-full max-h-[600px] object-contain" aria-hidden />
         </div>
 
       </div>
@@ -170,6 +176,10 @@ export default function EverestFederalCreditUnion() {
         }}
       >
         <ClarifyingMembership />
+        <LoanMembershipFindings />
+        <div className="w-full flex items-center justify-center">
+          <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="max-w-full max-h-[800px] object-contain" aria-hidden />
+        </div>
       </div>
     </div>
   )
