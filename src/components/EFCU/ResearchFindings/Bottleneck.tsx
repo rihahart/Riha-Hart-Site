@@ -12,7 +12,7 @@ export default function Bottleneck() {
   if (isMobile) {
     return (
       <Style>
-        <div className="flex flex-col gap-[var(--spacing-m)]">
+        <div className="flex flex-col gap-[var(--spacing-s)]">
           <h2 className="h3 text-[var(--color-primary)]">
             {section.title}
           </h2>
@@ -24,7 +24,7 @@ export default function Bottleneck() {
             alt=""
             className="max-w-[200px] h-auto object-contain flex-shrink-0 mx-auto"
           />
-          <ul className="flex flex-col gap-[var(--spacing-lg)] list-none pl-0 flex-1 min-w-0">
+          <ul className="flex flex-col gap-[var(--spacing-m)] list-none pl-0 flex-1 min-w-0">
             {section.bullets.map((item, i) => (
               <li
                 key={i}
@@ -51,15 +51,15 @@ export default function Bottleneck() {
   if (isTablet) {
     return (
       <Style>
-        <div className="flex flex-col gap-[var(--spacing-m)]">
+        <div className="flex flex-col gap-[var(--spacing-s)]">
           <h2 className="h3 text-[var(--color-primary)]">
             {section.title}
           </h2>
           <p className="body text-[var(--color-primary)]">{section.description}</p>
         </div>
-        <div className="w-full flex flex-row gap-[var(--spacing-2xl)] px-[var(--spacing-4xl)] items-center">
+        <div className="w-full flex flex-row gap-[var(--spacing-2xl)] items-center">
           <div className="flex flex-col gap-[var(--spacing-xl)] flex-1 min-w-0">
-          <ul className="flex flex-col gap-[var(--spacing-s)] list-none pl-0 flex-1 min-w-0">
+          <ul className="flex flex-col gap-[var(--spacing-m)] list-none pl-0 flex-1 min-w-0">
             {section.bullets.map((item, i) => (
               <li
                 key={i}
@@ -91,19 +91,19 @@ export default function Bottleneck() {
   if (isDesktop1440px) {
     return (
       <Style>
-        <div className="flex flex-col gap-[var(--spacing-xl)]">
+        <div className="flex flex-col gap-[var(--spacing-s)]">
           <h2 className="h3 text-[var(--color-primary)]">
             {section.title}
           </h2>
           <p className="body text-[var(--color-primary)]">{section.description}</p>
         </div>
-        <div className="flex flex-row gap-[var(--spacing-2xl)] items-center w-full">
-          <div className="flex flex-col gap-[var(--spacing-xl)] px-[var(--spacing-2xl)] w-[50%] min-w-0">
-            <ul className="flex flex-col gap-[var(--spacing-xl)] list-none">
+        <div className="flex flex-row justify-between items-center w-full">
+          <div className="flex flex-col gap-[var(--spacing-m)] min-w-0">
+            <ul className="flex flex-col gap-[var(--spacing-m)] list-none">
               {section.bullets.map((item, i) => (
                 <li
                   key={i}
-                  className="body text-[var(--color-primary)] uppercase flex items-center gap-[var(--spacing-xl)]"
+                  className="body text-[var(--color-primary)] uppercase flex items-center gap-[var(--spacing-m)]"
                 >
                   <img
                     src="/Icons/IconsBlue.svg"
@@ -130,19 +130,19 @@ export default function Bottleneck() {
 
   return (
     <Style>
-      <div className="flex flex-col gap-[var(--spacing-xl)]">
+      <div className="flex flex-col gap-[var(--spacing-s)]">
         <h2 className="h3 text-[var(--color-primary)]">
           {section.title}
         </h2>
         <p className="body text-[var(--color-primary)]">{section.description}</p>
       </div>
       <div className="flex flex-row justify-between items-center w-full">
-        <div className="flex flex-col gap-[var(--spacing-2xl)] flex-1 min-w-0">
-          <ul className="flex flex-col gap-[var(--spacing-2xl)] list-none">
+        <div className="flex flex-col flex-1 min-w-0">
+          <ul className="flex flex-col gap-[var(--spacing-s)] list-none">
             {section.bullets.map((item, i) => (
               <li
                 key={i}
-                className="body text-[var(--color-primary)] font-bold uppercase flex items-center gap-[var(--spacing-xl)]"
+                className="body text-[var(--color-primary)] font-bold uppercase flex items-center gap-[var(--spacing-s)]"
               >
                 <img
                   src="/Icons/IconsBlue.svg"

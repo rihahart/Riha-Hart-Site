@@ -12,13 +12,12 @@ export default function WeakOnlineApp() {
   if (isMobile) {
     return (
       <Style>
-        <div className="flex flex-col gap-[var(--spacing-m)]">
+        <div className="flex flex-col gap-[var(--spacing-s)]">
           <h2 className="h3 text-[var(--color-primary)]">
             {section.title}
           </h2>
           <p className="body text-[var(--color-primary)]">{section.description}</p>
         </div>
-        <div className="w-full flex flex-col gap-[var(--spacing-xl)] items-start">
         <img
             src={section.image}
             alt=""
@@ -37,7 +36,7 @@ export default function WeakOnlineApp() {
               )
             )}
           </div>
-        </div>
+      
       
         
       </Style>
@@ -47,14 +46,14 @@ export default function WeakOnlineApp() {
   if (isTablet) {
     return (
       <Style>
-        <div className="flex flex-col gap-[var(--spacing-m)]">
+        <div className="flex flex-col gap-[var(--spacing-s)]">
           <h2 className="h3 text-[var(--color-primary)]">
             {section.title}
           </h2>
           <p className="body text-[var(--color-primary)]">{section.description}</p>
         </div>
-        <div className="w-full flex flex-row gap-[var(--spacing-4xl)] px-[var(--spacing-4xl)] items-center">
-          <div className="flex flex-col gap-[var(--spacing-xl)] flex-1 min-w-0">
+        <div className="w-full flex flex-row gap-[var(--spacing-2xl)] items-center">
+          <div className="flex flex-col gap-[var(--spacing-lg)] flex-1 min-w-0">
             {section.stats.map((stat, i) =>
               i === 0 ? (
                 <h4 key={i} className="h4 text-[var(--color-primary)]">
@@ -70,7 +69,7 @@ export default function WeakOnlineApp() {
           <img
             src={section.image}
             alt=""
-            className="max-w-[225px] h-auto object-contain flex-shrink-0"
+            className="max-w-[150px] h-auto object-contain flex-shrink-0"
           />
         </div>
       </Style>
@@ -80,14 +79,14 @@ export default function WeakOnlineApp() {
   if (isDesktop1440px) {
     return (
       <Style>
-        <div className="flex flex-col gap-[var(--spacing-xl)]">
+        <div className="flex flex-col gap-[var(--spacing-s)]">
           <h2 className="h3 text-[var(--color-primary)]">
             {section.title}
           </h2>
           <p className="body text-[var(--color-primary)]">{section.description}</p>
         </div>
-        <div className="flex flex-row gap-[var(--spacing-8xl)] items-center px-[var(--spacing-4xl)] w-full">
-          <div className="flex flex-col gap-[var(--spacing-xl)] flex-1 min-w-0">
+        <div className="flex flex-row gap-[var(--spacing-8xl)] items-center w-full">
+          <div className="flex flex-col gap-[var(--spacing-lg)] flex-1 min-w-0">
             {section.stats.map((stat, i) =>
               i === 0 ? (
                 <h4 key={i} className="h4 text-[var(--color-primary)]">
@@ -103,7 +102,7 @@ export default function WeakOnlineApp() {
           <img
             src={section.image}
             alt=""
-            className="max-w-[250px] h-auto object-contain flex-shrink-0"
+            className="max-w-[175px] h-auto object-contain flex-shrink-0"
           />
         </div>
       </Style>
@@ -112,14 +111,14 @@ export default function WeakOnlineApp() {
 
   return (
     <Style>
-      <div className="flex flex-col gap-[var(--spacing-xl)]">
+      <div className="flex flex-col gap-[var(--spacing-s)]">
         <h2 className="h3 text-[var(--color-primary)]">
           {section.title}
         </h2>
         <p className="body text-[var(--color-primary)]">{section.description}</p>
       </div>
       <div className="flex flex-row justify-between items-center w-full">
-        <div className="flex flex-col gap-[var(--spacing-2xl)] flex-1 min-w-0">
+        <div className="flex flex-col gap-[var(--spacing-m)] flex-1 min-w-0">
           {section.stats.map((stat, i) =>
             i === 0 ? (
               <h4 key={i} className="h4 text-[var(--color-primary)]">
@@ -135,7 +134,7 @@ export default function WeakOnlineApp() {
         <img
           src={section.image}
           alt=""
-          className="max-w-[300px] h-auto object-contain flex-shrink-0"
+          className="max-w-[225px] h-auto object-contain flex-shrink-0"
         />
       </div>
     </Style>

@@ -18,26 +18,23 @@ export default function BankScale() {
 
   if (isMobile) {
     return (
-      <div
-        className="w-full flex flex-col px-[var(--spacing-lg)] py-[var(--spacing-2xl)] gap-[var(--spacing-4xl)]"
-  
-      >
-        <section className="w-full flex flex-row gap-[var(--spacing-m)] items-start">
-          <img
-            src="/researchDataPhotos/Lightbulb.png"
-            alt=""
-            className="w-auto h-[90px] object-contain flex-shrink-0"
-            aria-hidden
-          />
-          <div className="flex flex-col gap-[var(--spacing-s)] flex-1 min-w-0">
+      <div className="w-full flex flex-col gap-[var(--spacing-4xl)]">
+        <div className="flex flex-col gap-[var(--spacing-s)]">
+          <section className="w-full flex flex-row gap-[var(--spacing-s)] items-start">
+            <img
+              src="/researchDataPhotos/Lightbulb.png"
+              alt=""
+              className="w-auto h-[90px] object-contain flex-shrink-0"
+              aria-hidden
+            />
             <h2 className="h2 text-[var(--color-primary)] uppercase">
               The bank was not built to scale digitally.
             </h2>
-            <p className="body text-[var(--color-primary)]">
-              Research revealed a systemic misalignment between the bank's growth ambitions and its digital infrastructure. The organization was operating with tools and processes that could not support scale.
-            </p>
-          </div>
-        </section>
+          </section>
+          <p className="body text-[var(--color-primary)]">
+            Research revealed a systemic misalignment between the bank's growth ambitions and its digital infrastructure. The organization was operating with tools and processes that could not support scale.
+          </p>
+        </div>
         <WeakOnlineApp />
         <Bottleneck />
         <LowTrust />
@@ -47,26 +44,23 @@ export default function BankScale() {
 
   if (isTablet) {
     return (
-      <div
-        className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-2xl)]"
-    
-      >
-        <section className="w-full flex flex-row gap-[var(--spacing-lg)] items-start">
-          <img
-            src="/researchDataPhotos/Lightbulb.png"
-            alt=""
-            className="w-auto h-[100px] object-contain flex-shrink-0"
-            aria-hidden
-          />
-          <div className="flex flex-col gap-[var(--spacing-s)] flex-1 min-w-0">
-            <h2 className="h2 text-[var(--color-primary)] uppercase ">
+      <div className="w-full flex flex-col gap-[var(--spacing-3xl)]">
+        <div className="flex flex-col gap-[var(--spacing-s)]">
+          <section className="w-full flex flex-row gap-[var(--spacing-s)] items-center">
+            <img
+              src="/researchDataPhotos/Lightbulb.png"
+              alt=""
+              className="w-auto h-[100px] object-contain flex-shrink-0"
+              aria-hidden
+            />
+            <h2 className="h2 text-[var(--color-primary)] uppercase">
               The bank was not built to scale digitally.
             </h2>
-            <p className="body text-[var(--color-primary)]">
-              Research revealed a systemic misalignment between the bank's growth ambitions and its digital infrastructure. The organization was operating with tools and processes that could not support scale.
-            </p>
-          </div>
-        </section>
+          </section>
+          <p className="body text-[var(--color-primary)]">
+            Research revealed a systemic misalignment between the bank's growth ambitions and its digital infrastructure. The organization was operating with tools and processes that could not support scale.
+          </p>
+        </div>
         <WeakOnlineApp />
         <Bottleneck />
         <LowTrust />
@@ -76,17 +70,16 @@ export default function BankScale() {
 
   if (isDesktop1440px) {
     return (
-      <div
-        className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-2xl)] gap-[var(--spacing-4xl)]"
-     
-      >
-        <section className="w-full flex flex-row gap-[var(--spacing-lg)] items-start">
+    
+        <section className="w-full flex flex-row gap-[var(--spacing-s)] items-start">
           <img
             src="/researchDataPhotos/Lightbulb.png"
             alt=""
             className="w-auto h-[125px] object-contain flex-shrink-0"
             aria-hidden
           />
+            <div
+        className="w-full flex flex-col gap-[var(--spacing-3xl)]">
           <div className="flex flex-col gap-[var(--spacing-s)] flex-1 min-w-0">
             <h2 className="h2 text-[var(--color-primary)] uppercase">
               The bank was not built to scale digitally.
@@ -95,27 +88,27 @@ export default function BankScale() {
               Research revealed a systemic misalignment between the bank's growth ambitions and its digital infrastructure. The organization was operating with tools and processes that could not support scale.
             </p>
           </div>
-        </section>
-        <WeakOnlineApp />
+          <WeakOnlineApp />
         <Bottleneck />
         <LowTrust />
-      </div>
+        </div>
+        </section>
+       
+       
     )
   }
 
   return (
-    <div
-      className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-4xl)] gap-[var(--spacing-4xl)]"
-
-    >
-      <section className="w-full flex flex-row gap-[var(--spacing-xl)] items-start">
+  
+      <section className="w-full flex flex-row gap-[var(--spacing-s)] items-start">
         <img
           src="/researchDataPhotos/Lightbulb.png"
           alt=""
           className="w-auto h-[150px] object-contain flex-shrink-0"
           aria-hidden
         />
-        <div className="flex flex-col gap-[var(--spacing-lg)] flex-1 min-w-0">
+        <div className="flex flex-col gap-[var(--spacing-3xl)]">
+        <div className="flex flex-col gap-[var(--spacing-s)] flex-1 min-w-0">
           <h2 className="h2 text-[var(--color-primary)] uppercase">
             The bank was not built to scale digitally.
           </h2>
@@ -123,10 +116,10 @@ export default function BankScale() {
             Research revealed a systemic misalignment between the bank's growth ambitions and its digital infrastructure. The organization was operating with tools and processes that could not support scale.
           </p>
         </div>
+        <WeakOnlineApp />
+        <Bottleneck />
+        <LowTrust />
+        </div>
       </section>
-      <WeakOnlineApp />
-      <Bottleneck />
-      <LowTrust />
-    </div>
   )
 }

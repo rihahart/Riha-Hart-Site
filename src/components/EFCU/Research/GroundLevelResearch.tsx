@@ -32,7 +32,18 @@ function ScrollTriggerVideo({
       { threshold: 0.25, rootMargin: "0px" }
     )
     observer.observe(container)
-    return () => observer.disconnect()
+
+    const REPLAY_INTERVAL_MS = 15_000 // replay every 15 sec
+    const replayTimer = setInterval(() => {
+      if (!videoRef.current) return
+      videoRef.current.currentTime = 0
+      videoRef.current.play().catch(() => {})
+    }, REPLAY_INTERVAL_MS)
+
+    return () => {
+      observer.disconnect()
+      clearInterval(replayTimer)
+    }
   }, [])
 
   return (
