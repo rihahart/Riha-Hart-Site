@@ -154,7 +154,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  padding: var(--spacing-l);
+  padding: var(--spacing-xs);
   letter-spacing: var(--letter-spacing-s);
   color: var(--color-primary-inverse);
   background: var(--neutral-1000);

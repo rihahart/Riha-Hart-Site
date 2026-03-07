@@ -2,8 +2,9 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
+import IntroToIKlass from "@/components/iklass/IntroImpact/IntroToIKlass"
 
-export default function JHMuralProject() {
+export default function iklass() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()  
 
   // Mobile (≤768px)
@@ -14,17 +15,19 @@ export default function JHMuralProject() {
       {/* div with margins starts here*/}
       <div className="flex flex-col items-center w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-lg)]">
-         
-        </div>
-        <div
-        
-        >
-            <h2 className="h2 text-[var(--color-primary)]">JH Mural Project</h2>
+          <video
+            src="/EFCU/Everest FCU.mp4"
+            autoPlay
+            muted
+            playsInline
+            loop
+            className="w-full h-full object-contain"
+          />
+          <IntroToIKlass />
         </div>
       </div>
 
       {/* this div with margins ends here*/}
-      
     </div>
   )
   }
@@ -37,10 +40,16 @@ export default function JHMuralProject() {
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full p-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
           <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-2xl)]">
-            <h2 className="h2 text-[var(--color-primary)]">JH Mural Project</h2>
-           
+            <video
+              src="/EFCU/Everest FCU.mp4"
+              autoPlay
+              muted
+              playsInline
+              loop
+              className="w-full h-full object-contain"
+            />
+            <IntroToIKlass />
           </div>
-       
         </div>
 
         {/* this div with margins ends here*/}
@@ -56,10 +65,16 @@ export default function JHMuralProject() {
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
           <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
-            <h2 className="h2 text-[var(--color-primary)]">JH Mural Project</h2>
-           
+            <video
+              src="/EFCU/Everest FCU.mp4"
+              autoPlay
+              muted
+              playsInline
+              loop
+              className="w-full h-full object-contain"
+            />
+            <IntroToIKlass />
           </div>
-       
         </div>
 
         {/* this div with margins ends here*/}
@@ -75,11 +90,18 @@ export default function JHMuralProject() {
 
       <div className="flex flex-col items-center max-w-[1600px] p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
-          <h2 className="h2 text-[var(--color-primary)]">JH Mural Project</h2>
+          <video
+            src="/EFCU/Everest FCU.mp4"
+            autoPlay
+            muted
+            playsInline
+            loop
+            className="w-full h-full object-contain"
+          />
+          <IntroToIKlass />
         </div>
       </div>
       {/* this div with margins ends here*/}
-
     </div>
-  )   
+  )
 }

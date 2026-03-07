@@ -84,9 +84,9 @@ export default function MenuPage() {
     // TODO: Add navigation when page is created
   }
 
-  const handleOtherWork = () => {
+  const handleEarthHero = () => {
     handleClose()
-    // TODO: Add navigation when page is created
+    router.push('/earthhero')
   }
 
   // Mobile (≤768px)
@@ -137,8 +137,8 @@ export default function MenuPage() {
                 inverted={true}
               />
               <MenuButton
-                text="Other work"
-                onClick={handleOtherWork}
+                text="Earth Hero App"
+                onClick={handleEarthHero}
                 inverted={true}
               />
             </div>
@@ -205,8 +205,8 @@ export default function MenuPage() {
                   inverted={true}
                 />
                 <MenuButton
-                  text="Other work"
-                  onClick={handleOtherWork}
+                  text="Earth Hero App"
+                  onClick={handleEarthHero}
                   inverted={true}
                 />
               </div>
@@ -274,8 +274,8 @@ export default function MenuPage() {
                   inverted={true}
                 />
                 <MenuButton
-                  text="Other work"
-                  onClick={handleOtherWork}
+                  text="Earth Hero App"
+                  onClick={handleEarthHero}
                   inverted={true}
                 />
               </div>
@@ -342,8 +342,8 @@ export default function MenuPage() {
                 inverted={true}
               />
               <MenuButton
-                text="Other work"
-                onClick={handleOtherWork}
+                text="Earth Hero App"
+                onClick={handleEarthHero}
                 inverted={true}
               />
             </div>

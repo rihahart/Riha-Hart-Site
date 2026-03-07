@@ -136,9 +136,22 @@ export default function Menu() {
         router.push('/everest-federal-credit-union')
     }
 
-    const handleOtherWork = () => {
+    const handleEarthHero = () => {
+        if (pathname === '/earthhero') {
+            handleClose()
+            return
+        }
         handleClose()
-        // TODO: Add navigation when page is created
+        router.push('/earthhero')
+    }
+
+    const handleIklass = () => {
+        if (pathname === '/iklass') {
+            handleClose()
+            return
+        }
+        handleClose()
+        router.push('/iklass')
     }
 
     const handleLogoClick = () => {
@@ -195,9 +208,16 @@ export default function Menu() {
                                 isActive={pathname === '/everest-federal-credit-union'}
                             />
                             <MenuButton
-                                text="Other work"
-                                onClick={handleOtherWork}
+                                text="Earth Hero App"
+                                onClick={handleEarthHero}
                                 inverted={true}
+                                isActive={pathname === '/earthhero'}
+                            />
+                              <MenuButton
+                                text="iklass"
+                                onClick={handleIklass}
+                                inverted={true}
+                                isActive={pathname === '/iklass'}
                             />
                         </div>
                         <div className="relative w-full">
@@ -256,9 +276,16 @@ export default function Menu() {
                                     isActive={pathname === '/everest-federal-credit-union'}
                                 />
                                 <MenuButton
-                                    text="Other work"
-                                    onClick={handleOtherWork}
+                                    text="Earth Hero App"
+                                    onClick={handleEarthHero}
                                     inverted={true}
+                                    isActive={pathname === '/earthhero'}
+                                />
+                                <MenuButton
+                                    text="iklass"
+                                    onClick={handleIklass}
+                                    inverted={true}
+                                    isActive={pathname === '/iklass'}
                                 />
                             </div>
                             <div className="relative w-full">
@@ -297,8 +324,8 @@ export default function Menu() {
                         <ExitButton onClick={handleClose} size="large" aria-label="Close Menu" />
                     </div></div>
                     <div className="flex items-start justify-center h-[calc(100vh-160px)]">
-                        <div className="flex flex-col items-start pt-[var(--spacing-2xl)] pb-[var(--spacing-12xl)] px-[var(--spacing-8xl)] w-full gap-[var(--spacing-sm)]">
-                            <div className="flex flex-col items-center gap-[var(--spacing-2xl)] w-full">
+                        <div className="flex flex-col items-start pt-[var(--spacing-lg)] pb-[var(--spacing-12xl)] px-[var(--spacing-8xl)] w-full gap-[var(--spacing-sm)]">
+                            <div className="flex flex-col items-center gap-[var(--spacing-lg)] w-full">
                                 <MenuButton
                                     text="Get to know me"
                                     onClick={handleGetToKnowMe}
@@ -318,9 +345,16 @@ export default function Menu() {
                                     isActive={pathname === '/everest-federal-credit-union'}
                                 />
                                 <MenuButton
-                                    text="Other work"
-                                    onClick={handleOtherWork}
+                                    text="Earth Hero App"
+                                    onClick={handleEarthHero}
                                     inverted={true}
+                                    isActive={pathname === '/earthhero'}
+                                />
+                                <MenuButton
+                                    text="iklass"
+                                    onClick={handleIklass}
+                                    inverted={true}
+                                    isActive={pathname === '/iklass'}
                                 />
                             </div>
                             <div className="relative w-full">
@@ -342,7 +376,7 @@ export default function Menu() {
     return (
         <div className={`fixed inset-0 bg-[var(--neutral-1000)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
             <div className="max-w-[1400px] mx-auto ">
-                <div> <div className='flex items-center justify-between py-[var(--spacing-6xl)] px-[var(--spacing-12xl)]'>
+                <div> <div className='flex items-center justify-between py-[var(--spacing-3xl)] px-[var(--spacing-12xl)]'>
                     <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
                         <img
                             src="/Icons/Logo/RihaHartLogo.svg"
@@ -358,8 +392,8 @@ export default function Menu() {
                     <ExitButton onClick={handleClose} size="large" aria-label="Close Menu" />
                 </div></div>
                 <div className="flex items-start justify-center  h-[calc(100vh-180px)]">
-                    <div className="flex flex-col items-start pt-[var(--spacing-2xl)] pb-[var(--spacing-12xl)] px-[var(--spacing-12xl)] w-full h-full gap-[var(--spacing-md)]">
-                        <div className="flex flex-col items-center gap-[var(--spacing-3xl)] w-full">
+                    <div className="flex flex-col items-start pt-[var(--spacing-xl)] pb-[var(--spacing-xl)] px-[var(--spacing-12xl)] w-full h-full gap-[var(--spacing-md)]">
+                        <div className="flex flex-col items-center gap-[var(--spacing-lg)] w-full">
                             <MenuButton
                                 text="Get to know me"
                                 onClick={handleGetToKnowMe}
@@ -379,9 +413,16 @@ export default function Menu() {
                                 isActive={pathname === '/everest-federal-credit-union'}
                             />
                             <MenuButton
-                                text="Other work"
-                                onClick={handleOtherWork}
+                                text="Earth Hero App"
+                                onClick={handleEarthHero}
                                 inverted={true}
+                                isActive={pathname === '/earthhero'}
+                            />
+                            <MenuButton
+                                text="iklass"
+                                onClick={handleIklass}
+                                inverted={true}
+                                isActive={pathname === '/iklass'}
                             />
                         </div>
                         <div className="relative w-full">
