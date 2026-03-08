@@ -6,6 +6,7 @@ import IntroToIKlass from "@/components/iklass/IntroImpact/IntroToIKlass"
 import ResearchContainer from "@/components/iklass/ResearchContainer"
 import ResearchApproach from "@/components/iklass/ResearchApproach/ResearchApproach"
 import KeyInsight from "@/components/iklass/KeyInsights/KeyInsight"
+import DesignSolutions from "@/components/iklass/KeyInsights/DesignSolutions"
 
 export default function iklass() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()  
@@ -29,7 +30,11 @@ export default function iklass() {
         <ResearchApproach />
         <KeyInsight />
       </div>
-
+      <div className="w-full flex flex-col items-center justify-center bg-[#B4E1F9]">
+        <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)] p-[var(--spacing-lg)] mx-auto">
+          <DesignSolutions />
+        </div>
+      </div>
       {/* this div with margins ends here*/}
     </div>
   )
@@ -54,8 +59,13 @@ export default function iklass() {
           <ResearchApproach />
           <KeyInsight />
         </div>
-
-        {/* this div with margins ends here*/}
+         {/* this div with margins ends here*/}
+        <div className="w-full flex flex-col items-center justify-center bg-[#B4E1F9]">
+          <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)] p-[var(--spacing-2xl)] mx-auto">
+            <DesignSolutions />
+          </div>
+        </div>
+       
       </div>
     )
   }
@@ -63,10 +73,12 @@ export default function iklass() {
   // Desktop 1440px (1025px - 1440px)
   if (isDesktop1440px) {
     return (  
+
       <div className="flex flex-col items-center w-full mx-auto">
+      <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto px-[var(--spacing-3xl)]">
 
         {/* div with margins starts here*/}
-        <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
+        <div className="flex flex-col items-center w-full max-w-full pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)]">
           <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
             <img
               src="/iklass/SummerLarge.gif"
@@ -79,8 +91,14 @@ export default function iklass() {
           <ResearchApproach />
           <KeyInsight />
         </div>
-
+    
+      </div>
         {/* this div with margins ends here*/}
+      <div className="w-full flex flex-col items-center justify-center bg-[#B4E1F9]">
+          <div className="w-full max-w-[1440px] flex flex-col items-center justify-center gap-[var(--spacing-4xl)] py-[var(--spacing-3xl)] px-[var(--spacing-3xl)] mx-auto">
+            <DesignSolutions />
+          </div>
+        </div>
       </div>
     )
   }
@@ -103,6 +121,11 @@ export default function iklass() {
         <ResearchContainer />
         <ResearchApproach />
         <KeyInsight />
+      </div>
+      <div className="w-full flex flex-col items-center justify-center bg-[#B4E1F9]">
+        <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)] p-[var(--spacing-3xl)] mx-auto">
+          <DesignSolutions />
+        </div>
       </div>
       {/* this div with margins ends here*/}
     </div>

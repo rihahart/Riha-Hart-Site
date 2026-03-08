@@ -40,7 +40,7 @@ export default function KeyInsight() {
     return (
       <div className="w-full flex flex-col gap-[var(--spacing-xl)]">
         <div className="flex flex-row items-end justify-end gap-[var(--spacing-m)] w-full">
-          <div className="flex-shrink-0 max-w-[100px]">
+          <div className="flex-shrink-0 max-w-[120px]">
             <KeyInsightAnimation />
           </div>
           <div className="flex-shrink-0 self-stretch flex items-end justify-end">
