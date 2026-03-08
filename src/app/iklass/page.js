@@ -3,6 +3,7 @@
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import IntroToIKlass from "@/components/iklass/IntroImpact/IntroToIKlass"
+import ResearchContainer from "@/components/iklass/ResearchContainer"
 
 export default function iklass() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()  
@@ -22,6 +23,7 @@ export default function iklass() {
           />
           <IntroToIKlass />
         </div>
+        <ResearchContainer />
       </div>
 
       {/* this div with margins ends here*/}
@@ -44,6 +46,7 @@ export default function iklass() {
             />
             <IntroToIKlass />
           </div>
+          <ResearchContainer />
         </div>
 
         {/* this div with margins ends here*/}
@@ -66,6 +69,7 @@ export default function iklass() {
             />
             <IntroToIKlass />
           </div>
+          <ResearchContainer />
         </div>
 
         {/* this div with margins ends here*/}
@@ -88,6 +92,7 @@ export default function iklass() {
           />
           <IntroToIKlass />
         </div>
+        <ResearchContainer />
       </div>
       {/* this div with margins ends here*/}
     </div>
