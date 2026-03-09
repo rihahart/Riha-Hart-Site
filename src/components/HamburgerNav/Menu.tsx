@@ -196,12 +196,6 @@ export default function Menu() {
                                 isActive={pathname === '/bio'}
                             />
                             <MenuButton
-                                text="JH Mural Project"
-                                onClick={handleJHMuralProject}
-                                inverted={true}
-                                isActive={pathname === '/jh-mural-project'}
-                            />
-                            <MenuButton
                                 text="Everest Federal Credit Union"
                                 onClick={handleEverestFederal}
                                 inverted={true}
@@ -218,6 +212,12 @@ export default function Menu() {
                                 onClick={handleIklass}
                                 inverted={true}
                                 isActive={pathname === '/iklass'}
+                            />
+                            <MenuButton
+                                text="JH Mural Project"
+                                onClick={handleJHMuralProject}
+                                inverted={true}
+                                isActive={pathname === '/jh-mural-project'}
                             />
                         </div>
                         <div className="relative w-full">
@@ -264,12 +264,6 @@ export default function Menu() {
                                     isActive={pathname === '/bio'}
                                 />
                                 <MenuButton
-                                    text="JH Mural Project"
-                                    onClick={handleJHMuralProject}
-                                    inverted={true}
-                                    isActive={pathname === '/jh-mural-project'}
-                                />
-                                <MenuButton
                                     text="Everest Federal Credit Union"
                                     onClick={handleEverestFederal}
                                     inverted={true}
@@ -286,6 +280,12 @@ export default function Menu() {
                                     onClick={handleIklass}
                                     inverted={true}
                                     isActive={pathname === '/iklass'}
+                                />
+                                <MenuButton
+                                    text="JH Mural Project"
+                                    onClick={handleJHMuralProject}
+                                    inverted={true}
+                                    isActive={pathname === '/jh-mural-project'}
                                 />
                             </div>
                             <div className="relative w-full">
@@ -333,12 +333,6 @@ export default function Menu() {
                                     isActive={pathname === '/bio'}
                                 />
                                 <MenuButton
-                                    text="JH Mural Project"
-                                    onClick={handleJHMuralProject}
-                                    inverted={true}
-                                    isActive={pathname === '/jh-mural-project'}
-                                />
-                                <MenuButton
                                     text="Everest Federal Credit Union"
                                     onClick={handleEverestFederal}
                                     inverted={true}
@@ -355,6 +349,12 @@ export default function Menu() {
                                     onClick={handleIklass}
                                     inverted={true}
                                     isActive={pathname === '/iklass'}
+                                />
+                                <MenuButton
+                                    text="JH Mural Project"
+                                    onClick={handleJHMuralProject}
+                                    inverted={true}
+                                    isActive={pathname === '/jh-mural-project'}
                                 />
                             </div>
                             <div className="relative w-full">
@@ -401,12 +401,6 @@ export default function Menu() {
                                 isActive={pathname === '/bio'}
                             />
                             <MenuButton
-                                text="JH Mural Project"
-                                onClick={handleJHMuralProject}
-                                inverted={true}
-                                isActive={pathname === '/jh-mural-project'}
-                            />
-                            <MenuButton
                                 text="Everest Federal Credit Union"
                                 onClick={handleEverestFederal}
                                 inverted={true}
@@ -423,6 +417,12 @@ export default function Menu() {
                                 onClick={handleIklass}
                                 inverted={true}
                                 isActive={pathname === '/iklass'}
+                            />
+                            <MenuButton
+                                text="JH Mural Project"
+                                onClick={handleJHMuralProject}
+                                inverted={true}
+                                isActive={pathname === '/jh-mural-project'}
                             />
                         </div>
                         <div className="relative w-full">

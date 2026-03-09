@@ -19,7 +19,7 @@ export default function JHMuralProject() {
         <div
         
         >
-            <h2 className="h2 text-[var(--color-primary)]">JH Mural Project</h2>
+            <h2 className="h2 text-[var(--color-primary)]">JH Mural Project Comming Soon</h2>
         </div>
       </div>
 
@@ -37,7 +37,7 @@ export default function JHMuralProject() {
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full p-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
           <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-2xl)]">
-            <h2 className="h2 text-[var(--color-primary)]">JH Mural Project</h2>
+            <h2 className="h2 text-[var(--color-primary)]">JH Mural Project Comming Soon</h2>
            
           </div>
        
@@ -56,7 +56,7 @@ export default function JHMuralProject() {
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
           <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
-            <h2 className="h2 text-[var(--color-primary)]">JH Mural Project</h2>
+            <h2 className="h2 text-[var(--color-primary)]">JH Mural Project Comming Soon</h2>
            
           </div>
        
@@ -75,7 +75,7 @@ export default function JHMuralProject() {
 
       <div className="flex flex-col items-center max-w-[1600px] p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
-          <h2 className="h2 text-[var(--color-primary)]">JH Mural Project</h2>
+          <h2 className="h2 text-[var(--color-primary)]">JH Mural Project Comming Soon</h2>
         </div>
       </div>
       {/* this div with margins ends here*/}

@@ -5,8 +5,8 @@ export const bioData = {
     },
     heading: "Hi, again!",
     paragraphs: [
-        " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "I’m a co-founder and Creative Director of the JH Mural Project, a community arts nonprofit I built from the ground where I manage much of the day-to-day work, including branding, grant writing, contracts, budgets, and outreach."
+        " I am a designer by training, project manager by necessity, and an occasional developer who makes things happen.",
+        "I’m a co-founder and Creative Director of the JH Mural Project, a community arts nonprofit project. [I'm updating my website.... back to soon to learn more about me]"
     ]
 }
 
