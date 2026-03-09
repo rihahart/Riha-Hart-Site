@@ -3,6 +3,7 @@
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import IntroToEH from "@/components/EH/IntroImpact/IntroToEH"
+import ResearchDeck from "@/components/EH/ResearchDeck/ResearchDeck"  
 
 export default function EarthHero() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()  
@@ -25,6 +26,7 @@ export default function EarthHero() {
       </div>
 
       {/* this div with margins ends here*/}
+     <ResearchDeck />
     </div>
   )
   }
@@ -47,6 +49,7 @@ export default function EarthHero() {
         </div>
 
         {/* this div with margins ends here*/}
+        <ResearchDeck />
       </div>
     )
   }
@@ -58,19 +61,21 @@ export default function EarthHero() {
 
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
-          <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
-            <img
-              src="/EarthHero/PreferenceTest.gif"
-              alt="EarthHero preference test survey"
-              className="w-full max-w-full h-auto object-contain"
-            />
-            <IntroToEH />
-          </div>
+<div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
+          <img
+            src="/EarthHero/PreferenceTest.gif"
+            alt="EarthHero preference test survey"
+            className="w-full max-w-full h-auto object-contain"
+          />
+          <IntroToEH />
+        
         </div>
-
-        {/* this div with margins ends here*/}
       </div>
-    )
+
+      {/* this div with margins ends here*/}
+      <ResearchDeck />
+    </div>
+  )
   }
 
   // Large Desktop (>1440px)  
@@ -90,6 +95,7 @@ export default function EarthHero() {
         </div>
       </div>
       {/* this div with margins ends here*/}
+      <ResearchDeck />
     </div>
   )
 }

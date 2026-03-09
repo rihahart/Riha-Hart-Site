@@ -152,7 +152,7 @@ export default function iklass() {
 
       {/* div with margins starts here*/}
 
-      <div className="flex flex-col items-center max-w-[1600px] p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
+      <div className="flex flex-col items-center max-w-[1600px] px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
           <img
             src="/iklass/SummerLarge.gif"
