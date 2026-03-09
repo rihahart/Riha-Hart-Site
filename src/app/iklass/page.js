@@ -105,10 +105,10 @@ export default function iklass() {
     return (  
 
       <div className="flex flex-col items-center w-full mx-auto">
-      <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto px-[var(--spacing-3xl)]">
+      <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-6xl)]">
 
         {/* div with margins starts here*/}
-        <div className="flex flex-col items-center w-full max-w-full pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)]">
+        <div className="flex flex-col items-center w-full max-w-full gap-[var(--spacing-4xl)]">
           <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
             <img
               src="/iklass/SummerLarge.gif"
@@ -132,7 +132,7 @@ export default function iklass() {
         {/* this div with margins ends here*/}
 
         {/* div with margins starts here*/}
-        <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
+        <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-6xl)] gap-[var(--spacing-4xl)] mx-auto">
           <NavandScan />
           <img
             src="/iklass/SiteMap/SiteMapDesktop.png"
@@ -174,7 +174,7 @@ export default function iklass() {
       </div>
 
       {/* div with margins starts here*/}
-      <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
+      <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-6xl)] gap-[var(--spacing-4xl)] mx-auto">
         <NavandScan />
         <img
           src="/iklass/SiteMap/SiteMapDesktop.png"
