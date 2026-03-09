@@ -4,9 +4,9 @@ import React, { useState, useEffect, useRef, useMemo } from "react"
 import useWindowWidth from "@/_utilities/useWindowWidth"
 
 const BASE_PATH = "/getToKnowMe/Re-educationAnimation/Re-educationAnimation_"
-const TOTAL_FRAMES = 144 // Re-educationAnimation_00000.png through Re-educationAnimation_00143.png
-const PRELOAD_BATCH = 16 // load 16 at a time so production stays ahead of playback
-const START_AFTER_FRAMES = 48 // start after 2s of frames so slow networks have buffer
+const TOTAL_FRAMES = 144
+const PRELOAD_BATCH = 32
+const START_AFTER_FRAMES = 72
 
 function buildFramePaths(): string[] {
   return Array.from({ length: TOTAL_FRAMES }, (_, i) =>
@@ -14,15 +14,13 @@ function buildFramePaths(): string[] {
   )
 }
 
-// Match GetToKnowMe breakpoints: mobile ≤768, tablet 769–1024, desktop 1025–1440, 1440+
 function getContainerWidth(windowWidth: number): number | string {
-  if (windowWidth >= 1440) return 600   // 1440px and up
-  if (windowWidth >= 1025) return 500   // 1025px – 1440px
-  if (windowWidth >= 768) return 500   // tablet 769–1024
-  return "100%"                          // mobile
+  if (windowWidth >= 1440) return 600
+  if (windowWidth >= 1025) return 500
+  if (windowWidth >= 768) return 500
+  return "100%"
 }
 
-/** Preload frames in batches; call onFrameLoaded(index) when each frame is ready; call onFirstChunkLoaded when enough frames to start playback */
 function preloadInBatches(
   urls: string[],
   onFirstChunkLoaded: () => void,
@@ -54,7 +52,6 @@ function preloadInBatches(
 }
 
 export interface ReEducationAnimationProps {
-  /** Frames per second (default 24) */
   fps?: number
   className?: string
 }
@@ -73,10 +70,11 @@ export default function ReEducationAnimation({
 
   const framePaths = useMemo(() => buildFramePaths(), [])
 
-  // Preload in batches; track loaded frames so we only show ready frames (smooth on slow networks)
   useEffect(() => {
     let cancelled = false
     const loaded = new Set<number>()
+    loadedFramesRef.current = loaded
+
     preloadInBatches(
       framePaths,
       () => {
@@ -86,13 +84,12 @@ export default function ReEducationAnimation({
         loaded.add(index)
       }
     )
-    loadedFramesRef.current = loaded
+
     return () => {
       cancelled = true
     }
   }, [framePaths])
 
-  // requestAnimationFrame: update img.src only when frame is loaded (no setState = no re-render jank)
   useEffect(() => {
     if (!preloaded || !imgRef.current) return
 
@@ -103,19 +100,24 @@ export default function ReEducationAnimation({
     const tick = () => {
       const img = imgRef.current
       if (!img) return
+
       const start = startTimeRef.current ?? performance.now()
       const elapsed = performance.now() - start
-      const targetFrame = Math.floor((elapsed / frameInterval) % TOTAL_FRAMES)
       const loaded = loadedFramesRef.current
-      // Only advance when this frame is loaded (avoids pause on production where network is slower)
-      if (loaded.has(targetFrame)) {
-        if (lastDisplayedRef.current !== targetFrame) {
-          img.src = framePaths[targetFrame]
-          lastDisplayedRef.current = targetFrame
-        }
+
+      // Clamp to only what's loaded — never skip ahead of network
+      const maxLoadedFrame = loaded.size - 1
+      const rawTarget = Math.floor(elapsed / frameInterval) % TOTAL_FRAMES
+      const targetFrame = Math.min(rawTarget, maxLoadedFrame)
+
+      if (lastDisplayedRef.current !== targetFrame) {
+        img.src = framePaths[targetFrame]
+        lastDisplayedRef.current = targetFrame
       }
+
       rafRef.current = requestAnimationFrame(tick)
     }
+
     rafRef.current = requestAnimationFrame(tick)
 
     return () => {
