@@ -29,7 +29,7 @@ export default function ResearchDeck() {
             <button
               type="button"
               onClick={() => setSelectedIndex(i)}
-              className="w-full block focus:outline-none transition-transform duration-200 ease-out hover:scale-[1.15]"
+              className="w-full block focus:outline-none transition-transform duration-200 ease-out hover:scale-[1.15] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)]"
               style={{
                 background: "radial-gradient(ellipse at 60% 40%, #9B2010 0%, #6B1208 60%, #4A0D06 100%)",
                 backgroundColor: "#7D1A0A",
@@ -63,7 +63,7 @@ export default function ResearchDeck() {
             <button
               type="button"
               onClick={() => setSelectedIndex(i)}
-              className="w-full block focus:outline-none transition-transform duration-200 ease-out hover:scale-[1.15]"
+              className="w-full block focus:outline-none transition-transform duration-200 ease-out hover:scale-[1.15] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)]"
               style={{
                 background: "radial-gradient(ellipse at 60% 40%, #9B2010 0%, #6B1208 60%, #4A0D06 100%)",
                 backgroundColor: "#7D1A0A",
@@ -84,7 +84,7 @@ export default function ResearchDeck() {
 
   const MainImage = ({ large }: { large?: boolean }) => (
     <div
-      className={`relative overflow-hidden flex items-center justify-center ${large ? "flex-[1.1]" : "flex-1"}`}
+      className={`relative overflow-hidden flex items-center justify-center shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)] ${large ? "flex-[1.1]" : "flex-1"}`}
       style={{
         padding: "var(--spacing-3xl)",
         background: "radial-gradient(ellipse at 60% 40%, #9B2010 0%, #6B1208 60%, #4A0D06 100%)",
@@ -108,14 +108,10 @@ export default function ResearchDeck() {
     </div>
   )
 
-  const bgStyle = {
-    backgroundColor: "var(--neutral-1000)",
-  }
-
   if (isMobile) {
     return (
-      <div className="flex flex-col items-center w-full mx-auto" style={bgStyle}>
-        <div className="flex flex-col w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-lg)] mx-auto">
+      <div className="flex flex-col items-center w-full mx-auto">
+        <div className="flex flex-col w-full py-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-lg)] mx-auto">
           <TitleBlock />
           <MainImage />
           <Thumbnails cols="grid-cols-4" />
@@ -126,7 +122,7 @@ export default function ResearchDeck() {
 
   if (isTablet) {
     return (
-      <div className="flex flex-col items-center w-full mx-auto" style={bgStyle}>
+      <div className="flex flex-col items-center w-full mx-auto">
         <div className="flex flex-col w-full p-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-lg)] mx-auto">
           <TitleBlock />
           <MainImage />
@@ -138,7 +134,7 @@ export default function ResearchDeck() {
 
   if (isDesktop1440px) {
     return (
-      <div className="flex flex-col items-center w-full mx-auto" style={bgStyle}>
+      <div className="flex flex-col items-center w-full mx-auto">
         <div className="flex flex-col w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-lg)] mx-auto">
           <TitleBlock />
           <div className="flex flex-row w-full gap-[var(--spacing-lg)] items-stretch">
@@ -151,7 +147,7 @@ export default function ResearchDeck() {
   }
 
   return (
-    <div className="flex flex-col items-center w-full mx-auto" style={bgStyle}>
+    <div className="flex flex-col items-center w-full mx-auto">
       <div className="flex flex-col max-w-[1600px] w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-lg)] mx-auto">
         <TitleBlock />
         <div className="flex flex-row w-full gap-[var(--spacing-lg)] items-stretch">
