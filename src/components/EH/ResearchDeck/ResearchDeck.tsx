@@ -109,7 +109,7 @@ export default function ResearchDeck() {
   )
 
   const bgStyle = {
-    background: "radial-gradient(ellipse at 50% 20%, #1f1210 0%, #110a08 35%, #080808 60%, #000000 100%)",
+    backgroundColor: "var(--neutral-1000)",
   }
 
   if (isMobile) {
