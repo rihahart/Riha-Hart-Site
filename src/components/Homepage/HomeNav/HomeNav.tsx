@@ -38,14 +38,18 @@ export default function HomeNav() {
   // Mobile (≤768px)
   if (isMobile) {
     return (
-      <div className="flex flex-col gap-[var(--spacing-xl)] self-stretch">
+      <div className="flex flex-col gap-[var(--spacing-m)] py-[var(--spacing-4xl)] self-stretch">
         {caseStudies.map((study, index) => (
           <div
             key={index}
-            className="flex flex-col items-center self-stretch gap-[var(--spacing-m)] p-[var(--spacing-m)] border-b border-b-[var(--color-secondary)]"
+            className="flex flex-row items-center justify-between self-stretch gap-[var(--spacing-m)] py-[var(--spacing-m)] border-b-2 border-b-[var(--color-tertiary)]"
           >
-            <div className="body">
-              {study.title}
+            <div className="flex flex-col gap-[var(--spacing-xs)]">
+              {study.title.split(":").map((part, i) => (
+                <div key={i} className="body">
+                  {part.trim()}
+                </div>
+              ))}
             </div>
             <Button
               text={study.buttonText || "View case study"}
