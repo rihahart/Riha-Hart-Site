@@ -3,6 +3,7 @@
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import GetToKnowMe from "@/components/Homepage/GetToKnowMe/GetToKnowMe"
+import HomeNav from "@/components/Homepage/HomeNav/HomeNav"
 
 export default function Home() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
@@ -26,6 +27,7 @@ export default function Home() {
           </div>
         </div>
         <GetToKnowMe />
+        <HomeNav />
       </div>
     )
   }
@@ -48,6 +50,7 @@ export default function Home() {
             />
           </div>
           <GetToKnowMe />
+          <HomeNav />
         </div>
       </div>
     )
@@ -71,6 +74,7 @@ export default function Home() {
             />
           </div>
           <GetToKnowMe />
+          <HomeNav />
         </div>
       </div>
 
@@ -92,6 +96,7 @@ export default function Home() {
           />
         </div>
         <GetToKnowMe />
+        <HomeNav />
       </div>
     </div>
   )
