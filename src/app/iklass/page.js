@@ -7,6 +7,8 @@ import ResearchContainer from "@/components/iklass/ResearchContainer"
 import ResearchApproach from "@/components/iklass/ResearchApproach/ResearchApproach"
 import KeyInsight from "@/components/iklass/KeyInsights/KeyInsight"
 import DesignSolutions from "@/components/iklass/KeyInsights/DesignSolutions"
+import NavandScan from "@/components/iklass/KeyInsights/NavandScan/NavandScan"
+import IklassEnd from "@/components/iklass/iklassEnd/IklassEnd"
 
 export default function iklass() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()  
@@ -30,12 +32,27 @@ export default function iklass() {
         <ResearchApproach />
         <KeyInsight />
       </div>
+
+        {/* this div with margins ends here*/}
+
       <div className="w-full flex flex-col items-center justify-center bg-[#B4E1F9]">
         <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)] p-[var(--spacing-lg)] mx-auto">
           <DesignSolutions />
         </div>
       </div>
-      {/* this div with margins ends here*/}
+    
+
+      {/* div with margins starts here*/}
+      <div className="flex flex-col items-center w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
+        <NavandScan />
+        <img
+          src="/iklass/SiteMap/SiteMapMobile.png"
+          alt="The new navigation map for iKlass"
+          className="w-full max-w-full h-auto object-contain"
+        />
+        <IklassEnd />
+      </div>
+
     </div>
   )
   }
@@ -60,12 +77,25 @@ export default function iklass() {
           <KeyInsight />
         </div>
          {/* this div with margins ends here*/}
+
         <div className="w-full flex flex-col items-center justify-center bg-[#B4E1F9]">
           <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)] p-[var(--spacing-2xl)] mx-auto">
             <DesignSolutions />
           </div>
         </div>
-       
+        {/* this div with margins ends here*/}
+
+        {/* div with margins starts here*/}
+        <div className="flex flex-col items-center w-full p-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
+          <NavandScan />
+          <img
+            src="/iklass/SiteMap/SiteMapMobile.png"
+            alt="The new navigation map for iKlass"
+            className="w-full max-w-full h-auto object-contain"
+          />
+          <IklassEnd />
+        </div>
+        {/* this div with margins ends here*/}
       </div>
     )
   }
@@ -99,6 +129,19 @@ export default function iklass() {
             <DesignSolutions />
           </div>
         </div>
+        {/* this div with margins ends here*/}
+
+        {/* div with margins starts here*/}
+        <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
+          <NavandScan />
+          <img
+            src="/iklass/SiteMap/SiteMapDesktop.png"
+            alt="The new navigation map for iKlass"
+            className="w-full max-w-full h-auto object-contain"
+          />
+          <IklassEnd />
+        </div>
+        {/* this div with margins ends here*/}
       </div>
     )
   }
@@ -122,10 +165,23 @@ export default function iklass() {
         <ResearchApproach />
         <KeyInsight />
       </div>
+         {/* this div with margins ends here*/}
+
       <div className="w-full flex flex-col items-center justify-center bg-[#B4E1F9]">
         <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)] p-[var(--spacing-3xl)] mx-auto">
           <DesignSolutions />
         </div>
+      </div>
+
+      {/* div with margins starts here*/}
+      <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
+        <NavandScan />
+        <img
+          src="/iklass/SiteMap/SiteMapDesktop.png"
+          alt="The new navigation map for iKlass"
+          className="w-full max-w-full h-auto object-contain"
+        />
+        <IklassEnd />
       </div>
       {/* this div with margins ends here*/}
     </div>
