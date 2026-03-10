@@ -60,9 +60,6 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
             </li>
           ))}
         </ul>
-        {section.note && (
-          <p className="body text-[var(--color-primary)]">{section.note}</p>
-        )}
       </section>
     )
   }
@@ -113,9 +110,6 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
             </li>
           ))}
         </ul>
-        {section.note && (
-          <p className="body text-[var(--color-primary)]">{section.note}</p>
-        )}
       </section>
     )
   }
@@ -166,9 +160,6 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
             </li>
           ))}
         </ul>
-        {section.note && (
-          <p className="body text-[var(--color-primary)]">{section.note}</p>
-        )}
       </section>
     )
   }
@@ -218,9 +209,6 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
           </li>
         ))}
       </ul>
-      {section.note && (
-        <p className="body text-[var(--color-primary)]">{section.note}</p>
-      )}
     </section>
   )
 }
