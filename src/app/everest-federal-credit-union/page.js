@@ -4,8 +4,7 @@ import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import IntroToEFCU from "@/components/EFCU/IntroImpact/IntroToEFCU"
 import ImpactBox from "@/components/EFCU/IntroImpact/ImpactBox"
-import GroundLevelResearch from "@/components/EFCU/Research/GroundLevelResearch"
-import InternalOperationsResearch from "@/components/EFCU/Research/InternalOperationsResearch"
+import ResearchCardStack from "@/components/EFCU/Research/ResearchCardStack"
 import BankScale from "@/components/EFCU/ResearchFindings/BankScale"
 import ClarifyingMembership from "@/components/EFCU/MembershipLoans/ClarifyingMembership"
 import LoanMembershipFindings from "@/components/EFCU/MembershipLoans/LoanMembershipFindings"
@@ -32,22 +31,13 @@ export default function EverestFederalCreditUnion() {
           <IntroToEFCU />
         </div>
         <ImpactBox />
-        <div
-          className="w-full flex flex-col px-[var(--spacing-lg)] py-[var(--spacing-lg)] gap-[var(--spacing-3xl)]"
-          style={{
-            backgroundColor: "#F6F6F8",
-            borderLeft: "4px solid var(--blue-300)"
-          }}
-        >
-          <GroundLevelResearch />
-          <InternalOperationsResearch />
-        </div>
+        <ResearchCardStack />
         <BankScale />
         <div
           className="w-full flex flex-col px-[var(--spacing-lg)] py-[var(--spacing-lg)] gap-[var(--spacing-3xl)]"
           style={{
             backgroundColor: "#F6F6F8",
-            borderLeft: "4px solid var(--blue-300)"
+            borderLeft: "4px solid #1c4483"
           }}
         >
           <ClarifyingMembership />
@@ -103,22 +93,13 @@ export default function EverestFederalCreditUnion() {
           <IntroToEFCU />
         </div>
         <ImpactBox />
-        <div
-          className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
-          style={{
-            backgroundColor: "#F6F6F8",
-            borderLeft: "6px solid var(--blue-300)"
-          }}
-        >
-          <GroundLevelResearch />
-          <InternalOperationsResearch />
-        </div>
+        <ResearchCardStack />
         <BankScale />
         <div
           className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
           style={{
             backgroundColor: "#F6F6F8",
-            borderLeft: "6px solid var(--blue-300)"
+            borderLeft: "6px solid #1c4483"
           }}
         >
           <ClarifyingMembership />
@@ -182,22 +163,13 @@ export default function EverestFederalCreditUnion() {
           <IntroToEFCU />
         </div>  
         <ImpactBox />
-        <div
-          className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
-          style={{
-            backgroundColor: "#F6F6F8",
-            borderLeft: "6px solid var(--blue-300)"
-          }}
-        >
-          <GroundLevelResearch />
-          <InternalOperationsResearch />
-        </div>
+        <ResearchCardStack />
         <BankScale />
         <div
           className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
           style={{
             backgroundColor: "#F6F6F8",
-            borderLeft: "6px solid var(--blue-300)"
+            borderLeft: "6px solid #1c4483"
           }}
         >
           <ClarifyingMembership />
@@ -257,22 +229,13 @@ export default function EverestFederalCreditUnion() {
       </div>
      
       <ImpactBox />
-      <div
-        className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
-        style={{
-          backgroundColor: "#F6F6F8",
-          borderLeft: "8px solid var(--blue-300)"
-        }}
-      >
-        <GroundLevelResearch />
-        <InternalOperationsResearch />
-      </div>
+      <ResearchCardStack />
       <BankScale />
       <div
         className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
         style={{
           backgroundColor: "#F6F6F8",
-          borderLeft: "8px solid var(--blue-300)"
+          borderLeft: "8px solid #1c4483"
         }}
       >
         <ClarifyingMembership />

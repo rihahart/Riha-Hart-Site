@@ -2,7 +2,7 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import { internalOperationsResearch } from "@/data/EFCU/Research/internalOperationsResearch"
+import { groundLevelResearch } from "@/data/EFCU/Research/groundLevelResearch"
 
 interface Props {
   onNavigate: (direction: "prev" | "next") => void
@@ -10,14 +10,14 @@ interface Props {
   total: number
 }
 
-export default function InternalOperationsResearch({ onNavigate, currentIndex, total }: Props) {
+export default function ResearchPhotos({ onNavigate, currentIndex, total }: Props) {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
-  const section = internalOperationsResearch
+  const section = groundLevelResearch
 
   if (isMobile) {
     return (
       <section 
-        className="w-full flex flex-col gap-[var(--spacing-xl)] items-start px-[var(--spacing-lg)] py-[var(--spacing-lg)]"
+        className="w-full flex flex-col gap-[var(--spacing-xl)] items-center px-[var(--spacing-lg)] py-[var(--spacing-lg)]"
         style={{
           backgroundColor: "#FDFFFE",
           borderLeft: "4px solid #1c4483",
@@ -26,7 +26,7 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
         }}
       >
         <div className="flex flex-row justify-between items-center self-stretch">
-          <h3 className="h3 text-[#2E8FB6]">02</h3>
+          <h3 className="h3 text-[#2E8FB6]">03</h3>
           <div className="flex items-center gap-[var(--spacing-s)]">
             <button
               onClick={() => onNavigate("prev")}
@@ -45,24 +45,17 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
             </button>
           </div>
         </div>
-        <div className="flex flex-col gap-[var(--spacing-s)]">
-          <h2 className="h3 text-[#1c4483] uppercase">{section.heading}</h2>
-          <p className="body text-[var(--color-primary)]">{section.intro}</p>
+        <div className="w-full flex items-center justify-center">
+          <video
+            src={section.media.src}
+            autoPlay
+            muted
+            playsInline
+            loop
+            className="max-w-full h-auto object-contain flex-shrink-0"
+            style={{ maxHeight: "calc(450px - 120px)" }}
+          />
         </div>
-        <ul className="flex flex-col gap-[var(--spacing-m)] list-none pl-0">
-          {section.bullets.map((item, i) => (
-            <li
-              key={i}
-              className="body text-[var(--color-primary)] uppercase flex items-center gap-[var(--spacing-lg)]"
-            >
-              <span className="Icon--ArrowRight--S Icon--1c4483" aria-hidden />
-              {item}
-            </li>
-          ))}
-        </ul>
-        {section.note && (
-          <p className="body text-[var(--color-primary)]">{section.note}</p>
-        )}
       </section>
     )
   }
@@ -70,7 +63,7 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
   if (isTablet) {
     return (
       <section 
-        className="w-full flex flex-col gap-[var(--spacing-xl)] items-start px-[var(--spacing-xl)] py-[var(--spacing-xl)]"
+        className="w-full flex flex-col gap-[var(--spacing-xl)] items-center px-[var(--spacing-xl)] py-[var(--spacing-xl)]"
         style={{
           backgroundColor: "#FDFFFE",
           borderLeft: "6px solid #1c4483",
@@ -79,7 +72,7 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
         }}
       >
         <div className="flex flex-row justify-between items-center self-stretch">
-          <h3 className="h3 text-[#2E8FB6]">02</h3>
+          <h3 className="h3 text-[#2E8FB6]">03</h3>
           <div className="flex items-center gap-[var(--spacing-s)]">
             <button
               onClick={() => onNavigate("prev")}
@@ -98,24 +91,23 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
             </button>
           </div>
         </div>
-        <div className="flex flex-col gap-[var(--spacing-s)]">
-          <h2 className="h3 text-[#1c4483] uppercase">{section.heading}</h2>
-          <p className="body text-[var(--color-primary)]">{section.intro}</p>
+        <div className="flex flex-row gap-[var(--spacing-m)] items-center justify-center w-full flex-1" style={{ maxHeight: "calc(500px - 120px)", overflow: "hidden" }}>
+          <video
+            src={section.media.src}
+            autoPlay
+            muted
+            playsInline
+            loop
+            className="w-[48%] h-auto object-contain"
+            style={{ maxHeight: "100%" }}
+          />
+          <img
+            src="/EFCU/Crazy8S.gif"
+            alt="Crazy 8s workshop"
+            className="w-[48%] h-auto object-contain"
+            style={{ maxHeight: "100%" }}
+          />
         </div>
-        <ul className="flex flex-col gap-[var(--spacing-m)] list-none pl-0">
-          {section.bullets.map((item, i) => (
-            <li
-              key={i}
-              className="body text-[var(--color-primary)] uppercase flex items-center gap-[var(--spacing-m)]"
-            >
-              <span className="Icon--ArrowRight--S Icon--1c4483" aria-hidden />
-              {item}
-            </li>
-          ))}
-        </ul>
-        {section.note && (
-          <p className="body text-[var(--color-primary)]">{section.note}</p>
-        )}
       </section>
     )
   }
@@ -123,7 +115,7 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
   if (isDesktop1440px) {
     return (
       <section 
-        className="w-full flex flex-col gap-[var(--spacing-m)] items-start px-[var(--spacing-xl)] py-[var(--spacing-xl)]"
+        className="w-full flex flex-col gap-[var(--spacing-m)] items-center px-[var(--spacing-xl)] py-[var(--spacing-xl)]"
         style={{
           backgroundColor: "#FDFFFE",
           borderLeft: "6px solid #1c4483",
@@ -132,7 +124,7 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
         }}
       >
         <div className="flex flex-row justify-between items-center self-stretch">
-          <h3 className="h3 text-[#2E8FB6]">02</h3>
+          <h3 className="h3 text-[#2E8FB6]">03</h3>
           <div className="flex items-center gap-[var(--spacing-s)]">
             <button
               onClick={() => onNavigate("prev")}
@@ -151,31 +143,30 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
             </button>
           </div>
         </div>
-        <div className="flex flex-col gap-[var(--spacing-s)]">
-          <h2 className="h3 text-[#1c4483] uppercase">{section.heading}</h2>
-          <p className="body text-[var(--color-primary)]">{section.intro}</p>
+        <div className="flex flex-row gap-[var(--spacing-m)] items-center justify-center w-full flex-1" style={{ maxHeight: "calc(500px - 120px)", overflow: "hidden" }}>
+          <video
+            src={section.media.src}
+            autoPlay
+            muted
+            playsInline
+            loop
+            className="w-[48%] h-auto object-contain"
+            style={{ maxHeight: "100%" }}
+          />
+          <img
+            src="/EFCU/Crazy8S.gif"
+            alt="Crazy 8s workshop"
+            className="w-[48%] h-auto object-contain"
+            style={{ maxHeight: "100%" }}
+          />
         </div>
-        <ul className="flex flex-col gap-[var(--spacing-m)] list-none pl-0">
-          {section.bullets.map((item, i) => (
-            <li
-              key={i}
-              className="body text-[var(--color-primary)] uppercase flex items-center gap-[var(--spacing-s)]"
-            >
-              <span className="Icon--ArrowRight--M Icon--1c4483" aria-hidden />
-              {item}
-            </li>
-          ))}
-        </ul>
-        {section.note && (
-          <p className="body text-[var(--color-primary)]">{section.note}</p>
-        )}
       </section>
     )
   }
 
   return (
     <section 
-      className="w-full flex flex-col gap-[var(--spacing-m)] items-start px-[var(--spacing-xl)] py-[var(--spacing-xl)]"
+      className="w-full flex flex-col gap-[var(--spacing-m)] items-center px-[var(--spacing-xl)] py-[var(--spacing-xl)]"
       style={{
         backgroundColor: "#FDFFFE",
         borderLeft: "8px solid #1c4483",
@@ -184,7 +175,7 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
       }}
     >
       <div className="flex flex-row justify-between items-center self-stretch">
-        <h3 className="h3 text-[#2E8FB6]">02</h3>
+        <h3 className="h3 text-[#2E8FB6]">03</h3>
         <div className="flex items-center gap-[var(--spacing-s)]">
           <button
             onClick={() => onNavigate("prev")}
@@ -203,24 +194,23 @@ export default function InternalOperationsResearch({ onNavigate, currentIndex, t
           </button>
         </div>
       </div>
-      <div className="flex flex-col gap-[var(--spacing-s)]">
-        <h2 className="h3 text-[#1c4483] uppercase">{section.heading}</h2>
-        <p className="body text-[var(--color-primary)]">{section.intro}</p>
+      <div className="flex flex-row gap-[var(--spacing-m)] items-center justify-center w-full" style={{ maxHeight: "calc(650px - 120px)", overflow: "hidden" }}>
+        <video
+          src={section.media.src}
+          autoPlay
+          muted
+          playsInline
+          loop
+          className="w-[48%] h-auto object-contain"
+          style={{ maxHeight: "100%" }}
+        />
+        <img
+          src="/EFCU/Crazy8S.gif"
+          alt="Crazy 8s workshop"
+          className="w-[48%] h-auto object-contain"
+          style={{ maxHeight: "100%" }}
+        />
       </div>
-      <ul className="flex flex-col gap-[var(--spacing-m)] list-none pl-0">
-        {section.bullets.map((item, i) => (
-          <li
-            key={i}
-            className="body text-[var(--color-primary)] font-bold uppercase flex items-center gap-[var(--spacing-s)]"
-          >
-            <span className="Icon--ArrowRight--M Icon--1c4483" aria-hidden />
-            {item}
-          </li>
-        ))}
-      </ul>
-      {section.note && (
-        <p className="body text-[var(--color-primary)]">{section.note}</p>
-      )}
     </section>
   )
 }

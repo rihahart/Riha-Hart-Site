@@ -143,6 +143,7 @@
   -webkit-mask-position: center;
 }
 .Icon--ArrowRight--S.Icon--blue-500 { color: var(--blue-500); }
+.Icon--ArrowRight--S.Icon--1c4483 { color: #1c4483; }
 
 .Icon--ArrowRight--M {
   width: var(--Icon-ArrowRight-M-width);
@@ -161,6 +162,7 @@
   -webkit-mask-position: center;
 }
 .Icon--ArrowRight--M.Icon--blue-500 { color: var(--blue-500); }
+.Icon--ArrowRight--M.Icon--1c4483 { color: #1c4483; }
 
 .Icon--ArrowRight--L {
   width: var(--Icon-ArrowRight-L-width);
@@ -178,3 +180,108 @@
   -webkit-mask-position: center;
 }
 .Icon--ArrowRight--L.Icon--blue-500 { color: var(--blue-500); }
+.Icon--ArrowRight--L.Icon--1c4483 { color: #1c4483; }
+
+/* ChevronRight icon utility classes — use dimensions from variables, mask for color */
+.Icon--ChevronRight--S {
+  width: var(--Icon-ChevronRight-S-width);
+  height: var(--Icon-ChevronRight-S-height);
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-image: url("/Icons/ChevronRight/ChevronRightSmall.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("/Icons/ChevronRight/ChevronRightSmall.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+.Icon--ChevronRight--S.Icon--2E8FB6 { color: #2E8FB6; }
+
+.Icon--ChevronRight--M {
+  width: var(--Icon-ChevronRight-M-width);
+  height: var(--Icon-ChevronRight-M-height);
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-image: url("/Icons/ChevronRight/ChevronRightMedium.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("/Icons/ChevronRight/ChevronRightMedium.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+.Icon--ChevronRight--M.Icon--2E8FB6 { color: #2E8FB6; }
+
+.Icon--ChevronRight--L {
+  width: var(--Icon-ChevronRight-L-width);
+  height: var(--Icon-ChevronRight-L-height);
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-image: url("/Icons/ChevronRight/ChevronRightLarge.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("/Icons/ChevronRight/ChevronRightLarge.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+.Icon--ChevronRight--L.Icon--2E8FB6 { color: #2E8FB6; }
+
+/* ChevronLeft icon utility classes — flip ChevronRight horizontally */
+.Icon--ChevronLeft--S {
+  width: var(--Icon-ChevronRight-S-width);
+  height: var(--Icon-ChevronRight-S-height);
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-image: url("/Icons/ChevronRight/ChevronRightSmall.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("/Icons/ChevronRight/ChevronRightSmall.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transform: scaleX(-1);
+}
+
+.Icon--ChevronLeft--M {
+  width: var(--Icon-ChevronRight-M-width);
+  height: var(--Icon-ChevronRight-M-height);
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-image: url("/Icons/ChevronRight/ChevronRightMedium.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("/Icons/ChevronRight/ChevronRightMedium.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transform: scaleX(-1);
+}
+
+.Icon--ChevronLeft--L {
+  width: var(--Icon-ChevronRight-L-width);
+  height: var(--Icon-ChevronRight-L-height);
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-image: url("/Icons/ChevronRight/ChevronRightLarge.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("/Icons/ChevronRight/ChevronRightLarge.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transform: scaleX(-1);
+}

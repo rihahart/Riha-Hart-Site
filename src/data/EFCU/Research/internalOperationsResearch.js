@@ -7,7 +7,6 @@ export const internalOperationsResearch = {
     "APPLICATION FLOW ACROSS TEAMS",
     "GOALS, TARGETS, AND REVENUE STREAMS"
   ],
-  note: "Due to internal confidentiality, detailed workflow documentation cannot be shared. Here is a diagram of how crazy it is and affinity mapping team work I did with the team.",
   media: {
     type: "image",
     src: "/EFCU/EmployeeActivities.svg",

@@ -1,10 +1,186 @@
 "use client"
 
-import React from "react"
+import React, { useState, useEffect } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import { impactBox } from "@/data/EFCU/IntroImpact/impactBox"
 
 type ScreenSize = "mobile" | "tablet" | "desktop1440" | "large"
+
+function CountingNumber({ targetMillions, className }: { targetMillions: number; className: string }) {
+  const [count, setCount] = useState(1)
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = React.useRef<HTMLSpanElement>(null)
+  const target = targetMillions * 1000000
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        } else {
+          setIsVisible(false)
+          setCount(1) // Reset count when not visible
+        }
+      },
+      {
+        threshold: 1.0 // Trigger when 100% visible
+      }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!isVisible) return
+
+    const duration = 600 // 0.6 seconds
+    const steps = 40
+    const increment = target / steps
+    const stepDuration = duration / steps
+    let current = 1
+
+    const timer = setInterval(() => {
+      current += increment
+      if (current >= target) {
+        setCount(target)
+        clearInterval(timer)
+      } else {
+        setCount(Math.floor(current))
+      }
+    }, stepDuration)
+
+    return () => clearInterval(timer)
+  }, [target, isVisible])
+
+  const formatNumber = (num: number) => {
+    if (num >= 1000000) {
+      const millions = num / 1000000
+      return `$${Math.round(millions)} Million`
+    }
+    return `$${Math.floor(num / 1000)}K`
+  }
+
+  return <span ref={ref} className={className}>{formatNumber(count)}</span>
+}
+
+function CountingPercentage({ targetPercent, className }: { targetPercent: number; className: string }) {
+  const [count, setCount] = useState(1)
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = React.useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        } else {
+          setIsVisible(false)
+          setCount(1) // Reset count when not visible
+        }
+      },
+      {
+        threshold: 1.0 // Trigger when 100% visible
+      }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!isVisible) return
+
+    const duration = 600 // 0.6 seconds
+    const steps = 40
+    const increment = targetPercent / steps
+    const stepDuration = duration / steps
+    let current = 1
+
+    const timer = setInterval(() => {
+      current += increment
+      if (current >= targetPercent) {
+        setCount(targetPercent)
+        clearInterval(timer)
+      } else {
+        setCount(Math.floor(current))
+      }
+    }, stepDuration)
+
+    return () => clearInterval(timer)
+  }, [targetPercent, isVisible])
+
+  return <span ref={ref} className={className}>{count}%</span>
+}
+
+function CountingTime({ className }: { className: string }) {
+  const timeStages = ["3 DAYS", "2 DAYS", "1 DAY", "12 hr", "6 hr", "3 hr", "1 hr"]
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = React.useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        } else {
+          setIsVisible(false)
+          setCurrentIndex(0) // Reset when not visible
+        }
+      },
+      {
+        threshold: 1.0 // Trigger when 100% visible
+      }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!isVisible) return
+
+    const duration = 600 // 0.6 seconds total
+    const stepDuration = duration / timeStages.length
+    let index = 0
+
+    const timer = setInterval(() => {
+      index++
+      if (index >= timeStages.length) {
+        setCurrentIndex(timeStages.length - 1)
+        clearInterval(timer)
+      } else {
+        setCurrentIndex(index)
+      }
+    }, stepDuration)
+
+    return () => clearInterval(timer)
+  }, [isVisible])
+
+  return <span ref={ref} className={className}>3 days to {timeStages[currentIndex]}</span>
+}
 
 /* Arrow Right; rotated to face up */
 function ArrowIcon({
@@ -105,7 +281,7 @@ export default function ImpactBox() {
       cardStyles[screenSize]
     return (
       <div
-        className={`flex flex-col items-start justify-start text-left border border-[var(--green-200)] bg-[var(--color-primary-inverse)] shadow-md w-full ${contentGap} ${cardClass}`}
+        className={`flex flex-col items-start justify-start text-left bg-[var(--color-primary-inverse)] shadow-md w-full ${contentGap} ${cardClass}`}
       >
         <div className={`flex w-full items-center justify-center ${metricGap}`}>
           {item.metric !== "$15 Million" && item.metric !== "3 days to 1 hr" && (
@@ -115,9 +291,17 @@ export default function ImpactBox() {
               style={{ transform: iconTranslateY ? `translateY(${iconTranslateY}px) rotate(-90deg)` : "rotate(-90deg)" }}
             />
           )}
-          <span className={`${metricClass} text-[var(--color-primary)]`}>
-            {item.metric}
-          </span>
+          {item.metric === "$15 Million" ? (
+            <CountingNumber targetMillions={15} className={`${metricClass} text-[var(--color-primary)]`} />
+          ) : item.metric === "160%" ? (
+            <CountingPercentage targetPercent={160} className={`${metricClass} text-[var(--color-primary)]`} />
+          ) : item.metric === "3 days to 1 hr" ? (
+            <CountingTime className={`${metricClass} text-[var(--color-primary)]`} />
+          ) : (
+            <span className={`${metricClass} text-[var(--color-primary)]`}>
+              {item.metric}
+            </span>
+          )}
         </div>
         <p
           className={`${descriptionClass} text-[var(--color-primary)] text-left w-full`}
@@ -131,7 +315,13 @@ export default function ImpactBox() {
   // Mobile (≤768px): stacked, full width cards
   if (isMobile) {
     return (
-      <div className="w-full bg-[var(--green-100)] p-[var(--spacing-l)]">
+      <div 
+        className="w-full p-[var(--spacing-l)]"
+        style={{
+          background: "radial-gradient(ellipse at 60% 40%, #9B2010 0%, #6B1208 60%, #4A0D06 100%)",
+          backgroundColor: "#7D1A0A"
+        }}
+      >
         <div className="w-full flex flex-col gap-[var(--spacing-l)]">
           {impactBox.map((item, index) => (
             <Card key={index} item={item} index={index} screenSize="mobile" />
@@ -144,7 +334,13 @@ export default function ImpactBox() {
   // Tablet (769px - 1024px): 3 columns, smaller padding
   if (isTablet) {
     return (
-      <div className="w-full bg-[var(--green-100)] p-[var(--spacing-m)]">
+      <div 
+        className="w-full p-[var(--spacing-m)]"
+        style={{
+          background: "radial-gradient(ellipse at 60% 40%, #9B2010 0%, #6B1208 60%, #4A0D06 100%)",
+          backgroundColor: "#7D1A0A"
+        }}
+      >
         <div className="w-full grid grid-cols-3 gap-[var(--spacing-m)]">
           {impactBox.map((item, index) => (
             <Card key={index} item={item} index={index} screenSize="tablet" />
@@ -157,7 +353,13 @@ export default function ImpactBox() {
   // Desktop 1440px (1025px - 1440px): 3 columns, more gap
   if (isDesktop1440px) {
     return (
-      <div className="w-full bg-[var(--green-100)] p-[var(--spacing-m)]">
+      <div 
+        className="w-full p-[var(--spacing-m)]"
+        style={{
+          background: "radial-gradient(ellipse at 60% 40%, #9B2010 0%, #6B1208 60%, #4A0D06 100%)",
+          backgroundColor: "#7D1A0A"
+        }}
+      >
         <div className="w-full grid grid-cols-3 gap-[var(--spacing-m)]">
           {impactBox.map((item, index) => (
             <Card key={index} item={item} index={index} screenSize="desktop1440" />
@@ -169,7 +371,13 @@ export default function ImpactBox() {
 
   // Large Desktop (>1440px): 3 columns, max-width container, card height 275 + 4xl padding
   return (
-    <div className="w-full max-w-[1600px] mx-auto bg-[var(--green-100)] p-[var(--spacing-m)]">
+    <div 
+      className="w-full max-w-[1600px] mx-auto p-[var(--spacing-m)]"
+      style={{
+        background: "radial-gradient(ellipse at 60% 40%, #9B2010 0%, #6B1208 60%, #4A0D06 100%)",
+        backgroundColor: "#7D1A0A"
+      }}
+    >
       <div className="w-full grid grid-cols-3 gap-[var(--spacing-m)]">
         {impactBox.map((item, index) => (
           <Card key={index} item={item} index={index} screenSize="large" />
