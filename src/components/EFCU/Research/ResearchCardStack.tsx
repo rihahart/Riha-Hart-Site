@@ -91,7 +91,6 @@ export default function ResearchCardStack() {
             left: 0,
             width: "100%",
             zIndex: 2,
-            // ease-in for exit — starts slow, snaps away fast
             transform: sliding
               ? slideDirection === "left"
                 ? "translateX(-108%)"
@@ -101,7 +100,6 @@ export default function ResearchCardStack() {
               ? "transform 280ms cubic-bezier(0.4, 0, 1, 1)"
               : "transform 0ms",
             pointerEvents: sliding ? "none" : "auto",
-            // Shadow pops on hover feel — always present, strong lift
             filter: "drop-shadow(0 10px 28px rgba(0,0,0,0.22))",
             willChange: "transform",
           }}

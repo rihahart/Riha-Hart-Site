@@ -5,7 +5,7 @@ import useMobileDetection from "@/_utilities/useMobileDetection"
 import IntroToEFCU from "@/components/EFCU/IntroImpact/IntroToEFCU"
 import ImpactBox from "@/components/EFCU/IntroImpact/ImpactBox"
 import ResearchCardStack from "@/components/EFCU/Research/ResearchCardStack"
-import BankScale from "@/components/EFCU/ResearchFindings/BankScale"
+import ResearchFindingsDeck from "@/components/EFCU/ResearchFindings/ResearchFindingsDeck"
 import ClarifyingMembership from "@/components/EFCU/MembershipLoans/ClarifyingMembership"
 import LoanMembershipFindings from "@/components/EFCU/MembershipLoans/LoanMembershipFindings"
 import TrustandCommunity from "@/components/EFCU/TrustandCommunity/TrustandCommunity"
@@ -32,7 +32,7 @@ export default function EverestFederalCreditUnion() {
         </div>
         <ImpactBox />
         <ResearchCardStack />
-        <BankScale />
+        <ResearchFindingsDeck />
         <div
           className="w-full flex flex-col px-[var(--spacing-lg)] py-[var(--spacing-lg)] gap-[var(--spacing-3xl)]"
           style={{
@@ -94,7 +94,7 @@ export default function EverestFederalCreditUnion() {
         </div>
         <ImpactBox />
         <ResearchCardStack />
-        <BankScale />
+        <ResearchFindingsDeck />
         <div
           className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
           style={{
@@ -164,7 +164,7 @@ export default function EverestFederalCreditUnion() {
         </div>  
         <ImpactBox />
         <ResearchCardStack />
-        <BankScale />
+        <ResearchFindingsDeck />
         <div
           className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
           style={{
@@ -230,7 +230,7 @@ export default function EverestFederalCreditUnion() {
      
       <ImpactBox />
       <ResearchCardStack />
-      <BankScale />
+      <ResearchFindingsDeck />
       <div
         className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
         style={{

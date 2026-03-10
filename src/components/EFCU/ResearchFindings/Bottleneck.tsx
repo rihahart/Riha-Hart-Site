@@ -30,14 +30,7 @@ export default function Bottleneck() {
                 key={i}
                 className="body text-[var(--color-primary)] uppercase flex items-center gap-[var(--spacing-lg)]"
               >
-                <img
-                  src="/Icons/IconsBlue.svg"
-                  alt=""
-                  width={14}
-                  height={14}
-                  className="flex-shrink-0"
-                  aria-hidden
-                />
+                <span className="Icon--ArrowRight--S Icon--1c4483" aria-hidden />
                 {item}
               </li>
             ))}
@@ -65,14 +58,7 @@ export default function Bottleneck() {
                 key={i}
                 className="body text-[var(--color-primary)] uppercase flex items-center gap-[var(--spacing-lg)]"
               >
-                <img
-                  src="/Icons/IconsBlue.svg"
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="flex-shrink-0"
-                  aria-hidden
-                />
+                <span className="Icon--ArrowRight--S Icon--1c4483" aria-hidden />
                 {item}
               </li>
             ))}
@@ -105,14 +91,7 @@ export default function Bottleneck() {
                   key={i}
                   className="body text-[var(--color-primary)] uppercase flex items-center gap-[var(--spacing-m)]"
                 >
-                  <img
-                    src="/Icons/IconsBlue.svg"
-                    alt=""
-                    width={20}
-                    height={20}
-                    className="flex-shrink-0"
-                    aria-hidden
-                  />
+                  <span className="Icon--ArrowRight--M Icon--1c4483" aria-hidden />
                   {item}
                 </li>
               ))}
@@ -144,14 +123,7 @@ export default function Bottleneck() {
                 key={i}
                 className="body text-[var(--color-primary)] font-bold uppercase flex items-center gap-[var(--spacing-s)]"
               >
-                <img
-                  src="/Icons/IconsBlue.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-                  className="flex-shrink-0"
-                  aria-hidden
-                />
+                <span className="Icon--ArrowRight--L Icon--1c4483" aria-hidden />
                 {item}
               </li>
             ))}

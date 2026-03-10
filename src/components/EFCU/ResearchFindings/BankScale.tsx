@@ -8,7 +8,7 @@ import LowTrust from "./LowTrust"
 
 
 const baseStyle: React.CSSProperties = {
-  backgroundColor: "#F6F6F8",
+  backgroundColor: "#FFC700",
   borderLeftColor: "var(--blue-300)",
   borderLeftStyle: "solid"
 }
