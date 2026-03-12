@@ -36,7 +36,7 @@ function ArrowRightIcon({
 }
 
 function PointList({ variant }: { variant?: "desktop" }) {
-  const textClass = "body text-[var(--color-secondary-inverse)]"
+  const textClass = "body text-[var(--color-primary)]"
   const itemGap = "gap-[var(--spacing-xl)]"
   if (variant === "desktop") {
     return (
@@ -76,7 +76,7 @@ export default function TheProblem() {
       <div className="w-full flex flex-col gap-[var(--spacing-xl)] py-[var(--spacing-xl)]">
         <div className="flex flex-row items-start justify-start gap-[var(--spacing-m)] w-full ">
           <div className="flex flex-col gap-[var(--spacing-s)] w-[80%] min-w-0 text-left">
-            <h2 className="h2 text-[var(--color-secondary-inverse)]">
+            <h2 className="h2 text-[var(--color-primary)]">
               {theProblem.heading}
             </h2>
           </div>
@@ -93,7 +93,7 @@ export default function TheProblem() {
       <div className="w-full flex flex-col gap-[var(--spacing-2xl)] p-[var(--spacing-xl)]">
         <div className="flex flex-row items-start justify-start gap-[var(--spacing-xl)] w-full">
           <div className="flex flex-col gap-[var(--spacing-s)] w-[60%] min-w-0 text-left">
-            <h2 className="h2 text-[var(--color-secondary-inverse)]">
+            <h2 className="h2 text-[var(--color-primary)]">
               {theProblem.heading}
             </h2>
           </div>
@@ -107,7 +107,7 @@ export default function TheProblem() {
     return (
       <div className="w-full flex flex-row items-start gap-[var(--spacing-3xl)] p-[var(--spacing-xl)]">
         <div className="flex flex-col items-start gap-[var(--spacing-s)] py-[var(--spacing-xl)] w-[40%] min-w-0 text-left">
-          <h2 className="h3 text-[var(--color-secondary-inverse)]">
+          <h2 className="h3 text-[var(--color-primary)]">
             {theProblem.heading}
           </h2>
         </div>

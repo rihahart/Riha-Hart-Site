@@ -51,7 +51,9 @@ export default function ResearchPhotos({ onNavigate, currentIndex, total }: Prop
             autoPlay
             muted
             playsInline
-            loop
+            onLoadedMetadata={(e) => {
+              e.currentTarget.playbackRate = 0.7
+            }}
             className="max-w-full h-auto object-contain flex-shrink-0"
             style={{ maxHeight: "calc(450px - 120px)" }}
           />
@@ -97,7 +99,9 @@ export default function ResearchPhotos({ onNavigate, currentIndex, total }: Prop
             autoPlay
             muted
             playsInline
-            loop
+            onLoadedMetadata={(e) => {
+              e.currentTarget.playbackRate = 0.7
+            }}
             className="w-[48%] h-auto object-contain"
             style={{ maxHeight: "100%" }}
           />
@@ -149,7 +153,9 @@ export default function ResearchPhotos({ onNavigate, currentIndex, total }: Prop
             autoPlay
             muted
             playsInline
-            loop
+            onLoadedMetadata={(e) => {
+              e.currentTarget.playbackRate = 0.7
+            }}
             className="w-[48%] h-auto object-contain"
             style={{ maxHeight: "100%" }}
           />
@@ -200,7 +206,9 @@ export default function ResearchPhotos({ onNavigate, currentIndex, total }: Prop
           autoPlay
           muted
           playsInline
-          loop
+          onLoadedMetadata={(e) => {
+            e.currentTarget.playbackRate = 0.7
+          }}
           className="w-[48%] h-auto object-contain"
           style={{ maxHeight: "100%" }}
         />

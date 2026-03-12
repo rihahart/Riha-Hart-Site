@@ -21,7 +21,7 @@ export default function WeakOnlineApp() {
         <img
             src={section.image}
             alt=""
-            className="max-w-[150px] h-auto object-contain flex-shrink-0 mx-auto"
+            className="max-w-[100px] h-auto object-contain flex-shrink-0 mx-auto"
           />
           <div className="flex flex-col gap-[var(--spacing-s)] flex-1 min-w-0">
             {section.stats.map((stat, i) =>
@@ -69,7 +69,7 @@ export default function WeakOnlineApp() {
           <img
             src={section.image}
             alt=""
-            className="max-w-[150px] h-auto object-contain flex-shrink-0"
+            className="max-w-[120px] h-auto object-contain flex-shrink-0"
           />
         </div>
       </Style>
@@ -102,7 +102,7 @@ export default function WeakOnlineApp() {
           <img
             src={section.image}
             alt=""
-            className="max-w-[175px] h-auto object-contain flex-shrink-0"
+            className="max-w-[150px] h-auto object-contain flex-shrink-0"
           />
         </div>
       </Style>
@@ -134,7 +134,7 @@ export default function WeakOnlineApp() {
         <img
           src={section.image}
           alt=""
-          className="max-w-[225px] h-auto object-contain flex-shrink-0"
+          className="max-w-[200px] h-auto object-contain flex-shrink-0"
         />
       </div>
     </Style>

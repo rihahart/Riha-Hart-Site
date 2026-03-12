@@ -7,5 +7,5 @@ export const weakOnlineApp = {
     "More than 80% of applications were completed in person.",
     "For a national credit union with only three branches, this made digital growth nearly impossible."
   ],
-  image: "/researchDataPhotos/SVG.svg"
+  image: "/EFCU/BankScale/ScrollAnimation.gif"
 }

@@ -11,9 +11,9 @@ const OVERLAY_BODY =
   "Research revealed a systemic misalignment between the bank's growth ambitions and its digital infrastructure. The organization was operating with tools and processes that could not support scale."
 
 const thumbnailData = [
-  { component: <WeakOnlineApp key="weak" />, image: "/researchDataPhotos/SVG.svg", alt: "Weak Online Application" },
-  { component: <Bottleneck key="bottleneck" />, image: "/researchDataPhotos/Help.svg", alt: "Operational Bottlenecks" },
-  { component: <LowTrust key="lowtrust" />, image: "/EFCU/Everest.svg", alt: "Low Trust and Brand Clarity" },
+  { component: <WeakOnlineApp key="weak" />, image: "/EFCU/BankScale/ScrollAnimation.gif", alt: "Weak Online Application" },
+  { component: <Bottleneck key="bottleneck" />, image: "/EFCU/BankScale/PaperBlowing/PaperBlowing_00014.png", alt: "Operational Bottlenecks" },
+  { component: <LowTrust key="lowtrust" />, image: "/EFCU/BankScale/LowTrust/Frame 2.png", alt: "Low Trust and Brand Clarity" },
 ]
 
 export default function ResearchFindingsDeck() {
@@ -37,7 +37,7 @@ export default function ResearchFindingsDeck() {
             <button
               type="button"
               onClick={() => setSelectedIndex(i)}
-              className="w-full block focus:outline-none transition-transform duration-200 ease-out hover:scale-[1.15]"
+              className="w-full block focus:outline-none transition-transform duration-200 ease-out hover:scale-[1.20]"
               style={{
                 backgroundColor: "#FFC700",
                 padding: "var(--spacing-m)",
@@ -56,8 +56,8 @@ export default function ResearchFindingsDeck() {
     </div>
   )
 
-  const SidebarThumbnails = () => (
-    <div className="flex flex-col justify-start gap-[var(--spacing-lg)] w-[120px] shrink-0">
+  const SidebarThumbnails = ({ width = "120px" }: { width?: string }) => (
+    <div className="flex flex-col justify-start gap-[var(--spacing-lg)] shrink-0" style={{ width }}>
       {thumbnailData.map((item, i) => {
         const isActive = i === selectedIndex
         return (
@@ -71,7 +71,7 @@ export default function ResearchFindingsDeck() {
             <button
               type="button"
               onClick={() => setSelectedIndex(i)}
-              className="w-full block focus:outline-none transition-transform duration-200 ease-out hover:scale-[1.15]"
+              className="w-full block focus:outline-none transition-transform duration-200 ease-out hover:scale-[1.20]"
               style={{
                 backgroundColor: "#FFC700",
                 padding: "var(--spacing-m)",
@@ -160,7 +160,7 @@ export default function ResearchFindingsDeck() {
       <div className="flex flex-col w-full gap-[var(--spacing-3xl)] mx-auto">
         <TitleBlock />
         <div className="flex flex-row w-full gap-[var(--spacing-lg)] items-stretch">
-          <SidebarThumbnails />
+          <SidebarThumbnails width="180px" />
           <MainContent large />
         </div>
       </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import { bottleneck } from "@/data/EFCU/ResearchFindings/bottleneck"
 import Style from "./Style"
@@ -8,6 +8,47 @@ import Style from "./Style"
 export default function Bottleneck() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const section = bottleneck
+  const frames = [
+    "/EFCU/BankScale/PaperBlowing/PaperBlowing_00004.png",
+    "/EFCU/BankScale/PaperBlowing/PaperBlowing_00005.png",
+    "/EFCU/BankScale/PaperBlowing/PaperBlowing_00006.png",
+    "/EFCU/BankScale/PaperBlowing/PaperBlowing_00007.png",
+    "/EFCU/BankScale/PaperBlowing/PaperBlowing_00008.png",
+    "/EFCU/BankScale/PaperBlowing/PaperBlowing_00009.png",
+    "/EFCU/BankScale/PaperBlowing/PaperBlowing_00010.png",
+    "/EFCU/BankScale/PaperBlowing/PaperBlowing_00011.png",
+    "/EFCU/BankScale/PaperBlowing/PaperBlowing_00012.png",
+    "/EFCU/BankScale/PaperBlowing/PaperBlowing_00013.png",
+    "/EFCU/BankScale/PaperBlowing/PaperBlowing_00014.png",
+  ]
+  const [frameIndex, setFrameIndex] = useState(0)
+
+  useEffect(() => {
+    setFrameIndex(0)
+
+    if (frames.length <= 1) return
+
+    let cancelled = false
+    const frameDurationMs = 90
+
+    const step = (index: number) => {
+      if (cancelled) return
+      if (index >= frames.length - 1) {
+        setFrameIndex(frames.length - 1)
+        return
+      }
+      setFrameIndex(index)
+      setTimeout(() => step(index + 1), frameDurationMs)
+    }
+
+    // start from second frame for smoothness
+    setTimeout(() => step(1), frameDurationMs)
+
+    return () => {
+      cancelled = true
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   if (isMobile) {
     return (
@@ -19,8 +60,8 @@ export default function Bottleneck() {
           <p className="body text-[var(--color-primary)]">{section.description}</p>
         </div>
         <div className="w-full flex flex-col gap-[var(--spacing-xl)] items-start">
-        <img
-            src={section.image}
+          <img
+            src={frames[frameIndex]}
             alt=""
             className="max-w-[200px] h-auto object-contain flex-shrink-0 mx-auto"
           />
@@ -65,7 +106,7 @@ export default function Bottleneck() {
           </ul>
           </div>
           <img
-            src={section.image}
+            src={frames[frameIndex]}
             alt=""
             className="max-w-[275px] h-auto object-contain flex-shrink-0"
           />
@@ -98,7 +139,7 @@ export default function Bottleneck() {
             </ul>
           </div>
           <img
-            src={section.image}
+            src={frames[frameIndex]}
             alt=""
             className="max-w-[325px] h-auto object-contain flex-shrink-0"
           />
@@ -130,7 +171,7 @@ export default function Bottleneck() {
           </ul>
         </div>
         <img
-          src={section.image}
+          src={frames[frameIndex]}
           alt=""
           className="max-w-[375px] h-auto object-contain flex-shrink-0"
         />

@@ -10,7 +10,7 @@ export default function Rearranging() {
 
   if (isMobile) {
     return (
-      <div className="w-full flex flex-col items-stretch p-[var(--spacing-s)] border border-[#FED05F] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)]">
+      <div className="w-full flex flex-col items-stretch p-[var(--spacing-s)] border border-[#FED05F] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)] bg-[var(--neutral-1000)]">
         <div className="w-full mb-[var(--spacing-lg)]">
           <p className="body text-[var(--color-secondary-inverse)]">
             {rearranging.solvingText}
@@ -39,7 +39,7 @@ export default function Rearranging() {
 
   if (isTablet) {
     return (
-      <div className="w-full flex flex-col items-stretch p-[var(--spacing-s)] border border-[#FED05F] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)]">
+      <div className="w-full flex flex-col items-stretch p-[var(--spacing-s)] border border-[#FED05F] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)] bg-[var(--neutral-1000)]">
         <div className="w-full mb-[var(--spacing-lg)]">
           <p className="body text-[var(--color-secondary-inverse)]">
             {rearranging.solvingText}
@@ -68,7 +68,7 @@ export default function Rearranging() {
 
   if (isDesktop1440px) {
     return (
-      <div className="w-full flex flex-col justify-center items-center gap-[var(--spacing-s,24px)] p-[var(--spacing-xl)] border border-[#FED05F] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)]">
+      <div className="w-full flex flex-col justify-center items-center gap-[var(--spacing-s,24px)] p-[var(--spacing-xl)] border border-[#FED05F] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)] bg-[var(--neutral-1000)]">
         <div className="flex flex-row items-center justify-between w-full">
           <div className="flex flex-col items-center max-w-[800px] gap-[var(--spacing-2xl)] justify-center flex-1 self-stretch">
             <p className="body text-[var(--color-secondary-inverse)]">

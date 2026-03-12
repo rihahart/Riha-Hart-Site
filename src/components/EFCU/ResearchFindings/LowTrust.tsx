@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import { lowTrust } from "@/data/EFCU/ResearchFindings/lowTrust"
 import Style from "./Style"
@@ -8,6 +8,32 @@ import Style from "./Style"
 export default function LowTrust() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const section = lowTrust
+  const frames = [
+    "/EFCU/BankScale/LowTrust/Frame 1.png",
+    "/EFCU/BankScale/LowTrust/Frame 2.png",
+  ]
+  const [frameIndex, setFrameIndex] = useState(0)
+
+  useEffect(() => {
+    setFrameIndex(0)
+
+    if (frames.length <= 1) return
+
+    let cancelled = false
+    const frameDurationMs = 700
+
+    const timer = setTimeout(() => {
+      if (!cancelled) {
+        setFrameIndex(frames.length - 1)
+      }
+    }, frameDurationMs)
+
+    return () => {
+      cancelled = true
+      clearTimeout(timer)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   if (isMobile) {
     return (
@@ -19,7 +45,7 @@ export default function LowTrust() {
           <p className="body text-[var(--color-primary)]">{section.intro}</p>
           </div>
           <img
-            src={section.image}
+            src={frames[frameIndex]}
             alt=""
             className="max-w-[200px] h-auto object-contain flex-shrink-0 mx-auto"
           />
@@ -47,7 +73,7 @@ export default function LowTrust() {
             {section.subheading}
           </p>
           <img
-            src={section.image}
+            src={frames[frameIndex]}
             alt=""
             className="max-w-[225px] h-auto object-contain flex-shrink-0"
           />
@@ -70,7 +96,7 @@ export default function LowTrust() {
                 {section.subheading}
               </p>
               <img
-                src={section.image}
+                src={frames[frameIndex]}
                 alt=""
                 className="max-w-[300px] h-auto object-contain flex-shrink-0"
               />
@@ -93,7 +119,7 @@ export default function LowTrust() {
             {section.subheading}
           </p>
         <img
-          src={section.image}
+          src={frames[frameIndex]}
           alt=""
           className="max-w-[375px] h-auto object-contain flex-shrink-0"
         />

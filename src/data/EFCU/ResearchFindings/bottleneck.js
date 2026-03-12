@@ -8,6 +8,5 @@ export const bottleneck = {
     "REDUNDANT DOCUMENTATION",
     "EMPLOYEE ERROR",
     "OVERCROWDED BRANCHES"
-  ],
-  image: "/researchDataPhotos/Help.svg"
+  ]
 }

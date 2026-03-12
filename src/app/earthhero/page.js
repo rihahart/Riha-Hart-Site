@@ -31,13 +31,17 @@ export default function EarthHero() {
       {/* this div with margins ends here*/}
 
       <div className="w-full flex flex-col items-center justify-center bg-[var(--neutral-1000)]">
-        <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)] p-[var(--spacing-lg)] mx-auto">
+        <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-m)] p-[var(--spacing-lg)] mx-auto">
           <ResearchDeck />
           <EHCommunications />
-          <TheProblem />
-          <Rearranging />
+
         </div>
       </div>
+
+      <div className="flex flex-col items-center w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
+        <TheProblem />
+        <Rearranging />
+        </div>
     </div>
   )
   }
@@ -65,9 +69,15 @@ export default function EarthHero() {
           <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)] p-[var(--spacing-2xl)] mx-auto">
             <ResearchDeck />
             <EHCommunications />
-            <TheProblem />
-            <Rearranging />
+           
           </div>
+        </div>
+
+
+        <div className="flex flex-col items-center w-full p-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
+
+        <TheProblem />
+          <Rearranging />
         </div>
       </div>
     )
@@ -97,9 +107,14 @@ export default function EarthHero() {
         <div className="w-full max-w-[1440px] flex flex-col items-center justify-center gap-[var(--spacing-4xl)] py-[var(--spacing-3xl)] px-[var(--spacing-3xl)] mx-auto">
           <ResearchDeck />
           <EHCommunications />
-          <TheProblem />
-          <Rearranging />
+        
         </div>
+
+      </div>
+
+      <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
+      <TheProblem />
+      <Rearranging />
       </div>
     </div>
   )
@@ -127,9 +142,12 @@ export default function EarthHero() {
         <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)] p-[var(--spacing-3xl)] mx-auto max-w-[1600px]">
           <ResearchDeck />
           <EHCommunications />
-          <TheProblem />
-          <Rearranging />
+         
         </div>
+      </div>
+      <div className="flex flex-col items-center max-w-[1600px] p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
+      <TheProblem />
+      <Rearranging />
       </div>
     </div>
   )

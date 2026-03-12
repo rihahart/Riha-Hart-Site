@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import IntroToEFCU from "@/components/EFCU/IntroImpact/IntroToEFCU"
 import ImpactBox from "@/components/EFCU/IntroImpact/ImpactBox"
@@ -13,6 +13,13 @@ import TrustandCommunity from "@/components/EFCU/TrustandCommunity/TrustandCommu
 
 export default function EverestFederalCreditUnion() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
+  const everestVideoRef = useRef(null)
+
+  useEffect(() => {
+    if (everestVideoRef.current) {
+      everestVideoRef.current.playbackRate = 0.75
+    }
+  }, [])
 
   // Mobile (≤768px)
   if (isMobile) {
@@ -22,6 +29,7 @@ export default function EverestFederalCreditUnion() {
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-lg)]">
           <video
             src="/EFCU/Everest FCU.mp4"
+            ref={everestVideoRef}
             autoPlay
             muted 
             playsInline
@@ -84,6 +92,7 @@ export default function EverestFederalCreditUnion() {
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
           <video
             src="/EFCU/Everest FCU.mp4"
+            ref={everestVideoRef}
             autoPlay
             muted 
             playsInline
@@ -154,6 +163,7 @@ export default function EverestFederalCreditUnion() {
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
           <video
             src="/EFCU/Everest FCU.mp4"
+            ref={everestVideoRef}
             autoPlay
             muted
             playsInline
@@ -219,6 +229,7 @@ export default function EverestFederalCreditUnion() {
       <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
         <video
           src="/EFCU/Everest FCU.mp4"
+          ref={everestVideoRef}
           autoPlay
           muted
           playsInline

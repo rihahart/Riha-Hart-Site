@@ -68,7 +68,7 @@ export default function IklassEnd() {
 
   if (isDesktop1440px) {
     return (
-      <div className="w-full flex flex-col md:flex-row items-start p-[var(--spacing-2xl)] shadow-[0_0_10px_0_rgba(0,0,0,0.1)] rounded-[4px] gap-[var(--spacing-2xl)]">
+      <div className="w-full flex flex-col md:flex-row items-start p-[var(--spacing-2xl)]  shadow-[0_0_10px_0_rgba(0,0,0,0.1)] rounded-[4px] gap-[var(--spacing-2xl)]">
         <div className="flex flex-col items-start gap-[var(--spacing-l)] min-w-0 flex-1 max-w-xl">
           <div className="flex flex-col items-start gap-[var(--spacing-xs)]">
           <h2 className="body text-[var(--color-secondary)] uppercase">
