@@ -30,9 +30,9 @@ export default function NewNav() {
          The foundation is set. Time to design the EVEREST EXPERIENCE
         </h3>
         <img
-            src="/EFCU/ClarifyingNavAnimation/Arrow.png"
+            src="/EFCU/ClarifyingNavAnimation/ArrowDown.png"
             alt="arrow pointing to nav animation"
-            className="w-[50px] h-auto scale-x-[-1] mt-[-10px]"
+            className="h-[70px] w-auto scale-x-[-1] px-[var(--spacing-8xl)] mt-[-10px]"
           />
         </div>
         </div>
@@ -58,9 +58,9 @@ export default function NewNav() {
           The foundation is set. Time to design the EVEREST EXPERIENCE
         </h3>
         <img
-            src="/EFCU/ClarifyingNavAnimation/Arrow.png"
+            src="/EFCU/ClarifyingNavAnimation/ArrowDown.png"
             alt="arrow pointing to nav animation"
-            className="w-[75px] h-auto scale-x-[-1] mt-[-10px]"
+            className="w-auto h-[100px] scale-x-[-1] mt-[-10px]"
           />
         </div>
           
@@ -88,9 +88,9 @@ export default function NewNav() {
         The foundation is set. Time to design the EVEREST EXPERIENCE
       </h3>
           <img
-            src="/EFCU/ClarifyingNavAnimation/Arrow.png"
+            src="/EFCU/ClarifyingNavAnimation/ArrowDown.png"
             alt="arrow pointing to nav animation"
-            className="w-[150px] h-auto scale-x-[-1] pr-[var(--spacing-xl)] mt-[-10px]"
+            className="w-[60px] h-auto scale-x-[-1] pr-[var(--spacing-xl)] mt-[-10px]"
           />
 
     </div>
@@ -116,9 +116,9 @@ export default function NewNav() {
         The foundation is set. Time to design the EVEREST EXPERIENCE
       </h3>
           <img
-            src="/EFCU/ClarifyingNavAnimation/Arrow.png"
+            src="/EFCU/ClarifyingNavAnimation/ArrowDown.png"
             alt="arrow pointing to nav animation"
-            className="w-[175px] h-auto scale-x-[-1] pr-[var(--spacing-xl)] mt-[-10px]"
+            className="w-[75px] h-auto scale-x-[-1] pr-[var(--spacing-xl)] mt-[-10px]"
           />
           
     </div>
