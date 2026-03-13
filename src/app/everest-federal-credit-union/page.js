@@ -1,25 +1,20 @@
 "use client"
 
-import React, { useRef, useEffect } from "react"
+import React, { useRef } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import IntroToEFCU from "@/components/EFCU/IntroImpact/IntroToEFCU"
 import ImpactBox from "@/components/EFCU/IntroImpact/ImpactBox"
 import ResearchCardStack from "@/components/EFCU/Research/ResearchCardStack"
 import ResearchFindingsDeck from "@/components/EFCU/ResearchFindings/ResearchFindingsDeck"
-import ClarifyingMembership from "@/components/EFCU/MembershipLoans/ClarifyingMembership"
-import LoanMembershipFindings from "@/components/EFCU/MembershipLoans/LoanMembershipFindings"
 import TrustandCommunity from "@/components/EFCU/TrustandCommunity/TrustandCommunity"
+import WebsiteAudit from "@/components/EFCU/Audit/WebsiteAudit"
+import NewNav from "@/components/EFCU/Audit/NewNav"
+import Revealed  from "@/components/EFCU/Audit/Revealed"
 
 
 export default function EverestFederalCreditUnion() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const everestVideoRef = useRef(null)
-
-  useEffect(() => {
-    if (everestVideoRef.current) {
-      everestVideoRef.current.playbackRate = 0.75
-    }
-  }, [])
 
   // Mobile (≤768px)
   if (isMobile) {
@@ -29,7 +24,6 @@ export default function EverestFederalCreditUnion() {
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-lg)]">
           <video
             src="/EFCU/Everest FCU.mp4"
-            ref={everestVideoRef}
             autoPlay
             muted 
             playsInline
@@ -41,22 +35,9 @@ export default function EverestFederalCreditUnion() {
         <ImpactBox />
         <ResearchCardStack />
         <ResearchFindingsDeck />
-        <div
-          className="w-full flex flex-col px-[var(--spacing-lg)] py-[var(--spacing-lg)] gap-[var(--spacing-3xl)]"
-          style={{
-            backgroundColor: "#F6F6F8",
-            borderLeft: "4px solid #1c4483"
-          }}
-        >
-          <ClarifyingMembership />
-          <LoanMembershipFindings />
-          <div className="w-full flex items-center justify-center pb-[var(--spacing-6xl)]">
-            <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="w-full max-w-full max-h-[400px] object-contain" aria-hidden />
-          </div>
-      
-        
-        
-        </div>
+        <WebsiteAudit />
+        <Revealed />
+          <NewNav />
 
         {/* this div closes the second div ends here*/}
         </div>
@@ -104,21 +85,9 @@ export default function EverestFederalCreditUnion() {
         <ImpactBox />
         <ResearchCardStack />
         <ResearchFindingsDeck />
-        <div
-          className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
-          style={{
-            backgroundColor: "#F6F6F8",
-            borderLeft: "6px solid #1c4483"
-          }}
-        >
-          <ClarifyingMembership />
-          <LoanMembershipFindings />
-          <div className="w-full flex items-center justify-center pb-[var(--spacing-6xl)]">
-            <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="w-full max-w-full max-h-[400px] object-contain" aria-hidden />
-          </div>
-      
-          
-        </div>
+        <WebsiteAudit />
+        <Revealed />
+         <NewNav />
 
         {/* this div closes the second div ends here*/}
         </div>
@@ -175,19 +144,13 @@ export default function EverestFederalCreditUnion() {
         <ImpactBox />
         <ResearchCardStack />
         <ResearchFindingsDeck />
-        <div
-          className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
-          style={{
-            backgroundColor: "#F6F6F8",
-            borderLeft: "6px solid #1c4483"
-          }}
-        >
-          <ClarifyingMembership />
-          <LoanMembershipFindings />
-          <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="w-full max-w-full max-h-[600px] object-contain" aria-hidden />
-         
-          </div>
+        <WebsiteAudit />
+        <Revealed />
+          <NewNav />
+
+
     </div>
+
 
     {/* div ends here*/}
 
@@ -242,19 +205,10 @@ export default function EverestFederalCreditUnion() {
       <ImpactBox />
       <ResearchCardStack />
       <ResearchFindingsDeck />
-      <div
-        className="w-full flex flex-col px-[var(--spacing-xl)] py-[var(--spacing-xl)] gap-[var(--spacing-3xl)]"
-        style={{
-          backgroundColor: "#F6F6F8",
-          borderLeft: "8px solid #1c4483"
-        }}
-      >
-        <ClarifyingMembership />
-        <LoanMembershipFindings />
-        <div className="w-full flex items-center justify-center">
-          <img src="/EFCU/ClarifyingNavAnimation/NewNav.svg" alt="" className="max-w-full max-h-[800px] object-contain" aria-hidden />
-        </div>
-        </div>
+      <WebsiteAudit />
+      <Revealed />
+      <NewNav />
+
 </div>
 
       {/* Branding Video Section new div starts here*/}
