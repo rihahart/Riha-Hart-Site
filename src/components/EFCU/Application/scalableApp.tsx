@@ -68,7 +68,7 @@ export default function ScalableApp() {
 
   if (isTablet) {
     return (
-      <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-xl)] bg-[#3B558E]">
+      <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-xl)]  bg-[#3B558E]">
         <div className="flex flex-col items-center gap-[var(--spacing-xs)] self-stretch w-full px-[var(--spacing-3xl)]">
           {headingMobile}
           {bodyMobile}
@@ -89,7 +89,7 @@ export default function ScalableApp() {
 
   if (isDesktop1440px) {
     return (
-      <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-lg)] bg-[#3B558E] border-[2px] border-[#3B558E]">
+      <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-lg)] bg-[#3B558E]">
         <div className="flex flex-col items-center gap-[var(--spacing-xs)] self-stretch max-w-[800px] mx-auto w-full">
           {headingDesktop}
           {bodyDesktop}
@@ -107,7 +107,7 @@ export default function ScalableApp() {
   return (
     <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-lg)] bg-[#3B558E]">
       <div className="flex flex-col items-center gap-[var(--spacing-xs)] self-stretch max-w-[1000px] mx-auto w-full">
-        {headingMobile}
+        {headingDesktop}
         {bodyDesktop}
       </div>
       <div ref={row1.ref} className="flex items-center justify-center w-full gap-[var(--spacing-xl)]">

@@ -3,20 +3,22 @@
 import { useState, useEffect } from "react";
 import useWindowWidth from "./useWindowWidth";
 
+const getScreenSize = (width) => {
+  if (width <= 768) return 'mobile';
+  if (width <= 1024) return 'tablet';
+  if (width <= 1440) return 'desktop1440px';
+  return 'desktop';
+};
+
 export default function useMobileDetection() {
   const windowWidth = useWindowWidth();
-  const [screenSize, setScreenSize] = useState('mobile');
+  const [screenSize, setScreenSize] = useState(() => {
+    if (typeof window !== 'undefined') return getScreenSize(window.innerWidth);
+    return 'mobile';
+  });
 
   useEffect(() => {
-    if (windowWidth <= 768) {
-      setScreenSize('mobile');
-    } else if (windowWidth <= 1024) {
-      setScreenSize('tablet');
-    } else if (windowWidth <= 1440) {
-      setScreenSize('desktop1440px');
-    } else {
-      setScreenSize('desktop');
-    }
+    setScreenSize(getScreenSize(windowWidth));
   }, [windowWidth]);
 
   return {

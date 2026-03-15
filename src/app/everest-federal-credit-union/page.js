@@ -11,6 +11,7 @@ import WebsiteAudit from "@/components/EFCU/Audit/WebsiteAudit"
 import NewNav from "@/components/EFCU/Audit/NewNav"
 import Revealed  from "@/components/EFCU/Audit/Revealed"
 import ScalableApp from "@/components/EFCU/Application/scalableApp"
+import ClarifyingMembership from "@/components/EFCU/Application/clarifyingMembership"
 
 
 export default function EverestFederalCreditUnion() {
@@ -60,6 +61,7 @@ export default function EverestFederalCreditUnion() {
         <div className="flex flex-col items-center w-full px-[var(--spacing-lg)] pt-[var(--spacing-3xl)] pb-[var(--spacing-6xl)] gap-[var(--spacing-4xl)] mx-auto">
           <TrustandCommunity />
           <ScalableApp />
+          <ClarifyingMembership />
         </div>
 
         {/* this div closes the first div ends here*/}
@@ -115,6 +117,7 @@ export default function EverestFederalCreditUnion() {
 <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-3xl)] pb-[var(--spacing-8xl)] gap-[var(--spacing-6xl)] mx-auto">
 <TrustandCommunity />
 <ScalableApp />
+<ClarifyingMembership />
 </div>
 
 
@@ -184,6 +187,7 @@ export default function EverestFederalCreditUnion() {
 <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-3xl)] pb-[var(--spacing-8xl)] gap-[var(--spacing-6xl)] mx-auto">
   <TrustandCommunity />
   <ScalableApp />
+  <ClarifyingMembership />
   </div>
 
 </div>
@@ -239,6 +243,7 @@ export default function EverestFederalCreditUnion() {
        <div className="max-w-[1600px] flex flex-col items-center mx-auto px-[var(--spacing-3xl)] pt-[var(--spacing-3xl)] pb-[var(--spacing-3xl)] gap-[var(--spacing-8xl)]">
         <TrustandCommunity />
         <ScalableApp />
+        <ClarifyingMembership />
         </div>
         </div>
      
