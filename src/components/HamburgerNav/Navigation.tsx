@@ -10,6 +10,7 @@ const Navigation = () => {
   const router = useRouter()
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const [isScrolled, setIsScrolled] = useState(false)
+  const [fanActive, setFanActive] = useState(false)
   const { openMenu } = useMenu()
 
   const logoRef = useRef<HTMLImageElement>(null)
@@ -57,8 +58,17 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Hide nav when card fan section is active
+  useEffect(() => {
+    const handler = (e: Event) => {
+      setFanActive((e as CustomEvent).detail.active)
+    }
+    window.addEventListener("fan-section", handler)
+    return () => window.removeEventListener("fan-section", handler)
+  }, [])
+
   // IMPORTANT: fixed classes must be on EVERY return branch
-  const navClass = `w-full fixed top-0 left-0 z-50 bg-[var(--color-primary-inverse)] ${isScrolled ? "shadow-md" : ""}`
+  const navClass = `w-full fixed top-0 left-0 z-50 bg-[var(--color-primary-inverse)] transition-transform duration-300 ease-in-out ${isScrolled ? "shadow-md" : ""} ${fanActive ? "-translate-y-full" : "translate-y-0"}`
 
   // Mobile
   if (isMobile) {
