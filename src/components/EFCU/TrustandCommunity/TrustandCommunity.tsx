@@ -1,7 +1,8 @@
 "use client"
 
-import React from "react"
+import React, { useRef } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
+import useVideoReplay from "@/_utilities/useVideoReplay"
 import { trust } from "@/data/EFCU/TrustandCommunity/Trust"
 import { community } from "@/data/EFCU/TrustandCommunity/Community"
 import BuildingCommunity from "./BuildingCommunity"
@@ -10,6 +11,8 @@ const communityParagraphs = community.description.split("\n\n")
 
 export default function TrustandCommunity() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
+  const trustVideoRef = useRef<HTMLVideoElement>(null)
+  useVideoReplay(trustVideoRef)
 
   if (isMobile) {
     return (
@@ -22,6 +25,7 @@ export default function TrustandCommunity() {
         <div className="w-full flex items-center justify-center">
           <video
             src="/EFCU/Branding/Before and After.mp4"
+            ref={trustVideoRef}
             autoPlay
             muted
             playsInline
@@ -59,6 +63,7 @@ export default function TrustandCommunity() {
       
           <video
             src="/EFCU/Branding/Before and After.mp4"
+            ref={trustVideoRef}
             autoPlay
             muted
             playsInline
@@ -99,6 +104,7 @@ export default function TrustandCommunity() {
         <div className="flex-[0_0_45%] min-w-0">
           <video
             src="/EFCU/Branding/Before and After.mp4"
+            ref={trustVideoRef}
             autoPlay
             muted
             playsInline
@@ -142,6 +148,7 @@ export default function TrustandCommunity() {
         <div className="flex-[0_0_45%] min-w-0">
           <video
             src="/EFCU/Branding/Before and After.mp4"
+            ref={trustVideoRef}
             autoPlay
             muted
             playsInline

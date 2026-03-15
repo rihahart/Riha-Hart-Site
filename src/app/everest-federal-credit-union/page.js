@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
+import useVideoReplay from "@/_utilities/useVideoReplay"
 import IntroToEFCU from "@/components/EFCU/IntroImpact/IntroToEFCU"
 import ImpactBox from "@/components/EFCU/IntroImpact/ImpactBox"
 import ResearchCardStack from "@/components/EFCU/Research/ResearchCardStack"
@@ -18,6 +19,10 @@ import NewExperience from "@/components/EFCU/Application/newExperience"
 export default function EverestFederalCreditUnion() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const everestVideoRef = useRef(null)
+  const brandingVideoRef = useRef(null)
+
+  useVideoReplay(everestVideoRef)
+  useVideoReplay(brandingVideoRef)
 
   // Mobile (≤768px)
   if (isMobile) {
@@ -27,8 +32,9 @@ export default function EverestFederalCreditUnion() {
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-lg)]">
           <video
             src="/EFCU/Everest FCU.mp4"
+            ref={everestVideoRef}
             autoPlay
-            muted 
+            muted
             playsInline
             loop
             className="w-full h-full object-contain "
@@ -49,6 +55,7 @@ export default function EverestFederalCreditUnion() {
         <div className="flex flex-col items-center w-full bg-[#1c4483] p-[var(--spacing-lg)]  mx-auto">
         <video
               src="/EFCU/BrandingVideo.mp4"
+              ref={brandingVideoRef}
               className="w-full h-auto object-cover"
               muted
               playsInline
@@ -104,6 +111,7 @@ export default function EverestFederalCreditUnion() {
  <div className="flex flex-col items-center w-full bg-[#1c4483] p-[var(--spacing-3xl)] mx-auto">
         <video
               src="/EFCU/BrandingVideo.mp4"
+              ref={brandingVideoRef}
               className="w-full h-auto object-cover"
               muted
               playsInline
