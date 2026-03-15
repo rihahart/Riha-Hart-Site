@@ -1,6 +1,6 @@
 "use client"
 
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import { useRef, useEffect, useLayoutEffect, useState } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import { useMenu } from "@/contexts/MenuContext"
@@ -15,25 +15,31 @@ const Navigation = () => {
 
   const logoRef = useRef<HTMLImageElement>(null)
   const navRef = useRef<HTMLElement>(null)
+  const pathname = usePathname()
 
   const handleMenuClick = () => openMenu()
   const handleLogoClick = () => router.push("/")
 
   const logoSrc = "/Photos/Homepage/LogoOneCount.gif"
 
-  // Force GIF reload on mount and every 3 minutes so animation restarts
-  useEffect(() => {
-    const reloadLogo = () => {
-      if (logoRef.current) {
-        const img = logoRef.current
-        img.src = ""
-        img.src = logoSrc
-      }
+  const reloadLogo = () => {
+    if (logoRef.current) {
+      const img = logoRef.current
+      img.src = ""
+      img.src = logoSrc
     }
+  }
+
+  // Replay on mount, every 1 minute, and on route change
+  useEffect(() => {
     reloadLogo()
-    const interval = setInterval(reloadLogo, 3 * 60 * 1000) // 3 minutes
+    const interval = setInterval(reloadLogo, 60 * 1000) // 1 minute
     return () => clearInterval(interval)
-  }, [logoSrc])
+  }, [])
+
+  useEffect(() => {
+    reloadLogo()
+  }, [pathname])
 
   // Set --nav-h to nav height (for fixed header offset)
   useLayoutEffect(() => {
