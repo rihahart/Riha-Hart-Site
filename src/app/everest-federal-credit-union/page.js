@@ -10,6 +10,7 @@ import TrustandCommunity from "@/components/EFCU/TrustandCommunity/TrustandCommu
 import WebsiteAudit from "@/components/EFCU/Audit/WebsiteAudit"
 import NewNav from "@/components/EFCU/Audit/NewNav"
 import Revealed  from "@/components/EFCU/Audit/Revealed"
+import ScalableApp from "@/components/EFCU/Application/scalableApp"
 
 
 export default function EverestFederalCreditUnion() {
@@ -58,6 +59,7 @@ export default function EverestFederalCreditUnion() {
         {/* div back to normal here*/}
         <div className="flex flex-col items-center w-full px-[var(--spacing-lg)] pt-[var(--spacing-3xl)] pb-[var(--spacing-6xl)] gap-[var(--spacing-4xl)] mx-auto">
           <TrustandCommunity />
+          <ScalableApp />
         </div>
 
         {/* this div closes the first div ends here*/}
@@ -112,6 +114,7 @@ export default function EverestFederalCreditUnion() {
 
 <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-3xl)] pb-[var(--spacing-8xl)] gap-[var(--spacing-6xl)] mx-auto">
 <TrustandCommunity />
+<ScalableApp />
 </div>
 
 
@@ -120,6 +123,8 @@ export default function EverestFederalCreditUnion() {
 </div>
     )
   }
+
+
 
   // Desktop 1440px (1025px - 1440px)
   if (isDesktop1440px) {
@@ -178,6 +183,7 @@ export default function EverestFederalCreditUnion() {
 {/* div back to normal here*/}
 <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-3xl)] pb-[var(--spacing-8xl)] gap-[var(--spacing-6xl)] mx-auto">
   <TrustandCommunity />
+  <ScalableApp />
   </div>
 
 </div>
@@ -232,6 +238,7 @@ export default function EverestFederalCreditUnion() {
        {/* div back to normal here*/}
        <div className="max-w-[1600px] flex flex-col items-center mx-auto px-[var(--spacing-3xl)] pt-[var(--spacing-3xl)] pb-[var(--spacing-3xl)] gap-[var(--spacing-8xl)]">
         <TrustandCommunity />
+        <ScalableApp />
         </div>
         </div>
      
