@@ -22,7 +22,7 @@ export default function EverestFederalCreditUnion() {
   // Mobile (≤768px)
   if (isMobile) {
     return (
-      <div className="flex flex-col items-center pb-[var(--spacing-4xl)] w-full mx-auto">
+      <div className="flex flex-col items-center w-full mx-auto">
       <div className="flex flex-col items-center w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-lg)]">
           <video
@@ -74,7 +74,7 @@ export default function EverestFederalCreditUnion() {
   // Tablet (769px - 1024px)
   if (isTablet) {
     return (
-      <div className="flex flex-col items-center pb-[var(--spacing-6xl)] w-full mx-auto">
+      <div className="flex flex-col items-center w-full mx-auto">
       <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-6xl)] gap-[var(--spacing-6xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
           <video
@@ -134,7 +134,7 @@ export default function EverestFederalCreditUnion() {
   if (isDesktop1440px) {
     return (
 
-  <div className="flex flex-col items-center w-full pb-[var(--spacing-6xl)] mx-auto">
+  <div className="flex flex-col items-center w-full mx-auto">
 
     {/* div starts here*/}
       <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-6xl)] gap-[var(--spacing-6xl)] mx-auto">
@@ -200,7 +200,7 @@ export default function EverestFederalCreditUnion() {
 
   // Large Desktop (>1440px)
   return (
-    <div className="flex flex-col items-center w-full pb-[var(--spacing-8xl) mx-auto">
+    <div className="flex flex-col items-center w-full  mx-auto">
     <div className="max-w-[1600px] flex flex-col items-center mx-auto px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-8xl)] gap-[var(--spacing-8xl)]">
       <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
         <video
