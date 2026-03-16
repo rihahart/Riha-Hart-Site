@@ -11,6 +11,8 @@ const Navigation = () => {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const [isScrolled, setIsScrolled] = useState(false)
   const [fanActive, setFanActive] = useState(false)
+  const [hideOnScroll, setHideOnScroll] = useState(false)
+  const lastScrollY = useRef(0)
   const { openMenu } = useMenu()
 
   const logoRef = useRef<HTMLImageElement>(null)
@@ -54,15 +56,21 @@ const Navigation = () => {
     return () => window.removeEventListener("resize", setNavHeight)
   }, [isMobile, isTablet, isDesktop1440px])
 
-  // Track scroll for shadow
+  // Track scroll for shadow + hide/show on non-homepage
   useEffect(() => {
+    const isHomepage = pathname === "/"
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0)
+      const currentY = window.scrollY
+      setIsScrolled(currentY > 0)
+      if (!isHomepage) {
+        setHideOnScroll(currentY > lastScrollY.current && currentY > 80)
+      }
+      lastScrollY.current = currentY
     }
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [pathname])
 
   // Hide nav when card fan section is active
   useEffect(() => {
@@ -74,7 +82,7 @@ const Navigation = () => {
   }, [])
 
   // IMPORTANT: fixed classes must be on EVERY return branch
-  const navClass = `w-full fixed top-0 left-0 z-50 bg-[var(--color-primary-inverse)] transition-transform duration-300 ease-in-out ${isScrolled ? "shadow-md" : ""} ${fanActive ? "-translate-y-full" : "translate-y-0"}`
+  const navClass = `w-full fixed top-0 left-0 z-50 bg-[var(--color-primary-inverse)] transition-transform duration-300 ease-in-out ${isScrolled ? "shadow-md" : ""} ${fanActive || hideOnScroll ? "-translate-y-full" : "translate-y-0"}`
 
   // Mobile
   if (isMobile) {

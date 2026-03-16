@@ -1,53 +1,56 @@
 "use client"
 
 import React from "react"
+import Image from "next/image"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import { theProblem } from "@/data/EH/theProblem"
+import { theProblems } from "@/data/EH/theProblems"
 
-const ARROW_COLOR = "#FFD966"
-
-function ArrowRightIcon({
-  className,
-  width = 16,
-}: {
-  className?: string
-  width?: number
-}) {
-  const height = Math.round((11 / 16) * width)
+function ProgressSummary({ className, maxWidth }: { className?: string; maxWidth?: number }) {
   return (
-    <svg
-      className={className}
-      width={width}
-      height={height}
-      viewBox="0 0 16 11"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      <path
-        d="M1 5.5h14M10 1l5 4.5-5 4.5"
-        stroke={ARROW_COLOR}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <Image
+      src="/EarthHero/EHScreens/ProgressSummary.svg"
+      alt="Progress Summary"
+      width={maxWidth ?? 400}
+      height={300}
+      className={`h-auto object-contain ${className ?? ""}`}
+      style={{ width: "100%", maxWidth: maxWidth ? `${maxWidth}px` : "100%" }}
+    />
   )
 }
 
-function PointList({ variant }: { variant?: "desktop" }) {
-  const textClass = "body text-[var(--color-primary)]"
-  const itemGap = "gap-[var(--spacing-xl)]"
+function HeroLevels({ maxWidth }: { maxWidth?: number }) {
+  return (
+    <Image
+      src={theProblems.heroLevelsImage}
+      alt="Hero Levels"
+      width={maxWidth ?? 400}
+      height={300}
+      className="h-auto object-contain"
+      style={{ width: "100%", maxWidth: maxWidth ? `${maxWidth}px` : "100%" }}
+    />
+  )
+}
+
+function IndicatorCards({ variant, borderWidth = 4 }: { variant?: "desktop"; borderWidth?: number }) {
+  const bodyClass = "body text-[var(--color-primary)]"
+  const itemInner = (item: (typeof theProblems.indicators)[0]) => (
+    <div className="flex flex-col gap-[var(--spacing-xl)]">
+      <h3 className="h3 text-[var(--color-primary)]">{item.title}</h3>
+      <div className="flex flex-col gap-[var(--spacing-s)]">
+        <p className={bodyClass}>{item.description1}</p>
+        <p className={bodyClass}>{item.description2}</p>
+      </div>
+    </div>
+  )
   if (variant === "desktop") {
     return (
       <div className="flex flex-col gap-[var(--spacing-l)] w-full">
-        {theProblem.points.map((text, i) => (
+        {theProblems.indicators.map((item, i) => (
           <div
             key={i}
-            className={`flex flex-row items-center ${itemGap} pl-0`}
+            style={{ borderTopWidth: borderWidth, borderTopStyle: "solid", borderTopColor: item.color }}
           >
-            <ArrowRightIcon className="flex-shrink-0" width={40} />
-            <p className={`${textClass} flex-1 min-w-0`}>{text}</p>
+            <div className="py-[var(--spacing-m)]">{itemInner(item)}</div>
           </div>
         ))}
       </div>
@@ -55,13 +58,13 @@ function PointList({ variant }: { variant?: "desktop" }) {
   }
   return (
     <div className="flex flex-col gap-[var(--spacing-l)] w-full">
-      {theProblem.points.map((text, i) => (
+      {theProblems.indicators.map((item, i) => (
         <div
           key={i}
-          className={`flex flex-row items-center ${itemGap} px-[var(--spacing-m)] py-[var(--spacing-m)]`}
+          className="px-[var(--spacing-m)] py-[var(--spacing-m)]"
+          style={{ borderTopWidth: borderWidth, borderTopStyle: "solid", borderTopColor: item.color }}
         >
-          <ArrowRightIcon className="flex-shrink-0" width={24} />
-          <p className={`${textClass} flex-1 min-w-0`}>{text}</p>
+          {itemInner(item)}
         </div>
       ))}
     </div>
@@ -73,60 +76,51 @@ export default function TheProblem() {
 
   if (isMobile) {
     return (
-      <div className="w-full flex flex-col gap-[var(--spacing-xl)] py-[var(--spacing-xl)]">
-        <div className="flex flex-row items-start justify-start gap-[var(--spacing-m)] w-full ">
-          <div className="flex flex-col gap-[var(--spacing-s)] w-[80%] min-w-0 text-left">
-            <h2 className="h2 text-[var(--color-primary)]">
-              {theProblem.heading}
-            </h2>
-          </div>
+      <div className="w-full flex flex-col items-center gap-[var(--spacing-xs)] py-[var(--spacing-xl)]">
+        <ProgressSummary maxWidth={320} />
+        <HeroLevels maxWidth={320}  />
+        <div className="py-[var(--spacing-lg)]">
+          <IndicatorCards borderWidth={4} />
         </div>
-        <div className="w-full">
-          <PointList />
-        </div>
+        
       </div>
     )
   }
 
   if (isTablet) {
     return (
-      <div className="w-full flex flex-col gap-[var(--spacing-2xl)] p-[var(--spacing-xl)]">
-        <div className="flex flex-row items-start justify-start gap-[var(--spacing-xl)] w-full">
-          <div className="flex flex-col gap-[var(--spacing-s)] w-[60%] min-w-0 text-left">
-            <h2 className="h2 text-[var(--color-primary)]">
-              {theProblem.heading}
-            </h2>
-          </div>
+      <div className="w-full flex flex-col items-center gap-[var(--spacing-xl)] p-[var(--spacing-xl)]">
+        <div className="flex w-full flex-row gap-[var(--spacing-m)] items-end justify-center">
+          <ProgressSummary maxWidth={350} />
+          <HeroLevels maxWidth={320} />
         </div>
-        <PointList />
+        <IndicatorCards borderWidth={6} />
       </div>
     )
   }
 
   if (isDesktop1440px) {
     return (
-      <div className="w-full flex flex-row items-start gap-[var(--spacing-3xl)] p-[var(--spacing-xl)]">
-        <div className="flex flex-col items-start gap-[var(--spacing-s)] py-[var(--spacing-xl)] w-[40%] min-w-0 text-left">
-          <h2 className="h3 text-[var(--color-primary)]">
-            {theProblem.heading}
-          </h2>
+      <div className="w-full flex flex-row items-center justify-between p-[var(--spacing-xl)]">
+        <div className="flex flex-col items-start gap-[var(--spacing-m)] w-[45%] min-w-0">
+          <ProgressSummary maxWidth={560} />
+          <HeroLevels maxWidth={560} />
         </div>
-        <div className="flex flex-col items-start gap-[var(--spacing-xl)] flex-1 min-w-0">
-          <PointList variant="desktop" />
+        <div className="flex flex-col items-end gap-[var(--spacing-xl)] w-[40%] min-w-0">
+          <IndicatorCards variant="desktop" borderWidth={8} />
         </div>
       </div>
     )
   }
 
   return (
-    <div className="w-full flex flex-row items-start gap-[var(--spacing-xl)] p-[var(--spacing-xl)]">
-      <div className="flex flex-col items-start gap-[var(--spacing-s)] py-[var(--spacing-xl)] w-[40%] min-w-0 text-left">
-        <h2 className="h3 text-[var(--color-secondary-inverse)]">
-          {theProblem.heading}
-        </h2>
+    <div className="w-full  flex flex-row items-center justify-between p-[var(--spacing-xl)]">
+      <div className="flex flex-col items-center  gap-[var(--spacing-m)] w-[45%] h-full min-w-0">
+        <ProgressSummary maxWidth={680} />
+        <HeroLevels maxWidth={680} />
       </div>
-      <div className="flex flex-col items-start gap-[var(--spacing-xl)] flex-1 min-w-0">
-        <PointList variant="desktop" />
+      <div className="flex flex-col items-end gap-[var(--spacing-xl)] w-[40%] min-w-0">
+        <IndicatorCards variant="desktop" borderWidth={12} />
       </div>
     </div>
   )

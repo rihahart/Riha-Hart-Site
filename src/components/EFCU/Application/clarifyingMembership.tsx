@@ -10,9 +10,9 @@ const heading = <h2 className="h3 text-[var(--color-primary)]  uppercase">Clarif
 
 const ul = <ul className="list-none caption text-[var(--color-primary)] uppercase flex flex-col gap-[var(--spacing-m)]">
     <li>Explains membership and how to apply</li>
-    <li>Eligibility and document requirements clearly stated.</li>
-    <li>Highlights membership benefits and available services.</li>
-    <li>Navigation to business account application for members.</li>
+    <li>Eligibility and document requirements clearly stated</li>
+    <li>Highlights membership benefits and available services</li>
+    <li>Navigation to business account application for members</li>
 </ul>
 
 

@@ -7,7 +7,7 @@ export default function NewNav() {
 
   const heading = (
     <h3 className="h3 text-[var(--color-primary)]">
-      so for the new nav, I clarified MEMBERSHIP and repositioned LOANS
+      so for the NEW NAVIGATION, I clarified MEMBERSHIP and repositioned LOANS
     </h3>
   )
 
