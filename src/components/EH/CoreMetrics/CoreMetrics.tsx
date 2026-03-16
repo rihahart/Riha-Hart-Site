@@ -15,7 +15,7 @@ export default function CoreMetrics() {
 
   if (isMobile) {
     return (
-      <div className="w-full flex flex-col items-stretch px-[var(--spacing-m)] pb-[var(--spacing-m)] border border-[#FED05F] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)] bg-[var(--neutral-1000)]">
+      <div className="w-full flex flex-col items-stretch px-[var(--spacing-lg)] pb-[var(--spacing-m)] border border-[#FED05F] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)] bg-[var(--neutral-1000)]">
         <style>{`@keyframes swing { 0%,100%{transform:rotate(-15deg)} 50%{transform:rotate(15deg)} }`}</style>
         <div className="relative w-[100px] h-[180px] flex-shrink-0 self-end -mt-[20px] z-10">
           <Image
