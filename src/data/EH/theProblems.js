@@ -6,7 +6,7 @@ export const theProblems = {
   indicators: [
     {
       color: "#142CB8",
-      title: "Actions Did Not Clearly Translate Into Points",
+      title: "Actions Did Not Clearly Translate Into Earth Points",
       description1: "Users could see the number of actions completed, but it was unclear how those actions translated into EarthPoints.",
       description2: "The interface displayed Actions Achieved and EarthPoints as separate numbers without explaining the relationship between them.",
     },
