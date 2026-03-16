@@ -35,7 +35,7 @@ function IndicatorCards({ variant, borderWidth = 4 }: { variant?: "desktop"; bor
   const bodyClass = "body text-[var(--color-primary)]"
   const itemInner = (item: (typeof theProblems.indicators)[0]) => (
     <div className="flex flex-col gap-[var(--spacing-xl)]">
-      <h3 className="h3 text-[var(--color-primary)]">{item.title}</h3>
+      <h3 className={`${variant === "desktop" ? "h3" : "h2"} text-[var(--color-primary)]`}>{item.title}</h3>
       <div className="flex flex-col gap-[var(--spacing-s)]">
         <p className={bodyClass}>{item.description1}</p>
         <p className={bodyClass}>{item.description2}</p>
