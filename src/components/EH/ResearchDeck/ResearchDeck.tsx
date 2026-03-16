@@ -4,9 +4,9 @@ import React, { useState } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import { researchDeckSlides } from "@/data/EH/ResearchDeck"
 
-const OVERLAY_HEADING = "Research Synthesis"
+const OVERLAY_HEADING = "Understanding Homepage Engagement Issues"
 const OVERLAY_BODY =
-  "I consolidated prior research findings into a structured overview to identify recurring themes across the experience."
+  "To understand why users were leaving the homepage and not engaging with the app, we synthesized prior research findings to identify recurring issues across the experience, including how key information (Actions Achieved, EarthPoint, Emission Target) on the homepage was understood."
 
 export default function ResearchDeck() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()

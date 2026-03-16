@@ -1,19 +1,19 @@
 export const aboutEH = {
   id: "about-eh",
-  heading: "How Earth Hero drives climate behavior change",
+  heading: "How EarthHero drives climate behavior change",
   sections: [
     {
-      title: "ACTION ACHIEVED",
+      title: "ACTIONS ACHIEVED",
       color: "#142CB8",
       logo: "/EarthHero/EHLogos/ActionLogo.svg",
       points: [
         "The app recommends sustainability actions users can take.",
-        "Each action is categorized by ease, Earth Points earned, and Emissions saved.",
+        "Each action is categorized by ease, EarthPoints earned, and Emissions saved.",
         "Completed actions increase the user's total Actions Achieved.",
       ],
     },
     {
-      title: "EARTH POINTS",
+      title: "EARTHPOINTS",
       color: "#26B77B",
       logo: "/EarthHero/EHLogos/EHPointLogo.svg",
       points: [

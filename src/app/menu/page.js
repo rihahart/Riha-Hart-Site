@@ -137,7 +137,7 @@ export default function MenuPage() {
                 inverted={true}
               />
               <MenuButton
-                text="Earth Hero App"
+                text="EarthHero App"
                 onClick={handleEarthHero}
                 inverted={true}
               />
@@ -205,7 +205,7 @@ export default function MenuPage() {
                   inverted={true}
                 />
                 <MenuButton
-                  text="Earth Hero App"
+                  text="EarthHero App"
                   onClick={handleEarthHero}
                   inverted={true}
                 />
@@ -274,7 +274,7 @@ export default function MenuPage() {
                   inverted={true}
                 />
                 <MenuButton
-                  text="Earth Hero App"
+                  text="EarthHero App"
                   onClick={handleEarthHero}
                   inverted={true}
                 />
@@ -342,7 +342,7 @@ export default function MenuPage() {
                 inverted={true}
               />
               <MenuButton
-                text="Earth Hero App"
+                text="EarthHero App"
                 onClick={handleEarthHero}
                 inverted={true}
               />

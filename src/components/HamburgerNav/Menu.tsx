@@ -202,7 +202,7 @@ export default function Menu() {
                                 isActive={pathname === '/everest-federal-credit-union'}
                             />
                             <MenuButton
-                                text="Earth Hero App"
+                                text="EarthHero App"
                                 onClick={handleEarthHero}
                                 inverted={true}
                                 isActive={pathname === '/earthhero'}
@@ -270,7 +270,7 @@ export default function Menu() {
                                     isActive={pathname === '/everest-federal-credit-union'}
                                 />
                                 <MenuButton
-                                    text="Earth Hero App"
+                                    text="EarthHero App"
                                     onClick={handleEarthHero}
                                     inverted={true}
                                     isActive={pathname === '/earthhero'}
@@ -339,7 +339,7 @@ export default function Menu() {
                                     isActive={pathname === '/everest-federal-credit-union'}
                                 />
                                 <MenuButton
-                                    text="Earth Hero App"
+                                    text="EarthHero App"
                                     onClick={handleEarthHero}
                                     inverted={true}
                                     isActive={pathname === '/earthhero'}
@@ -407,7 +407,7 @@ export default function Menu() {
                                 isActive={pathname === '/everest-federal-credit-union'}
                             />
                             <MenuButton
-                                text="Earth Hero App"
+                                text="EarthHero App"
                                 onClick={handleEarthHero}
                                 inverted={true}
                                 isActive={pathname === '/earthhero'}
