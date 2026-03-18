@@ -10,6 +10,8 @@ import CoreMetrics from "@/components/EH/CoreMetrics/CoreMetrics"
 import Divider from "@/components/EH/Divider/Divider"
 import ActionChart from "@/components/EH/TheProblem/ActionChart"
 import DesignIteration from "@/components/EH/DesignIternations/DesignIternation"
+import PreferenceTest from "@/components/EH/FinalResult/PreferenceTest"
+import SystemChange from "@/components/EH/FinalResult/SystemChange"
 
 export default function EarthHero() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
@@ -57,6 +59,14 @@ export default function EarthHero() {
           <DesignIteration />
         </div>
       </div> 
+       <div className="w-full flex flex-col items-center justify-center pb-[var(--spacing-4xl)] bg-[var(--neutral-150)]">
+        <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-2xl)] px-[var(--spacing-lg)] py-[var(--spacing-4xl)] mx-auto">
+          <h1 className="h1 text-[var(--color-primary)]">Where It Broke</h1>
+          <video src="/EarthHero/PreferenceTestFinal.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+          <PreferenceTest />
+          <SystemChange />
+        </div>
+      </div>
       {/* this div without margins ends here*/}
 
     </div>
@@ -117,6 +127,15 @@ export default function EarthHero() {
           </div>
         </div>
 
+         <div className="w-full flex flex-col items-center justify-center pb-[var(--spacing-4xl)] bg-[var(--neutral-150)]">
+          <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-6xl)] px-[var(--spacing-2xl)] py-[var(--spacing-6xl)] mx-auto">
+            <h1 className="h1 text-[var(--color-primary)]">Where It Broke</h1>
+            <video src="/EarthHero/PreferenceTestFinal.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+          <PreferenceTest />
+          <SystemChange />
+          </div>
+        </div>
+
           {/* this div without margins ends here*/}
 
 
@@ -129,7 +148,7 @@ export default function EarthHero() {
 
   if (isDesktop1440px) {
     return (
-      <div className="flex flex-col items-center w-full mx-auto">
+      <div className="flex flex-col items-center w-full mx-auto  ">
 
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full  pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
@@ -175,7 +194,14 @@ export default function EarthHero() {
         <div className="w-full max-w-[1440px] flex flex-col items-center justify-center gap-[var(--spacing-4xl)] px-[var(--spacing-3xl)] mx-auto">
           <DesignIteration />
         </div>
-
+      </div>
+       <div className="w-full flex flex-col items-center justify-center pb-[var(--spacing-4xl)] bg-[var(--neutral-150)] ">
+        <div className="w-full max-w-[1440px] flex flex-col items-center justify-center gap-[var(--spacing-6xl)] px-[var(--spacing-3xl)] py-[var(--spacing-6xl)] mx-auto">
+          <h1 className="h1 text-[var(--color-primary)]">Where It Broke</h1>
+          <video src="/EarthHero/PreferenceTestFinal.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+          <PreferenceTest />
+          <SystemChange />
+        </div>
       </div>
     </div>
   )
@@ -232,6 +258,15 @@ export default function EarthHero() {
       <div className="w-full flex flex-col items-center justify-center bg-[var(--neutral-300)]">
         <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)] px-[var(--spacing-3xl)] mx-auto max-w-[1600px]">
           <DesignIteration />
+        </div>
+      </div>
+
+        <div className="w-full flex flex-col items-center justify-center p-[var(--spacing-3xl)] pb-[var(--spacing-8xl)] bg-[var(--neutral-150)]">
+        <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-6xl)] p-[var(--spacing-3xl)] mx-auto max-w-[1600px]">
+          <h1 className="h1 text-[var(--color-primary)]">Where It Broke</h1>
+          <video src="/EarthHero/PreferenceTestFinal.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+          <PreferenceTest />
+          <SystemChange />
         </div>
       </div>
 
