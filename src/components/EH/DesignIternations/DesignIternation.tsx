@@ -50,7 +50,7 @@ export default function DesignIteration() {
 
       {/* Image container */}
       <div
-        className={`flex gap-[var(--spacing-2xl)] w-full items-center justify-center ${
+        className={`flex gap-[var(--spacing-2xl)] w-full items-center justify-center overflow-hidden ${
           isMobile || isTablet ? "flex-col" : "flex-row"
         }`}
       >
