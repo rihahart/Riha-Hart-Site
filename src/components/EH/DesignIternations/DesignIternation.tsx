@@ -6,7 +6,7 @@ import { designIterationSlides } from "@/data/EH/DesignIterations"
 
 const HEADING = "Design Iterations: Make Impact Visible"
 const DESCRIPTION =
-  "Actions didn't translate to EarthPoints, EarthPoints were unclear, and Emission Targets felt abstract, which we believed contributed to low user motivation. Our data showed conversion remained at 40–45%. We explored multiple visual systems to make the impact more visible through changes to how metrics are presented on the homepage."
+  "We explored multiple visual systems to make the impact more visible through changes to how metrics are presented on the homepage."
 
 export default function DesignIteration() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
