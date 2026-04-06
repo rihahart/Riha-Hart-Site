@@ -43,10 +43,11 @@ export default function JHMuralTabs() {
             {activeTab === "upcoming" && (
                 <div className={`flex flex-col w-full ${isMobile || isTablet ? "p-[var(--spacing-xl)]" : "p-[var(--spacing-4xl)]"}`}>
                     <img
-                        src="/JHMural/Planning.png"
+                        src="/Jhmural/Planning.png"
                         alt="Upcoming mural placeholder"
                         className="w-full h-auto object-contain"
                     />
+                    
 
                 </div>
             )}

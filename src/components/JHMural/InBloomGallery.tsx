@@ -14,7 +14,7 @@ export default function InBloomGallery() {
                 {photoCaption.map((item) => (
                     <div key={item.photo} className="flex flex-col gap-[var(--spacing-xs)]">
                         <img
-                            src={`/JHMural/EventPhotos/${item.photo}`}
+                            src={`/Jhmural/EventPhotos/${item.photo}`}
                             alt={item.caption}
                             className="w-full h-auto object-contain"
                         />
@@ -34,7 +34,7 @@ export default function InBloomGallery() {
             {photoCaption.map((item) => (
                 <div key={item.photo} className="flex flex-col gap-[var(--spacing-xs)]">
                     <img
-                        src={`/JHMural/EventPhotos/${item.photo}`}
+                        src={`/Jhmural/EventPhotos/${item.photo}`}
                         alt={item.caption}
                         className="w-full h-auto object-contain"
                     />

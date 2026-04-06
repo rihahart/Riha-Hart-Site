@@ -16,7 +16,7 @@ export default function JHMuralProject() {
       {/* div with margins starts here*/}
       <div className="flex flex-col items-center w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
           <img
-                   src="/JHMural/JHMuralProject.jpg"
+                   src="/Jhmural/JHMuralProject.jpg"
                    alt="Mural on 82nd Street"
                    className="w-full max-w-full h-auto object-contain"
                  />
@@ -38,7 +38,7 @@ export default function JHMuralProject() {
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full p-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-6xl)] mx-auto">
              <img
-                        src="/JHMural/JHMuralProject.jpg"
+                        src="/Jhmural/JHMuralProject.jpg"
                         alt="Mural on 82nd Street"
                         className="w-full max-w-full h-auto object-contain"
                       />
@@ -60,7 +60,7 @@ export default function JHMuralProject() {
         {/* div with margins starts here*/}
         <div className="flex flex-col w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-8xl)] mx-auto">
             <img
-                       src="/JHMural/JHMuralProject.jpg"
+                       src="/Jhmural/JHMuralProject.jpg"
                        alt="Mural on 82nd Street"
                        className="w-full max-w-full h-auto object-contain"
                      />
@@ -82,7 +82,7 @@ export default function JHMuralProject() {
 
       <div className="flex flex-col items-center max-w-[1600px] p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-8xl)] mx-auto">
           <img
-                   src="/JHMural/JHMuralProject.jpg"
+                   src="/Jhmural/JHMuralProject.jpg"
                    alt="Mural on 82nd Street"
                    className="w-full max-w-full h-auto object-contain"
                  />
