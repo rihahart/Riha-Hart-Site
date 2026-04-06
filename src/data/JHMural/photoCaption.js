@@ -1,0 +1,16 @@
+export const photoCaption = [
+  { photo: "01.jpg", caption: "Jackson Heights in Bloom" },
+  { photo: "02.jpg", caption: "Jackson Heights in Bloom @JHMURALPROJECT" },
+  { photo: "03.jpg", caption: "View from the 7 train" },
+  { photo: "04.jpg", caption: "Mural opening with state senator Jessica Ramos and council member Shanel Thomas-Henry" },
+  { photo: "05.jpg", caption: "Official proclamation presented at the mural opening by state senator Jessica Ramos" },
+  { photo: "06.jpg", caption: "JH Mural team with State Senator Jessica Ramos" },
+  { photo: "07.jpg", caption: "JH Mural team with council member Shanel Thomas-Henry" },
+  { photo: "08.jpg", caption: "JH Mural team with Flushing Town Hall representative" },
+  { photo: "09.jpg", caption: "Group photo with our sponsors and members of the Jackson Heights community." },
+  { photo: "10.jpg", caption: "JH Mural team with the Jackson Heights Beautification Group, a long-standing community organization in Jackson Heights" },
+  { photo: "11.jpg", caption: "Attendees in anticipation of the raffle announcements" },
+  { photo: "12.jpg", caption: "Face painting for kids" },
+  { photo: "13.jpg", caption: "Grace, our Digital Media Strategist, snaps photos for the social media page" },
+  { photo: "14.jpg", caption: "Community gathering around the mural" },
+]

@@ -27,7 +27,7 @@ const caseStudies: CaseStudy[] = [
   {
     title: "JH Mural Project: Founder and Creative Director",
     route: "/jh-mural-project",
-    buttonText: "Coming soon"
+
   }
 ]
 

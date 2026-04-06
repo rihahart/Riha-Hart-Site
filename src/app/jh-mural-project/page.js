@@ -2,6 +2,8 @@
 
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
+import IntroToJHMural from "@/components/JHMural/IntroToJHMural"
+import JHMuralTabs from "@/components/JHMural/JHMuralTabs"
 
 export default function JHMuralProject() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()  
@@ -13,14 +15,13 @@ export default function JHMuralProject() {
 
       {/* div with margins starts here*/}
       <div className="flex flex-col items-center w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
-        <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-lg)]">
-         
-        </div>
-        <div
-        
-        >
-            <h2 className="h2 text-[var(--color-primary)]">JH Mural Project Comming Soon</h2>
-        </div>
+          <img
+                   src="/JHMural/JHMuralProject.jpg"
+                   alt="Mural on 82nd Street"
+                   className="w-full max-w-full h-auto object-contain"
+                 />
+             <IntroToJHMural />
+         <JHMuralTabs />
       </div>
 
       {/* this div with margins ends here*/}
@@ -35,11 +36,14 @@ export default function JHMuralProject() {
       <div className="flex flex-col items-center w-full mx-auto">
 
         {/* div with margins starts here*/}
-        <div className="flex flex-col items-center w-full p-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
-          <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-2xl)]">
-            <h2 className="h2 text-[var(--color-primary)]">JH Mural Project Comming Soon</h2>
-           
-          </div>
+        <div className="flex flex-col items-center w-full p-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-6xl)] mx-auto">
+             <img
+                        src="/JHMural/JHMuralProject.jpg"
+                        alt="Mural on 82nd Street"
+                        className="w-full max-w-full h-auto object-contain"
+                      />
+           <IntroToJHMural />
+            <JHMuralTabs />
        
         </div>
 
@@ -54,11 +58,14 @@ export default function JHMuralProject() {
       <div className="flex flex-col items-center w-full mx-auto">
 
         {/* div with margins starts here*/}
-        <div className="flex flex-col items-center w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
-          <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
-            <h2 className="h2 text-[var(--color-primary)]">JH Mural Project Comming Soon</h2>
-           
-          </div>
+        <div className="flex flex-col w-full p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-8xl)] mx-auto">
+            <img
+                       src="/JHMural/JHMuralProject.jpg"
+                       alt="Mural on 82nd Street"
+                       className="w-full max-w-full h-auto object-contain"
+                     />
+             <IntroToJHMural />
+           <JHMuralTabs />
        
         </div>
 
@@ -73,10 +80,14 @@ export default function JHMuralProject() {
 
       {/* div with margins starts here*/}
 
-      <div className="flex flex-col items-center max-w-[1600px] p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
-        <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
-          <h2 className="h2 text-[var(--color-primary)]">JH Mural Project Comming Soon</h2>
-        </div>
+      <div className="flex flex-col items-center max-w-[1600px] p-[var(--spacing-3xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-8xl)] mx-auto">
+          <img
+                   src="/JHMural/JHMuralProject.jpg"
+                   alt="Mural on 82nd Street"
+                   className="w-full max-w-full h-auto object-contain"
+                 />
+          <IntroToJHMural />
+        <JHMuralTabs />
       </div>
       {/* this div with margins ends here*/}
 

@@ -139,7 +139,8 @@
 }
 
 /* Pressed: Background → Content Tertiary Inverse */
-.button--link:active {
+.button--link:active,
+.button--link.active {
   background: var(--color-tertiary-inverse);
   color: var(--color-link);
 }
