@@ -1,12 +1,11 @@
 "use client"
 
-import React, { useState, useEffect, useRef, useMemo } from "react"
+import { useState, useEffect, useRef, useMemo } from "react"
 import useWindowWidth from "@/_utilities/useWindowWidth"
 
 const BASE_PATH = "/getToKnowMe/Re-educationAnimation/Re-educationAnimation_"
 const TOTAL_FRAMES = 144
-const PRELOAD_BATCH = 8
-const START_AFTER_FRAMES = 16
+const START_AFTER_FRAMES = 8
 
 function buildFramePaths(): string[] {
   return Array.from({ length: TOTAL_FRAMES }, (_, i) =>
@@ -21,36 +20,6 @@ function getContainerWidth(windowWidth: number): number | string {
   return "100%"
 }
 
-function preloadInBatches(
-  urls: string[],
-  onFirstChunkLoaded: () => void,
-  onFrameLoaded: (index: number) => void
-): Promise<void> {
-  let firstChunkDone = false
-  const loadOne = (src: string, index: number): Promise<void> =>
-    new Promise((resolve) => {
-      const img = new Image()
-      img.onload = () => {
-        onFrameLoaded(index)
-        resolve()
-      }
-      img.onerror = () => resolve()
-      img.src = src
-    })
-
-  const run = async () => {
-    for (let i = 0; i < urls.length; i += PRELOAD_BATCH) {
-      const batch = urls.slice(i, i + PRELOAD_BATCH)
-      await Promise.all(batch.map((src, j) => loadOne(src, i + j)))
-      if (!firstChunkDone && i + PRELOAD_BATCH >= START_AFTER_FRAMES) {
-        firstChunkDone = true
-        onFirstChunkLoaded()
-      }
-    }
-  }
-  return run()
-}
-
 export interface ReEducationAnimationProps {
   fps?: number
   className?: string
@@ -62,10 +31,11 @@ export default function ReEducationAnimation({
 }: ReEducationAnimationProps) {
   const [preloaded, setPreloaded] = useState(false)
   const rafRef = useRef<number | null>(null)
-  const startTimeRef = useRef<number | null>(null)
   const imgRef = useRef<HTMLImageElement>(null)
   const loadedFramesRef = useRef<Set<number>>(new Set())
-  const lastDisplayedRef = useRef(0)
+  const frameCounterRef = useRef(0)
+  const lastTickRef = useRef<number | null>(null)
+  const startedRef = useRef(false)
   const windowWidth = useWindowWidth()
 
   const framePaths = useMemo(() => buildFramePaths(), [])
@@ -74,45 +44,49 @@ export default function ReEducationAnimation({
     let cancelled = false
     const loaded = new Set<number>()
     loadedFramesRef.current = loaded
+    startedRef.current = false
+    frameCounterRef.current = 0
+    lastTickRef.current = null
 
-    preloadInBatches(
-      framePaths,
-      () => {
-        if (!cancelled) setPreloaded(true)
-      },
-      (index) => {
+    // Fire all requests in parallel — no sequential batching
+    framePaths.forEach((src, index) => {
+      const img = new window.Image()
+      img.onload = () => {
         loaded.add(index)
+        if (!startedRef.current && loaded.size >= START_AFTER_FRAMES) {
+          startedRef.current = true
+          if (!cancelled) setPreloaded(true)
+        }
       }
-    )
+      img.onerror = () => {
+        loaded.add(index) // count it anyway so we don't stall
+      }
+      img.src = src
+    })
 
-    return () => {
-      cancelled = true
-    }
+    return () => { cancelled = true }
   }, [framePaths])
 
   useEffect(() => {
     if (!preloaded || !imgRef.current) return
 
     const frameInterval = 1000 / fps
-    startTimeRef.current = performance.now()
-    lastDisplayedRef.current = 0
 
-    const tick = () => {
+    const tick = (now: number) => {
       const img = imgRef.current
-      if (!img) return
+      if (!img) { rafRef.current = requestAnimationFrame(tick); return }
 
-      const start = startTimeRef.current ?? performance.now()
-      const elapsed = performance.now() - start
-      const loaded = loadedFramesRef.current
-
-      // Loop through loaded frames at full speed
-      const loadedCount = loaded.size
+      const loadedCount = loadedFramesRef.current.size
       if (loadedCount === 0) { rafRef.current = requestAnimationFrame(tick); return }
-      const targetFrame = Math.floor(elapsed / frameInterval) % loadedCount
 
-      if (lastDisplayedRef.current !== targetFrame) {
-        img.src = framePaths[targetFrame]
-        lastDisplayedRef.current = targetFrame
+      if (lastTickRef.current === null) lastTickRef.current = now
+      const delta = now - lastTickRef.current
+
+      if (delta >= frameInterval) {
+        lastTickRef.current = now
+        // Advance by 1, loop within loaded frames
+        frameCounterRef.current = (frameCounterRef.current + 1) % loadedCount
+        img.src = framePaths[frameCounterRef.current]
       }
 
       rafRef.current = requestAnimationFrame(tick)
