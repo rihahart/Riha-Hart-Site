@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import Image from "next/image"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import { photoCaption } from "@/data/JHMural/photoCaption"
 
@@ -13,10 +13,13 @@ export default function InBloomGallery() {
             <div className="flex flex-col w-full gap-[var(--spacing-xl)]">
                 {photoCaption.map((item) => (
                     <div key={item.photo} className="flex flex-col gap-[var(--spacing-xs)]">
-                        <img
+                        <Image
                             src={`/Jhmural/EventPhotos/${item.photo}`}
                             alt={item.caption}
+                            width={800}
+                            height={600}
                             className="w-full h-auto object-contain"
+                            loading="lazy"
                         />
                         <p className="caption text-[var(--color-secondary)] text-center">{item.caption}</p>
                     </div>

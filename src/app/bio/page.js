@@ -14,7 +14,7 @@ export default function Bio() {
     return (
       <div className="w-full flex flex-col items-center px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-8xl)] gap-[var(--spacing-xl)]">
         <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-2xl)]">
-          <img src={bioData.image.src} alt={bioData.image.alt} />
+          <Image src={bioData.image.src} alt={bioData.image.alt} width={800} height={1000} className="w-full h-auto" />
           <div className="flex flex-col items-start justify-center gap-[var(--spacing-lg)]">
             <h2 className="h2 text-[var(--color-primary)]">
               {bioData.heading}
@@ -35,7 +35,7 @@ export default function Bio() {
     return (
       <div className="flex flex-col items-center px-[var(--spacing-2xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-10xl)] gap-[var(--spacing-4xl)] w-full  mx-auto">
         <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)]">
-          <img src={bioData.image.src} alt={bioData.image.alt} />
+          <Image src={bioData.image.src} alt={bioData.image.alt} width={800} height={1000} className="w-full h-auto" />
           <div className="flex flex-col items-start justify-center gap-[var(--spacing-xl)]">
             <h2 className="h2 text-[var(--color-primary)]">
               {bioData.heading}
@@ -56,7 +56,7 @@ export default function Bio() {
     return (
       <div className="flex flex-col items-center px-[var(--spacing-2xl)] gap-[var(--spacing-4xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-10xl)] w-full mx-auto">
         <div className="w-full flex items-center justify-center gap-[var(--spacing-5xl)] py-[var(--spacing-xl)]">
-          <img src={bioData.image.src} alt={bioData.image.alt} className="w-[50%]" />
+          <Image src={bioData.image.src} alt={bioData.image.alt} width={800} height={1000} className="w-[50%] h-auto" />
           <div className="w-[50%] flex flex-col items-start justify-center gap-[var(--spacing-2xl)]">
             <h2 className="h2 text-[var(--color-primary)]">
               {bioData.heading}

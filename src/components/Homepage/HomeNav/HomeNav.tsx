@@ -12,6 +12,11 @@ interface CaseStudy {
 }
 
 const caseStudies: CaseStudy[] = [
+    {
+    title: "JH Mural Project: Founder and Creative Director",
+    route: "/jh-mural-project",
+
+  },
   {
     title: "Everest Federal Credit Union: Design and Tech Lead",
     route: "/everest-federal-credit-union"
@@ -23,12 +28,8 @@ const caseStudies: CaseStudy[] = [
   {
     title: "EarthHero: Product Design",
     route: "/earthhero"
-  },
-  {
-    title: "JH Mural Project: Founder and Creative Director",
-    route: "/jh-mural-project",
-
   }
+
 ]
 
 export default function HomeNav() {

@@ -5,8 +5,8 @@ import useWindowWidth from "@/_utilities/useWindowWidth"
 
 const BASE_PATH = "/getToKnowMe/Re-educationAnimation/Re-educationAnimation_"
 const TOTAL_FRAMES = 144
-const PRELOAD_BATCH = 32
-const START_AFTER_FRAMES = 72
+const PRELOAD_BATCH = 8
+const START_AFTER_FRAMES = 16
 
 function buildFramePaths(): string[] {
   return Array.from({ length: TOTAL_FRAMES }, (_, i) =>
@@ -105,10 +105,10 @@ export default function ReEducationAnimation({
       const elapsed = performance.now() - start
       const loaded = loadedFramesRef.current
 
-      // Clamp to only what's loaded — never skip ahead of network
-      const maxLoadedFrame = loaded.size - 1
-      const rawTarget = Math.floor(elapsed / frameInterval) % TOTAL_FRAMES
-      const targetFrame = Math.min(rawTarget, maxLoadedFrame)
+      // Loop through loaded frames at full speed
+      const loadedCount = loaded.size
+      if (loadedCount === 0) { rafRef.current = requestAnimationFrame(tick); return }
+      const targetFrame = Math.floor(elapsed / frameInterval) % loadedCount
 
       if (lastDisplayedRef.current !== targetFrame) {
         img.src = framePaths[targetFrame]

@@ -58,13 +58,10 @@ const Navigation = () => {
 
   // Track scroll for shadow + hide/show on non-homepage
   useEffect(() => {
-    const isHomepage = pathname === "/"
     const handleScroll = () => {
       const currentY = window.scrollY
       setIsScrolled(currentY > 0)
-      if (!isHomepage) {
-        setHideOnScroll(currentY > lastScrollY.current && currentY > 80)
-      }
+      setHideOnScroll(currentY > lastScrollY.current && currentY > 80)
       lastScrollY.current = currentY
     }
 

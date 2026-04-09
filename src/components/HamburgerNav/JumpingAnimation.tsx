@@ -1,54 +1,95 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface JumpingAnimationProps {
     className?: string
 }
 
+const MIN_FRAME = 1
+const MAX_FRAME = 7
+const TOTAL_FRAMES = MAX_FRAME - MIN_FRAME + 1
+const FPS = 6
+
+function buildFramePaths(): string[] {
+    return Array.from({ length: TOTAL_FRAMES }, (_, i) =>
+        `/Photos/Jumping/Jumping${MIN_FRAME + i}.png`
+    )
+}
+
 export default function JumpingAnimation({ className = '' }: JumpingAnimationProps) {
-    const [currentFrame, setCurrentFrame] = useState(1)
-    const directionRef = useRef<'forward' | 'backward'>('forward')
-    const minFrame = 1 // Start from frame 1
-    const maxFrame = 7 // End at frame 7
-    const fps = 6
-    const frameInterval = 1000 / fps // ~166.67ms per frame
-    const intervalRef = useRef<NodeJS.Timeout | null>(null)
+    const [preloaded, setPreloaded] = useState(false)
+    const imgRef = useRef<HTMLImageElement>(null)
+    const loadedFramesRef = useRef<Set<number>>(new Set())
+    const rafRef = useRef<number | null>(null)
+    const startTimeRef = useRef<number | null>(null)
+    const lastDisplayedRef = useRef(0)
+
+    const framePaths = useRef(buildFramePaths()).current
 
     useEffect(() => {
-        // Start animation on mount
-        intervalRef.current = setInterval(() => {
-            setCurrentFrame((prev) => {
-                if (directionRef.current === 'forward') {
-                    if (prev >= maxFrame) {
-                        directionRef.current = 'backward'
-                        return maxFrame - 1
-                    }
-                    return prev + 1
-                } else {
-                    if (prev <= minFrame) {
-                        directionRef.current = 'forward'
-                        return minFrame + 1
-                    }
-                    return prev - 1
-                }
-            })
-        }, frameInterval)
+        let cancelled = false
+        const loaded = loadedFramesRef.current
 
-        // Cleanup on unmount
+        const loadOne = (src: string, index: number): Promise<void> =>
+            new Promise((resolve) => {
+                const img = new window.Image()
+                img.onload = () => { loaded.add(index); resolve() }
+                img.onerror = () => resolve()
+                img.src = src
+            })
+
+        Promise.all(framePaths.map((src, i) => loadOne(src, i))).then(() => {
+            if (!cancelled) setPreloaded(true)
+        })
+
+        return () => { cancelled = true }
+    }, [framePaths])
+
+    useEffect(() => {
+        if (!preloaded || !imgRef.current) return
+
+        const frameInterval = 1000 / FPS
+        startTimeRef.current = performance.now()
+
+        const tick = () => {
+            const img = imgRef.current
+            if (!img) return
+
+            const loadedCount = loadedFramesRef.current.size
+            if (loadedCount === 0) { rafRef.current = requestAnimationFrame(tick); return }
+
+            const start = startTimeRef.current ?? performance.now()
+            const elapsed = performance.now() - start
+            const totalTicks = Math.floor(elapsed / frameInterval)
+
+            // Bounce back and forth
+            const cycleLength = (loadedCount - 1) * 2
+            const pos = totalTicks % cycleLength
+            const frameIndex = pos < loadedCount ? pos : cycleLength - pos
+
+            if (lastDisplayedRef.current !== frameIndex) {
+                img.src = framePaths[frameIndex]
+                lastDisplayedRef.current = frameIndex
+            }
+
+            rafRef.current = requestAnimationFrame(tick)
+        }
+
+        rafRef.current = requestAnimationFrame(tick)
         return () => {
-            if (intervalRef.current) {
-                clearInterval(intervalRef.current)
+            if (rafRef.current != null) {
+                cancelAnimationFrame(rafRef.current)
+                rafRef.current = null
             }
         }
-    }, [minFrame, maxFrame, frameInterval])
-
-    const frameSrc = `/Photos/Jumping/Jumping${currentFrame}.png`
+    }, [preloaded, framePaths])
 
     return (
         <div className={className} style={{ overflow: 'hidden', position: 'relative' }}>
             <img
-                src={frameSrc}
+                ref={imgRef}
+                src={framePaths[0]}
                 alt="Jumping animation"
                 style={{
                     width: '140%',
