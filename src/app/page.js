@@ -1,12 +1,19 @@
 "use client"
 
-import React from "react"
+import { useEffect, useRef } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import GetToKnowMe from "@/components/Homepage/GetToKnowMe/GetToKnowMe"
 import HomeNav from "@/components/Homepage/HomeNav/HomeNav"
 
 export default function Home() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {})
+    }
+  }, [isMobile, isTablet])
 
   // Mobile (≤768px)
   if (isMobile) {
@@ -15,6 +22,7 @@ export default function Home() {
         <div className="flex flex-col items-center gap-[var(--spacing-xl)] w-full">
           <div className="flex justify-center w-full ">
             <video
+              ref={videoRef}
               src="/Photos/Homepage/PhotoWebsiteVideoMobile.mp4"
               autoPlay
               muted
@@ -39,6 +47,7 @@ export default function Home() {
         <div className="flex flex-col items-center gap-[var(--spacing-4xl)] w-full mx-auto">
           <div className="flex justify-center w-full">
             <video
+              ref={videoRef}
               src="/Photos/Homepage/PhotoWebsiteVideoMobile.mp4"
               autoPlay
               muted
