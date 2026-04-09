@@ -10,12 +10,46 @@ const MIN_FRAME = 48
 const MAX_FRAME = 119
 const TOTAL_FRAMES = MAX_FRAME - MIN_FRAME + 1
 const FPS = 24
+const CONCURRENCY = 6
 const START_AFTER_FRAMES = 8
 
 function buildFramePaths(): string[] {
     return Array.from({ length: TOTAL_FRAMES }, (_, i) =>
         `/Photos/DolphinPhotos/Frame${MIN_FRAME + i}.png`
     )
+}
+
+async function loadWithConcurrency(
+    paths: string[],
+    loaded: Set<number>,
+    onReady: () => void,
+    cancelled: () => boolean
+) {
+    let readyFired = false
+    let index = 0
+
+    const loadOne = (i: number): Promise<void> =>
+        new Promise((resolve) => {
+            const img = new window.Image()
+            img.onload = img.onerror = () => {
+                loaded.add(i)
+                if (!readyFired && loaded.size >= START_AFTER_FRAMES) {
+                    readyFired = true
+                    if (!cancelled()) onReady()
+                }
+                resolve()
+            }
+            img.src = paths[i]
+        })
+
+    const workers = Array.from({ length: CONCURRENCY }, async () => {
+        while (index < paths.length) {
+            const i = index++
+            await loadOne(i)
+        }
+    })
+
+    await Promise.all(workers)
 }
 
 export default function DolphinAnimation({ className = '' }: DolphinAnimationProps) {
@@ -25,32 +59,29 @@ export default function DolphinAnimation({ className = '' }: DolphinAnimationPro
     const rafRef = useRef<number | null>(null)
     const frameCounterRef = useRef(0)
     const lastTickRef = useRef<number | null>(null)
-    const startedRef = useRef(false)
 
     const framePaths = useRef(buildFramePaths()).current
 
     useEffect(() => {
-        let cancelled = false
-        const loaded = loadedFramesRef.current
-        startedRef.current = false
+        let isCancelled = false
+        const loaded = new Set<number>()
+        loadedFramesRef.current = loaded
         frameCounterRef.current = 0
         lastTickRef.current = null
 
-        // Fire all requests in parallel
-        framePaths.forEach((src, index) => {
-            const img = new window.Image()
-            img.onload = () => {
-                loaded.add(index)
-                if (!startedRef.current && loaded.size >= START_AFTER_FRAMES) {
-                    startedRef.current = true
-                    if (!cancelled) setPreloaded(true)
-                }
-            }
-            img.onerror = () => { loaded.add(index) }
-            img.src = src
-        })
+        const start = () => {
+            loadWithConcurrency(framePaths, loaded, () => {
+                if (!isCancelled) setPreloaded(true)
+            }, () => isCancelled)
+        }
 
-        return () => { cancelled = true }
+        if ('requestIdleCallback' in window) {
+            (window as any).requestIdleCallback(start)
+        } else {
+            setTimeout(start, 300)
+        }
+
+        return () => { isCancelled = true }
     }, [framePaths])
 
     useEffect(() => {
@@ -71,12 +102,9 @@ export default function DolphinAnimation({ className = '' }: DolphinAnimationPro
             if (delta >= frameInterval) {
                 lastTickRef.current = now
                 frameCounterRef.current++
-
-                // Bounce: 0→1→...→N-1→N-2→...→1→0
                 const cycleLength = (loadedCount - 1) * 2
                 const pos = frameCounterRef.current % cycleLength
                 const frameIndex = pos < loadedCount ? pos : cycleLength - pos
-
                 img.src = framePaths[frameIndex]
             }
 

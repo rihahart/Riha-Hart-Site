@@ -24,32 +24,38 @@ export default function JumpingAnimation({ className = '' }: JumpingAnimationPro
     const rafRef = useRef<number | null>(null)
     const frameCounterRef = useRef(0)
     const lastTickRef = useRef<number | null>(null)
-    const startedRef = useRef(false)
 
     const framePaths = useRef(buildFramePaths()).current
 
     useEffect(() => {
-        let cancelled = false
-        const loaded = loadedFramesRef.current
-        startedRef.current = false
+        let isCancelled = false
+        const loaded = new Set<number>()
+        loadedFramesRef.current = loaded
         frameCounterRef.current = 0
         lastTickRef.current = null
 
-        // All 7 frames in parallel
-        framePaths.forEach((src, index) => {
-            const img = new window.Image()
-            img.onload = () => {
-                loaded.add(index)
-                if (!startedRef.current && loaded.size >= TOTAL_FRAMES) {
-                    startedRef.current = true
-                    if (!cancelled) setPreloaded(true)
-                }
-            }
-            img.onerror = () => { loaded.add(index) }
-            img.src = src
-        })
+        const start = () => {
+            const loadOne = (i: number): Promise<void> =>
+                new Promise((resolve) => {
+                    const img = new window.Image()
+                    img.onload = img.onerror = () => {
+                        loaded.add(i)
+                        if (loaded.size >= TOTAL_FRAMES && !isCancelled) setPreloaded(true)
+                        resolve()
+                    }
+                    img.src = framePaths[i]
+                })
 
-        return () => { cancelled = true }
+            Promise.all(framePaths.map((_, i) => loadOne(i)))
+        }
+
+        if ('requestIdleCallback' in window) {
+            (window as any).requestIdleCallback(start)
+        } else {
+            setTimeout(start, 300)
+        }
+
+        return () => { isCancelled = true }
     }, [framePaths])
 
     useEffect(() => {
@@ -70,12 +76,9 @@ export default function JumpingAnimation({ className = '' }: JumpingAnimationPro
             if (delta >= frameInterval) {
                 lastTickRef.current = now
                 frameCounterRef.current++
-
-                // Bounce: 0→1→...→N-1→N-2→...→1→0
                 const cycleLength = (loadedCount - 1) * 2
                 const pos = frameCounterRef.current % cycleLength
                 const frameIndex = pos < loadedCount ? pos : cycleLength - pos
-
                 img.src = framePaths[frameIndex]
             }
 

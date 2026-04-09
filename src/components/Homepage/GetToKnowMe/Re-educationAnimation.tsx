@@ -5,7 +5,8 @@ import useWindowWidth from "@/_utilities/useWindowWidth"
 
 const BASE_PATH = "/getToKnowMe/Re-educationAnimation/Re-educationAnimation_"
 const TOTAL_FRAMES = 144
-const START_AFTER_FRAMES = 8
+const CONCURRENCY = 6
+const START_AFTER_FRAMES = 12
 
 function buildFramePaths(): string[] {
   return Array.from({ length: TOTAL_FRAMES }, (_, i) =>
@@ -18,6 +19,40 @@ function getContainerWidth(windowWidth: number): number | string {
   if (windowWidth >= 1025) return 500
   if (windowWidth >= 768) return 500
   return "100%"
+}
+
+// Load frames with limited concurrency — never more than CONCURRENCY in-flight at once
+async function loadWithConcurrency(
+  paths: string[],
+  loaded: Set<number>,
+  onReady: () => void,
+  cancelled: () => boolean
+) {
+  let readyFired = false
+  let index = 0
+
+  const loadOne = (i: number): Promise<void> =>
+    new Promise((resolve) => {
+      const img = new window.Image()
+      img.onload = img.onerror = () => {
+        loaded.add(i)
+        if (!readyFired && loaded.size >= START_AFTER_FRAMES) {
+          readyFired = true
+          if (!cancelled()) onReady()
+        }
+        resolve()
+      }
+      img.src = paths[i]
+    })
+
+  const workers = Array.from({ length: CONCURRENCY }, async () => {
+    while (index < paths.length) {
+      const i = index++
+      await loadOne(i)
+    }
+  })
+
+  await Promise.all(workers)
 }
 
 export interface ReEducationAnimationProps {
@@ -35,36 +70,31 @@ export default function ReEducationAnimation({
   const loadedFramesRef = useRef<Set<number>>(new Set())
   const frameCounterRef = useRef(0)
   const lastTickRef = useRef<number | null>(null)
-  const startedRef = useRef(false)
   const windowWidth = useWindowWidth()
 
   const framePaths = useMemo(() => buildFramePaths(), [])
 
   useEffect(() => {
-    let cancelled = false
+    let isCancelled = false
     const loaded = new Set<number>()
     loadedFramesRef.current = loaded
-    startedRef.current = false
     frameCounterRef.current = 0
     lastTickRef.current = null
 
-    // Fire all requests in parallel — no sequential batching
-    framePaths.forEach((src, index) => {
-      const img = new window.Image()
-      img.onload = () => {
-        loaded.add(index)
-        if (!startedRef.current && loaded.size >= START_AFTER_FRAMES) {
-          startedRef.current = true
-          if (!cancelled) setPreloaded(true)
-        }
-      }
-      img.onerror = () => {
-        loaded.add(index) // count it anyway so we don't stall
-      }
-      img.src = src
-    })
+    // Defer until page is interactive
+    const start = () => {
+      loadWithConcurrency(framePaths, loaded, () => {
+        if (!isCancelled) setPreloaded(true)
+      }, () => isCancelled)
+    }
 
-    return () => { cancelled = true }
+    if ("requestIdleCallback" in window) {
+      (window as any).requestIdleCallback(start)
+    } else {
+      setTimeout(start, 300)
+    }
+
+    return () => { isCancelled = true }
   }, [framePaths])
 
   useEffect(() => {
@@ -84,7 +114,6 @@ export default function ReEducationAnimation({
 
       if (delta >= frameInterval) {
         lastTickRef.current = now
-        // Advance by 1, loop within loaded frames
         frameCounterRef.current = (frameCounterRef.current + 1) % loadedCount
         img.src = framePaths[frameCounterRef.current]
       }
