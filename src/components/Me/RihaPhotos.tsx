@@ -11,6 +11,9 @@ export default function RihaPhotos({ className = "" }: { className?: string }) {
     const isSmall = isMobile || isTablet
 
     useEffect(() => {
+        // Preload all photos so swaps are instant
+        PHOTOS.forEach(src => { const img = new Image(); img.src = src })
+
         let i = 0
         const id = setInterval(() => {
             i = (i + 1) % PHOTOS.length
@@ -25,6 +28,7 @@ export default function RihaPhotos({ className = "" }: { className?: string }) {
                 ref={imgRef}
                 src={PHOTOS[0]}
                 alt="Riha Hart"
+                fetchPriority="high"
                 style={{ display: "block", transition: "none", width: "100%", marginTop: "-15%", marginBottom: "-20%" }}
             />
         </div>
