@@ -203,35 +203,32 @@ export default function HomePage() {
 
           triggerRef.current = trigger
 
-          const onWheel = (e) => {
+          let touchStartY = 0
+
+          onWheel = (e) => {
             if (e.deltaY > 0) trigger()
           }
 
-          let touchStartY = 0
-
-          const onTouchStart = (e) => {
+          onTouchStart = (e) => {
             touchStartY = e.touches[0].clientY
           }
 
-          const onTouchEnd = (e) => {
+          onTouchEnd = (e) => {
             if (touchStartY - e.changedTouches[0].clientY > 30) trigger()
           }
 
           window.addEventListener("wheel", onWheel)
           window.addEventListener("touchstart", onTouchStart)
           window.addEventListener("touchend", onTouchEnd)
-
-          return () => {
-            window.removeEventListener("wheel", onWheel)
-            window.removeEventListener("touchstart", onTouchStart)
-            window.removeEventListener("touchend", onTouchEnd)
-          }
         },
       }
     )
 
     return () => {
       if (ticker) gsap.ticker.remove(ticker)
+      if (onWheel) window.removeEventListener("wheel", onWheel)
+      if (onTouchStart) window.removeEventListener("touchstart", onTouchStart)
+      if (onTouchEnd) window.removeEventListener("touchend", onTouchEnd)
     }
   }, [router, isMenuOpen, mounted])
 
