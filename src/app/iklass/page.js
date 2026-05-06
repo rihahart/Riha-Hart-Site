@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useEffect } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import IntroToIKlass from "@/components/iklass/IntroImpact/IntroToIKlass"
 import ResearchContainer from "@/components/iklass/ResearchContainer"
@@ -11,12 +11,13 @@ import NavandScan from "@/components/iklass/KeyInsights/NavandScan/NavandScan"
 import IklassEnd from "@/components/iklass/iklassEnd/IklassEnd"
 
 export default function iklass() {
-  const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()  
+  const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
+  useEffect(() => { window.dispatchEvent(new CustomEvent("case-study-ready")) }, [])
 
   // Mobile (≤768px)
   if (isMobile) {
   return (
-    <div className="flex flex-col items-center w-full mx-auto">
+    <div className="flex flex-col items-center bg-[var(--color-primary-inverse)] w-full mx-auto">
 
       {/* div with margins starts here*/}
       <div className="flex flex-col items-center w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
@@ -60,7 +61,7 @@ export default function iklass() {
   // Tablet (769px - 1024px)
   if (isTablet) {
     return (
-      <div className="flex flex-col items-center w-full mx-auto">
+      <div className="flex flex-col bg-[var(--color-primary-inverse)] items-center w-full mx-auto">
 
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full p-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
@@ -104,7 +105,7 @@ export default function iklass() {
   if (isDesktop1440px) {
     return (  
 
-      <div className="flex flex-col items-center w-full mx-auto">
+      <div className="flex flex-col items-center bg-[var(--color-primary-inverse)] w-full mx-auto">
       <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-6xl)]">
 
         {/* div with margins starts here*/}
@@ -148,7 +149,7 @@ export default function iklass() {
 
   // Large Desktop (>1440px)  
   return (
-    <div className="flex flex-col items-center w-full mx-auto">
+    <div className="flex flex-col bg-[var(--color-primary-inverse)] items-center w-full mx-auto">
 
       {/* div with margins starts here*/}
 

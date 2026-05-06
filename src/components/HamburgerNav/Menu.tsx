@@ -2,10 +2,9 @@
 import { useEffect, useState, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import useMobileDetection from '@/_utilities/useMobileDetection'
-import MenuButton from './MenuButton'
-import Button from '@/components/Button'
-import ExitButton from './ExitButton'
+import { MenuButton, Button, ExitButton } from '@/components/Buttons'
 import JumpingAnimation from './JumpingAnimation'
+import LogoAnimation from '@/components/LogoAnimation'
 import { useMenu } from '@/contexts/MenuContext'
 
 export default function Menu() {
@@ -108,59 +107,27 @@ export default function Menu() {
 
     const handleGetToKnowMe = () => {
         // If already on bio page, just close the menu
-        if (pathname === '/bio') {
+        if (pathname === '/me') {
             handleClose()
             return
         }
         // Start navigation immediately, menu stays open during navigation
-        router.push('/bio')
+        router.push('/me')
     }
 
-    const handleJHMuralProject = () => {
-        // If already on jh-mural-project page, just close the menu
-        if (pathname === '/jh-mural-project') {
+    const handleProjects = () => {
+        if (pathname === '/Work') {
             handleClose()
             return
         }
-        // Start navigation immediately, menu stays open during navigation
-        router.push('/jh-mural-project')
-    }
-
-    const handleEverestFederal = () => {
-        // If already on everest-federal-credit-union page, just close the menu
-        if (pathname === '/everest-federal-credit-union') {
-            handleClose()
-            return
-        }
-        // Start navigation immediately, menu stays open during navigation
-        router.push('/everest-federal-credit-union')
-    }
-
-    const handleEarthHero = () => {
-        if (pathname === '/earthhero') {
-            handleClose()
-            return
-        }
-        handleClose()
-        router.push('/earthhero')
-    }
-
-    const handleIklass = () => {
-        if (pathname === '/iklass') {
-            handleClose()
-            return
-        }
-        handleClose()
-        router.push('/iklass')
+        router.push('/Work')
     }
 
     const handleLogoClick = () => {
-        // If already on homepage, just close the menu
         if (pathname === '/') {
             handleClose()
             return
         }
-        // Start navigation immediately, menu stays open during navigation
         router.push('/')
     }
 
@@ -170,62 +137,41 @@ export default function Menu() {
     // Mobile (≤768px)
     if (isMobile) {
         return (
-            <div className={`fixed inset-0 bg-[var(--neutral-1000)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenuMobile' : 'animate-slideInMenuMobile'}`}>
+            <div className={`fixed inset-0 z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenuMobileRight' : 'animate-slideInMenuMobileRight'}`} style={{ background: "radial-gradient(ellipse 100% 70% at 50% 100%, rgba(120,0,20,0.6) 0%, transparent 90%), linear-gradient(180deg, #0a0a0a 0%, #1a0007 60%, #2d0010 100%)" }}>
                 <div><div className='flex items-center justify-between py-[var(--spacing-xl)] px-[var(--spacing-xl)]'>
-                    <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
-                        <img
-                            src="/Icons/Logo/RihaHartLogo.svg"
-                            alt="Riha Hart Logo"
-                            style={{
-                                height: '40px',
-                                width: 'auto',
-                                objectFit: 'contain'
-                            }}
-                            loading="eager"
-                        />
-                    </button>
+                    <div onClick={handleLogoClick} className="cursor-pointer" style={{ width: "88px" }}>
+                        <LogoAnimation fps={24} heartGlow />
+                    </div>
                     <ExitButton onClick={handleClose} size="small" aria-label="Close Menu" />
                 </div></div>
                 <div className="flex items-start justify-center h-[calc(100vh-120px)] ">
                     <div className="flex flex-col items-start px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-8xl)] gap-[var(--spacing-md)] w-full">
                         <div className="flex flex-col items-center gap-[var(--spacing-xl)] w-full">
                             <MenuButton
+                                text="Home"
+                                onClick={handleLogoClick}
+                                inverted={true}
+                                isActive={pathname === '/'}
+                            />
+                            <MenuButton
                                 text="Get to know me"
                                 onClick={handleGetToKnowMe}
                                 inverted={true}
-                                isActive={pathname === '/bio'}
+                                isActive={pathname === '/me'}
                             />
                             <MenuButton
-                                text="Everest Federal Credit Union"
-                                onClick={handleEverestFederal}
+                                text="Projects"
+                                onClick={handleProjects}
                                 inverted={true}
-                                isActive={pathname === '/everest-federal-credit-union'}
-                            />
-                            <MenuButton
-                                text="EarthHero App"
-                                onClick={handleEarthHero}
-                                inverted={true}
-                                isActive={pathname === '/earthhero'}
-                            />
-                              <MenuButton
-                                text="iklass"
-                                onClick={handleIklass}
-                                inverted={true}
-                                isActive={pathname === '/iklass'}
-                            />
-                            <MenuButton
-                                text="JH Mural Project"
-                                onClick={handleJHMuralProject}
-                                inverted={true}
-                                isActive={pathname === '/jh-mural-project'}
+                                isActive={pathname === '/Work'}
                             />
                         </div>
                         <div className="relative w-full">
                             <JumpingAnimation className="h-full max-w-[320px] px-[var(--spacing-lg)]" />
                             <div className="absolute bottom-[-30%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
-                                <Button text="Email" onClick={handleEmailClick} inverted={true} />
-                                <Button text="LinkedIn" onClick={handleLinkedInClick} inverted={true} />
-                                <Button text="Instagram" onClick={handleInstagramClick} inverted={true} />
+                                <Button text="Email" onClick={handleEmailClick} variant="primary" />
+                                <Button text="LinkedIn" onClick={handleLinkedInClick} variant="primary" />
+                                <Button text="Instagram" onClick={handleInstagramClick} variant="primary" />
                             </div>
                         </div>
                     </div>
@@ -237,55 +183,34 @@ export default function Menu() {
     // Tablet (769px - 1024px)
     if (isTablet) {
         return (
-            <div className={`fixed inset-0 bg-[var(--neutral-1000)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
+            <div className={`fixed inset-0 z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenuRight' : 'animate-slideInMenuRight'}`} style={{ background: "radial-gradient(ellipse 100% 70% at 50% 100%, rgba(120,0,20,0.6) 0%, transparent 90%), linear-gradient(180deg, #0a0a0a 0%, #1a0007 60%, #2d0010 100%)" }}>
                 <div className="max-w-[900px] mx-auto">
                     <div><div className='flex items-center justify-between py-[var(--spacing-2xl)] px-[var(--spacing-6xl)]'>
-                        <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
-                            <img
-                                src="/Icons/Logo/RihaHartLogo.svg"
-                                alt="Riha Hart Logo"
-                                style={{
-                                    height: '50px',
-                                    width: 'auto',
-                                    objectFit: 'contain'
-                                }}
-                                loading="eager"
-                            />
-                        </button>
+                        <div onClick={handleLogoClick} className="cursor-pointer" style={{ width: "112px" }}>
+                            <LogoAnimation fps={24} heartGlow />
+                        </div>
                         <ExitButton onClick={handleClose} size="small" aria-label="Close Menu" />
                     </div></div>
                     <div className="flex items-start justify-center py-[var(--spacing-2xl)] px-[var(--spacing-6xl)] h-[calc(100vh-140px)]">
                         <div className="flex flex-col items-start px-[var(--spacing-lg)] pb-[var(--spacing-10xl)] gap-[var(--spacing-md)] w-full">
                             <div className="flex flex-col items-center gap-[var(--spacing-3xl)] w-full">
                                 <MenuButton
+                                    text="Home"
+                                    onClick={handleLogoClick}
+                                    inverted={true}
+                                    isActive={pathname === '/'}
+                                />
+                                <MenuButton
                                     text="Get to know me"
                                     onClick={handleGetToKnowMe}
                                     inverted={true}
-                                    isActive={pathname === '/bio'}
+                                    isActive={pathname === '/me'}
                                 />
                                 <MenuButton
-                                    text="Everest Federal Credit Union"
-                                    onClick={handleEverestFederal}
+                                    text="Projects"
+                                    onClick={handleProjects}
                                     inverted={true}
-                                    isActive={pathname === '/everest-federal-credit-union'}
-                                />
-                                <MenuButton
-                                    text="EarthHero App"
-                                    onClick={handleEarthHero}
-                                    inverted={true}
-                                    isActive={pathname === '/earthhero'}
-                                />
-                                <MenuButton
-                                    text="iklass"
-                                    onClick={handleIklass}
-                                    inverted={true}
-                                    isActive={pathname === '/iklass'}
-                                />
-                                <MenuButton
-                                    text="JH Mural Project"
-                                    onClick={handleJHMuralProject}
-                                    inverted={true}
-                                    isActive={pathname === '/jh-mural-project'}
+                                    isActive={pathname === '/Work'}
                                 />
                             </div>
                             <div className="relative w-full">
@@ -303,139 +228,4 @@ export default function Menu() {
         )
     }
 
-    // Desktop 1440px (1025px - 1440px)
-    if (isDesktop1440px) {
-        return (
-            <div className={`fixed inset-0 bg-[var(--neutral-1000)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
-                <div className="max-w-[1200px] mx-auto">
-                    <div><div className='flex items-center justify-between py-[var(--spacing-4xl)] px-[var(--spacing-8xl)]'>
-                        <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
-                            <img
-                                src="/Icons/Logo/RihaHartLogo.svg"
-                                alt="Riha Hart Logo"
-                                style={{
-                                    height: '60px',
-                                    width: 'auto',
-                                    objectFit: 'contain'
-                                }}
-                                loading="eager"
-                            />
-                        </button>
-                        <ExitButton onClick={handleClose} size="large" aria-label="Close Menu" />
-                    </div></div>
-                    <div className="flex items-start justify-center h-[calc(100vh-160px)]">
-                        <div className="flex flex-col items-start pt-[var(--spacing-lg)] pb-[var(--spacing-12xl)] px-[var(--spacing-8xl)] w-full gap-[var(--spacing-sm)]">
-                            <div className="flex flex-col items-center gap-[var(--spacing-lg)] w-full">
-                                <MenuButton
-                                    text="Get to know me"
-                                    onClick={handleGetToKnowMe}
-                                    inverted={true}
-                                    isActive={pathname === '/bio'}
-                                />
-                                <MenuButton
-                                    text="Everest Federal Credit Union"
-                                    onClick={handleEverestFederal}
-                                    inverted={true}
-                                    isActive={pathname === '/everest-federal-credit-union'}
-                                />
-                                <MenuButton
-                                    text="EarthHero App"
-                                    onClick={handleEarthHero}
-                                    inverted={true}
-                                    isActive={pathname === '/earthhero'}
-                                />
-                                <MenuButton
-                                    text="iklass"
-                                    onClick={handleIklass}
-                                    inverted={true}
-                                    isActive={pathname === '/iklass'}
-                                />
-                                <MenuButton
-                                    text="JH Mural Project"
-                                    onClick={handleJHMuralProject}
-                                    inverted={true}
-                                    isActive={pathname === '/jh-mural-project'}
-                                />
-                            </div>
-                            <div className="relative w-full">
-                                <JumpingAnimation className="h-full max-w-[400px] px-[var(--spacing-lg)]" />
-                                <div className="absolute bottom-[-20%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
-                                    <Button text="Email" onClick={handleEmailClick} inverted={true} />
-                                    <Button text="LinkedIn" onClick={handleLinkedInClick} inverted={true} />
-                                    <Button text="Instagram" onClick={handleInstagramClick} inverted={true} />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )
-    }
-
-    // Large Desktop (>1440px)
-    return (
-        <div className={`fixed inset-0 bg-[var(--neutral-1000)] z-[9999] overflow-y-auto ${isAnimatingOut ? 'animate-slideOutMenu' : 'animate-slideInMenu'}`}>
-            <div className="max-w-[1400px] mx-auto ">
-                <div> <div className='flex items-center justify-between py-[var(--spacing-3xl)] px-[var(--spacing-12xl)]'>
-                    <button onClick={handleLogoClick} className="cursor-pointer" aria-label="Home">
-                        <img
-                            src="/Icons/Logo/RihaHartLogo.svg"
-                            alt="Riha Hart Logo"
-                            style={{
-                                height: '70px',
-                                width: 'auto',
-                                objectFit: 'contain'
-                            }}
-                            loading="eager"
-                        />
-                    </button>
-                    <ExitButton onClick={handleClose} size="large" aria-label="Close Menu" />
-                </div></div>
-                <div className="flex items-start justify-center  h-[calc(100vh-180px)]">
-                    <div className="flex flex-col items-start pt-[var(--spacing-xl)] pb-[var(--spacing-xl)] px-[var(--spacing-12xl)] w-full h-full gap-[var(--spacing-md)]">
-                        <div className="flex flex-col items-center gap-[var(--spacing-lg)] w-full">
-                            <MenuButton
-                                text="Get to know me"
-                                onClick={handleGetToKnowMe}
-                                inverted={true}
-                                isActive={pathname === '/bio'}
-                            />
-                            <MenuButton
-                                text="Everest Federal Credit Union"
-                                onClick={handleEverestFederal}
-                                inverted={true}
-                                isActive={pathname === '/everest-federal-credit-union'}
-                            />
-                            <MenuButton
-                                text="EarthHero App"
-                                onClick={handleEarthHero}
-                                inverted={true}
-                                isActive={pathname === '/earthhero'}
-                            />
-                            <MenuButton
-                                text="iklass"
-                                onClick={handleIklass}
-                                inverted={true}
-                                isActive={pathname === '/iklass'}
-                            />
-                            <MenuButton
-                                text="JH Mural Project"
-                                onClick={handleJHMuralProject}
-                                inverted={true}
-                                isActive={pathname === '/jh-mural-project'}
-                            />
-                        </div>
-                        <div className="relative w-full">
-                            <JumpingAnimation className="h-full max-w-[450px] px-[var(--spacing-lg)]" />
-                            <div className="absolute bottom-[-20%] left-0 w-full z-10 flex items-start gap-[var(--spacing-xl)] px-[var(--spacing-lg)]">
-                                <Button text="Email" onClick={handleEmailClick} inverted={true} />
-                                <Button text="LinkedIn" onClick={handleLinkedInClick} inverted={true} />
-                                <Button text="Instagram" onClick={handleInstagramClick} inverted={true} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
 }

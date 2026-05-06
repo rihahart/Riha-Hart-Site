@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useEffect } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import IntroToEH from "@/components/EH/IntroImpact/IntroToEH"
 import ResearchDeck from "@/components/EH/ResearchDeck/ResearchDeck"
@@ -15,11 +15,12 @@ import SystemChange from "@/components/EH/FinalResult/SystemChange"
 
 export default function EarthHero() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
+  useEffect(() => { window.dispatchEvent(new CustomEvent("case-study-ready")) }, [])
 
   // Mobile (≤768px)
   if (isMobile) {
   return (
-    <div className="flex flex-col items-center w-full mx-auto">
+    <div className="flex flex-col items-center w-full bg-[var(--color-primary-inverse)] mx-auto">
 
       {/* div with margins starts here*/}
       <div className="flex flex-col items-center w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
@@ -77,7 +78,7 @@ export default function EarthHero() {
 
   if (isTablet) {
     return (
-      <div className="flex flex-col items-center w-full mx-auto">
+      <div className="flex flex-col items-center bg-[var(--color-primary-inverse)] w-full mx-auto">
 
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full p-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
@@ -148,7 +149,7 @@ export default function EarthHero() {
 
   if (isDesktop1440px) {
     return (
-      <div className="flex flex-col items-center w-full mx-auto  ">
+      <div className="flex flex-col items-center bg-[var(--color-primary-inverse)] w-full mx-auto  ">
 
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full  pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
@@ -210,7 +211,7 @@ export default function EarthHero() {
   ////////////////////////////////////////////// Large Desktop (>1440px)
 
   return (
-    <div className="flex flex-col items-center w-full mx-auto">
+    <div className="flex flex-col items-center bg-[var(--color-primary-inverse)] w-full mx-auto">
 
       {/* div with margins starts here*/}
 

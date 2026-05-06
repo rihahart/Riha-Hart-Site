@@ -3,7 +3,7 @@ export const bioData = {
         src: "/Photos/Bio/RihaHart.JPG",
         alt: "Profile"
     },
-    heading: "Hi, again!",
+    heading: "Oh, Hello!",
     paragraphs: [
         " I'm a designer by training, project manager by necessity, and an occasional developer who makes things happen.",
         "I’m a proud resident of the world’s best neighborhood, Jackson Heights, Queens. And no, I’m not exaggerating—come visit us! I am the Creative Director and Founder of JH Mural Project, a non-profit that partners with artists and community organizations to bring murals to the walls of Jackson Heights.",

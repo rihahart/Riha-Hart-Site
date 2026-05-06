@@ -1,7 +1,5 @@
 /* ============================================================
    Button Styles
-   Variants: Primary, Inverse, Link
-   Sizes: Large (pressed border 4px), Small (pressed border 2px)
    ============================================================ */
 
 /* ── Base Button ──────────────────────────────────────────── */
@@ -12,7 +10,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: var(--spacing-s) var(--spacing-m);
+  padding: 12px 16px;
   border: none;
   border-bottom: 0 solid transparent;
   text-decoration: none;
@@ -24,7 +22,11 @@
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
   font-weight: 500;
-  transition: border-color 0.2s ease, border-width 0.2s ease;
+  transition: border-color 0.2s ease, border-width 0.2s ease, transform 0.2s ease;
+}
+
+.button--small {
+  padding: var(--spacing-xs);
 }
 
 .button::after {
@@ -44,45 +46,47 @@
   position: relative;
   z-index: 1;
   pointer-events: none;
+  color: rgba(253,247,230,0.72);
+  text-shadow:
+    0 0 10px rgba(253,247,230,0.3),
+    0 0 24px rgba(220,40,40,0.2),
+    0 0 50px rgba(180,0,30,0.15);
   transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+.button:hover span {
+  color: #FDF7E6;
 }
 
 /* ── Button Primary ───────────────────────────────────────── */
 
-/* Default: Background → Brand, Text → Content Primary Inverse */
 .button--primary {
-  background: var(--color-brand);
-  color: var(--color-primary-inverse);
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background: color-mix(in srgb, var(--accent-glow) 8%, transparent);
+  border: 1px solid var(--accent-glow);
+  border-radius: 4px;
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--accent-glow) 35%, transparent),
+    0 0 28px color-mix(in srgb, var(--accent-glow) 15%, transparent);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .button--primary::after {
-  background-color: var(--color-primary);
+  display: none;
 }
 
-/* Hover: Background → Primary (skew animation) */
 .button--primary:hover {
-  color: var(--color-primary-inverse);
+  background: rgba(253, 247, 230, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(253, 247, 230, 0.16);
 }
 
-.button--primary:hover::after {
-  transform: skewY(9.3deg) scaleY(2);
-}
-
-/* Pressed: Large = bottom border 4px Primary; Small = bottom border 2px Primary */
-.button--primary.button--large:active {
-  border-bottom-width: 4px;
-  border-bottom-color: var(--color-primary);
-}
-
-.button--primary.button--small:active {
-  border-bottom-width: 2px;
-  border-bottom-color: var(--color-primary);
+.button--primary:active {
+  transform: translateY(0);
+  background: rgba(253, 247, 230, 0.08);
 }
 
 /* ── Button Inverse ──────────────────────────────────────── */
 
-/* Default: Background → None, Text → Content Primary Inverse */
 .button--inverse {
   background: transparent;
   color: var(--color-primary-inverse);
@@ -92,16 +96,15 @@
   background-color: var(--color-primary-inverse);
 }
 
-/* Hover: Background → Primary Inverse, Text → Content Primary (skew animation) */
 .button--inverse:hover {
   color: var(--color-primary);
+  transform: translateY(-2px);
 }
 
 .button--inverse:hover::after {
   transform: skewY(9.3deg) scaleY(2);
 }
 
-/* Pressed: Large = bottom border 4px Primary Inverse, Text → Primary Inverse */
 .button--inverse.button--large:active {
   border-bottom-width: 4px;
   border-bottom-color: var(--color-primary-inverse);
@@ -109,7 +112,6 @@
   color: var(--color-primary-inverse);
 }
 
-/* Pressed: Small = bottom border 2px Content Primary Inverse, Text → Content Primary Inverse */
 .button--inverse.button--small:active {
   border-bottom-width: 2px;
   border-bottom-color: var(--color-primary-inverse);
@@ -119,7 +121,6 @@
 
 /* ── Button Link ───────────────────────────────────────────── */
 
-/* Default: Background → None, Text → Link */
 .button--link {
   background: transparent;
   color: var(--color-link);
@@ -129,25 +130,22 @@
   background-color: var(--color-tertiary-inverse);
 }
 
-/* Hover: Background → Content Tertiary Inverse (skew animation) */
 .button--link:hover {
   color: var(--color-link);
+  transform: translateY(-2px);
 }
 
 .button--link:hover::after {
   transform: skewY(9.3deg) scaleY(2);
 }
 
-/* Pressed: Background → Content Tertiary Inverse */
 .button--link:active,
 .button--link.active {
   background: var(--color-tertiary-inverse);
   color: var(--color-link);
 }
 
-/* ============================================================
-   Menu Button (unchanged behavior, keep for nav)
-   ============================================================ */
+/* ── Menu Button ──────────────────────────────────────────── */
 
 .menu-button {
   position: relative;
@@ -156,76 +154,170 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  padding: var(--spacing-xs);
-  letter-spacing: var(--letter-spacing-s);
-  color: var(--color-primary-inverse);
-  background: var(--neutral-1000);
-  border: none;
-  border-bottom: 1px solid var(--color-primary-inverse);
-  text-decoration: none;
+  background: transparent;
+  border-bottom: 0.5px solid var(--accent-glow);
   cursor: pointer;
+  text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  transition: border-color 600ms cubic-bezier(0.48, 0, 0.12, 1);
-}
-
-.menu-button::after {
-  content: "";
-  position: absolute;
-  bottom: -50%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-brand);
-  transform: skewY(4.3deg) scaleY(0);
-  transform-origin: bottom center;
-  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
-  z-index: 50;
+  transition: transform 0.2s ease;
 }
 
 .menu-button:hover {
-  border-bottom: none;
+  transform: translateY(-2px);
 }
 
-.menu-button:hover::after {
-  transform: skewY(2.3deg) scaleY(2);
+.menu-button:hover span {
+  color: #FDF7E6;
 }
 
 .menu-button span {
   position: relative;
   font-family: var(--font-sofia);
   font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-  font-weight: 400;
-  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
-  z-index: 100;
+  font-weight: 500;
+  color: rgba(253, 247, 230, 0.72);
+  text-shadow:
+    0 0 8px rgba(253,247,230,0.3),
+    0 0 18px rgba(220,40,40,0.2),
+    0 0 40px rgba(180,0,30,0.15);
+  transition: color 0.2s;
+  z-index: 1;
+  pointer-events: none;
+  padding: 2px;
 }
 
-.menu-button:hover span {
-  color: var(--color-primary-inverse);
+.menu-button--desktop {
+  width: auto;
+  border-bottom: none;
 }
 
 .menu-button.active {
-  border-bottom: 4px solid var(--color-brand);
+  border-bottom: 2px solid rgba(253,247,230,0.72);
+  letter-spacing: 0.5px;
 }
 
-.menu-button.active::after {
-  transform: skewY(4.3deg) scaleY(0);
-}
+/* ── Nav Button ───────────────────────────────────────────── */
 
-.menu-button.active span {
-  color: var(--color-primary-inverse);
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .menu-button.active {
-    border-bottom-width: 6px;
-  }
+.nav-btn {
+  padding: 8px;
+  background: color-mix(in srgb, var(--accent-glow) 8%, transparent);
+  border: 1px solid var(--accent-glow);
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--accent-glow) 35%, transparent),
+    0 0 28px color-mix(in srgb, var(--accent-glow) 15%, transparent);
 }
 
 @media (min-width: 1025px) {
-  .menu-button.active {
-    border-bottom-width: 8px;
+  .nav-btn {
+    padding: 12px;
   }
+}
+
+.nav-btn--social {
+  width: auto;
+  height: auto;
+  padding: 8px;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+@media (min-width: 1025px) {
+  .nav-btn--social {
+    padding: 4px;
+  }
+}
+
+.nav-btn:hover {
+  background: rgba(253, 247, 230, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(253, 247, 230, 0.16);
+}
+
+/* ── Nav Arrow ────────────────────────────────────────────── */
+
+.nav-arrow {
+  width: var(--Icon-ArrowRight-M-width);
+  height: var(--Icon-ArrowRight-M-height);
+  display: block;
+  filter: brightness(0) invert(1) drop-shadow(0 0 0.5px var(--accent-glow));
+}
+
+@media (min-width: 1025px) {
+  .nav-arrow {
+    width: 21px;
+    height: 14px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .nav-arrow {
+    width: 25px;
+    height: 17px;
+  }
+}
+
+.nav-arrow-left  { transform: scaleX(-1); }
+.nav-arrow-up    { transform: rotate(-90deg); }
+.nav-arrow-down  { transform: rotate(90deg); }
+
+/* ── Nav Social Icon ──────────────────────────────────────── */
+
+.nav-social-icon {
+  width: 33px;
+  height: 33px;
+  display: block;
+  filter: brightness(0) invert(1) drop-shadow(0 0 0.5px var(--accent-glow));
+  opacity: 0.72;
+  transition: opacity 0.2s;
+}
+
+@media (min-width: 1025px) {
+  .nav-social-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .nav-social-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.nav-btn:hover .nav-social-icon {
+  opacity: 1;
+}
+
+/* ── Hamburger & Exit Button ──────────────────────────────── */
+
+.hamburger-btn, .exit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  filter: brightness(0) invert(1) drop-shadow(0 0 0.5px var(--accent-glow));
+  opacity: 0.72;
+  transition: opacity 0.2s;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger-btn:active, .exit-btn:active {
+  background: rgba(253, 247, 230, 0.18);
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--accent-glow) 35%, transparent),
+    0 0 28px color-mix(in srgb, var(--accent-glow) 15%, transparent);
+  opacity: 1;
 }

@@ -3,7 +3,7 @@
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import { introToIKlass } from "@/data/iklass/introToIKlass"
-import Button from "@/components/Button"
+import { Button } from "@/components/Buttons"
 
 export default function IntroToIKlass() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()

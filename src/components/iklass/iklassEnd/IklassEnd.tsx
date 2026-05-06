@@ -3,7 +3,7 @@
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import { iklassEnd } from "@/data/iklass/iklassEnd"
-import Button from "@/components/Button"
+import { Button } from "@/components/Buttons"
 
 export default function IklassEnd() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()

@@ -3,7 +3,7 @@
 import React from "react"
 import { useRouter } from "next/navigation"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import Button from "@/components/Button"
+import { Button } from "@/components/Buttons"
 
 interface CaseStudy {
   title: string

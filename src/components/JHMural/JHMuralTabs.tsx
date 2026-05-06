@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Button from "@/components/Button"
+import { Button } from "@/components/Buttons"
 import { inBloom } from "@/data/JHMural/inBloom"
 import InBloomGallery from "@/components/JHMural/InBloomGallery"
 import useMobileDetection from "@/_utilities/useMobileDetection"

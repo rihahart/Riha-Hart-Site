@@ -2,7 +2,6 @@ import '../styles/global.css'
 import Navigation from '@/components/HamburgerNav/Navigation'
 import { VideoProvider } from '@/contexts/VideoContext'
 import { MenuProvider } from '@/contexts/MenuContext'
-import Footer from '@/components/Footer/Footer'
 import Menu from '@/components/HamburgerNav/Menu'
 import { ReactNode } from 'react'
 
@@ -17,14 +16,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/zpt8xte.css" />
       </head>
-      <body style={{ backgroundColor: 'var(--black)', position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <body style={{ backgroundColor: '#0a0a0a', position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <VideoProvider>
           <MenuProvider>
             <Navigation />
-            <main style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', marginTop: 'var(--nav-h)' }}>
+            <main style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', marginTop: 'var(--nav-h, 84px)' }}>
               {children}
             </main>
-            <Footer />
             <Menu />
           </MenuProvider>
         </VideoProvider>

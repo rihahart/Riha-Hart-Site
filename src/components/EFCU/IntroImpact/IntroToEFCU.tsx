@@ -3,7 +3,7 @@
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import { introToEFCU } from "@/data/EFCU/IntroImpact/introToEFCU"
-import Button from "@/components/Button"
+import { Button } from "@/components/Buttons"
 
 export default function IntroToEFCU() {
     const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()

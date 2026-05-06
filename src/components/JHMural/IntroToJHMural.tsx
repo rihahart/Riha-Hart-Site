@@ -3,7 +3,7 @@
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import { introToJH } from "@/data/JHMural/introToJH"
-import Button from "@/components/Button"
+import { Button } from "@/components/Buttons"
 
 export default function IntroToJHMural() {
     const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()

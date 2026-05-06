@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 body {
-  background-color: var(--black);
+  background-color: var(--color-primary-inverse);
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -17,9 +17,12 @@ body {
    ============================================================ */
 
 :root {
+--accent-glow: #FDF7E6;
+
+  --nav-h: 84px;
   /* Letter Spacing */
   --letter-spacing-none: 0;
-  --letter-spacing-s:    -0.5px;
+  --letter-spacing-s:    0.5px;
   --letter-spacing-m:    1px;
   --letter-spacing-l:    2px;
 
@@ -55,7 +58,7 @@ body {
   --green-300: #78BF91;
   --green-400: #012611;
 
-  --neutral-100:  #FDFFFE;
+  --neutral-100:  #FDF7E6;
   --neutral-150:  #FAFAFA;
   --neutral-200:  #F0F1F1;
   --neutral-300:  #E9E9E9;
@@ -66,6 +69,7 @@ body {
   --neutral-800:  #616161;
   --neutral-900:  #474646;
   --neutral-1000: #131313;
+  --black: #0a0a0a;
 
   /* Semantic Colors */
   --color-primary:           var(--neutral-900);
@@ -99,7 +103,7 @@ body {
 
 html,
 body {
-  background-color: var(--black);
+  background-color: var(--neutral-1000);
   font-family: var(--font-sofia);
   overflow-x: hidden;
   scrollbar-width: none;
@@ -115,73 +119,103 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+@media (min-width: 1024px) { :root { --nav-h: 98px;  } }
+@media (min-width: 1400px) { :root { --nav-h: 123px; } }
+@media (min-width: 1600px) { :root { --nav-h: 148px; } }
+
+/* ============================================================
+   Project Page — Reel Label
+   ============================================================ */
+
+.reel-label {
+  text-align: center;
+  color: #FDF7E6;
+}
+
+.reel-label h1,
+.reel-label h2 {
+  font-family: "sofia-pro-comp", sans-serif;
+  font-weight: 600;
+  text-shadow:
+    0 0 12px rgba(253,247,230,0.85),
+    0 0 20px rgba(220,40,40,0.6),
+    0 0 50px rgba(180,0,30,0.45);
+}
+
+.reel-label p {
+  font-size: var(--font-size-body);
+  color: rgba(253,247,230,0.72);
+  margin: 0;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s ease;
+}
+
+.reel-label p:hover {
+  color: #FDF7E6;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   View Work Arrow (5% smaller than nav-arrow)
+   ============================================================ */
+
+.view-work-arrow {
+  display: inline-block;
+  vertical-align: middle;
+  filter: brightness(0) invert(1) drop-shadow(0 0 0.5px var(--accent-glow));
+  width: 14px;
+  height: 12px;
+}
+
+@media (min-width: 769px) {
+  .view-work-arrow {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .view-work-arrow {
+    width: 16px;
+    height: 13px;
+    transform: translateY(-1px);
+  }
+}
+
+@media (min-width: 1441px) {
+  .view-work-arrow {
+    width: 20px;
+    height: 14px;
+    transform: translateY(-1px);
+  }
+}
+
+
 /* ============================================================
    Navigation — hamburger hover
    ============================================================ */
 
-.nav-hamburger-btn:hover {
-  background-color: var(--color-tertiary-inverse);
+.nav-pill {
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--accent-glow) 15%, transparent),
+    0 0 4px color-mix(in srgb, var(--accent-glow) 5%, transparent);
 }
 
-.nav-hamburger-wrap {
-  transform: translateY(var(--spacing-s));
+nav {
+  border-bottom: none;
 }
 
-/* ============================================================
-   HamburgerButton & ExitButton (shared design)
-   ============================================================ */
 
-.hamburger-btn,
-.exit-btn {
-  position: relative;
-  overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
 
-.hamburger-btn::after,
-.exit-btn::after {
-  content: "";
-  position: absolute;
-  bottom: -50%;
-  left: -1px;
-  width: calc(100% + 2px);
-  height: 100%;
-  background-color: var(--color-tertiary-inverse);
-  transform: skewY(9.3deg) scaleY(0);
-  transform-origin: bottom center;
-  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
-  z-index: 0;
-}
 
-.hamburger-btn:hover::after,
-.exit-btn:hover::after {
-  transform: skewY(9.3deg) scaleY(2);
-}
 
-.hamburger-btn img,
-.exit-btn img {
-  position: relative;
-  z-index: 1;
-  display: block;
-}
 
-.hamburger-btn--large,
-.exit-btn--large {
-  padding: 12px;
-  border-radius: 2px;
-}
 
-.hamburger-btn--small,
-.exit-btn--small {
-  padding: 8px;
-  border-radius: 1px;
-}
+
+
+
+
 
 /* ============================================================
    Animations
@@ -197,34 +231,34 @@ body::-webkit-scrollbar {
   to   { transform: translateX(-100%); }
 }
 
+@keyframes slideInMenuRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0%); }
+}
+
+@keyframes slideOutMenuRight {
+  from { transform: translateX(0%); }
+  to   { transform: translateX(100%); }
+}
+
 @keyframes scrollFrames {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
-.animate-slideInMenu        { animation: slideInMenu  1000ms ease-in-out forwards; }
-.animate-slideOutMenu       { animation: slideOutMenu 1000ms ease-in-out forwards; }
-.animate-slideInMenuMobile  { animation: slideInMenu   640ms ease-in-out forwards; }
-.animate-slideOutMenuMobile { animation: slideOutMenu  640ms ease-in-out forwards; }
+.animate-slideInMenu             { animation: slideInMenu       1000ms ease-in-out forwards; }
+.animate-slideOutMenu            { animation: slideOutMenu      1000ms ease-in-out forwards; }
+.animate-slideInMenuMobile       { animation: slideInMenu        640ms ease-in-out forwards; }
+.animate-slideOutMenuMobile      { animation: slideOutMenu       640ms ease-in-out forwards; }
+.animate-slideInMenuRight        { animation: slideInMenuRight  1000ms ease-in-out forwards; }
+.animate-slideOutMenuRight       { animation: slideOutMenuRight 1000ms ease-in-out forwards; }
+.animate-slideInMenuMobileRight  { animation: slideInMenuRight   640ms ease-in-out forwards; }
+.animate-slideOutMenuMobileRight { animation: slideOutMenuRight  640ms ease-in-out forwards; }
 
 /* ============================================================
    Footer Scroll
    ============================================================ */
 
-.footer-scroll {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
-
-.footer-scroll > div {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: scrollFrames 10000ms linear infinite;
-  will-change: transform;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-}
 
 /* ============================================================
    Typography
@@ -237,6 +271,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   font-family: var(--font-sofia);
   font-style: normal;
   font-weight: 900;
+  letter-spacing: var(--letter-spacing-s);
 }
 
 body, .body {
@@ -245,6 +280,7 @@ body, .body {
   font-weight: 500;
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-s);
 }
 
 .caption {
@@ -253,13 +289,14 @@ body, .body {
   font-weight: 400;
   font-size: var(--font-size-caption);
   line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-s);
 }
 
 /* Mobile (≤768px) — default, matches :root values */
 @media (max-width: 768px) {
   :root {
-    --font-size-body:      18px;
-    --line-height-body:    28px;
+    --font-size-body:      16px;
+    --line-height-body:    24px;
     --font-size-caption:   14px;
     --line-height-caption: 20px;
   }
@@ -273,8 +310,8 @@ body, .body {
 /* Tablet (769px–1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   :root {
-    --font-size-body:      20px;
-    --line-height-body:    32px;
+    --font-size-body:      18px;
+    --line-height-body:    28px;
     --font-size-caption:   16px;
     --line-height-caption: 24px;
   }
@@ -288,8 +325,8 @@ body, .body {
 /* Desktop (1025px–1440px) */
 @media (min-width: 1025px) and (max-width: 1440px) {
   :root {
-    --font-size-body:      24px;
-    --line-height-body:    36px;
+    --font-size-body:      20px;
+    --line-height-body:    32px;
     --font-size-caption:   18px;
     --line-height-caption: 28px;
   }
@@ -303,8 +340,8 @@ body, .body {
 /* Large Desktop (>1440px) */
 @media (min-width: 1441px) {
   :root {
-    --font-size-body:      28px;
-    --line-height-body:    40px;
+    --font-size-body:      24px;
+    --line-height-body:    36px;
     --font-size-caption:   20px;
     --line-height-caption: 32px;
   }
@@ -350,4 +387,15 @@ body, .body {
 [class*="animate-slideOutMenuMobile"]::-webkit-scrollbar-thumb {
   background-color: var(--color-primary-inverse);
   border-radius: 4px;
+}
+body.intro-active nav,
+body.intro-active footer {
+  visibility: hidden;
+}
+
+body.intro-active.show-nav-logo nav {
+  visibility: visible;
+}
+body.intro-active.show-nav-logo .nav-hamburger-wrap {
+  visibility: hidden;
 }

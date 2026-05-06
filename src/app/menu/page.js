@@ -2,8 +2,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import useMobileDetection from '@/_utilities/useMobileDetection'
-import MenuButton from '@/components/HamburgerNav/MenuButton'
-import Button from '@/components/Button'
+import { MenuButton, Button } from '@/components/Buttons'
 import JumpingAnimation from '@/components/HamburgerNav/JumpingAnimation'
 
 export default function MenuPage() {
@@ -68,7 +67,7 @@ export default function MenuPage() {
   const handleGetToKnowMe = () => {
     setIsAnimatingOut(true)
     setTimeout(() => {
-      router.push('/bio')
+      router.push('/me')
     }, isMobile ? 640 : 1000)
   }
 

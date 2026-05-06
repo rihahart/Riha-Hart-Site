@@ -13,7 +13,7 @@ const getScreenSize = (width) => {
 export default function useMobileDetection() {
   const windowWidth = useWindowWidth();
   const [screenSize, setScreenSize] = useState(() =>
-    typeof window !== "undefined" ? getScreenSize(window.innerWidth) : 'mobile'
+    typeof window !== 'undefined' ? getScreenSize(window.innerWidth) : 'desktop'
   );
 
   useEffect(() => {

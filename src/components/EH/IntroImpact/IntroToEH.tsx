@@ -3,7 +3,7 @@
 import React from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 import { introToEH } from "@/data/EH/introToEH"
-import Button from "@/components/Button"
+import { Button } from "@/components/Buttons"
 
 export default function IntroToEH() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
