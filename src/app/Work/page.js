@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import gsap from "gsap"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import { NavButton } from "@/components/Buttons"
+import { NavButton, MenuButton } from "@/components/Buttons"
 
 let _fromHP = false
 let _activeTicker = null
@@ -48,6 +48,7 @@ export default function ProjectPage() {
   const mountedRef     = useRef(false)
   const activeFrameRef = useRef(null)
   const navTransRef    = useRef(false)
+  const knowMeRef      = useRef(null)
 
   useEffect(() => {
     const alreadyReloaded = sessionStorage.getItem("work-reloaded-once") === "1"
@@ -149,6 +150,7 @@ export default function ProjectPage() {
           function bobble() {
             const t = gsap.ticker.time - start
             words.forEach((w, i) => gsap.set(w, { y: Math.sin(t * 2 + i * 0.8) * 3 }))
+            if (knowMeRef.current) gsap.set(knowMeRef.current, { y: Math.sin(t * 2 + words.length * 0.8) * 3 })
           }
           gsap.ticker.add(bobble)
           tickerRef.current = bobble
@@ -190,6 +192,7 @@ export default function ProjectPage() {
         function bobble() {
           const t = gsap.ticker.time - start
           words.forEach((w, i) => gsap.set(w, { y: Math.sin(t * 2 + i * 0.8) * 3 }))
+          if (knowMeRef.current) gsap.set(knowMeRef.current, { y: Math.sin(t * 2 + words.length * 0.8) * 3 })
         }
         gsap.ticker.add(bobble)
         tickerRef.current = bobble
@@ -388,6 +391,9 @@ export default function ProjectPage() {
 
     <div className="reel-nav" ref={navRef} style={{ opacity: 0 }}>
       <NavButton onClick={prev} direction="up" alt="Previous" />
+      <span ref={knowMeRef} style={{ display: "inline-block" }}>
+        <MenuButton text="Get to know me" onClick={() => router.push("/me")} inverted={true} className="menu-button--desktop" />
+      </span>
       <NavButton onClick={next} direction="down" alt="Next" />
     </div>
   </div>
@@ -423,6 +429,9 @@ export default function ProjectPage() {
           </div>
           <div className="reel-nav" ref={navRef} style={{ opacity: 0 }}>
             <NavButton onClick={prev} direction="up" alt="Previous" />
+            <span ref={knowMeRef} style={{ display: "inline-block" }}>
+        <MenuButton text="Get to know me" onClick={() => router.push("/me")} inverted={true} className="menu-button--desktop" />
+      </span>
             <NavButton onClick={next} direction="down" alt="Next" />
           </div>
         </div>

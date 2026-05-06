@@ -87,8 +87,8 @@ const Navigation = () => {
     return () => window.removeEventListener("nav-hide", handler)
   }, [])
 
-  const isHomepage = pathname === "/" || pathname === "/Work" || pathname === "/me"
-  const isLightNav = pathname === "/everest-federal-credit-union" || pathname === "/earthhero" || pathname === "/iklass" || pathname === "/jh-mural-project"
+  const isHomepage = pathname === "/" || pathname === "/Work" || pathname === "/me" || pathname === "/everest-federal-credit-union" || pathname === "/iklass" || pathname === "/earthhero" || pathname === "/jh-mural-project"
+  const isLightNav = false
   const hideClass = hideOnZoom ? "duration-75" : "duration-300"
   const shouldHide = fanActive || (hideOnScroll && pathname !== "/Work") || hideOnZoom
   const navClass   = `w-full fixed top-0 left-0 z-50 transition-transform ${hideClass} ease-in-out ${isScrolled && pathname !== "/Work" ? "shadow-md" : ""} ${shouldHide ? "-translate-y-full" : "translate-y-0"}`

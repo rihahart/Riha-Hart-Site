@@ -72,32 +72,58 @@ export default function Bio() {
     const paras = Array.from(document.querySelectorAll(".me-para"))
     if (!headingChars.length && !paras.length) return
 
+    let ticker = null
+    const btns = Array.from(document.querySelectorAll(".me-btns"))
     const tl = gsap.timeline({ delay: 0.05 })
 
     if (headingChars.length) {
       tl.fromTo(
         headingChars,
         { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: "power3.out", stagger: 0.012 }
+        {
+          y: 0, opacity: 1, duration: 0.5, ease: "power3.out", stagger: 0.012,
+          onComplete() {
+            const start = gsap.ticker.time
+            ticker = gsap.ticker.add(() => {
+              const t = gsap.ticker.time - start
+              headingChars.forEach((ch, i) => gsap.set(ch, { y: Math.sin(t * 2 + i * 0.4) * 3 }))
+            })
+          }
+        }
       )
     }
+
+    const isDesktop = !isMobile && !isTablet
 
     if (paras.length) {
       tl.fromTo(
         paras,
         { y: 0, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.04, ease: "power2.out" },
+        isDesktop ? "-=0.35" : undefined
       )
     }
 
-    return () => tl.kill()
+    if (btns.length) {
+      tl.fromTo(
+        btns,
+        { y: 0, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.04, ease: "power2.out" },
+        isDesktop ? "-=0.35" : undefined
+      )
+    }
+
+    return () => {
+      tl.kill()
+      if (ticker) gsap.ticker.remove(ticker)
+    }
   }, [mounted, isMobile, isTablet, isDesktop1440px])
 
   // Mobile (≤768px) — also default before mount to avoid SSR flash
   if (!mounted || isMobile) {
     return (
       <>
-        <style>{`.me-char { opacity: 0; } .me-para { opacity: 0; }`}</style>
+        <style>{`.me-char { opacity: 0; } .me-para { opacity: 0; } .me-btns { opacity: 0; }`}</style>
         <div className="w-full flex flex-col items-center px-[var(--spacing-lg)] pt-[var(--spacing-lg)] pb-[var(--spacing-8xl)] gap-[var(--spacing-xl)]" style={{ minHeight: "100vh" }}>
           <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-2xl)]">
             <RihaPhotos className="w-full" />
@@ -111,7 +137,7 @@ export default function Bio() {
                 </p>
               ))}
             </div>
-             <div className="flex items-start w-full mt-[var(--spacing-xl)] gap-[var(--spacing-xl)] ">
+             <div className="me-btns flex items-start w-full mt-[var(--spacing-xl)] gap-[var(--spacing-xl)] ">
                 <Button text="Email" onClick={handleEmailClick} variant="primary" />
                 <Button text="LinkedIn" onClick={handleLinkedInClick} variant="primary" />
                 <Button text="Instagram" onClick={handleInstagramClick} variant="primary" />
@@ -126,7 +152,7 @@ export default function Bio() {
   if (isTablet) {
     return (
       <>
-        <style>{`.me-char { opacity: 0; } .me-para { opacity: 0; }`}</style>
+        <style>{`.me-char { opacity: 0; } .me-para { opacity: 0; } .me-btns { opacity: 0; }`}</style>
         <div className="flex flex-col items-center px-[var(--spacing-2xl)] pt-[var(--spacing-2xl)] pb-[var(--spacing-10xl)] gap-[var(--spacing-4xl)] w-full mx-auto" style={{ minHeight: "100vh" }}>
           <div className="w-full flex flex-col items-center justify-center gap-[var(--spacing-4xl)]">
             <RihaPhotos className="w-full" />
@@ -139,7 +165,7 @@ export default function Bio() {
                   {paragraph}
                 </p>
               ))}
-              <div className="flex items-start w-full mt-[var(--spacing-xl)] gap-[var(--spacing-xl)] ">
+              <div className="me-btns flex items-start w-full mt-[var(--spacing-xl)] gap-[var(--spacing-xl)] ">
                 <Button text="Email" onClick={handleEmailClick} variant="primary" />
                 <Button text="LinkedIn" onClick={handleLinkedInClick} variant="primary" />
                 <Button text="Instagram" onClick={handleInstagramClick} variant="primary" />
@@ -156,7 +182,7 @@ export default function Bio() {
   if (isDesktop1440px) {
     return (
       <>
-        <style>{`.me-char { opacity: 0; } .me-para { opacity: 0; }`}</style>
+        <style>{`.me-char { opacity: 0; } .me-para { opacity: 0; } .me-btns { opacity: 0; }`}</style>
         <div className="flex flex-col items-center pt-[var(--spacing-3xl)] w-full max-w-[1600px] mx-auto">
           <div className="w-full flex items-center justify-center px-[var(--spacing-xl)] gap-[var(--spacing-xl)]">
             <RihaPhotos className="w-[50%]" />
@@ -169,7 +195,7 @@ export default function Bio() {
                   {paragraph}
                 </p>
               ))}
-               <div className="flex items-start mt-[var(--spacing-xl)] gap-[var(--spacing-lg)] ">
+               <div className="me-btns flex items-start mt-[var(--spacing-xl)] gap-[var(--spacing-lg)] ">
                 <Button text="Email" onClick={handleEmailClick} variant="primary" />
                 <Button text="LinkedIn" onClick={handleLinkedInClick} variant="primary" />
                 <Button text="Instagram" onClick={handleInstagramClick} variant="primary" />
@@ -184,7 +210,7 @@ export default function Bio() {
   // Large Desktop (>1440px)
   return (
     <>
-      <style>{`.me-char { opacity: 0; } .me-para { opacity: 0; }`}</style>
+      <style>{`.me-char { opacity: 0; } .me-para { opacity: 0; } .me-btns { opacity: 0; }`}</style>
       <div className="flex flex-col items-center pt-[var(--spacing-3xl)] w-full max-w-[1600px] mx-auto">
         <div className="w-full flex items-center justify-center gap-[var(--spacing-xl)]">
           <RihaPhotos className="w-[50%]" />
@@ -198,7 +224,7 @@ export default function Bio() {
               </p>
             ))}
         
-              <div className="flex items-start mt-[var(--spacing-xl)] gap-[var(--spacing-lg)] ">
+              <div className="me-btns flex items-start mt-[var(--spacing-xl)] gap-[var(--spacing-lg)] ">
                 <Button text="Email" onClick={handleEmailClick} variant="primary" />
                 <Button text="LinkedIn" onClick={handleLinkedInClick} variant="primary" />
                 <Button text="Instagram" onClick={handleInstagramClick} variant="primary" />
