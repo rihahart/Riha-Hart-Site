@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useState, useEffect, useRef } from "react"
@@ -48,7 +49,22 @@ export default function ProjectPage() {
   const activeFrameRef = useRef(null)
   const navTransRef    = useRef(false)
 
-  useEffect(() => { setWindowWidth(window.innerWidth); setMounted(true) }, [])
+  useEffect(() => {
+    const perfNav = performance.getEntriesByType?.("navigation")?.[0]
+    const isHardReload = perfNav?.type === "reload"
+    const alreadyReloaded = sessionStorage.getItem("work-reloaded-once") === "1"
+
+    if (!isHardReload && !alreadyReloaded) {
+      sessionStorage.setItem("work-reloaded-once", "1")
+      sessionStorage.removeItem("fromHomepage")
+      window.location.reload()
+      return
+    }
+
+    sessionStorage.removeItem("work-reloaded-once")
+    setWindowWidth(window.innerWidth)
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     window.scrollTo(0, 0)

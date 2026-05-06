@@ -281,7 +281,7 @@ const text = (
                letterSpacing: "0.3px",
                cursor: "pointer" }}
     >
-      <span className="h4">Scroll or click to see my work</span>
+      <span className="h4">Scroll to see my work</span>
       <Image src="/Icons/Heart/HeartLarge.svg" alt="" width={38} height={30} style={{ ...heartStyle, height: "clamp(18px, 2.2vw, 30px)", width: "auto" }} />
       <Image src="/Icons/Heart/HeartLarge.svg" alt="" width={38} height={30} style={{ ...heartStyle, height: "clamp(18px, 2.2vw, 30px)", width: "auto" }} />
       <Image src="/Icons/Heart/HeartLarge.svg" alt="" width={38} height={30} style={{ ...heartStyle, height: "clamp(18px, 2.2vw, 30px)", width: "auto" }} />
