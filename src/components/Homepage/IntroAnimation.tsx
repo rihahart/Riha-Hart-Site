@@ -2,7 +2,6 @@
 
 import { useEffect } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
-import ReEducationAnimation from "./GetToKnowMe/Re-educationAnimation"
 
 export default function IntroAnimation({ onDone }: { onDone?: () => void }) {
     const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
@@ -37,7 +36,6 @@ export default function IntroAnimation({ onDone }: { onDone?: () => void }) {
                 }
             `}</style>
             <div className="intro-wrap" style={{ '--intro-content-width': contentWidth } as React.CSSProperties}>
-                <ReEducationAnimation onComplete={onDone} />
             </div>
         </>
     )
