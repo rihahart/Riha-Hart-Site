@@ -18,18 +18,18 @@ export default function IntroToEH() {
       <div className="w-full flex justify-center align-center">
         <div className="flex flex-col items-start justify-center gap-[var(--spacing-xl)] py-[var(--spacing-xl)]">
           <div className="inline-block">
-            <h2 className="h1 text-[var(--color-primary)] inline-block">
+            <h2 className="h1 text-[var(--color-primary-inverse)] inline-block">
               {introToEH.heading}
             </h2>
-            <p className="h4 text-[var(--color-secondary)] mt-[var(--spacing-xs)]">
+            <p className="h4 text-[var(--color-primary-inverse)] mt-[var(--spacing-xs)]">
               {introToEH.subtitle}
             </p>
           </div>
           <div className="flex flex-col gap-[var(--spacing-s)]">
-            <p className="body text-[var(--color-primary)]">
+            <p className="body text-[var(--color-primary-inverse)]">
               {introToEH.body}
             </p>
-            <p className="body text-[var(--color-primary)]">
+            <p className="body text-[var(--color-primary-inverse)]">
               {introToEH.body2}
             </p>
           </div>
@@ -49,18 +49,18 @@ export default function IntroToEH() {
       <div className="flex w-full align-center justify-center">
         <div className="flex flex-col items-start justify-center gap-[var(--spacing-2xl)] py-[var(--spacing-2xl)] px-[var(--spacing-2xl)]">
           <div className="inline-block">
-            <h2 className="h1 text-[var(--color-primary)] inline-block">
+            <h2 className="h1 text-[var(--color-primary-inverse)] inline-block">
               {introToEH.heading}
             </h2>
-            <p className="h4 text-[var(--color-secondary)] mt-[var(--spacing-s)]">
+            <p className="h4 text-[var(--color-primary-inverse)] mt-[var(--spacing-s)]">
               {introToEH.subtitle}
             </p>
           </div>
           <div className="flex flex-col gap-[var(--spacing-s)]">
-            <p className="body text-[var(--color-primary)]">
+            <p className="body text-[var(--color-primary-inverse)]">
               {introToEH.body}
             </p>
-            <p className="body text-[var(--color-primary)]">
+            <p className="body text-[var(--color-primary-inverse)]">
               {introToEH.body2}
             </p>
           </div>
@@ -80,18 +80,18 @@ export default function IntroToEH() {
       <div className="w-full flex justify-end">
         <div className="flex flex-col items-start justify-center w-[700px] p-[var(--spacing-lg)] gap-[var(--spacing-lg)]">
           <div className="flex flex-col items-start justify-center gap-[var(--spacing-xs)]">
-            <h2 className="h1 text-[var(--color-primary)]">
+            <h2 className="h1 text-[var(--color-primary-inverse)] textshadow">
               {introToEH.heading}
             </h2>
-            <p className="h4 text-[var(--color-secondary)]">
+            <p className="h4 text-[var(--color-primary-inverse)]">
               {introToEH.subtitle}
             </p>
           </div>
           <div className="flex flex-col gap-[var(--spacing-s)]">
-            <p className="body text-[var(--color-primary)]">
+            <p className="body text-[var(--color-primary-inverse)]">
               {introToEH.body}
             </p>
-            <p className="body text-[var(--color-primary)]">
+            <p className="body text-[var(--color-primary-inverse)]">
               {introToEH.body2}
             </p>
           </div>
