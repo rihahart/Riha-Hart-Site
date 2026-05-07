@@ -21,7 +21,7 @@ export default function ResearchPhotos({ onNavigate, currentIndex, total }: Prop
         style={{
           backgroundColor: "#FDFFFE",
           borderLeft: "4px solid #1c4483",
-          boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
+          boxShadow: "var(--glow-shadow)",
           height: "450px"
         }}
       >
@@ -69,7 +69,7 @@ export default function ResearchPhotos({ onNavigate, currentIndex, total }: Prop
         style={{
           backgroundColor: "#FDFFFE",
           borderLeft: "6px solid #1c4483",
-          boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
+          boxShadow: "var(--glow-shadow)",
           height: "500px"
         }}
       >
@@ -123,7 +123,7 @@ export default function ResearchPhotos({ onNavigate, currentIndex, total }: Prop
         style={{
           backgroundColor: "#FDFFFE",
           borderLeft: "6px solid #1c4483",
-          boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
+          boxShadow: "var(--glow-shadow)",
           height: "550px"
         }}
       >
@@ -176,7 +176,7 @@ export default function ResearchPhotos({ onNavigate, currentIndex, total }: Prop
       style={{
         backgroundColor: "#FDFFFE",
         borderLeft: "8px solid #1c4483",
-        boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
+        boxShadow: "var(--glow-shadow)",
         height: "650px"
       }}
     >

@@ -18,14 +18,14 @@ export default function IntroToEFCU() {
             <div className="w-full flex justify-center align-center">
                 <div className="flex flex-col items-start justify-center gap-[var(--spacing-xl)] py-[var(--spacing-xl)]">
                     <div className="inline-block">
-                        <h2 className="h1 text-[var(--color-primary)] inline-block">
+                        <h2 className="h1 inline-block textshadow">
                             {introToEFCU.heading}
                         </h2>
-                        <p className="h4 text-[var(--color-secondary)] mt-[var(--spacing-xs)]">
+                        <p className="h4 text-[var(--color-secondary-inverse)] mt-[var(--spacing-xs)]">
                             {introToEFCU.subtitle}
                         </p>
                     </div>
-                    <p className="body text-[var(--color-primary)]">
+                    <p className="body text-[var(--color-primary-inverse)]">
                         {introToEFCU.body}
                     </p>
                     <Button
@@ -44,14 +44,14 @@ export default function IntroToEFCU() {
             <div className="flex w-full align-center justify-center">
                 <div className="flex flex-col items-start justify-center gap-[var(--spacing-2xl)] py-[var(--spacing-2xl) px-[var(--spacing-2xl)]">
                     <div className="inline-block">
-                        <h2 className="h1 text-[var(--color-primary)] inline-block">
+                        <h2 className="h1 inline-block textshadow">
                             {introToEFCU.heading}
                         </h2>
-                        <p className="h4 text-[var(--color-secondary)] mt-[var(--spacing-s)]">
+                        <p className="h4 text-[var(--color-secondary-inverse)] mt-[var(--spacing-s)]">
                             {introToEFCU.subtitle}
                         </p>
                     </div>
-                    <p className="body text-[var(--color-primary)]">
+                    <p className="body text-[var(--color-primary-inverse)]">
                         {introToEFCU.body}
                     </p>
                     <Button
@@ -70,14 +70,14 @@ export default function IntroToEFCU() {
             <div className="w-full flex justify-end">
                 <div className="flex flex-col items-start justify-center w-[800px] min-w-[800px] shrink-0 p-[var(--spacing-lg)] gap-[var(--spacing-lg)]">
                     <div className="flex flex-col items-start justify-center gap-[var(--spacing-xs)]">
-                        <h2 className="h1 text-[var(--color-primary)]">
+                        <h2 className="h1 text-[var(--color-primary-inverse)] textshadow">
                             {introToEFCU.heading}
                         </h2>
-                        <p className="h4 text-[var(--color-secondary)]">
+                        <p className="h4 text-[var(--color-secondary-inverse)]">
                             {introToEFCU.subtitle}
                         </p>
                     </div>
-                    <p className="body text-[var(--color-primary)]">
+                    <p className="body text-[var(--color-primary-inverse)]">
                         {introToEFCU.body}
                     </p>
                     <Button
@@ -95,14 +95,14 @@ export default function IntroToEFCU() {
         <div className="w-full flex justify-end">
             <div className="flex flex-col items-start justify-center w-[1000px] min-w-[1000px] shrink-0 p-[var(--spacing-lg)] gap-[var(--spacing-lg)]">
                 <div className="flex flex-col items-start justify-center gap-[var(--spacing-xs)]">
-                    <h2 className="h1 text-[var(--color-primary)]">
+                    <h2 className="h1 text-[var(--color-primary-inverse)] textshadow">
                         {introToEFCU.heading}
                     </h2>
-                    <p className="h4 text-[var(--color-secondary)]">
+                    <p className="h4 text-[var(--color-secondary-inverse)]">
                         {introToEFCU.subtitle}
                     </p>
                 </div>
-                <p className="body text-[var(--color-primary)]">
+                <p className="body text-[var(--color-primary-inverse)]">
                     {introToEFCU.body}
                 </p>
                 <Button

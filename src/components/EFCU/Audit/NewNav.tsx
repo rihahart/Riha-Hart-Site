@@ -6,7 +6,7 @@ export default function NewNav() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
 
   const heading = (
-    <h3 className="h3 text-[var(--color-primary)]">
+    <h3 className="h3 text-[var(--color-primary-inverse)] textshadow">
       so for the NEW NAVIGATION, I clarified MEMBERSHIP and repositioned LOANS
     </h3>
   )
@@ -19,6 +19,7 @@ export default function NewNav() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[50px] h-auto pl-[var(--spacing-s)] md:translate-x-0 md:scale-x-100"
           />
         </div>
@@ -26,12 +27,13 @@ export default function NewNav() {
             <img src="/EFCU/NewNav.png" alt="New navigation layout" className="w-full max-h-[350px] object-contain" />
           </div>
            <div className="flex w-full flex-col items-end gap-[var(--spacing-m)]">
-        <h3 className="h3 text-[var(--color-primary)] pt-[var(--spacing-2xl)]">
+        <h3 className="h3 text-[var(--color-primary-inverse)] textshadow pt-[var(--spacing-2xl)]">
          The foundation is set. Time to design the EVEREST EXPERIENCE
         </h3>
         <img
             src="/EFCU/ClarifyingNavAnimation/ArrowDown.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="h-[70px] w-auto scale-x-[-1] px-[var(--spacing-8xl)] mt-[-10px]"
           />
         </div>
@@ -48,18 +50,20 @@ export default function NewNav() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[75px] h-auto] "
           />
           <div className="w-full flex justify-start">
                 <img src="/EFCU/NewNav.png" alt="New navigation layout" className="w-full pl-[var(--spacing-8xl)] mt-[-60px] max-h-[300px] object-contain" />
           </div>
            <div className="flex w-full flex-col items-end gap-[var(--spacing-m)]">
-        <h3 className="h3 text-[var(--color-primary)] pt-[var(--spacing-2xl)]">
+        <h3 className="h3 text-[var(--color-primary-inverse)] textshadow pt-[var(--spacing-2xl)]">
           The foundation is set. Time to design the EVEREST EXPERIENCE
         </h3>
         <img
             src="/EFCU/ClarifyingNavAnimation/ArrowDown.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-auto h-[100px] scale-x-[-1] mt-[-10px]"
           />
         </div>
@@ -77,6 +81,7 @@ export default function NewNav() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[115px] h-auto pl-[var(--spacing-s)] scale-x-[-1] md:scale-x-100"
           />
         </div>
@@ -84,12 +89,13 @@ export default function NewNav() {
           <img src="/EFCU/NewNav.png" alt="New navigation layout" className="w-full pl-[var(--spacing-8xl)] mt-[-40px] max-h-[345px] object-contain" />
         </div>
       <div className="flex flex-col w-full items-end justify-end gap-[var(--spacing-lg)] pt-[var(--spacing-8xl)]">
-      <h3 className="h3 text-[var(--color-primary)] ">
+      <h3 className="h3 text-[var(--color-primary-inverse)] textshadow">
         The foundation is set. Time to design the EVEREST EXPERIENCE
       </h3>
           <img
             src="/EFCU/ClarifyingNavAnimation/ArrowDown.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[60px] h-auto scale-x-[-1] pr-[var(--spacing-xl)] mt-[-10px]"
           />
 
@@ -105,6 +111,7 @@ export default function NewNav() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[140px] h-auto pl-[var(--spacing-s)] scale-x-[-1] md:scale-x-100"
           />
         </div>
@@ -112,12 +119,13 @@ export default function NewNav() {
           <img src="/EFCU/NewNav.png" alt="New navigation layout" className="w-full pl-[var(--spacing-8xl)] mt-[-40px] max-h-[425px] object-contain" />
         </div>
       <div className="flex flex-col w-full items-end justify-end gap-[var(--spacing-lg)] pt-[var(--spacing-8xl)]">
-      <h3 className="h3 text-[var(--color-primary)] ">
+      <h3 className="h3 text-[var(--color-primary-inverse)] textshadow">
         The foundation is set. Time to design the EVEREST EXPERIENCE
       </h3>
           <img
             src="/EFCU/ClarifyingNavAnimation/ArrowDown.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[75px] h-auto scale-x-[-1] pr-[var(--spacing-xl)] mt-[-10px]"
           />
           

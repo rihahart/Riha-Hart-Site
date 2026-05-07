@@ -4,11 +4,11 @@ import React, { useState, useEffect } from "react"
 import useMobileDetection from "@/_utilities/useMobileDetection"
 
 
-const heading = <h2 className="h3 text-[var(--color-primary)]  uppercase">Clarifying Membership</h2>
+const heading = <h2 className="h3 text-[var(--color-primary-inverse)]  uppercase">Clarifying Membership</h2>
 
 
 
-const ul = <ul className="list-none caption text-[var(--color-primary)] uppercase flex flex-col gap-[var(--spacing-m)]">
+const ul = <ul className="list-none caption text-[var(--color-primary-inverse)]  uppercase flex flex-col gap-[var(--spacing-m)]">
     <li>Explains membership and how to apply</li>
     <li>Eligibility and document requirements clearly stated</li>
     <li>Highlights membership benefits and available services</li>
@@ -28,6 +28,7 @@ export default function ClarifyingMembership() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+             style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[50px] h-auto pl-[var(--spacing-s)] scale-x-[-1] rotate-[-80.16deg] translate-x-[200px] mt-[-25px] "
           />
         </div>
@@ -42,6 +43,7 @@ export default function ClarifyingMembership() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png "
             alt="arrow"
+             style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[50px] h-auto"
           />
           <div className="w-full flex justify-end items-center">
@@ -71,6 +73,7 @@ export default function ClarifyingMembership() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+             style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[75px] h-auto pl-[var(--spacing-s)] scale-x-[-1] rotate-[-80.16deg] translate-x-[280px] mt-[-25px] "
           />
         </div>
@@ -78,6 +81,7 @@ export default function ClarifyingMembership() {
           <img
             src="/EFCU/Applications/ClarifyingMembership/LoanClarification.png"
             alt="loan clarification"
+            
             className="w-full h-auto"
           />
         </div>
@@ -85,6 +89,7 @@ export default function ClarifyingMembership() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png "
             alt="arrow"
+             style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[75px] h-auto"
           />
           <div className="w-full flex justify-end items-center mt-[-20px]">
@@ -113,6 +118,7 @@ export default function ClarifyingMembership() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+             style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[100px] h-auto pl-[var(--spacing-sm)] scale-x-[-1] md:scale-x-100"
           />
         </div>
@@ -135,6 +141,7 @@ export default function ClarifyingMembership() {
             <img
               src="/EFCU/ClarifyingNavAnimation/Arrow.png"
               alt="arrow"
+               style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
               className="w-[100px] h-auto scale-x-[-1] "
             />
             {ul}
@@ -166,6 +173,7 @@ export default function ClarifyingMembership() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+             style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[150px] pl-[var(--spacing-lg)] h-auto scale-x-[-1] md:scale-x-100"
           />
         </div>
@@ -188,6 +196,7 @@ export default function ClarifyingMembership() {
             <img
               src="/EFCU/ClarifyingNavAnimation/Arrow.png"
               alt="arrow"
+               style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
               className="w-[115px] h-auto scale-x-[-1]  mb-[120px] "
             />
             {ul}

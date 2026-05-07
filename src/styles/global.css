@@ -18,6 +18,7 @@ body {
 
 :root {
 --accent-glow: #FDF7E6;
+--glow-shadow: 0 0 12px color-mix(in srgb, var(--accent-glow) 15%, transparent), 0 0 4px color-mix(in srgb, var(--accent-glow) 5%, transparent);
 
   --nav-h: 84px;
   /* Letter Spacing */
@@ -398,4 +399,18 @@ body.intro-active.show-nav-logo nav {
 }
 body.intro-active.show-nav-logo .nav-hamburger-wrap {
   visibility: hidden;
+}
+
+.lineshadow {
+  border: 2px solid var(--accent-glow);
+  box-shadow: 0 0 24px rgba(253,247,230,0.2), 0 0 48px rgba(253,247,230,0.1);
+}
+
+.textshadow {
+  color: #FDF7E6;
+  text-shadow:
+    0 0 2px rgba(253, 247, 230, 0.591),
+    0 0 2px rgba(253,247,230,0.25),
+    0 0 0px rgba(222, 204, 204, 0.115),
+    0 0 0px rgba(248, 215, 220, 0.25);
 }

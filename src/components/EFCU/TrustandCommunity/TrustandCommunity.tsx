@@ -19,10 +19,10 @@ export default function TrustandCommunity() {
       <div className="w-full flex flex-col gap-[var(--spacing-6xl)] items-start">
         <div className="flex flex-col gap-[var(--spacing-3xl)]">
         <div className="flex flex-col gap-[var(--spacing-s)]">
-          <h3 className="h3 text-[var(--color-primary)]">{trust.title}</h3>
-          <p className="body text-[var(--color-primary)]">{trust.description}</p>
+          <h3 className="h3 text-[var(--color-primary-inverse)]">{trust.title}</h3>
+          <p className="body text-[var(--color-primary-inverse)]">{trust.description}</p>
         </div>
-        <div className="w-full flex items-center justify-center">
+        <div className="w-full flex items-center justify-center lineshadow">
           <video
             src="/EFCU/Branding/Before and After.mp4"
             ref={trustVideoRef}
@@ -37,9 +37,9 @@ export default function TrustandCommunity() {
         </div>
         <div className="flex flex-col gap-[var(--spacing-xl)]">
         <div className="flex flex-col gap-[var(--spacing-s)]">
-          <h3 className="h3 text-[var(--color-primary)]">{community.title}</h3>
+          <h3 className="h3 text-[var(--color-primary-inverse)]">{community.title}</h3>
           {communityParagraphs.map((para, i) => (
-            <p key={i} className="body text-[var(--color-primary)]">
+            <p key={i} className="body text-[var(--color-primary-inverse)]">
               {para}
             </p>
           ))}
@@ -57,8 +57,8 @@ export default function TrustandCommunity() {
         {/* Trust */}
         <div className="flex flex-col items-center gap-[var(--spacing-6xl)] w-full">
         <div className="flex flex-col gap-[var(--spacing-s)]">
-          <h3 className="h3 text-[var(--color-primary)]">{trust.title}</h3>
-          <p className="body text-[var(--color-primary)]">{trust.description}</p>
+          <h3 className="h3 text-[var(--color-primary-inverse)]">{trust.title}</h3>
+          <p className="body text-[var(--color-primary-inverse)]">{trust.description}</p>
         </div>
       
           <video
@@ -68,7 +68,7 @@ export default function TrustandCommunity() {
             muted
             playsInline
             loop
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain lineshadow"
             onLoadedMetadata={(e) => { e.currentTarget.playbackRate = 0.75 }}
           />
         </div>
@@ -76,9 +76,9 @@ export default function TrustandCommunity() {
         {/* Community */}
         <div className="flex flex-col gap-[var(--spacing-2xl)]">
         <div className="flex flex-col gap-[var(--spacing-s)]">
-          <h3 className="h3 text-[var(--color-primary)]">{community.title}</h3>
+          <h3 className="h3 text-[var(--color-primary-inverse)]">{community.title}</h3>
           {communityParagraphs.map((para, i) => (
-            <p key={i} className="body text-[var(--color-primary)]">
+            <p key={i} className="body text-[var(--color-primary-inverse)]">
               {para}
             </p>
           ))}
@@ -98,10 +98,10 @@ export default function TrustandCommunity() {
       {/* Trust */}
       <div className="flex items-center justify-between w-full">
       <div className="flex flex-col p-[var(--spacing-lg)] gap-[var(--spacing-s)] flex-[0_0_40%] justify-center">
-          <h3 className="h3 text-[var(--color-primary)]">{trust.title}</h3>
-          <p className="body text-[var(--color-primary)]">{trust.description}</p>
+          <h3 className="h3 text-[var(--color-primary-inverse)]">{trust.title}</h3>
+          <p className="body text-[var(--color-primary-inverse)]">{trust.description}</p>
         </div>
-        <div className="flex-[0_0_45%] min-w-0">
+        <div className="flex-[0_0_45%] min-w-0 lineshadow">
           <video
             src="/EFCU/Branding/Before and After.mp4"
             ref={trustVideoRef}
@@ -118,10 +118,10 @@ export default function TrustandCommunity() {
       {/* Community */}
     <div className="flex items-center justify-between w-full">
       <div className="flex flex-col p-[var(--spacing-lg)] gap-[var(--spacing-s)] flex-[0_0_40%] justify-center">
-        <h3 className="h3 text-[var(--color-primary)]">{community.title}</h3>
+        <h3 className="h3 text-[var(--color-primary-inverse)]">{community.title}</h3>
         <div className="flex flex-col gap-[var(--spacing-xs)]">
           {communityParagraphs.map((para, i) => (
-            <p key={i} className="body text-[var(--color-primary)]">
+            <p key={i} className="body text-[var(--color-primary-inverse)]">
               {para}
             </p>
           ))}
@@ -142,10 +142,10 @@ export default function TrustandCommunity() {
       {/* Trust */}
       <div className="flex items-center justify-between w-full">
       <div className="flex flex-col p-[var(--spacing-lg)]  gap-[var(--spacing-s)] flex-[0_0_40%] justify-center">
-          <h3 className="h3 text-[var(--color-primary)]">{trust.title}</h3>
-          <p className="body text-[var(--color-primary)]">{trust.description}</p>
+          <h3 className="h3 text-[var(--color-primary-inverse)]">{trust.title}</h3>
+          <p className="body text-[var(--color-primary-inverse)]">{trust.description}</p>
         </div>
-        <div className="flex-[0_0_45%] min-w-0">
+        <div className="flex-[0_0_45%] min-w-0 lineshadow">
           <video
             src="/EFCU/Branding/Before and After.mp4"
             ref={trustVideoRef}
@@ -162,10 +162,10 @@ export default function TrustandCommunity() {
       {/* Community */}
     <div className="flex items-center justify-between w-full">
       <div className="flex flex-col p-[var(--spacing-lg)] gap-[var(--spacing-s)] flex-[0_0_40%] justify-center">
-        <h3 className="h3 text-[var(--color-primary)]">{community.title}</h3>
+        <h3 className="h3 text-[var(--color-primary-inverse)]">{community.title}</h3>
         <div className="flex flex-col gap-[var(--spacing-xs)]">
           {communityParagraphs.map((para, i) => (
-            <p key={i} className="body text-[var(--color-primary)]">
+            <p key={i} className="body text-[var(--color-primary-inverse)]">
               {para}
             </p>
           ))}

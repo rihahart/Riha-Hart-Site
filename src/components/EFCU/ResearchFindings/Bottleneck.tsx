@@ -164,7 +164,7 @@ export default function Bottleneck() {
                 key={i}
                 className="body text-[var(--color-primary)] font-bold uppercase flex items-center gap-[var(--spacing-s)]"
               >
-                <span className="Icon--ArrowRight--L Icon--1c4483" aria-hidden />
+                <span className="Icon--ArrowRight--M Icon--1c4483" aria-hidden />
                 {item}
               </li>
             ))}

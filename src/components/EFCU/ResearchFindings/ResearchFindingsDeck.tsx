@@ -30,8 +30,9 @@ export default function ResearchFindingsDeck() {
           <div
             key={i}
             style={{
-              border: isActive ? "2px solid #1C4483" : "2px solid transparent",
-              padding: "var(--spacing-xs)",
+              border: isActive ? "2px solid var(--color-primary-inverse) " : "2px solid transparent",
+              boxShadow: isActive ? "var(--glow-shadow)" : "none",
+              padding: "var(--spacing-s)",
             }}
           >
             <button
@@ -41,7 +42,7 @@ export default function ResearchFindingsDeck() {
               style={{
                 backgroundColor: "#FFC700",
                 padding: "var(--spacing-m)",
-                boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
+                boxShadow: "var(--glow-shadow)",
               }}
             >
               <img
@@ -64,7 +65,8 @@ export default function ResearchFindingsDeck() {
           <div
             key={i}
             style={{
-              border: isActive ? "2px solid #1C4483" : "2px solid transparent",
+              border: isActive ? "2px solid var(--color-primary-inverse) " : "2px solid transparent",
+              boxShadow: isActive ? "var(--glow-shadow)" : "none",
               padding: "var(--spacing-xs)",
             }}
           >
@@ -75,7 +77,7 @@ export default function ResearchFindingsDeck() {
               style={{
                 backgroundColor: "#FFC700",
                 padding: "var(--spacing-m)",
-                boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
+                boxShadow: "var(--glow-shadow)",
               }}
             >
               <img
@@ -106,10 +108,10 @@ export default function ResearchFindingsDeck() {
           aria-hidden
         />
         <div className="flex flex-col gap-[var(--spacing-s)]">
-          <h2 className="h2 text-[var(--color-primary)] uppercase">
+          <h2 className="h2 uppercase textshadow">
             {OVERLAY_HEADING}
           </h2>
-          <p className="body text-[var(--color-primary)]">
+          <p className="body text-[var(--color-primary-inverse)]">
             {OVERLAY_BODY}
           </p>
         </div>

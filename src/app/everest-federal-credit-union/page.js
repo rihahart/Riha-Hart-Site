@@ -23,13 +23,25 @@ export default function EverestFederalCreditUnion() {
 
   useEffect(() => { window.dispatchEvent(new CustomEvent("case-study-ready")) }, [])
 
+  useEffect(() => {
+    const bg = "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\"), radial-gradient(ellipse 100% 70% at 50% 100%, rgba(28,68,131,0.8) 0%, transparent 90%), linear-gradient(180deg, #0a0a0a 0%, #1C4483 15%, #1C4483 80%, #3B558E 100%)"
+    document.body.style.background = bg
+    document.body.style.backgroundBlendMode = "overlay, normal, normal"
+    document.body.style.backgroundSize = "200px 200px, 100% 100%, 100% 100%"
+    return () => {
+      document.body.style.background = ""
+      document.body.style.backgroundBlendMode = ""
+      document.body.style.backgroundSize = ""
+    }
+  }, [])
+
   useVideoReplay(everestVideoRef)
   useVideoReplay(brandingVideoRef)
 
   // Mobile (≤768px)
   if (isMobile) {
     return (
-      <div className="flex flex-col items-center w-full mx-auto bg-[var(--color-primary-inverse)] min-h-screen">
+      <div className="flex flex-col items-center w-full mx-auto min-h-screen">
       <div className="flex flex-col items-center w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-lg)]">
           <video
@@ -39,7 +51,7 @@ export default function EverestFederalCreditUnion() {
             muted
             playsInline
             loop
-            className="w-full h-full object-contain "
+            className="w-full h-full object-contain lineshadow"
           />
           <IntroToEFCU />
         </div>
@@ -83,14 +95,14 @@ export default function EverestFederalCreditUnion() {
   // Tablet (769px - 1024px)
   if (isTablet) {
     return (
-      <div className="flex flex-col items-center w-full mx-auto bg-[var(--color-primary-inverse)] min-h-screen">
+      <div className="flex flex-col items-center w-full mx-auto min-h-screen">
       <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-6xl)] gap-[var(--spacing-6xl)] mx-auto">
         <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
           <video
             src="/EFCU/Everest FCU.mp4"
             ref={everestVideoRef}
             autoPlay
-            muted 
+            muted
             playsInline
             loop
             className="w-full h-full object-contain"
@@ -114,7 +126,7 @@ export default function EverestFederalCreditUnion() {
         <video
               src="/EFCU/BrandingVideo.mp4"
               ref={brandingVideoRef}
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover "
               muted
               playsInline
               autoPlay
@@ -144,7 +156,7 @@ export default function EverestFederalCreditUnion() {
   if (isDesktop1440px) {
     return (
 
-  <div className="flex flex-col items-center w-full mx-auto bg-[var(--color-primary-inverse)] min-h-screen">
+  <div className="flex flex-col items-center w-full mx-auto min-h-screen">
 
     {/* div starts here*/}
       <div className="flex flex-col items-center w-full px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-6xl)] gap-[var(--spacing-6xl)] mx-auto">
@@ -156,7 +168,7 @@ export default function EverestFederalCreditUnion() {
             muted
             playsInline
             loop
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain lineshadow"
           />
           <IntroToEFCU />
         </div>  
@@ -210,7 +222,7 @@ export default function EverestFederalCreditUnion() {
 
   // Large Desktop (>1440px)
   return (
-    <div className="flex flex-col items-center w-full bg-[var(--color-primary-inverse)]  mx-auto">
+    <div className="flex flex-col items-center w-full mx-auto">
     <div className="max-w-[1600px] flex flex-col items-center mx-auto px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-8xl)] gap-[var(--spacing-8xl)]">
       <div className="flex flex-col items-center justify-center h-full w-full gap-[var(--spacing-3xl)]">
         <video
@@ -221,6 +233,7 @@ export default function EverestFederalCreditUnion() {
           playsInline
           loop
           className="w-full h-full object-contain"
+          style={{ border: "2px solid var(--accent-glow)", boxShadow: "0 0 24px rgba(253,247,230,0.2), 0 0 48px rgba(253,247,230,0.1)" }}
         />
          <IntroToEFCU />
       </div>
@@ -238,7 +251,7 @@ export default function EverestFederalCreditUnion() {
 
 <div className="flex flex-col items-center w-full bg-[#1c4483] mx-auto">
       <div className="max-w-[1600px] flex flex-col items-center mx-auto">
-      <div className="flex flex-col items-center justify-center p-[var(--spacing-3xl)] h-full w-full gap-[var(--spacing-3xl)]">
+      <div className="flex flex-col items-center justify-center p-[var(--spacing-3xl)] h-full w-full gap-[var(--spacing-3xl)] ">
             <video
             src="/EFCU/BrandingVideo.mp4"
             className="w-full h-auto object-cover"

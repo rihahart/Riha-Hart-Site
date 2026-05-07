@@ -91,12 +91,13 @@ export default function Revealed() {
     return (
       <div className="w-full flex flex-col gap-[var(--spacing-xl)] p-[var(--spacing-m)] items-start ">
          <div className="flex w-full flex-col items-end gap-[var(--spacing-m)]">
-        <h3 className="h3 text-[var(--color-primary)]">
+        <h3 className="h3 text-[var(--color-primary-inverse)] textshadow">
           REVEALED
         </h3>
         <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[50px] h-auto scale-x-[-1] mt-[-10px]"
           />
         </div>
@@ -105,7 +106,7 @@ export default function Revealed() {
           {bullets.map((item, i) => (
             <li
               key={i}
-              className="body text-[var(--color-primary)] flex items-start gap-[var(--spacing-m)]"
+              className="body text-[var(--color-primary-inverse)] flex items-start gap-[var(--spacing-m)]"
             >
               <img
                 src="/Icons/Pin.png"
@@ -125,12 +126,13 @@ export default function Revealed() {
     return (
       <div className="w-full flex flex-col gap-[var(--spacing-m)] p-[var(--spacing-m)] items-start mt-[-50px] ">
         <div className="flex w-full flex-col items-end gap-[var(--spacing-m)]">
-        <h3 className="h3 text-[var(--color-primary)]">
+        <h3 className="h3 text-[var(--color-primary-inverse)] textshadow">
           REVEALED
         </h3>
         <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[75px] h-auto scale-x-[-1] mt-[-10px]"
           />
         </div>
@@ -139,7 +141,7 @@ export default function Revealed() {
           {bullets.map((item, i) => (
             <li
               key={i}
-              className="body text-[var(--color-primary)] flex items-start gap-[var(--spacing-m)]"
+              className="body text-[var(--color-primary-inverse)] flex items-start gap-[var(--spacing-m)]"
             >
               <img
                 src="/Icons/Pin.png"
@@ -163,19 +165,20 @@ export default function Revealed() {
           <JourneyFrameAnimation large={true} />
         </div>
       <div className="flex flex-col items-end gap-[var(--spacing-lg)] mt-[-250px]">
-      <h3 className="h3 text-[var(--color-primary)] ">
+      <h3 className="h3 text-[var(--color-primary-inverse)] textshadow">
         REVEALED
       </h3>
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[150px] h-auto scale-x-[-1] pr-[var(--spacing-xl)] mt-[-10px]"
           />
            <ul className="flex flex-col gap-[var(--spacing-m)] list-none pl-0 flex-1 min-w-0">
           {bullets.map((item, i) => (
             <li
               key={i}
-              className="body text-[var(--color-primary)] flex items-start gap-[var(--spacing-m)]"
+              className="body text-[var(--color-primary-inverse)] flex items-start gap-[var(--spacing-m)]"
             >
               <img
                 src="/Icons/Pin.png"
@@ -204,19 +207,20 @@ export default function Revealed() {
           <JourneyFrameAnimation large={true} />
         </div>
       <div className="flex flex-col items-end gap-[var(--spacing-m)] mt-[-300px]">
-      <h3 className="h3 text-[var(--color-primary)] ">
+      <h3 className="h3 text-[var(--color-primary-inverse)] textshadow">
         REVEALED
       </h3>
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[175px] h-auto scale-x-[-1] pr-[var(--spacing-xl)] mt-[-30px]"
           />
            <ul className="flex flex-col gap-[var(--spacing-m)] list-none pl-0 flex-1 min-w-0">
           {bullets.map((item, i) => (
             <li
               key={i}
-              className="body text-[var(--color-primary)] flex items-start gap-[var(--spacing-m)]"
+              className="body text-[var(--color-primary-inverse)] flex items-start gap-[var(--spacing-m)]"
             >
               <img
                 src="/Icons/Pin.png"

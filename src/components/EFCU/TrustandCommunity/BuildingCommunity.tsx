@@ -38,6 +38,7 @@ export default function BuildingCommunity() {
         src={BUILDING_CONNECTION_IMAGES[index]}
         alt=""
         className="w-full h-full object-contain"
+        style={{ boxShadow: "var(--glow-shadow)" }}
         aria-hidden
       />
     </div>

@@ -207,7 +207,7 @@ function ArrowIcon({
     >
       <path
         d="M30.5 10.4704C30.5 10.4704 24.0374 4.66973 19.219 1.5M1.5 10.5627C1.5 10.5627 18.9415 10.9091 30.4529 10.5627M30.5 10.5617C30.5 10.5617 24.0374 16.3624 19.219 19.5321"
-        stroke="var(--green-300)"
+        stroke="var(--color-primary)"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
@@ -316,10 +316,9 @@ export default function ImpactBox() {
   if (isMobile) {
     return (
       <div 
-        className="w-full p-[var(--spacing-l)]"
+        className="w-full p-[var(--spacing-l)] lineshadow"
         style={{
-          background: "radial-gradient(ellipse at 60% 40%, #9B2010 0%, #6B1208 60%, #4A0D06 100%)",
-          backgroundColor: "#7D1A0A"
+          background: "radial-gradient(ellipse 100% 70% at 50% 100%, rgba(28,68,131,0.8) 0%, transparent 90%), linear-gradient(180deg, #033361 0%, #1C4483 100%, #01519C 100%)"
         }}
       >
         <div className="w-full flex flex-col gap-[var(--spacing-l)]">
@@ -335,10 +334,9 @@ export default function ImpactBox() {
   if (isTablet) {
     return (
       <div 
-        className="w-full p-[var(--spacing-m)]"
+        className="w-full p-[var(--spacing-m)] lineshadow"
         style={{
-          background: "radial-gradient(ellipse at 60% 40%, #9B2010 0%, #6B1208 60%, #4A0D06 100%)",
-          backgroundColor: "#7D1A0A"
+          background: "radial-gradient(ellipse 100% 70% at 50% 100%, rgba(28,68,131,0.8) 0%, transparent 90%), linear-gradient(180deg, #033361 0%, #1C4483 100%, #01519C 100%)"
         }}
       >
         <div className="w-full grid grid-cols-3 gap-[var(--spacing-m)]">
@@ -354,10 +352,9 @@ export default function ImpactBox() {
   if (isDesktop1440px) {
     return (
       <div 
-        className="w-full p-[var(--spacing-m)]"
+        className="w-full p-[var(--spacing-m)] lineshadow"
         style={{
-          background: "radial-gradient(ellipse at 60% 40%, #9B2010 0%, #6B1208 60%, #4A0D06 100%)",
-          backgroundColor: "#7D1A0A"
+          background: "radial-gradient(ellipse 100% 70% at 50% 100%, rgba(28,68,131,0.8) 0%, transparent 90%), linear-gradient(180deg, #033361 0%, #1C4483 100%, #01519C 100%)"
         }}
       >
         <div className="w-full grid grid-cols-3 gap-[var(--spacing-m)]">
@@ -372,10 +369,9 @@ export default function ImpactBox() {
   // Large Desktop (>1440px): 3 columns, max-width container, card height 275 + 4xl padding
   return (
     <div 
-      className="w-full max-w-[1600px] mx-auto p-[var(--spacing-m)]"
+      className="w-full max-w-[1600px] mx-auto p-[var(--spacing-m)] lineshadow"
       style={{
-        background: "radial-gradient(ellipse at 60% 40%, #9B2010 0%, #6B1208 60%, #4A0D06 100%)",
-        backgroundColor: "#7D1A0A"
+        background: "radial-gradient(ellipse 100% 70% at 50% 100%, rgba(28,68,131,0.8) 0%, transparent 90%), linear-gradient(180deg, #033361 0%, #1C4483 100%, #01519C 100%)"
       }}
     >
       <div className="w-full grid grid-cols-3 gap-[var(--spacing-m)]">

@@ -8,10 +8,10 @@ const Img2 = "/EFCU/Applications/ScalableFolder/BusinessAccount.png"
 const Img3 = "/EFCU/Applications/ScalableFolder/Mobile.png"
 const Img4 = "/EFCU/Applications/ScalableFolder/Prefills.png"
 
-const headingDesktop = <h1 className="h1 text-[var(--color-secondary-inverse)] text-center">SCALABLE MEMBERSHIP AND LOAN APPLICATION</h1>
-const headingMobile = <h1 className="h1 text-[var(--color-secondary-inverse)] text-left">SCALABLE MEMBERSHIP AND LOAN APPLICATION</h1>
-const bodyDesktop = <p className="body text-[var(--color-secondary-inverse)] text-center">Everest FCU was growing quickly and regularly launching new membership types and loan products. One scalable membership application and one loan application were designed to support product growth.</p>
-const bodyMobile = <p className="body text-[var(--color-secondary-inverse)] text-left">Everest FCU was growing quickly and regularly launching new membership types and loan products. One scalable membership application and one loan application were designed to support product growth.</p>
+const headingDesktop = <h1 className="h1 text-[var(--color-primary-inverse)] text-center">SCALABLE MEMBERSHIP AND LOAN APPLICATION</h1>
+const headingMobile = <h1 className="h1 text-[var(--color-primary-inverse)] text-left">SCALABLE MEMBERSHIP AND LOAN APPLICATION</h1>
+const bodyDesktop = <p className="body text-[var(--color-primary-inverse)] text-center">Everest FCU was growing quickly and regularly launching new membership types and loan products. One scalable membership application and one loan application were designed to support product growth.</p>
+const bodyMobile = <p className="body text-[var(--color-primary-inverse)] text-left">Everest FCU was growing quickly and regularly launching new membership types and loan products. One scalable membership application and one loan application were designed to support product growth.</p>
 
 function useScrollUp() {
   const ref = useRef<HTMLDivElement>(null)
@@ -47,7 +47,7 @@ export default function ScalableApp() {
 
   if (isMobile) {
     return (
-      <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-xl)] bg-[#3B558E]">
+      <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-xl)] bg-[#3B558E] lineshadow ">
         <div className="flex flex-col items-center gap-[var(--spacing-xs)] self-stretch w-full px-[var(--spacing-lg)]">
           {headingMobile}
           {bodyMobile}
@@ -68,7 +68,7 @@ export default function ScalableApp() {
 
   if (isTablet) {
     return (
-      <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-xl)]  bg-[#3B558E]">
+      <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-xl)]  bg-[#3B558E] lineshadow">
         <div className="flex flex-col items-center gap-[var(--spacing-xs)] self-stretch w-full px-[var(--spacing-3xl)]">
           {headingMobile}
           {bodyMobile}
@@ -89,7 +89,7 @@ export default function ScalableApp() {
 
   if (isDesktop1440px) {
     return (
-      <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-lg)] bg-[#3B558E]">
+      <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-lg)] bg-[#3B558E] lineshadow">
         <div className="flex flex-col items-center gap-[var(--spacing-xs)] self-stretch max-w-[800px] mx-auto w-full">
           {headingDesktop}
           {bodyDesktop}
@@ -105,13 +105,13 @@ export default function ScalableApp() {
   }
 
   return (
-    <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-lg)] bg-[#3B558E]">
+    <div className="w-full flex flex-col py-[var(--spacing-xl)] gap-[var(--spacing-lg)] bg-[#3B558E] lineshadow">
       <div className="flex flex-col items-center gap-[var(--spacing-xs)] self-stretch max-w-[1000px] mx-auto w-full">
         {headingDesktop}
         {bodyDesktop}
       </div>
       <div ref={row1.ref} className="flex items-center justify-center w-full gap-[var(--spacing-xl)]">
-        <img src={Img1} alt="Become a Member" className={`max-w-[445px] h-auto object-contain shadow-lg rotate-[0.79deg] ${animUp(row1.visible, "delay-0")}`} />
+        <img src={Img1} alt="Become a Member" className={`max-w-[445px] h-auto object-contain shadow-lg rotate-[0.79deg] ${animUp(row1.visible, "delay-0")}` } />
         <img src={Img2} alt="Business Account" className={`max-w-[200px] h-auto object-contain shadow-lg rotate-[-5.70deg] ${animUp(row1.visible, "delay-100")}`} />
         <img src={Img3} alt="Mobile" className={`max-w-[145px] h-auto object-contain shadow-lg ${animUp(row1.visible, "delay-200")}`} />
         <img src={Img4} alt="Prefills" className={`max-w-[365px] h-auto object-contain shadow-lg rotate-[2deg] ${animUp(row1.visible, "delay-300")}`} />

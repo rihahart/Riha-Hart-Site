@@ -33,9 +33,8 @@ function NavigationFrameAnimation() {
 export default function WebsiteAudit() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   const section = websiteAudit
-
   const heading = (
-    <h3 className="h3 text-[var(--color-primary)]">
+    <h3 className="h3 textshadow">
       {section.title}
     </h3>
   )
@@ -48,6 +47,7 @@ export default function WebsiteAudit() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[50px] h-auto pl-[var(--spacing-s)] translate-x-[200px] rotate-[-80.16deg] scale-x-[-1] mt-[-15px] md:translate-x-0 md:scale-x-100"
           />
         </div>
@@ -57,7 +57,7 @@ export default function WebsiteAudit() {
               <NavigationFrameAnimation />
             </div>
           </div>
-          <div className="w-full flex justify-start mt-[-10px]">
+          <div className="flex justify-start mt-[-10px] lineshadow">
             <video
               src="/EFCU/ClarifyingNavAnimation/HueristicEvaluation_small.mp4"
               className="w-full object-contain"
@@ -82,6 +82,7 @@ export default function WebsiteAudit() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[75px] h-auto] "
           />
         </div>
@@ -91,7 +92,7 @@ export default function WebsiteAudit() {
               <NavigationFrameAnimation />
             </div>
           </div>
-          <div className="w-full flex justify-start mt-[-10px]">
+          <div className="flex justify-start mt-[-10px] lineshadow">
             <video
               src="/EFCU/ClarifyingNavAnimation/HueristicEvaluation_small.mp4"
               className="max-h-[300px] w-auto object-contain"
@@ -116,6 +117,7 @@ export default function WebsiteAudit() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[150px] h-auto pl-[var(--spacing-xl)] scale-x-[-1] md:scale-x-100"
           />
         </div>
@@ -125,7 +127,7 @@ export default function WebsiteAudit() {
               <NavigationFrameAnimation />
             </div>
           </div>
-          <div className="w-full flex justify-start mt-[-40px]">
+          <div className="flex justify-start mt-[-40px] lineshadow">
             <video
               src="/EFCU/ClarifyingNavAnimation/HueristicEvaluation_small.mp4"
               className="max-h-[300px] w-auto object-contain"
@@ -149,6 +151,7 @@ export default function WebsiteAudit() {
           <img
             src="/EFCU/ClarifyingNavAnimation/Arrow.png"
             alt="arrow pointing to nav animation"
+            style={{ filter: "brightness(0) saturate(100%) invert(97%) sepia(19%) saturate(317%) hue-rotate(326deg) brightness(103%) contrast(97%) drop-shadow(0 0 8px rgba(253,247,230,0.6))" }}
             className="w-[175px] h-auto pl-[var(--spacing-xl)] scale-x-[-1] md:scale-x-100"
           />
         </div>
@@ -158,7 +161,7 @@ export default function WebsiteAudit() {
               <NavigationFrameAnimation />
             </div>
           </div>
-          <div className="w-full flex justify-start mt-[-50px]">
+          <div className="flex justify-start mt-[-50px] lineshadow">
             <video
               src="/EFCU/ClarifyingNavAnimation/HueristicEvaluation.mp4"
               className="max-h-[400px] w-auto object-contain"
