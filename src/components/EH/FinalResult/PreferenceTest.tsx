@@ -7,7 +7,8 @@ const { heading, quote1, quote2, quote3, quote4, body } = preferenceTestData
 
 const quoteStyle = {
   fontStyle: "italic",
-  color: "#2E8FB6",
+  color: "var(--neutral-500)",
+  textTransform: "uppercase"
 }
 
 export default function PreferenceTest() {
@@ -19,7 +20,7 @@ export default function PreferenceTest() {
         className="flex flex-col justify-center items-center gap-[var(--spacing-4xl)] border-t-[4px] border-[#A17E5E] self-stretch w-full"
         style={{ padding: "var(--spacing-m)" }}
       >
-        <h3 className="h3 text-[var(--color-primary)]">{heading}</h3>
+        <h3 className="h3 text-[var(--color-primary-inverse)]">{heading}</h3>
 
         <div className="flex flex-col justify-center items-center w-full">
           <div className="flex flex-col gap-[var(--spacing-2xl)] w-full items-center text-center">
@@ -29,7 +30,7 @@ export default function PreferenceTest() {
             <h4 className="h4" style={quoteStyle}>{quote4}</h4>
           </div>
         </div>
-        <p className="body text-[var(--color-primary)]">{preferenceTestData.body}</p>
+        <p className="body text-[var(--color-primary-inverse)]">{preferenceTestData.body}</p>
       </div>
     )
   }
@@ -51,7 +52,7 @@ export default function PreferenceTest() {
       className={`flex flex-col justify-center items-center gap-[var(--spacing-8xl)] self-stretch w-full ${borderTop} border-[#A17E5E]`}
       style={{ padding: "var(--spacing-s)" }}
     >
-      <h3 className="h3 text-[var(--color-primary)]">{heading}</h3>
+      <h3 className="h3 text-[var(--color-primary-inverse)]">{heading}</h3>
 
       <div className="flex flex-col justify-center items-center gap-[var(--spacing-3xl)] w-full">
         <div className={`flex flex-col gap-[var(--spacing-3xl)] w-full ${innerWidth}`}>
@@ -67,7 +68,7 @@ export default function PreferenceTest() {
           </div>
 
         </div>
-        <p className="body text-[var(--color-primary)]">{preferenceTestData.body}</p>
+        <p className="body text-[var(--color-primary-inverse)]">{preferenceTestData.body}</p>
       </div>
     </div>
   )

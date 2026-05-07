@@ -26,7 +26,7 @@ function Section({
           className={`flex-shrink-0${section.logo.includes("EHPointLogo") ? " rotate-[-40deg]" : ""}`}
           style={{ width: logoSize, height: logoSize }}
         />
-        <h3 className="h3" style={{ color: section.color }}>
+        <h3 className="h3"  style={{ color: section.color }  }>
           {section.title}
         </h3>
       </div>
@@ -35,7 +35,7 @@ function Section({
         style={{ paddingLeft: `calc(${logoSize}px + ${logoGap})` }}
       >
         {section.points.map((point, i) => (
-          <p key={i} className="body text-[var(--color-primary)]">
+          <p key={i} className="body text-[var(--color-primary-inverse)]">
             {point}
           </p>
         ))}
@@ -67,7 +67,7 @@ export default function AboutEH() {
           height={575}
           className="max-w-[275px] h-auto object-contain"
         />
-        <h2 className="h2 text-[var(--color-primary)]">{aboutEH.heading}</h2>
+        <h2 className="h2 text-[var(--color-primary-inverse)]">{aboutEH.heading}</h2>
       
         <SectionList logoSize={20} />
       </div>
@@ -86,7 +86,7 @@ export default function AboutEH() {
           className="max-w-[275px] h-auto object-contain"
         />
         </div>
-        <h2 className="h2 text-[var(--color-primary)]">{aboutEH.heading}</h2>
+        <h2 className="h2 text-[var(--color-primary-inverse)]">{aboutEH.heading}</h2>
        
         <div className="px-[var(--spacing-3xl)] w-full">
           <SectionList logoSize={24} logoGap="var(--spacing-xl)" />
@@ -99,7 +99,7 @@ export default function AboutEH() {
     return (
       <div className="w-full flex flex-row items-start justify-between p-[var(--spacing-xl)]">
         <div className="flex flex-col items-start gap-[var(--spacing-3xl)] w-[45%] min-w-0">
-          <h2 className="h2 text-[var(--color-primary)]">{aboutEH.heading}</h2>
+          <h2 className="h2 text-[var(--color-primary-inverse)]">{aboutEH.heading}</h2>
           <Image
             src="/EarthHero/EHScreens/iPhone.svg"
             alt="EarthHero app on iPhone"
@@ -119,7 +119,7 @@ export default function AboutEH() {
   return (
     <div className="w-full flex flex-row items-stretch justify-between  p-[var(--spacing-2xl)]">
       <div className="flex flex-col items-start gap-[var(--spacing-3xl)] w-[45%] min-w-0">
-        <h2 className="h2 text-[var(--color-primary)]">{aboutEH.heading}</h2>
+        <h2 className="h2 text-[var(--color-primary-inverse)]">{aboutEH.heading}</h2>
         <Image
           src="/EarthHero/EHScreens/iPhone.svg"
           alt="EarthHero app on iPhone"

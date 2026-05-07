@@ -110,18 +110,18 @@ export default function IntroToEH() {
     <div className="w-full flex justify-end">
       <div className="flex flex-col items-start justify-center w-[800px] p-[var(--spacing-lg)] gap-[var(--spacing-lg)]">
         <div className="flex flex-col items-start justify-center gap-[var(--spacing-xs)]">
-          <h2 className="h1 text-[var(--color-primary)]">
+          <h2 className="h1 text-[var(--color-primary-inverse)] textshadow">
             {introToEH.heading}
           </h2>
-          <p className="h4 text-[var(--color-secondary)]">
+          <p className="h4 text-[var(--color-primary-inverse)]">
             {introToEH.subtitle}
           </p>
         </div>
         <div className="flex flex-col gap-[var(--spacing-s)]">
-          <p className="body text-[var(--color-primary)]">
+          <p className="body text-[var(--color-primary-inverse)]">
             {introToEH.body}
           </p>
-          <p className="body text-[var(--color-primary)]">
+          <p className="body text-[var(--color-primary-inverse)]">
             {introToEH.body2}
           </p>
         </div>

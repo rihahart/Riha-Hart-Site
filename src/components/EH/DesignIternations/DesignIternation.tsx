@@ -26,8 +26,8 @@ export default function DesignIteration() {
 
   const TitleBlock = () => (
     <div className="flex flex-col w-full gap-[var(--spacing-xs)]">
-      <h2 className="h2 text-[var(--color-primary)]">{HEADING}</h2>
-      <p className="body font-normal text-[var(--color-primary)]">{DESCRIPTION}</p>
+      <h2 className="h2 text-[var(--color-primary-inverse)]">{HEADING}</h2>
+      <p className="body font-normal text-[var(--color-primary-inverse)]">{DESCRIPTION}</p>
     </div>
   )
 
@@ -75,7 +75,8 @@ export default function DesignIteration() {
           <div
             key={i}
             style={{
-              border: isActive ? "2px solid var(--color-primary)" : "2px solid transparent",
+              border: isActive ? "2px solid var(--color-primary-inverse)" : "2px solid transparent",
+              boxShadow: isActive ? "var(--glow-shadow)" : "none",
               padding: "var(--spacing-xs)",
             }}
           >
@@ -87,6 +88,7 @@ export default function DesignIteration() {
                 backgroundColor: "#1E9263",
                 padding: "var(--spacing-m)",
                 minHeight: "80px",
+                
               }}
             >
               <p className="body font-semibold text-[var(--color-secondary-inverse)] text-center pointer-events-none">{s.heading}</p>
@@ -105,7 +107,8 @@ export default function DesignIteration() {
           <div
             key={i}
             style={{
-              border: isActive ? "2px solid var(--color-primary)" : "2px solid transparent",
+              border: isActive ? "2px solid var(--color-primary-inverse)" : "2px solid transparent",
+              boxShadow: isActive ? "var(--glow-shadow)" : "none",
               padding: "var(--spacing-xs)",
             }}
           >

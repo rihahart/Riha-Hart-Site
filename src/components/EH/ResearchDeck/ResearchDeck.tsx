@@ -22,7 +22,8 @@ export default function ResearchDeck() {
           <div
             key={i}
             style={{
-              border: isActive ? "2px solid var(--color-primary)" : "2px solid transparent",
+              border: isActive ? "2px solid var(--color-primary-inverse)" : "2px solid transparent",
+              boxShadow: isActive ? "var(--glow-shadow)" : "none",
               padding: "var(--spacing-xs)",
             }}
           >
@@ -55,7 +56,8 @@ export default function ResearchDeck() {
           <div
             key={i}
             style={{
-              border: isActive ? "2px solid var(--color-primary)" : "2px solid transparent",
+              border: isActive ? "2px solid var(--color-primary-inverse)" : "2px solid transparent",
+             boxShadow: isActive ? "var(--glow-shadow)" : "none",
               padding: "var(--spacing-xs)",
             }}
           >
@@ -100,8 +102,8 @@ export default function ResearchDeck() {
 
   const TitleBlock = () => (
     <div className="flex flex-col w-full gap-[var(--spacing-xs)]">
-      <h2 className="h2 text-[var(--color-primary)]">{OVERLAY_HEADING}</h2>
-      <p className="body font-normal text-[var(--color-primary)]">{OVERLAY_BODY}</p>
+      <h2 className="h2 text-[var(--color-primary-inverse)]">{OVERLAY_HEADING}</h2>
+      <p className="body font-normal text-[var(--color-primary-inverse)]">{OVERLAY_BODY}</p>
     </div>
   )
 

@@ -43,7 +43,7 @@ const chartOptions = {
 }
 
 const containerClass =
-  "p-[var(--spacing-xl)] border border-[var(--neutral-300)] shadow-lg"
+  "p-[var(--spacing-xl)] lineshadow"
 
 const h4Text =
   "Users felt unmotivated because the impact of their actions wasn't visible. In 2024 user data, EarthHero had an action conversion rate of 40–45% among existing users."
@@ -88,7 +88,7 @@ export default function ActionChart() {
         <div style={{ maxWidth: 275, width: "100%", height: "auto", aspectRatio: "1" }}>
           <Pie ref={chartRef} data={chartData} options={chartOptions} />
         </div>
-        <h4 className="h4 text-[var(--color-primary)]">{h4Text}</h4>
+        <h4 className="h4 text-[var(--color-primary-inverse)]">{h4Text}</h4>
       </div>
     )
   }
@@ -102,7 +102,7 @@ export default function ActionChart() {
         <div style={{ maxWidth: 300, width: "100%", height: "auto", aspectRatio: "1" }}>
           <Pie ref={chartRef} data={chartData} options={chartOptions} />
         </div>
-        <h4 className="h4 text-[var(--color-primary)]">{h4Text}</h4>
+        <h4 className="h4 text-[var(--color-primary-inverse)]">{h4Text}</h4>
       </div>
     )
   }
@@ -117,7 +117,7 @@ export default function ActionChart() {
         <div style={{ maxWidth: 300, width: "100%", height: 300 }}>
           <Pie ref={chartRef} data={chartData} options={chartOptions} />
         </div>
-        <h4 className="h4 text-[var(--color-primary)]" style={{ width: 400 }}>
+        <h4 className="h4 text-[var(--color-primary-inverse)]" style={{ width: 400 }}>
           {h4Text}
         </h4>
       </div>
@@ -134,7 +134,7 @@ export default function ActionChart() {
       <div style={{ maxWidth: 345, width: "100%", height: 345 }}>
         <Pie ref={chartRef} data={chartData} options={chartOptions} />
       </div>
-      <h4 className="h4 text-[var(--color-primary)]" style={{ width: 500 }}>
+      <h4 className="h4 text-[var(--color-primary-inverse)]" style={{ width: 500 }}>
         {h4Text}
       </h4>
     </div>

@@ -15,7 +15,7 @@ export default function CoreMetrics() {
 
   if (isMobile) {
     return (
-      <div className="w-full flex flex-col items-stretch px-[var(--spacing-lg)] pb-[var(--spacing-m)] border border-[#FED05F] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)] bg-[var(--neutral-1000)]">
+      <div className="w-full flex flex-col items-stretch px-[var(--spacing-lg)] pb-[var(--spacing-m)] overflow-hidden lineshadow">
         <style>{`@keyframes swing { 0%,100%{transform:rotate(-15deg)} 50%{transform:rotate(15deg)} }`}</style>
         <div className="relative w-[100px] h-[180px] flex-shrink-0 self-end -mt-[20px] z-10">
           <Image
@@ -37,7 +37,7 @@ export default function CoreMetrics() {
 
   if (isTablet) {
     return (
-      <div className="w-full flex flex-col items-stretch px-[var(--spacing-m)] pb-[var(--spacing-m)] border border-[#FED05F] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)] bg-[var(--neutral-1000)]">
+      <div className="w-full flex flex-col items-stretch overflow-hidden px-[var(--spacing-m)] pb-[var(--spacing-m)] lineshadow">
         <style>{`@keyframes swing { 0%,100%{transform:rotate(-15deg)} 50%{transform:rotate(15deg)} }`}</style>
         <div className="relative w-[100px] h-[180px] flex-shrink-0 self-end -mt-[20px] z-10">
           <Image
@@ -59,7 +59,7 @@ export default function CoreMetrics() {
 
   if (isDesktop1440px) {
     return (
-      <div className="w-full flex flex-col justify-center items-center gap-[var(--spacing-s,24px)] px-[var(--spacing-xl)] pb-[var(--spacing-m)] border border-[#FED05F] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)] bg-[var(--neutral-1000)]">
+      <div className="w-full flex flex-col justify-center items-center gap-[var(--spacing-s,24px)] overflow-hidden px-[var(--spacing-xl)] pb-[var(--spacing-m)] lineshadow">
         <style>{`@keyframes swing { 0%,100%{transform:rotate(-15deg)} 50%{transform:rotate(15deg)} }`}</style>
         <div className="flex flex-row items-center justify-between w-full">
           <div className="flex flex-col items-center max-w-[800px] gap-[var(--spacing-2xl)] justify-center flex-1 self-stretch">
@@ -82,7 +82,7 @@ export default function CoreMetrics() {
   }
 
   return (
-    <div className="w-full flex flex-col justify-center items-center gap-[var(--spacing-s,24px)] px-[var(--spacing-xl)] pb-[var(--spacing-m)] border border-[#FED05F] shadow-[0_2.46px_2.46px_0_rgba(255,255,255,0.2)] bg-[var(--neutral-1000)]">
+    <div className="w-full flex flex-col justify-center items-center gap-[var(--spacing-s,24px)]  overflow-hidden px-[var(--spacing-xl)] pb-[var(--spacing-m)] lineshadow">
       <style>{`@keyframes swing { 0%,100%{transform:rotate(-15deg)} 50%{transform:rotate(15deg)} }`}</style>
       <div className="flex flex-row items-start justify-between w-full">
         <div className="flex flex-col items-start gap-[var(--spacing-lg)] justify-center max-w-[900px] flex-1 self-stretch">

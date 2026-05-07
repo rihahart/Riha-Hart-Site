@@ -14,7 +14,7 @@ const Card = () => (
     {/* Left panel */}
     <div
       className="flex items-center justify-center p-[var(--spacing-xl)]"
-      style={{ flex: "1", backgroundColor: "#2E8FB6" }}
+      style={{ flex: "1", backgroundColor: "#192B96" }}
     >
       <h3 className="h3 text-[var(--color-secondary-inverse)]">{heading}</h3>
     </div>
@@ -28,13 +28,13 @@ const Card = () => (
       style={{ flex: "1.4" }}
     >
       <div className="flex flex-col gap-[var(--spacing-xs)]">
-        <p className="body text-[var(--color-primary)]">
-          <strong style={{ color: "#2E8FB6" }}>{insight1.title}</strong> {insight1.body}
+        <p className="body text-[var(--color-primary-inverse)]">
+          <strong style={{ textTransform: "uppercase" }}>{insight1.title}</strong> {insight1.body}
         </p>
       </div>
       <div className="flex flex-col gap-[var(--spacing-xs)]">
-        <p className="body text-[var(--color-primary)]">
-          <strong style={{ color: "#2E8FB6" }}>{insight2.title}</strong> {insight2.body}
+        <p className="body text-[var(--color-primary-inverse)]">
+          <strong style={{ textTransform: "uppercase" }}>{insight2.title}</strong> {insight2.body}
         </p>
       </div>
     </div>
@@ -48,17 +48,17 @@ const MobileCard = () => (
   >
     <div
       className="flex items-center justify-center p-[var(--spacing-xl)]"
-      style={{ backgroundColor: "#2E8FB6" }}
+      style={{ backgroundColor: "#192B96" }}
     >
       <h3 className="h3 text-[var(--color-secondary-inverse)]">{heading}</h3>
     </div>
     <div style={{ height: "1px", backgroundColor: "var(--neutral-300)" }} />
     <div className="flex flex-col gap-[var(--spacing-xl)] p-[var(--spacing-xl)]">
-      <p className="body text-[var(--color-primary)]">
-        <strong style={{ color: "#2E8FB6" }}>{insight1.title}</strong> {insight1.body}
+      <p className="body text-[var(--color-primary-inverse)]">
+        <strong style={{ textTransform: "uppercase" }}>{insight1.title}</strong> {insight1.body}
       </p>
-      <p className="body text-[var(--color-primary)]">
-        <strong style={{ color: "#2E8FB6" }}>{insight2.title}</strong> {insight2.body}
+      <p className="body text-[var(--color-primary-inverse)]">
+        <strong style={{ textTransform: "uppercase" }}>{insight2.title}</strong> {insight2.body}
       </p>
     </div>
   </div>

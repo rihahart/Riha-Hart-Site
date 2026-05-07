@@ -18,24 +18,24 @@ function ProgressSummary({ className, maxWidth }: { className?: string; maxWidth
   )
 }
 
-function HeroLevels({ maxWidth }: { maxWidth?: number }) {
+function HeroLevels({ className, maxWidth }: { className?: string; maxWidth?: number }) {
   return (
     <Image
       src={theProblems.heroLevelsImage}
       alt="Hero Levels"
       width={maxWidth ?? 400}
       height={300}
-      className="h-auto object-contain"
+      className={`h-auto object-contain ${className ?? ""}`}
       style={{ width: "100%", maxWidth: maxWidth ? `${maxWidth}px` : "100%" }}
     />
   )
 }
 
 function IndicatorCards({ variant, borderWidth = 4 }: { variant?: "desktop"; borderWidth?: number }) {
-  const bodyClass = "body text-[var(--color-primary)]"
+  const bodyClass = "body text-[var(--color-primary-inverse)]"
   const itemInner = (item: (typeof theProblems.indicators)[0]) => (
     <div className="flex flex-col gap-[var(--spacing-xl)]">
-      <h3 className={`${variant === "desktop" ? "h3" : "h2"} text-[var(--color-primary)]`}>{item.title}</h3>
+      <h3 className={`${variant === "desktop" ? "h3" : "h2"} text-[var(--color-primary-inverse)]`}>{item.title}</h3>
       <div className="flex flex-col gap-[var(--spacing-s)]">
         <p className={bodyClass}>{item.description1}</p>
         <p className={bodyClass}>{item.description2}</p>
@@ -78,7 +78,7 @@ export default function TheProblem() {
     return (
       <div className="w-full flex flex-col items-center gap-[var(--spacing-xs)] py-[var(--spacing-xl)]">
         <ProgressSummary maxWidth={320} />
-        <HeroLevels maxWidth={320}  />
+        <HeroLevels maxWidth={320} className="lineshadow"   />
         <div className="py-[var(--spacing-lg)]">
           <IndicatorCards borderWidth={4} />
         </div>
@@ -92,7 +92,7 @@ export default function TheProblem() {
       <div className="w-full flex flex-col items-center gap-[var(--spacing-xl)] p-[var(--spacing-xl)]">
         <div className="flex w-full flex-row gap-[var(--spacing-m)] items-end justify-center">
           <ProgressSummary maxWidth={350} />
-          <HeroLevels maxWidth={320} />
+          <HeroLevels maxWidth={320} className="lineshadow"   />
         </div>
         <IndicatorCards borderWidth={6} />
       </div>
@@ -104,7 +104,7 @@ export default function TheProblem() {
       <div className="w-full flex flex-row items-center justify-between p-[var(--spacing-xl)]">
         <div className="flex flex-col items-start gap-[var(--spacing-m)] w-[45%] min-w-0">
           <ProgressSummary maxWidth={560} />
-          <HeroLevels maxWidth={560} />
+          <HeroLevels maxWidth={560} className="lineshadow"  />
         </div>
         <div className="flex flex-col items-end gap-[var(--spacing-xl)] w-[40%] min-w-0">
           <IndicatorCards variant="desktop" borderWidth={8} />
@@ -116,8 +116,8 @@ export default function TheProblem() {
   return (
     <div className="w-full  flex flex-row items-center justify-between p-[var(--spacing-xl)]">
       <div className="flex flex-col items-center  gap-[var(--spacing-m)] w-[45%] h-full min-w-0">
-        <ProgressSummary maxWidth={680} />
-        <HeroLevels maxWidth={680} />
+        <ProgressSummary maxWidth={680}  />
+        <HeroLevels maxWidth={680} className="lineshadow" />
       </div>
       <div className="flex flex-col items-end gap-[var(--spacing-xl)] w-[40%] min-w-0">
         <IndicatorCards variant="desktop" borderWidth={12} />
