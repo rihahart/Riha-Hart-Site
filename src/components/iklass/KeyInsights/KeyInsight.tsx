@@ -10,8 +10,8 @@ const YELLOW = "#FFDD86"
 function InsightContentBox() {
   return (
     <div
-      className="flex flex-col gap-[var(--spacing-l)] w-full border-4 px-[var(--spacing-m)] py-[var(--spacing-m)] bg-white"
-      style={{ borderColor: YELLOW }}
+      className="flex flex-col gap-[var(--spacing-l)] w-full border-4 px-[var(--spacing-m)] py-[var(--spacing-m)] bg-[var(--color-primary-inverse)]"
+      style={{ borderColor: YELLOW, boxShadow: "var(--glow-shadow)" }}
     >
       {keyInsight.insights.map((item, i) => (
         <div key={i} className="flex flex-col gap-[var(--spacing-s)]">

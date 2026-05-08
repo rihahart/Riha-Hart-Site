@@ -14,7 +14,7 @@ export default function IklassEnd() {
 
   if (isMobile) {
     return (
-      <div className="w-full flex flex-col items-center gap-[var(--spacing-xl)] shadow-[0_0_10px_0_rgba(0,0,0,0.1)] py-[var(--spacing-xl)] px-[var(--spacing-lg)] rounded-[4px]">
+      <div className="w-full flex flex-col items-center gap-[var(--spacing-xl)] bg-[#B4E1F9] shadow-[0_0_10px_0_rgba(0,0,0,0.1)] py-[var(--spacing-xl)] px-[var(--spacing-lg)] rounded-[4px]">
         <div className="flex flex-col items-center gap-[var(--spacing-xs)] text-center">
           <h2 className="body text-[var(--color-secondary)] uppercase">
             {iklassEnd.caption}
@@ -26,7 +26,7 @@ export default function IklassEnd() {
         <Button
           text="Visit Site"
           onClick={handleVisitWebsite}
-          variant="redPrimary"
+          variant="iKPrimary"
         />
         <div className="w-full flex items-center justify-center py-[var(--spacing-l)]">
           <img
@@ -53,7 +53,7 @@ export default function IklassEnd() {
         <Button
           text="Visit Site"
           onClick={handleVisitWebsite}
-          variant="redPrimary"
+          variant="iKPrimary"
         />
         <div className="w-full flex items-center justify-center py-[var(--spacing-l)]">
           <img
@@ -81,7 +81,7 @@ export default function IklassEnd() {
           <Button
             text="Visit Site"
             onClick={handleVisitWebsite}
-            variant="redPrimary"
+            variant="iKPrimary"
           />
         </div>
         <div className="w-full flex-1 min-w-0 flex items-center justify-center">
@@ -96,7 +96,7 @@ export default function IklassEnd() {
   }
 
   return (
-    <div className="w-full flex flex-col md:flex-row items-start p-[var(--spacing-2xl)] shadow-[0_0_10px_0_rgba(0,0,0,0.1)] rounded-[4px] gap-[var(--spacing-2xl)]">
+    <div className="w-full flex flex-col md:flex-row items-start bg-[#B4E1F9] p-[var(--spacing-2xl)] rounded-[4px] gap-[var(--spacing-2xl)] lineshadow">
       <div className="flex flex-col items-start gap-[var(--spacing-lg)]">
       <div className="flex flex-col items-start gap-[var(--spacing-xs)] min-w-0 flex-1 max-w-xl">
         <h2 className="body text-[var(--color-secondary)] uppercase">
@@ -110,7 +110,7 @@ export default function IklassEnd() {
         <Button
           text="Visit Site"
           onClick={handleVisitWebsite}
-          variant="redPrimary"
+          variant="iKPrimary"
         />
       </div>
       <div className="w-full flex-1 min-w-0 flex items-center justify-center">

@@ -12,7 +12,7 @@ function ParagraphCards({ variant }: { variant?: "desktop" }) {
         {researchApproach.paragraphs.map((para, i) => (
           <div
             key={i}
-            className="border-l-4 border-l-[var(--color-brand)] pl-[var(--spacing-xl)]"
+            className="border-l-4 border-l-[var(--color-brand)] bg-[var(--color-primary-inverse)] pl-[var(--spacing-xl)]" style={{ boxShadow: "var(--glow-shadow)" }}
           >
             <p className="body text-[var(--color-primary)] py-[var(--spacing-m)]">
               {para}
@@ -27,7 +27,8 @@ function ParagraphCards({ variant }: { variant?: "desktop" }) {
       {researchApproach.paragraphs.map((para, i) => (
         <div
           key={i}
-          className="border-t-4 border-t-[var(--color-brand)] px-[var(--spacing-m)] py-[var(--spacing-m)]"
+          className="border-t-4 border-t-[var(--color-brand)] bg-[var(--color-primary-inverse)] px-[var(--spacing-m)] py-[var(--spacing-m)]"
+          style={{ boxShadow: "var(--glow-shadow)" }}
         >
           <p className="body text-[var(--color-primary)]">
             {para}

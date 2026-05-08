@@ -14,10 +14,22 @@ export default function iklass() {
   const { isMobile, isTablet, isDesktop1440px } = useMobileDetection()
   useEffect(() => { window.dispatchEvent(new CustomEvent("case-study-ready")) }, [])
 
+  useEffect(() => {
+    const bg = "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\"), radial-gradient(ellipse 100% 70% at 50% 100%, rgba(233, 233, 233, 0.8) 0%, transparent 90%), linear-gradient(180deg, #0a0a0a 0%, #3eb8fa 45%, #05a7ff 100%)"
+    document.body.style.background = bg
+    document.body.style.backgroundBlendMode = "overlay, normal, normal"
+    document.body.style.backgroundSize = "200px 200px, 100% 100%, 100% 100%"
+    return () => {
+      document.body.style.background = ""
+      document.body.style.backgroundBlendMode = ""
+      document.body.style.backgroundSize = ""
+    }
+  }, [])
+
   // Mobile (≤768px)
   if (isMobile) {
   return (
-    <div className="flex flex-col items-center bg-[var(--color-primary-inverse)] w-full mx-auto">
+    <div className="flex flex-col items-center w-full mx-auto">
 
       {/* div with margins starts here*/}
       <div className="flex flex-col items-center w-full p-[var(--spacing-lg)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
@@ -61,7 +73,7 @@ export default function iklass() {
   // Tablet (769px - 1024px)
   if (isTablet) {
     return (
-      <div className="flex flex-col bg-[var(--color-primary-inverse)] items-center w-full mx-auto">
+      <div className="flex flex-col items-center w-full mx-auto">
 
         {/* div with margins starts here*/}
         <div className="flex flex-col items-center w-full p-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] gap-[var(--spacing-4xl)] mx-auto">
@@ -105,7 +117,7 @@ export default function iklass() {
   if (isDesktop1440px) {
     return (  
 
-      <div className="flex flex-col items-center bg-[var(--color-primary-inverse)] w-full mx-auto">
+      <div className="flex flex-col items-center w-full mx-auto">
       <div className="flex flex-col items-center w-full max-w-[1440px] mx-auto px-[var(--spacing-3xl)] pt-[var(--spacing-m)] pb-[var(--spacing-6xl)]">
 
         {/* div with margins starts here*/}
@@ -149,7 +161,7 @@ export default function iklass() {
 
   // Large Desktop (>1440px)  
   return (
-    <div className="flex flex-col bg-[var(--color-primary-inverse)] items-center w-full mx-auto">
+    <div className="flex flex-col items-center w-full mx-auto">
 
       {/* div with margins starts here*/}
 

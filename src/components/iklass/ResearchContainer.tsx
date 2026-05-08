@@ -36,7 +36,7 @@ export default function ResearchContainer() {
     return (
       <div
         ref={containerRef}
-        className="w-full flex px-[var(--spacing-m)] py-[var(--spacing-lg)] items-center justify-center rounded-[8px] bg-cover bg-center bg-no-repeat"
+        className="w-full flex px-[var(--spacing-m)] py-[var(--spacing-lg)] items-center justify-center rounded-[8px] bg-cover bg-center bg-no-repeat lineshadow"
         style={{ backgroundImage: "url(/iklass/Research/iklassBackground.png)" }}
       >
       <div className={`flex w-full flex-col items-center justify-center p-[var(--spacing-2xl)] gap-[var(--spacing-s)] ${animateClass} ${transitionClass}`}>
@@ -84,7 +84,7 @@ export default function ResearchContainer() {
     return (
       <div
         ref={containerRef}
-        className="w-full flex px-[var(--spacing-4xl)] py-[var(--spacing-2xl)] items-center justify-center rounded-[8px] bg-cover bg-center bg-no-repeat"
+        className="w-full flex px-[var(--spacing-4xl)] py-[var(--spacing-2xl)] items-center justify-center rounded-[8px] bg-cover bg-center bg-no-repeat lineshadow"
         style={{ backgroundImage: "url(/iklass/Research/iklassBackground.png)" }}
       >
       <div className={`flex w-full flex-col items-center justify-center p-[var(--spacing-2xl)] gap-[var(--spacing-s)] ${animateClass} ${transitionClass}`}>
@@ -132,7 +132,7 @@ export default function ResearchContainer() {
     return (
       <div
         ref={containerRef}
-        className="w-full flex px-[var(--spacing-m)] py-[var(--spacing-2xl)] items-center justify-center rounded-[6px] bg-cover bg-center bg-no-repeat"
+        className="w-full flex px-[var(--spacing-m)] py-[var(--spacing-2xl)] items-center justify-center rounded-[6px] bg-cover bg-center bg-no-repeat lineshadow"
         style={{ backgroundImage: "url(/iklass/Research/iklassBackground.png)" }}
       >
       <div className={`flex w-full items-stretch justify-between gap-[var(--spacing-s)] min-w-0 ${animateClass} ${transitionClass}`}>
@@ -163,7 +163,7 @@ export default function ResearchContainer() {
   return (
     <div
       ref={containerRef}
-      className="w-full flex px-[var(--spacing-m)] py-[var(--spacing-2xl)] items-center justify-center rounded-[8px] bg-cover bg-center bg-no-repeat"
+      className="w-full flex px-[var(--spacing-m)] py-[var(--spacing-2xl)] items-center justify-center rounded-[8px] bg-cover bg-center bg-no-repeat lineshadow"
       style={{ backgroundImage: "url(/iklass/Research/iklassBackground.png)" }}
     >
       <div className={`flex w-full items-stretch justify-between gap-[var(--spacing-s)] min-w-0 ${animateClass} ${transitionClass}`}>

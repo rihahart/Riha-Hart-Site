@@ -65,8 +65,8 @@
   border: 1px solid var(--accent-glow);
   border-radius: 4px;
   box-shadow:
-    0 0 12px color-mix(in srgb, var(--accent-glow) 35%, transparent),
-    0 0 28px color-mix(in srgb, var(--accent-glow) 15%, transparent);
+    0 0 12px color-mix(in srgb, var(--accent-glow) 20%, transparent),
+    0 0 28px color-mix(in srgb, var(--accent-glow) 8%, transparent);
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
@@ -83,6 +83,42 @@
 .button--primary:active {
   transform: translateY(0);
   background: rgba(253, 247, 230, 0.08);
+}
+
+/* ── Button iK Primary ───────────────────────────────────── */
+
+.button--ik-primary {
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--color-primary) 20%, transparent),
+    0 0 28px color-mix(in srgb, var(--color-primary) 8%, transparent);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.button--ik-primary::after {
+  display: none;
+}
+
+.button--ik-primary span {
+  color: var(--color-primary);
+  text-shadow: none;
+}
+
+.button--ik-primary:hover span {
+  color: var(--color-primary);
+}
+
+.button--ik-primary:hover {
+  background: color-mix(in srgb, var(--color-primary) 18%, transparent);
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--color-primary) 16%, transparent);
+}
+
+.button--ik-primary:active {
+  transform: translateY(0);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
 }
 
 /* ── Button Inverse ──────────────────────────────────────── */

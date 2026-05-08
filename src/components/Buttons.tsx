@@ -11,7 +11,7 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset"
   className?: string
   inverted?: boolean
-  variant?: "default" | "redPrimary" | "primary" | "inverse" | "link"
+  variant?: "default" | "redPrimary" | "primary" | "inverse" | "link" | "iKPrimary"
   size?: "large" | "small"
 }
 
@@ -28,13 +28,15 @@ export const Button: React.FC<ButtonProps> = ({
     variant === "redPrimary" ? "primary" : inverted ? "inverse" : variant === "default" ? "primary" : variant
 
   const variantClass =
-    resolvedVariant === "primary"
-      ? "button--primary"
-      : resolvedVariant === "inverse"
-        ? "button--inverse"
-        : resolvedVariant === "link"
-          ? "button--link"
-          : "button--primary"
+    variant === "iKPrimary"
+      ? "button--ik-primary"
+      : resolvedVariant === "primary"
+        ? "button--primary"
+        : resolvedVariant === "inverse"
+          ? "button--inverse"
+          : resolvedVariant === "link"
+            ? "button--link"
+            : "button--primary"
 
   const sizeClass = size === "small" ? "button--small" : "button--large"
 
